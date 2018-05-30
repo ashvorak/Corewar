@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   Visual.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlytvyn <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:55:28 by dlytvyn           #+#    #+#             */
-/*   Updated: 2018/05/24 15:55:29 by dlytvyn          ###   ########.fr       */
+/*   Updated: 2018/05/30 16:55:01 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,7 @@
 #include "../inc/corewar.h"
 #include <stdlib.h>
 
-typedef	struct	s_gen
-{
-	t_sector	array[MEM_SIZE];
-}				t_gen;
-
-
-void	create_array(t_gen *st)
-{
-	int			i;
-
-	i = 0;
-	while (i < MEM_SIZE)
-	{
-		st->array[i].value = ft_strdup("00");
-		st->array[i].color = 0;
-		st->array[i].pc = 0;
-		i++;
-	}
-}
-
-WINDOW	*print_data(WINDOW *stdscr, t_gen *st)
+WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 {
 	int i;
 	int j;
@@ -50,7 +30,7 @@ WINDOW	*print_data(WINDOW *stdscr, t_gen *st)
 		j = 5;
 		while (k % 63 != 0)
 		{
-			mvprintw(i, j, st->array[k].value);
+			mvprintw(i, j, game->area[k].value);
 			j += 3;
 			k++;
 		}
@@ -61,7 +41,7 @@ WINDOW	*print_data(WINDOW *stdscr, t_gen *st)
 	return (stdscr);
 }
 
-void	print_frame(WINDOW *stdscr, t_gen *st)
+void	print_frame(WINDOW *stdscr)
 {
 	int i;
 	int j;
@@ -102,7 +82,6 @@ void visual(t_game *game)
 	int max_y;
 	int next_x;
 	int direction;
-	t_gen	st;
 
 	x = 0;
 	y = 0;
@@ -114,13 +93,12 @@ void visual(t_game *game)
 	//cbreak();
 	noecho();
 	curs_set(FALSE);
-	create_array(&st);
 	while (1)
 	{
 		clear();
 		getmaxyx(stdscr, max_y, max_x);
-		print_frame(stdscr, &st);
-		stdscr = print_data(stdscr, &st);
+		print_frame(stdscr);
+		stdscr = print_data(stdscr, game);
 		refresh();
 	}
 	getch();

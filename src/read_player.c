@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 12:44:42 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/05/29 14:26:44 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/05/30 16:50:19 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ static void			get_opcode(t_player *player, char *buf)
 		j += 2;
 		j += (buf[j] == ' ' || buf[j] == '\n') ? 1 : 0;
 	}
-	player->opcode[i] = '\0';
+	player->opcode[i] = NULL;
 }
 
 static	char *read_buf(int fd)

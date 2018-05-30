@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/05/29 14:29:56 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/05/30 16:54:25 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@
 
 #include "op.h"
 
-typedef struct	s_sector
+typedef struct	s_area
 {
 	char		*value;
 	int			color;
 	int			pc;
-}				t_sector;
+}				t_area;
 
 typedef struct	s_player
 {
@@ -42,7 +42,7 @@ typedef struct	s_player
 typedef struct	s_game
 {
 	t_player	players[4];
-	t_sector	sector[MEM_SIZE + 1];
+	t_area	area[MEM_SIZE + 1];
 }				t_game;
 
 void			ft_error(void);
