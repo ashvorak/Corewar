@@ -14,23 +14,24 @@
 
 void	ft_error(void)
 {
-	ft_printf("Error\n");
+	write(1, "Error\n", 6);
 	exit(1);
 }
 
 int	main(int ac, char **av)
 {
-	int i;
+	//int i;
 	t_game *game;
 
 	if (!(game = (t_game*)malloc(sizeof(t_game))))
-		return (NULL);
+		return (0);
 	read_players(game, av, ac, 1);
-	i = 0;
-	while (i < game->players[0].prog_size)
-	{
-		ft_printf("%s\n", game->players[0].opcode[i]);
-		i++;
-	}
+	// i = 0;
+	// while (i < game->players[0].prog_size)
+	// {
+	// 	ft_printf("%s\n", game->players[0].opcode[i]);
+	// 	i++;
+	// }
+	visual(game);
 	return (0);
 }
