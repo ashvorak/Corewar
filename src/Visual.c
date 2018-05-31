@@ -15,29 +15,49 @@
 #include "../inc/corewar.h"
 #include <stdlib.h>
 
+int		what_color(int col)
+{
+	if (col == 0)
+		return (3);
+	else if (col == 1)
+		return (4);
+	else if (col == 2)
+		return (5);
+	else if (col == 3)
+		return (6);
+	else
+		return (2);
+}
+
 WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 {
 	int i;
 	int j;
 	int k;
+	int l;
 
-	i = 1;
+	i = 2;
 	k = 0;
+	start_color();
 	init_pair(2, COLOR_WHITE, COLOR_BLACK);
-	attron(COLOR_PAIR(2));
+	init_pair(3, COLOR_GREEN, COLOR_BLACK);
+	init_pair(4, COLOR_BLUE, COLOR_BLACK);
+	init_pair(5, COLOR_RED, COLOR_BLACK);
+	init_pair(6, COLOR_YELLOW, COLOR_BLACK);
 	while (k < MEM_SIZE)
 	{
-		j = 5;
-		while (k % 63 != 0)
+		l = 0;
+		j = 3;
+		while (l++ < 64)
 		{
+			attron(COLOR_PAIR(what_color(game->area[k].color)));
 			mvprintw(i, j, game->area[k].value);
 			j += 3;
+			attroff(COLOR_PAIR(what_color(game->area[k].color)));
 			k++;
 		}
-		k++;
-		i += 1;
+		i++;
 	}
-	attroff(COLOR_PAIR(2));
 	return (stdscr);
 }
 
@@ -66,10 +86,10 @@ void	print_frame(WINDOW *stdscr)
 		{
 			mvprintw(i, j, " ");
 			mvprintw(i, 250 - 1, " ");
-			mvprintw(i, 195, " ");
+			mvprintw(i, 196, " ");
 		}
 		i++;
-		usleep(50000);
+		usleep(10000);
 	}
 	attroff(COLOR_PAIR(1));
 }

@@ -19,6 +19,7 @@ void		read_players(t_game *game, char **av, int ac, int i)
 	j = 0;
 	while (i < ac && j < 4)
 	{
+		game->players[j].color = j;
 		game->players[j] = read_player(av[i]);
 		i++;
 		j++;

@@ -20,7 +20,7 @@ void	ft_error(void)
 
 int	main(int ac, char **av)
 {
-	int		i;
+ 	int		i;
 	unsigned int		j;
 	t_game	*game;
 
@@ -31,10 +31,33 @@ int	main(int ac, char **av)
 	j = 0;
 	while (i < MEM_SIZE)
 	{
-		game->area[i].value = j < game->players[0].prog_size ? game->players[0].opcode[j] : ft_strdup("00");
+		//game->area[i].value = j < game->players[0].prog_size ? game->players[0].opcode[j] : ft_strdup("00");
+		if (j < game->players[0].prog_size)
+		{
+			game->area[i].value = game->players[0].opcode[j];
+			game->area[i].color = 0;
+		}
+		else
+		{
+			game->area[i].value = ft_strdup("00");
+			game->area[i].color = 10;
+		}
 		i++;
 		j++;
 	}
+	
+	// i = 0;
+	// j = 0;
+	// while (game->area[i].value)
+	// 	i++;
+	// ft_printf("%d\n", i);
+	/*
+	while (i < 100)
+	{
+		ft_printf("%s\n", game->area[i].value);
+		i++;
+	}
+	*/	
 	visual(game);
 	return (0);
 }

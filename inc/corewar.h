@@ -37,6 +37,7 @@ typedef struct	s_player
 	unsigned int		prog_size;
 	char				comment[COMMENT_LENGTH + 1];
 	char				**opcode;
+	int					color;
 }				t_player;
 
 typedef struct	s_game
@@ -50,5 +51,6 @@ void			ft_error(void);
 void			read_players(t_game *game, char **av, int ac, int i);
 t_player		read_player(char *file);
 void			visual(t_game *game);
+int				what_color(int col);
 
 #endif
