@@ -51,6 +51,5 @@ void			ft_error(void);
 void			read_players(t_game *game, char **av, int ac, int i);
 t_player		read_player(char *file);
 void			visual(t_game *game);
-int				what_color(int col);
 
 #endif

@@ -44,16 +44,28 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 	init_pair(4, COLOR_BLUE, COLOR_BLACK);
 	init_pair(5, COLOR_RED, COLOR_BLACK);
 	init_pair(6, COLOR_YELLOW, COLOR_BLACK);
+	init_pair(7, COLOR_WHITE, COLOR_WHITE);
+	init_pair(8, COLOR_GREEN, COLOR_WHITE);
+	init_pair(9, COLOR_BLUE, COLOR_WHITE);
+	init_pair(10, COLOR_RED, COLOR_WHITE);
+	init_pair(11, COLOR_YELLOW, COLOR_WHITE);
+	game->area[0].pc = 1;
 	while (k < MEM_SIZE)
 	{
 		l = 0;
 		j = 3;
 		while (l++ < 64)
 		{
-			attron(COLOR_PAIR(what_color(game->area[k].color)));
+			if (game->area[k].pc == 0)
+				attron(COLOR_PAIR(what_color(game->area[k].color)));
+			else
+				attron(COLOR_PAIR(what_color(game->area[k].color) + 5));
 			mvprintw(i, j, game->area[k].value);
 			j += 3;
-			attroff(COLOR_PAIR(what_color(game->area[k].color)));
+			if (game->area[k].pc == 0)
+				attroff(COLOR_PAIR(what_color(game->area[k].color)));
+			else
+				attroff(COLOR_PAIR(what_color(game->area[k].color) + 5));
 			k++;
 		}
 		i++;
@@ -78,7 +90,7 @@ void	print_frame(WINDOW *stdscr)
 		{
 			while (j < 250)
 			{
-				mvprintw(i, j, " ");	
+				mvprintw(i, j, " ");
 				j++;
 			}
 		}
