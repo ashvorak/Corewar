@@ -38,7 +38,7 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 
 	i = 2;
 	k = 0;
-	start_color();
+	//start_color();
 	init_pair(2, COLOR_WHITE, COLOR_BLACK);
 	init_pair(3, COLOR_GREEN, COLOR_BLACK);
 	init_pair(4, COLOR_BLUE, COLOR_BLACK);
@@ -80,7 +80,7 @@ void	print_frame(WINDOW *stdscr)
 
 	i = 0;
 	start_color();
-	wattron(stdscr, COLOR_PAIR(2));
+	//wattron(stdscr, COLOR_PAIR(2));
 	init_pair(1, COLOR_BLACK, COLOR_WHITE);
 	attron(COLOR_PAIR(1));
 	while (i < 70)
@@ -104,6 +104,16 @@ void	print_frame(WINDOW *stdscr)
 		usleep(10000);
 	}
 	attroff(COLOR_PAIR(1));
+}
+
+void	right_menu(t_game *game)
+{
+	attron(COLOR_PAIR(2));
+	mvprintw(5, 200, "Cycles:");
+	mvprintw(5, 210, game->area[0].value);   // del me
+	mvprintw(7, 200, "Processes:");
+	attroff(COLOR_PAIR(2));
+	
 }
 
 void visual(t_game *game)
@@ -131,6 +141,7 @@ void visual(t_game *game)
 		getmaxyx(stdscr, max_y, max_x);
 		print_frame(stdscr);
 		stdscr = print_data(stdscr, game);
+		right_menu(game);
 		refresh();
 	}
 	getch();
