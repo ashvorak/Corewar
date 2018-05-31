@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:26:00 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/05/30 17:00:46 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/05/31 17:02:16 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_error(void)
 int	main(int ac, char **av)
 {
 	int		i;
-	unsigned int		j;
+	int		j;
 	t_game	*game;
 
 	if (!(game = (t_game*)malloc(sizeof(t_game))))
@@ -35,6 +35,12 @@ int	main(int ac, char **av)
 		i++;
 		j++;
 	}
-	visual(game);
+	//visual(game);
+	i = 0;
+	while (game->players[0].opcode[i])
+	{
+		ft_printf("%s\n", game->players[0].opcode[i]);
+		i++;
+	}
 	return (0);
 }

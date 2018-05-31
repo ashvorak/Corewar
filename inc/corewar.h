@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/05/30 16:54:25 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/05/31 13:42:10 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ typedef struct	s_area
 {
 	char		*value;
 	int			color;
-	int			pc;
+	int			REG_NUM;
+	int			PC;
+	int			carry;
 }				t_area;
 
 typedef struct	s_player
