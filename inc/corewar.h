@@ -39,6 +39,7 @@ typedef struct	s_player
 	unsigned int		prog_size;
 	char				comment[COMMENT_LENGTH + 1];
 	char				**opcode;
+	int					color;
 }				t_player;
 
 typedef struct	s_game
