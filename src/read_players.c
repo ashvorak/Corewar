@@ -6,11 +6,11 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 10:53:13 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/05/29 14:29:35 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/05/31 18:41:01 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/corewar.h"
+#include "../inc/corewar_vm.h"
 
 void		read_players(t_game *game, char **av, int ac, int i)
 {

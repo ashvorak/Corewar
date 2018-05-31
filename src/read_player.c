@@ -6,11 +6,11 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 12:44:42 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/05/30 16:50:19 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/05/31 18:41:03 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/corewar.h"
+#include "../inc/corewar_vm.h"
 
 static unsigned int	get_magic(char *buf)
 {
