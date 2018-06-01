@@ -6,16 +6,20 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 10:53:13 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/05/31 18:41:01 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/01 13:14:33 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-void		read_players(t_game *game, char **av, int ac, int i)
+t_game	*read_players(char **av, int ac, int i)
 {
-	int j;
+	int		j;
+	t_game	*game;
 
+	if (!(game = (t_game*)malloc(sizeof(t_game))))
+		return (0);
+	game->process = NULL;	
 	j = 0;
 	while (i < ac && j < 4)
 	{
@@ -24,4 +28,6 @@ void		read_players(t_game *game, char **av, int ac, int i)
 		i++;
 		j++;
 	}
+	fill_area(game);
+	return (game);
 }

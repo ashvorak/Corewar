@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/05/31 18:55:25 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/01 14:08:54 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,25 @@ typedef struct	s_area
 	int			carry;
 }				t_area;
 
+typedef struct	s_op
+{
+	char	*name;
+	int		arg;
+	int		id;
+	int		CYCLES;
+	int		codage;
+	int		carry;
+}				t_op;
+
 typedef struct	s_process
 {
-	int pos;
-	int live;
+	int					location;
+	int					live;
+	char				REG[REG_SIZE];
+	char				IND[IND_SIZE];
+	char				DIR[DIR_CODE];
+	int					CYCLE_TO_DONE;
+	struct s_process	*next;
 }				t_process;
 
 typedef struct	s_player
@@ -50,16 +65,39 @@ typedef struct	s_player
 
 typedef struct	s_game
 {
-	t_player	players[4];
-	t_area		area[MEM_SIZE + 1];
-	t_process	*process;
+	t_player		players[4];
+	t_area			area[MEM_SIZE + 1];
+	t_process		*process;
+	size_t			CYCLE;
 }				t_game;
 
 void			ft_error(void);
 
-void			read_players(t_game *game, char **av, int ac, int i);
+t_game			*read_players(char **av, int ac, int i);
 t_player		read_player(char *file);
 void			fill_area(t_game *game);
+void			push_procces(t_game *game, int location);
 void			visual(t_game *game);
+
+static const t_op    op_tab[17] =
+{
+	{"live", 1, 1, 10, 0, 0},
+	{"ld", 2, 2, 5, 1, 0},
+	{"st", 2, 3, 5, 1, 0},
+	{"add", 3, 4, 10, 1, 0},
+	{"sub", 3, 5, 10, 1, 0},
+	{"and", 3, 6, 6, 1, 0},
+	{"or", 3, 7, 6, 1, 0},
+	{"xor", 3, 8, 6, 1, 0},
+	{"zjmp", 1, 9, 20, 0, 1},
+	{"ldi", 3, 10, 25, 1, 1},
+	{"sti", 3, 11, 25, 1, 1},
+	{"fork", 1, 12, 800, 0, 1},
+	{"lld", 2, 13, 10, 1, 0},
+	{"lldi", 3, 14, 50, 1, 1},
+	{"lfork", 1, 15, 1000, 0, 1},
+	{"aff", 1, 16, 2, 1, 0},
+	{0, 0, 0, 0, 0, 0}
+};
 
 #endif
