@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/01 14:08:54 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/01 14:58:26 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ typedef struct	s_area
 
 typedef struct	s_op
 {
+	int		id;
 	char	*name;
 	int		arg;
-	int		id;
 	int		CYCLES;
 	int		codage;
 	int		carry;
@@ -46,6 +46,7 @@ typedef struct	s_process
 {
 	int					location;
 	int					live;
+	int					op_id;
 	char				REG[REG_SIZE];
 	char				IND[IND_SIZE];
 	char				DIR[DIR_CODE];
@@ -81,22 +82,22 @@ void			visual(t_game *game);
 
 static const t_op    op_tab[17] =
 {
-	{"live", 1, 1, 10, 0, 0},
-	{"ld", 2, 2, 5, 1, 0},
-	{"st", 2, 3, 5, 1, 0},
-	{"add", 3, 4, 10, 1, 0},
-	{"sub", 3, 5, 10, 1, 0},
-	{"and", 3, 6, 6, 1, 0},
-	{"or", 3, 7, 6, 1, 0},
-	{"xor", 3, 8, 6, 1, 0},
-	{"zjmp", 1, 9, 20, 0, 1},
-	{"ldi", 3, 10, 25, 1, 1},
-	{"sti", 3, 11, 25, 1, 1},
-	{"fork", 1, 12, 800, 0, 1},
-	{"lld", 2, 13, 10, 1, 0},
-	{"lldi", 3, 14, 50, 1, 1},
-	{"lfork", 1, 15, 1000, 0, 1},
-	{"aff", 1, 16, 2, 1, 0},
+	{1, "live", 1, 10, 0, 0},
+	{2, "ld", 2, 5, 1, 0},
+	{3, "st", 2, 5, 1, 0},
+	{4, "add", 3, 10, 1, 0},
+	{5, "sub", 3, 10, 1, 0},
+	{6, "and", 3, 6, 1, 0},
+	{7, "or", 3, 6, 1, 0},
+	{8, "xor", 3, 6, 1, 0},
+	{9, "zjmp", 1, 20, 0, 1},
+	{10, "ldi", 3, 25, 1, 1},
+	{11, "sti", 3, 25, 1, 1},
+	{12, "fork", 1, 800, 0, 1},
+	{13, "lld", 2, 10, 1, 0},
+	{14, "lldi", 3, 50, 1, 1},
+	{15, "lfork", 1, 1000, 0, 1},
+	{16, "aff", 1, 2, 1, 0},
 	{0, 0, 0, 0, 0, 0}
 };
 
