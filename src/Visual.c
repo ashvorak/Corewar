@@ -6,13 +6,13 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:55:28 by dlytvyn           #+#    #+#             */
-/*   Updated: 2018/05/30 16:55:01 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/05/31 18:41:53 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ncurses.h>
 #include <unistd.h>
-#include "../inc/corewar.h"
+#include "../inc/corewar_vm.h"
 #include <stdlib.h>
 
 int		what_color(int col)
@@ -49,20 +49,20 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 	init_pair(9, COLOR_BLUE, COLOR_WHITE);
 	init_pair(10, COLOR_RED, COLOR_WHITE);
 	init_pair(11, COLOR_YELLOW, COLOR_WHITE);
-	game->area[0].pc = 1;
+	game->area[0].PC = 1;    // test of PC //// delete it
 	while (k < MEM_SIZE)
 	{
 		l = 0;
 		j = 3;
 		while (l++ < 64)
 		{
-			if (game->area[k].pc == 0)
+			if (game->area[k].PC == 0)
 				attron(COLOR_PAIR(what_color(game->area[k].color)));
 			else
 				attron(COLOR_PAIR(what_color(game->area[k].color) + 5));
 			mvprintw(i, j, game->area[k].value);
 			j += 3;
-			if (game->area[k].pc == 0)
+			if (game->area[k].PC == 0)
 				attroff(COLOR_PAIR(what_color(game->area[k].color)));
 			else
 				attroff(COLOR_PAIR(what_color(game->area[k].color) + 5));
@@ -108,10 +108,18 @@ void	print_frame(WINDOW *stdscr)
 
 void	right_menu(t_game *game)
 {
+	int pn;
+
+	pn = 
 	attron(COLOR_PAIR(2));
 	mvprintw(5, 200, "Cycles:");
+	
 	mvprintw(5, 210, game->area[0].value);   // del me
 	mvprintw(7, 200, "Processes:");
+
+
+
+
 	attroff(COLOR_PAIR(2));
 	
 }
