@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:16:10 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/01 15:24:12 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/02 12:42:18 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,20 @@
 static void	execute_process(t_game *game)
 {
 
+}
+
+static int	push_op_id(char *value)
+{
+	int i;
+
+	i = 0;
+	while (i < 16)
+	{
+		if (!ft_strcmp(value, op_tab[i].hex))
+			return (op_tab[i].id);
+		i++;
+	}
+	return (0);
 }
 
 static void	execute_processes(t_game *game)
@@ -27,12 +41,18 @@ static void	execute_processes(t_game *game)
 		if (process->op_id)
 		{
 			if (process->CYCLE_TO_DONE == op_tab[process->op_id].CYCLES)
-				execute_process(game);
+			{
+				//execute_process(game);
+				process->CYCLE_TO_DONE = 0;
+			}
 			else
 				process->CYCLE_TO_DONE++;
 		}
 		else
-			process->location += process->location + 1 == MEM_SIZE ? 1 : -process->location;
+		{
+			process->location += process->location + 1 == MEM_SIZE ? -process->location : 1;
+			process->op_id = push_op_id(game->area[process->location].value);
+		}
 		process = process->next;
 	}
 }
