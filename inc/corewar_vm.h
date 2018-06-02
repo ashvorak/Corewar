@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/02 14:09:48 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/02 14:51:49 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@ typedef struct	s_area
 {
 	char		*value;
 	int			color;
-	int			REG_NUM;
-	int			PC;
-	int			carry;
 }				t_area;
 
 typedef struct	s_op
@@ -46,12 +43,11 @@ typedef struct	s_op
 
 typedef struct	s_process
 {
-	int					location;
+	int					REG_NUM[REG_SIZE];
+	int					PC;
+	int					carry;
 	int					live;
 	int					op_id;
-	char				REG[REG_SIZE];
-	char				IND[IND_SIZE];
-	char				DIR[DIR_CODE];
 	int					CYCLE_TO_DONE;
 	struct s_process	*next;
 }				t_process;
@@ -82,26 +78,31 @@ void			fill_area(t_game *game);
 void			push_procces(t_game *game, int location);
 void			visual(t_game *game);
 int				players_num(t_game *game);
+int				check_codege(int op_id, int codage);
+void			start_game(t_game *game);
+
+void			op_aff(t_game *game, t_process *process);
+void			op_zjmp(t_game *game, t_process *process);
 
 static const t_op    op_tab[17] =
 {
-	{1, "live", "01", {T_DIR}, 1, 10, 0, 0},
-	{2, "ld", "02", {T_DIR | T_IND, T_REG}, 2, 5, 1, 0},
-	{3, "st", "03", {T_REG, T_IND | T_REG}, 2, 5, 1, 0},
-	{4, "add", "04", {T_REG, T_REG, T_REG}, 3, 10, 1, 0},
-	{5, "sub", "05", {T_REG, T_REG, T_REG}, 3, 10, 1, 0},
-	{6, "and", "06", {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}, 3, 6, 1, 0},
-	{7, "or", "07", {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 3, 6, 1, 0},
-	{8, "xor", "08", {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 3, 6, 1, 0},
-	{9, "zjmp", "09", {T_DIR}, 1, 20, 0, 1},
-	{10, "ldi", "0a", {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 3, 25, 1, 1},
-	{11, "sti", "0b", {T_REG, T_REG | T_DIR | T_IND, T_DIR | T_REG}, 3, 25, 1, 1},
-	{12, "fork", "0c", {T_DIR}, 1, 800, 0, 1},
-	{13, "lld", "0d", {T_DIR | T_IND, T_REG}, 2, 10, 1, 0},
-	{14, "lldi", "0e", {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 3, 50, 1, 1},
-	{15, "lfork", "0f", {T_DIR}, 1, 1000, 0, 1},
-	{16, "aff", "10", {T_REG}, 1, 2, 1, 0},
-	{0, 0, 0, {0}, 0, 0, 0, 0}
+	{0, "live", "01", {T_DIR}, 1, 10, 0, 0},
+	{1, "ld", "02", {T_DIR | T_IND, T_REG}, 2, 5, 1, 0},
+	{2, "st", "03", {T_REG, T_IND | T_REG}, 2, 5, 1, 0},
+	{3, "add", "04", {T_REG, T_REG, T_REG}, 3, 10, 1, 0},
+	{4, "sub", "05", {T_REG, T_REG, T_REG}, 3, 10, 1, 0},
+	{5, "and", "06", {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}, 3, 6, 1, 0},
+	{6, "or", "07", {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 3, 6, 1, 0},
+	{7, "xor", "08", {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 3, 6, 1, 0},
+	{8, "zjmp", "09", {T_DIR}, 1, 20, 0, 1},
+	{9, "ldi", "0a", {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 3, 25, 1, 1},
+	{10, "sti", "0b", {T_REG, T_REG | T_DIR | T_IND, T_DIR | T_REG}, 3, 25, 1, 1},
+	{11, "fork", "0c", {T_DIR}, 1, 800, 0, 1},
+	{12, "lld", "0d", {T_DIR | T_IND, T_REG}, 2, 10, 1, 0},
+	{13, "lldi", "0e", {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 3, 50, 1, 1},
+	{14, "lfork", "0f", {T_DIR}, 1, 1000, 0, 1},
+	{15, "aff", "10", {T_REG}, 1, 2, 1, 0},
+	{16, 0, 0, {0}, 0, 0, 0, 0}
 };
 
 #endif

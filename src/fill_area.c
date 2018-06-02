@@ -29,8 +29,11 @@ void	push_procces(t_game *game, int location)
 
 	if (!(process = (t_process*)malloc(sizeof(t_process))))
 		exit(1);
-	process->location = location;
+	process->PC = location;
 	process->live = 0;
+	process->op_id = 16;
+	process->CYCLE_TO_DONE = 1;
+	process->carry = 1;
 	process->next = NULL;
 	if (game->process)
 	{

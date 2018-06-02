@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "../inc/corewar_vm.h"
 #include <stdlib.h>
-
+/*
 int		what_color(int col)
 {
 	if (col == 0)
@@ -177,3 +177,4 @@ void visual(t_game *game)
 	getch();
 	endwin();
 }
+*/

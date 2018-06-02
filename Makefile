@@ -6,7 +6,7 @@
 #    By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/23 11:59:18 by oshvorak          #+#    #+#              #
-#    Updated: 2018/06/01 14:10:23 by oshvorak         ###   ########.fr        #
+#    Updated: 2018/06/02 15:21:32 by oshvorak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,11 @@ SRC =	./src/main.c \
 		./src/read_player.c \
 		./src/read_players.c \
 		./src/fill_area.c \
-		./src/visual.c
+		./src/visual.c \
+		./src/start_game.c \
+		./src/check_codage.c \
+		./src/op_aff.c \
+		./src/op_zjmp.c
 
 MLIB = make -C lib
 

@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 13:08:41 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/02 14:17:28 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/02 15:20:39 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 # define MASK_1 11000000
 # define MASK_2 00110000
-# define MASK_3 00001100 
+# define MASK_3 00001100
 
 int check_arg(int arg, int op_id, int arg_num)
 {
-	if (arg = T_REG)
+	if (arg == T_REG)
 	{
-		if (arg == op_tab[op_id - 1].arg_type[arg_num] || arg | T_DIR == op_tab[op_id - 1].arg_type[arg_num] \
-			|| arg | T_IND == op_tab[op_id - 1].arg_type[arg_num] || arg | T_DIR | T_IND == op_tab[op_id - 1].arg_type[arg_num])
+		if ((arg == op_tab[op_id].arg_type[arg_num]) || ((arg | T_DIR) == op_tab[op_id].arg_type[arg_num]) \
+			|| ((arg | T_IND) == op_tab[op_id].arg_type[arg_num]) || ((arg | T_DIR | T_IND) == op_tab[op_id].arg_type[arg_num]))
 			return (1);
 	}
-	else if (arg = T_DIR)
+	else if (arg == T_DIR)
 	{
-		if (arg == op_tab[op_id - 1].arg_type[arg_num] || arg | T_REG == op_tab[op_id - 1].arg_type[arg_num] \
-			|| arg | T_IND == op_tab[op_id - 1].arg_type[arg_num] || arg | T_REG | T_IND == op_tab[op_id - 1].arg_type[arg_num])
+		if ((arg == op_tab[op_id].arg_type[arg_num]) || ((arg | T_REG) == op_tab[op_id].arg_type[arg_num]) \
+			|| ((arg | T_IND) == op_tab[op_id].arg_type[arg_num]) || ((arg | T_REG | T_IND) == op_tab[op_id].arg_type[arg_num]))
 			return (1);
 	}
-	else if (arg = T_IND)
+	else if (arg == T_IND)
 	{
-		if (arg == op_tab[op_id - 1].arg_type[arg_num] || arg | T_DIR == op_tab[op_id - 1].arg_type[arg_num] \
-			|| arg | T_REG == op_tab[op_id - 1].arg_type[arg_num] || arg | T_DIR | T_REG == op_tab[op_id - 1].arg_type[arg_num])
+		if ((arg == op_tab[op_id].arg_type[arg_num]) || ((arg | T_DIR) == op_tab[op_id].arg_type[arg_num]) \
+			|| ((arg | T_REG) == op_tab[op_id].arg_type[arg_num]) || ((arg | T_DIR | T_REG) == op_tab[op_id].arg_type[arg_num]))
 			return (1);
 	}
 	return (0);
@@ -44,11 +44,11 @@ int ret_arg(int codage, int MASK, int move)
 	int arg;
 
 	arg = 0;
-	if (codage & MASK >> move == T_REG)
+	if (((codage & MASK) >> move) == T_REG)
 		arg = T_REG;
-	else if (codage & MASK>> move == T_DIR)
+	else if (((codage & MASK) >> move) == T_DIR)
 		arg = T_DIR;
-	else if (codage & MASK>> move == T_IND)
+	else if (((codage & MASK) >> move) == T_IND)
 		arg = T_IND;
 	return (arg);
 }
@@ -60,15 +60,15 @@ int	check_codege(int op_id, int codage)
 	int arg3;
 
 	arg1 = ret_arg(codage, MASK_1, 6);
-	if (!check_arg(arg1, op_id, 1))
+	if (!check_arg(arg1, op_id, 0))
 		return (0);
 	arg2 = ret_arg(codage, MASK_2, 4);
 	if (arg2)
 	{
-		if (!check_arg(arg2, op_id, 2))
+		if (!check_arg(arg2, op_id, 1))
 			return (0);
 		arg3 = ret_arg(codage, MASK_3, 2);
-		if (arg3 && !check_arg(arg3, op_id, 3))
+		if (arg3 && !check_arg(arg3, op_id, 2))
 			return (0);
 	}	
 	return (1);

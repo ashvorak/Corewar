@@ -6,15 +6,18 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:16:10 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/02 14:20:47 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/02 15:22:07 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-static void	execute_process(t_game *game)
+static void	execute_process(t_game *game, t_process *process)
 {
-
+	if (process->op_id == 8)
+		op_zjmp(game, process);
+	else if (process->op_id == 15)
+		op_aff(game, process);	
 }
 
 static int	push_op_id(char *value)
@@ -28,21 +31,23 @@ static int	push_op_id(char *value)
 			return (op_tab[i].id);
 		i++;
 	}
-	return (0);
+	return (16);
 }
 
-static void	execute_processes(t_game *game)
+static void	execute(t_game *game)
 {
 	t_process *process;
 
 	process = game->process;
 	while (process)
 	{
-		if (process->op_id)
+		if (process->op_id != 16)
 		{
 			if (process->CYCLE_TO_DONE == op_tab[process->op_id].CYCLES)
 			{
-				//execute_process(game);
+				execute_process(game, process);
+				process->op_id = 16;
+				process->PC += process->PC + 1 == MEM_SIZE ? -process->PC : 1;
 				process->CYCLE_TO_DONE = 0;
 			}
 			else
@@ -50,8 +55,8 @@ static void	execute_processes(t_game *game)
 		}
 		else
 		{
-			process->location += process->location + 1 == MEM_SIZE ? -process->location : 1;
-			process->op_id = push_op_id(game->area[process->location].value);
+			process->PC += process->PC + 1 == MEM_SIZE ? -process->PC : 1;
+			process->op_id = push_op_id(game->area[process->PC].value);
 		}
 		process = process->next;
 	}
@@ -59,9 +64,17 @@ static void	execute_processes(t_game *game)
 
 void	start_game(t_game *game)
 {
-	while (game->process)
+	t_process *process;
+
+	process = game->process;
+	while (process)
 	{
-		execute_proccess(game);
+		process->op_id = push_op_id(game->area[process->PC].value);
+		process = process->next;
+	}
+	while (game->process && game->CYCLE < 50)
+	{
+		execute(game);
 		game->CYCLE++;
 	}
 }
