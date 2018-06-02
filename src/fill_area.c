@@ -12,7 +12,7 @@
 
 #include "../inc/corewar_vm.h"
 
-static int	players_num(t_game *game)
+int	players_num(t_game *game)
 {
 	int i;
 
@@ -60,6 +60,11 @@ static void fill_players(t_game *game)
 		if (n <= pn)
 		{
 			i = (0 + (MEM_SIZE / (pn + 1))) * n;
+			if (i % 64 != 0)
+			{
+				i /= 64;
+				i *= 64;
+			}
 			push_procces(game, i);
 			while (j < (int)game->players[n].prog_size)
 			{

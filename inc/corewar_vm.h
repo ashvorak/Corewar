@@ -81,6 +81,7 @@ t_player		read_player(char *file);
 void			fill_area(t_game *game);
 void			push_procces(t_game *game, int location);
 void			visual(t_game *game);
+int				players_num(t_game *game);
 
 static const t_op    op_tab[17] =
 {
