@@ -109,19 +109,41 @@ void	print_frame(WINDOW *stdscr)
 void	right_menu(t_game *game)
 {
 	int pn;
+	int i;
+	int y;
 
-	pn = 
+ 	i = 1;
+	y = 10;
+	pn = players_num(game);
+	if (pn < 0)
+		ft_error();
+	attron(A_BOLD);
 	attron(COLOR_PAIR(2));
-	mvprintw(5, 200, "Cycles:");
+	mvprintw(5, 200, "CYClES :");
 	
 	mvprintw(5, 210, game->area[0].value);   // del me
-	mvprintw(7, 200, "Processes:");
+	mvprintw(7, 200, "PROCESSES :");
 
+	while (i <= pn + 1)
+	{
+		mvprintw(y, 200, "%s %d %s", "Player", i, ":");
+		attron(COLOR_PAIR(what_color(i - 1)));
+		mvprintw(y, 211, game->players[i - 1].prog_name);
+		attroff(COLOR_PAIR(what_color(i - 1)));
+		i++;
+		y += 2;
+	}
+	mvprintw(y + 2, 200, "CYCLE_TO_DIE :");
 
+	mvprintw(y + 4, 200, "CYCLE_DELTA :");
+
+	mvprintw(y + 6, 200, "NBR_LIVE :");
+
+	mvprintw(y + 8, 200, "MAX_CHECKS :");
 
 
 	attroff(COLOR_PAIR(2));
-	
+	attroff(A_BOLD);
 }
 
 void visual(t_game *game)

@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/oshvorak/corewar
+CMAKE_SOURCE_DIR = /Users/dlytvyn/Cor_common
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/oshvorak/corewar/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dlytvyn/Cor_common/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oshvorak/corewar/cmake-build-debug/CMakeFiles /Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles /Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oshvorak/corewar/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -2526,6 +2526,33 @@ src/Visual.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/Visual.c.s
 .PHONY : src/Visual.c.s
 
+src/fill_area.o: src/fill_area.c.o
+
+.PHONY : src/fill_area.o
+
+# target to build an object file
+src/fill_area.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/fill_area.c.o
+.PHONY : src/fill_area.c.o
+
+src/fill_area.i: src/fill_area.c.i
+
+.PHONY : src/fill_area.i
+
+# target to preprocess a source file
+src/fill_area.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/fill_area.c.i
+.PHONY : src/fill_area.c.i
+
+src/fill_area.s: src/fill_area.c.s
+
+.PHONY : src/fill_area.s
+
+# target to generate assembly for a file
+src/fill_area.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/fill_area.c.s
+.PHONY : src/fill_area.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -2606,6 +2633,33 @@ src/read_players.s: src/read_players.c.s
 src/read_players.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/read_players.c.s
 .PHONY : src/read_players.c.s
+
+src/start_game.o: src/start_game.c.o
+
+.PHONY : src/start_game.o
+
+# target to build an object file
+src/start_game.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/start_game.c.o
+.PHONY : src/start_game.c.o
+
+src/start_game.i: src/start_game.c.i
+
+.PHONY : src/start_game.i
+
+# target to preprocess a source file
+src/start_game.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/start_game.c.i
+.PHONY : src/start_game.c.i
+
+src/start_game.s: src/start_game.c.s
+
+.PHONY : src/start_game.s
+
+# target to generate assembly for a file
+src/start_game.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/start_game.c.s
+.PHONY : src/start_game.c.s
 
 # Help Target
 help:
@@ -2883,6 +2937,9 @@ help:
 	@echo "... src/Visual.o"
 	@echo "... src/Visual.i"
 	@echo "... src/Visual.s"
+	@echo "... src/fill_area.o"
+	@echo "... src/fill_area.i"
+	@echo "... src/fill_area.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -2892,6 +2949,9 @@ help:
 	@echo "... src/read_players.o"
 	@echo "... src/read_players.i"
 	@echo "... src/read_players.s"
+	@echo "... src/start_game.o"
+	@echo "... src/start_game.i"
+	@echo "... src/start_game.s"
 .PHONY : help
 
 

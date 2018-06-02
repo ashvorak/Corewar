@@ -32,7 +32,7 @@ static void	execute_processes(t_game *game)
 				process->CYCLE_TO_DONE++;
 		}
 		else
-			process->location += process->location + 1 == MEM_SIZE ? 1 : -process->location;
+			process->location += process->location + 1 == MEM_SIZE ? 1 : -process->location;    // should be in reverse order
 		process = process->next;
 	}
 }

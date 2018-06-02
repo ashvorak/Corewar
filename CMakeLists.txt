@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(Cor_common
         inc/corewar.h
+        inc/corewar_vm.h
         inc/op.h
         lib/ft_printf/inc/ft_printf.h
         lib/ft_printf/src/active_bits.c
@@ -97,7 +98,9 @@ add_executable(Cor_common
         lib/ft_tolower.c
         lib/ft_toupper.c
         lib/libft.h
+        src/fill_area.c
         src/main.c
         src/read_player.c
         src/read_players.c
+        src/start_game.c
         src/Visual.c)
