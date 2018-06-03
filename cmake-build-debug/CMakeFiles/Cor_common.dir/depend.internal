@@ -273,7 +273,19 @@ CMakeFiles/Cor_common.dir/lib/get_next_line/get_next_line.c.o
  /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
  /Users/dlytvyn/Cor_common/lib/libft.h
 CMakeFiles/Cor_common.dir/src/Visual.c.o
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
  /Users/dlytvyn/Cor_common/src/Visual.c
+CMakeFiles/Cor_common.dir/src/check_codage.c.o
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
+ /Users/dlytvyn/Cor_common/src/check_codage.c
 CMakeFiles/Cor_common.dir/src/fill_area.c.o
  /Users/dlytvyn/Cor_common/inc/corewar_vm.h
  /Users/dlytvyn/Cor_common/inc/op.h
@@ -288,6 +300,20 @@ CMakeFiles/Cor_common.dir/src/main.c.o
  /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
  /Users/dlytvyn/Cor_common/lib/libft.h
  /Users/dlytvyn/Cor_common/src/main.c
+CMakeFiles/Cor_common.dir/src/op_aff.c.o
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
+ /Users/dlytvyn/Cor_common/src/op_aff.c
+CMakeFiles/Cor_common.dir/src/op_zjmp.c.o
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
+ /Users/dlytvyn/Cor_common/src/op_zjmp.c
 CMakeFiles/Cor_common.dir/src/read_player.c.o
  /Users/dlytvyn/Cor_common/inc/corewar_vm.h
  /Users/dlytvyn/Cor_common/inc/op.h
@@ -303,4 +329,9 @@ CMakeFiles/Cor_common.dir/src/read_players.c.o
  /Users/dlytvyn/Cor_common/lib/libft.h
  /Users/dlytvyn/Cor_common/src/read_players.c
 CMakeFiles/Cor_common.dir/src/start_game.c.o
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
  /Users/dlytvyn/Cor_common/src/start_game.c

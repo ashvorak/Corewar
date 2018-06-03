@@ -80,9 +80,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/dlytvyn/Cor_common/inc/corewar.h">
-			<Option target="Cor_common"/>
-		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/inc/corewar_vm.h">
 			<Option target="Cor_common"/>
 		</Unit>
@@ -365,10 +362,22 @@
 		<Unit filename="/Users/dlytvyn/Cor_common/src/Visual.c">
 			<Option target="Cor_common"/>
 		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/check_codage.c">
+			<Option target="Cor_common"/>
+		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/fill_area.c">
 			<Option target="Cor_common"/>
 		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/live.c">
+			<Option target="Cor_common"/>
+		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/main.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_aff.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_zjmp.c">
 			<Option target="Cor_common"/>
 		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/read_player.c">

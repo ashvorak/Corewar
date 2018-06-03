@@ -272,7 +272,19 @@ CMakeFiles/Cor_common.dir/lib/get_next_line/get_next_line.c.o: ../lib/get_next_l
 CMakeFiles/Cor_common.dir/lib/get_next_line/get_next_line.c.o: ../lib/get_next_line/get_next_line.h
 CMakeFiles/Cor_common.dir/lib/get_next_line/get_next_line.c.o: ../lib/libft.h
 
+CMakeFiles/Cor_common.dir/src/Visual.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/Visual.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/Visual.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/Visual.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/Visual.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/Visual.c.o: ../src/Visual.c
+
+CMakeFiles/Cor_common.dir/src/check_codage.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/check_codage.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/check_codage.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/check_codage.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/check_codage.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/check_codage.c.o: ../src/check_codage.c
 
 CMakeFiles/Cor_common.dir/src/fill_area.c.o: ../inc/corewar_vm.h
 CMakeFiles/Cor_common.dir/src/fill_area.c.o: ../inc/op.h
@@ -288,6 +300,20 @@ CMakeFiles/Cor_common.dir/src/main.c.o: ../lib/get_next_line/get_next_line.h
 CMakeFiles/Cor_common.dir/src/main.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/main.c.o: ../src/main.c
 
+CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../src/op_aff.c
+
+CMakeFiles/Cor_common.dir/src/op_zjmp.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_zjmp.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_zjmp.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_zjmp.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_zjmp.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_zjmp.c.o: ../src/op_zjmp.c
+
 CMakeFiles/Cor_common.dir/src/read_player.c.o: ../inc/corewar_vm.h
 CMakeFiles/Cor_common.dir/src/read_player.c.o: ../inc/op.h
 CMakeFiles/Cor_common.dir/src/read_player.c.o: ../lib/ft_printf/inc/ft_printf.h
@@ -302,5 +328,10 @@ CMakeFiles/Cor_common.dir/src/read_players.c.o: ../lib/get_next_line/get_next_li
 CMakeFiles/Cor_common.dir/src/read_players.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/read_players.c.o: ../src/read_players.c
 
+CMakeFiles/Cor_common.dir/src/start_game.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/start_game.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/start_game.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/start_game.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/start_game.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/start_game.c.o: ../src/start_game.c
 

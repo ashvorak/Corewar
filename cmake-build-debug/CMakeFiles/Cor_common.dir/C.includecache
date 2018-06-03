@@ -379,12 +379,32 @@ string.h
 -
 
 /Users/dlytvyn/Cor_common/src/Visual.c
+ncurses.h
+-
+unistd.h
+-
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
+stdlib.h
+-
+
+/Users/dlytvyn/Cor_common/src/check_codage.c
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
 
 /Users/dlytvyn/Cor_common/src/fill_area.c
 ../inc/corewar_vm.h
 /Users/dlytvyn/Cor_common/inc/corewar_vm.h
 
 /Users/dlytvyn/Cor_common/src/main.c
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
+
+/Users/dlytvyn/Cor_common/src/op_aff.c
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
+
+/Users/dlytvyn/Cor_common/src/op_zjmp.c
 ../inc/corewar_vm.h
 /Users/dlytvyn/Cor_common/inc/corewar_vm.h
 
@@ -397,4 +417,6 @@ string.h
 /Users/dlytvyn/Cor_common/inc/corewar_vm.h
 
 /Users/dlytvyn/Cor_common/src/start_game.c
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
 

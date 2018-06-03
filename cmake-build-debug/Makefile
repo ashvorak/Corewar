@@ -2526,6 +2526,33 @@ src/Visual.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/Visual.c.s
 .PHONY : src/Visual.c.s
 
+src/check_codage.o: src/check_codage.c.o
+
+.PHONY : src/check_codage.o
+
+# target to build an object file
+src/check_codage.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/check_codage.c.o
+.PHONY : src/check_codage.c.o
+
+src/check_codage.i: src/check_codage.c.i
+
+.PHONY : src/check_codage.i
+
+# target to preprocess a source file
+src/check_codage.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/check_codage.c.i
+.PHONY : src/check_codage.c.i
+
+src/check_codage.s: src/check_codage.c.s
+
+.PHONY : src/check_codage.s
+
+# target to generate assembly for a file
+src/check_codage.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/check_codage.c.s
+.PHONY : src/check_codage.c.s
+
 src/fill_area.o: src/fill_area.c.o
 
 .PHONY : src/fill_area.o
@@ -2553,6 +2580,33 @@ src/fill_area.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/fill_area.c.s
 .PHONY : src/fill_area.c.s
 
+src/live.o: src/live.c.o
+
+.PHONY : src/live.o
+
+# target to build an object file
+src/live.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/live.c.o
+.PHONY : src/live.c.o
+
+src/live.i: src/live.c.i
+
+.PHONY : src/live.i
+
+# target to preprocess a source file
+src/live.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/live.c.i
+.PHONY : src/live.c.i
+
+src/live.s: src/live.c.s
+
+.PHONY : src/live.s
+
+# target to generate assembly for a file
+src/live.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/live.c.s
+.PHONY : src/live.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -2579,6 +2633,60 @@ src/main.s: src/main.c.s
 src/main.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/main.c.s
 .PHONY : src/main.c.s
+
+src/op_aff.o: src/op_aff.c.o
+
+.PHONY : src/op_aff.o
+
+# target to build an object file
+src/op_aff.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_aff.c.o
+.PHONY : src/op_aff.c.o
+
+src/op_aff.i: src/op_aff.c.i
+
+.PHONY : src/op_aff.i
+
+# target to preprocess a source file
+src/op_aff.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_aff.c.i
+.PHONY : src/op_aff.c.i
+
+src/op_aff.s: src/op_aff.c.s
+
+.PHONY : src/op_aff.s
+
+# target to generate assembly for a file
+src/op_aff.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_aff.c.s
+.PHONY : src/op_aff.c.s
+
+src/op_zjmp.o: src/op_zjmp.c.o
+
+.PHONY : src/op_zjmp.o
+
+# target to build an object file
+src/op_zjmp.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_zjmp.c.o
+.PHONY : src/op_zjmp.c.o
+
+src/op_zjmp.i: src/op_zjmp.c.i
+
+.PHONY : src/op_zjmp.i
+
+# target to preprocess a source file
+src/op_zjmp.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_zjmp.c.i
+.PHONY : src/op_zjmp.c.i
+
+src/op_zjmp.s: src/op_zjmp.c.s
+
+.PHONY : src/op_zjmp.s
+
+# target to generate assembly for a file
+src/op_zjmp.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_zjmp.c.s
+.PHONY : src/op_zjmp.c.s
 
 src/read_player.o: src/read_player.c.o
 
@@ -2937,12 +3045,24 @@ help:
 	@echo "... src/Visual.o"
 	@echo "... src/Visual.i"
 	@echo "... src/Visual.s"
+	@echo "... src/check_codage.o"
+	@echo "... src/check_codage.i"
+	@echo "... src/check_codage.s"
 	@echo "... src/fill_area.o"
 	@echo "... src/fill_area.i"
 	@echo "... src/fill_area.s"
+	@echo "... src/live.o"
+	@echo "... src/live.i"
+	@echo "... src/live.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/op_aff.o"
+	@echo "... src/op_aff.i"
+	@echo "... src/op_aff.s"
+	@echo "... src/op_zjmp.o"
+	@echo "... src/op_zjmp.i"
+	@echo "... src/op_zjmp.s"
 	@echo "... src/read_player.o"
 	@echo "... src/read_player.i"
 	@echo "... src/read_player.s"
