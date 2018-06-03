@@ -14,5 +14,5 @@
 
 void	op_aff(t_game *game, t_process *process)
 {
-	
+    
 }
