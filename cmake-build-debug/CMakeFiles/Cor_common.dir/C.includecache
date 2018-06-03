@@ -400,7 +400,15 @@ stdlib.h
 ../inc/corewar_vm.h
 /Users/dlytvyn/Cor_common/inc/corewar_vm.h
 
+/Users/dlytvyn/Cor_common/src/op_add.c
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
+
 /Users/dlytvyn/Cor_common/src/op_aff.c
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
+
+/Users/dlytvyn/Cor_common/src/op_live.c
 ../inc/corewar_vm.h
 /Users/dlytvyn/Cor_common/inc/corewar_vm.h
 

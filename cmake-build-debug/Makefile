@@ -2580,33 +2580,6 @@ src/fill_area.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/fill_area.c.s
 .PHONY : src/fill_area.c.s
 
-src/live.o: src/live.c.o
-
-.PHONY : src/live.o
-
-# target to build an object file
-src/live.c.o:
-	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/live.c.o
-.PHONY : src/live.c.o
-
-src/live.i: src/live.c.i
-
-.PHONY : src/live.i
-
-# target to preprocess a source file
-src/live.c.i:
-	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/live.c.i
-.PHONY : src/live.c.i
-
-src/live.s: src/live.c.s
-
-.PHONY : src/live.s
-
-# target to generate assembly for a file
-src/live.c.s:
-	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/live.c.s
-.PHONY : src/live.c.s
-
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -2634,6 +2607,33 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/op_add.o: src/op_add.c.o
+
+.PHONY : src/op_add.o
+
+# target to build an object file
+src/op_add.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_add.c.o
+.PHONY : src/op_add.c.o
+
+src/op_add.i: src/op_add.c.i
+
+.PHONY : src/op_add.i
+
+# target to preprocess a source file
+src/op_add.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_add.c.i
+.PHONY : src/op_add.c.i
+
+src/op_add.s: src/op_add.c.s
+
+.PHONY : src/op_add.s
+
+# target to generate assembly for a file
+src/op_add.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_add.c.s
+.PHONY : src/op_add.c.s
+
 src/op_aff.o: src/op_aff.c.o
 
 .PHONY : src/op_aff.o
@@ -2660,6 +2660,87 @@ src/op_aff.s: src/op_aff.c.s
 src/op_aff.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_aff.c.s
 .PHONY : src/op_aff.c.s
+
+src/op_and.o: src/op_and.c.o
+
+.PHONY : src/op_and.o
+
+# target to build an object file
+src/op_and.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_and.c.o
+.PHONY : src/op_and.c.o
+
+src/op_and.i: src/op_and.c.i
+
+.PHONY : src/op_and.i
+
+# target to preprocess a source file
+src/op_and.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_and.c.i
+.PHONY : src/op_and.c.i
+
+src/op_and.s: src/op_and.c.s
+
+.PHONY : src/op_and.s
+
+# target to generate assembly for a file
+src/op_and.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_and.c.s
+.PHONY : src/op_and.c.s
+
+src/op_live.o: src/op_live.c.o
+
+.PHONY : src/op_live.o
+
+# target to build an object file
+src/op_live.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_live.c.o
+.PHONY : src/op_live.c.o
+
+src/op_live.i: src/op_live.c.i
+
+.PHONY : src/op_live.i
+
+# target to preprocess a source file
+src/op_live.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_live.c.i
+.PHONY : src/op_live.c.i
+
+src/op_live.s: src/op_live.c.s
+
+.PHONY : src/op_live.s
+
+# target to generate assembly for a file
+src/op_live.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_live.c.s
+.PHONY : src/op_live.c.s
+
+src/op_sub.o: src/op_sub.c.o
+
+.PHONY : src/op_sub.o
+
+# target to build an object file
+src/op_sub.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_sub.c.o
+.PHONY : src/op_sub.c.o
+
+src/op_sub.i: src/op_sub.c.i
+
+.PHONY : src/op_sub.i
+
+# target to preprocess a source file
+src/op_sub.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_sub.c.i
+.PHONY : src/op_sub.c.i
+
+src/op_sub.s: src/op_sub.c.s
+
+.PHONY : src/op_sub.s
+
+# target to generate assembly for a file
+src/op_sub.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_sub.c.s
+.PHONY : src/op_sub.c.s
 
 src/op_zjmp.o: src/op_zjmp.c.o
 
@@ -3051,15 +3132,24 @@ help:
 	@echo "... src/fill_area.o"
 	@echo "... src/fill_area.i"
 	@echo "... src/fill_area.s"
-	@echo "... src/live.o"
-	@echo "... src/live.i"
-	@echo "... src/live.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/op_add.o"
+	@echo "... src/op_add.i"
+	@echo "... src/op_add.s"
 	@echo "... src/op_aff.o"
 	@echo "... src/op_aff.i"
 	@echo "... src/op_aff.s"
+	@echo "... src/op_and.o"
+	@echo "... src/op_and.i"
+	@echo "... src/op_and.s"
+	@echo "... src/op_live.o"
+	@echo "... src/op_live.i"
+	@echo "... src/op_live.s"
+	@echo "... src/op_sub.o"
+	@echo "... src/op_sub.i"
+	@echo "... src/op_sub.s"
 	@echo "... src/op_zjmp.o"
 	@echo "... src/op_zjmp.i"
 	@echo "... src/op_zjmp.s"

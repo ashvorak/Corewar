@@ -368,13 +368,22 @@
 		<Unit filename="/Users/dlytvyn/Cor_common/src/fill_area.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/dlytvyn/Cor_common/src/live.c">
-			<Option target="Cor_common"/>
-		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/main.c">
 			<Option target="Cor_common"/>
 		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_add.c">
+			<Option target="Cor_common"/>
+		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/op_aff.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_and.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_live.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_sub.c">
 			<Option target="Cor_common"/>
 		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/op_zjmp.c">

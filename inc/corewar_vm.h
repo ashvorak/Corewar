@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <ncurses.h>
 # include "../lib/libft.h"
 # include "../lib/get_next_line/get_next_line.h"
 # include "../lib/ft_printf/inc/ft_printf.h"
@@ -27,6 +28,7 @@ typedef struct	s_area
 {
 	char		*value;
 	int			color;
+	int         karetka;
 }				t_area;
 
 typedef struct	s_op
@@ -82,8 +84,13 @@ int				players_num(t_game *game);
 int				check_codege(int op_id, int codage);
 void			start_game(t_game *game);
 
+char		    *convert(size_t value);
+
 void			op_aff(t_game *game, t_process *process);
 void			op_zjmp(t_game *game, t_process *process);
+void            op_live(t_game *game, t_process *process);
+void            op_add(t_game *game, t_process *process);
+void            op_sub(t_game *game, t_process *process);
 
 static const t_op    op_tab[17] =
 {

@@ -300,12 +300,26 @@ CMakeFiles/Cor_common.dir/src/main.c.o: ../lib/get_next_line/get_next_line.h
 CMakeFiles/Cor_common.dir/src/main.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/main.c.o: ../src/main.c
 
+CMakeFiles/Cor_common.dir/src/op_add.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_add.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_add.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_add.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_add.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_add.c.o: ../src/op_add.c
+
 CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../inc/corewar_vm.h
 CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../inc/op.h
 CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../lib/ft_printf/inc/ft_printf.h
 CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../lib/get_next_line/get_next_line.h
 CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/op_aff.c.o: ../src/op_aff.c
+
+CMakeFiles/Cor_common.dir/src/op_live.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_live.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_live.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_live.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_live.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_live.c.o: ../src/op_live.c
 
 CMakeFiles/Cor_common.dir/src/op_zjmp.c.o: ../inc/corewar_vm.h
 CMakeFiles/Cor_common.dir/src/op_zjmp.c.o: ../inc/op.h

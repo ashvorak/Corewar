@@ -96,7 +96,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/Cor_common.dir/src/read_players.c.o"
   "CMakeFiles/Cor_common.dir/src/start_game.c.o"
   "CMakeFiles/Cor_common.dir/src/Visual.c.o"
-  "CMakeFiles/Cor_common.dir/src/live.c.o"
+  "CMakeFiles/Cor_common.dir/src/op_live.c.o"
+  "CMakeFiles/Cor_common.dir/src/op_add.c.o"
+  "CMakeFiles/Cor_common.dir/src/op_sub.c.o"
+  "CMakeFiles/Cor_common.dir/src/op_and.c.o"
   "Cor_common.pdb"
   "Cor_common"
 )
