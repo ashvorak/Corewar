@@ -10,11 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ncurses.h>
-#include <unistd.h>
 #include "../inc/corewar_vm.h"
-#include <stdlib.h>
-/*
+
 int		what_color(int col)
 {
 	if (col == 0)
@@ -49,20 +46,20 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 	init_pair(9, COLOR_BLUE, COLOR_WHITE);
 	init_pair(10, COLOR_RED, COLOR_WHITE);
 	init_pair(11, COLOR_YELLOW, COLOR_WHITE);
-	game->area[0].PC = 1;    // test of PC //// delete it
+	//game->area[0].karetka = 1;    // test of PC //// delete it
 	while (k < MEM_SIZE)
 	{
 		l = 0;
 		j = 3;
 		while (l++ < 64)
 		{
-			if (game->area[k].PC == 0)
+			if (game->area[k].karetka == 0)
 				attron(COLOR_PAIR(what_color(game->area[k].color)));
 			else
 				attron(COLOR_PAIR(what_color(game->area[k].color) + 5));
 			mvprintw(i, j, game->area[k].value);
 			j += 3;
-			if (game->area[k].PC == 0)
+			if (game->area[k].karetka == 0)
 				attroff(COLOR_PAIR(what_color(game->area[k].color)));
 			else
 				attroff(COLOR_PAIR(what_color(game->area[k].color) + 5));
@@ -101,7 +98,7 @@ void	print_frame(WINDOW *stdscr)
 			mvprintw(i, 196, " ");
 		}
 		i++;
-		usleep(10000);
+		usleep(2000);
 	}
 	attroff(COLOR_PAIR(1));
 }
@@ -119,9 +116,8 @@ void	right_menu(t_game *game)
 		ft_error();
 	attron(A_BOLD);
 	attron(COLOR_PAIR(2));
-	mvprintw(5, 200, "CYClES :");
-	
-	mvprintw(5, 210, game->area[0].value);   // del me
+	mvprintw(5, 200, "%s %d", "CYClES :", game->CYCLE);
+
 	mvprintw(7, 200, "PROCESSES :");
 
 	while (i <= pn + 1)
@@ -148,33 +144,9 @@ void	right_menu(t_game *game)
 
 void visual(t_game *game)
 {
-	int x;
-	int y;
-	int max_x;
-	int max_y;
-	int next_x;
-	int direction;
-
-	x = 0;
-	y = 0;
-	max_x = 0;
-	max_y = 0;
-	next_x = 0;
-	direction = 1;
-	initscr();
-	//cbreak();
-	noecho();
-	curs_set(FALSE);
-	while (1)
-	{
-		clear();
-		getmaxyx(stdscr, max_y, max_x);
-		print_frame(stdscr);
-		stdscr = print_data(stdscr, game);
-		right_menu(game);
-		refresh();
-	}
-	getch();
-	endwin();
+	print_frame(stdscr);
+	print_data(stdscr, game);
+	right_menu(game);
+	refresh();
+	//getch();    // wait for space or may be other button
 }
-*/

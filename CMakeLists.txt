@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.9)
-project(corewar)
+project(Cor_common)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(corewar
+add_executable(Cor_common
         inc/corewar_vm.h
         inc/op.h
         lib/ft_printf/inc/ft_printf.h
@@ -101,7 +101,8 @@ add_executable(corewar
         src/fill_area.c
         src/main.c
         src/op_aff.c
+        src/op_zjmp.c
         src/read_player.c
         src/read_players.c
         src/start_game.c
-        src/Visual.c src/op_zjmp.c)
+        src/Visual.c src/op_live.c src/op_add.c src/op_sub.c src/op_and.c)

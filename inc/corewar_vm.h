@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/04 10:53:01 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/04 11:27:06 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <ncurses.h>
 # include "../lib/libft.h"
 # include "../lib/get_next_line/get_next_line.h"
 # include "../lib/ft_printf/inc/ft_printf.h"
@@ -27,6 +28,7 @@ typedef struct	s_area
 {
 	unsigned char	value;
 	int				color;
+	int         	karetka;
 }				t_area;
 
 typedef struct	s_op
@@ -60,6 +62,7 @@ typedef struct	s_player
 	char				comment[COMMENT_LENGTH + 1];
 	unsigned char		opcode[MEM_SIZE / 6];
 	int					color;
+	int                 live;
 }				t_player;
 
 typedef struct	s_game
@@ -81,8 +84,13 @@ int				players_num(t_game *game);
 int				check_codege(int op_id, int codage);
 void			start_game(t_game *game);
 
+char		    *convert(size_t value);
+
 void			op_aff(t_game *game, t_process *process);
 void			op_zjmp(t_game *game, t_process *process);
+void            op_live(t_game *game, t_process *process);
+void            op_add(t_game *game, t_process *process);
+void            op_sub(t_game *game, t_process *process);
 
 static const t_op    op_tab[17] =
 {

@@ -22,6 +22,8 @@ void	op_zjmp(t_game *game, t_process *process)
 		res = game->area[process->PC + 1].value << 8;
 		res = res | game->area[process->PC + 2].value;
 		process->PC = res / IDX_MOD;
+		if (process->PC > 4095)
+			process->PC %= 4096;
 	}
 }
 

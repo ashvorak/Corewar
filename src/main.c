@@ -22,8 +22,11 @@ int	main(int ac, char **av)
 {
 	t_game	*game;
 
+	initscr();
+	noecho();
+	curs_set(FALSE);
 	game = read_players(av, ac, 1);
 	start_game(game);
-	//visual(game);
+	endwin();
 	return (0);
 }
