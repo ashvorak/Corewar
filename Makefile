@@ -21,7 +21,8 @@ SRC =	./src/main.c \
 		./src/check_codage.c \
 		./src/op_aff.c \
 		./src/op_zjmp.c \
-		./src/op_sti.c
+		./src/op_sti.c \
+		./src/write_2_4_bytes.c
 		#./src/op_live.c \
 		#./src/op_add.c \
 		#./src/op_sub.c \

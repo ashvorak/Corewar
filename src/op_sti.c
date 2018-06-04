@@ -20,20 +20,21 @@ void	op_sti(t_game *game, t_process *process)
 
 	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
 		return ;
-	if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_DIR)
+	if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_DIR || ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)
 	{
-		arg2 = write_2_bytes(game, process->PC, 3);
+		arg2 = write_2_bytes(game, process->PC + 3);
 		PC_buf = process->PC + 4;
+		if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)
+			arg2 %= 256;
 	}
 	else
 	{
-		arg2 = write_4_bytes(game, process->PC, 3);
-		arg2 %= IDX_MOD;
-		PC_buf = process->PC + 6;
+		arg2 = game->area[process->PC + 3].value;
+		PC_buf = process->PC + 3;
 	}
-	if (ret_arg(game->area[process->PC + 1].value, MASK_3, 2) == T_DIR)
-		arg3 = write_2_bytes(game, PC_buf, 1);
+	if (ret_arg(game->area[process->PC + 1].value, MASK_3, 2) == T_DIR || ret_arg(game->area[process->PC + 1].value, MASK_3, 2) == T_IND)
+		arg3 = write_2_bytes(game, PC_buf + 1);
 	else
 		arg3 = game->area[PC_buf + 1].value;
-	game->area[(process->PC + arg2 + arg3) % IDX_MOD] = game->area[process->PC + 2];
+	game->area[(process->PC + arg2 + arg3) % IDX_MOD].value = process->REG_NUM[game->area[process->PC + 2].value];
 }

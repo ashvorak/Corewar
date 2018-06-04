@@ -49,7 +49,7 @@ typedef struct	s_op
 
 typedef struct	s_process
 {
-	unsigned char		REG_NUM[REG_SIZE];
+	unsigned char		REG_NUM[REG_NUMBER];
 	int					PC;
 	int					carry;
 	int					live;
@@ -99,8 +99,8 @@ void            op_add(t_game *game, t_process *process);
 void            op_sub(t_game *game, t_process *process);
 
 int				ret_arg(int codage, int MASK, int move);
-unsigned int	write_2_bytes(t_game *game, int PC, int diff);
-unsigned int	write_4_bytes(t_game *game, int PC, int diff);
+unsigned int	write_2_bytes(t_game *game, int PC);
+unsigned int	write_4_bytes(t_game *game, int PC);
 
 static const t_op    op_tab[17] =
 {
