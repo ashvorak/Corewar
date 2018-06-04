@@ -86,6 +86,6 @@ void	start_game(t_game *game)
 	{
 		execute(game);
 		game->CYCLE++;
-		//visual(game);
+		visual(game);
 	}
 }

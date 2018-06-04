@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
-/*
+
 int		what_color(int col)
 {
 	if (col == 0)
@@ -121,7 +121,6 @@ void	right_menu(t_game *game)
 	attron(A_BOLD);
 	attron(COLOR_PAIR(2));
 	mvprintw(5, 200, "%s %d", "CYClES :", game->CYCLE);
-
 	mvprintw(7, 200, "PROCESSES :");
 
 	while (i <= pn + 1)
@@ -135,11 +134,9 @@ void	right_menu(t_game *game)
 	}
 	mvprintw(y + 2, 200, "CYCLE_TO_DIE :");
 
-	mvprintw(y + 4, 200, "CYCLE_DELTA :");
-
+	mvprintw(y + 4, 200, "%s %d", "CYCLE_DELTA :", CYCLE_DELTA);
 	mvprintw(y + 6, 200, "NBR_LIVE :");
-
-	mvprintw(y + 8, 200, "MAX_CHECKS :");
+	mvprintw(y + 8, 200, "%s %d", "MAX_CHECKS :", MAX_CHECKS);
 
 
 	attroff(COLOR_PAIR(2));
@@ -154,4 +151,3 @@ void visual(t_game *game)
 	refresh();
 	//getch();    // wait for space or may be other button
 }
-*/
