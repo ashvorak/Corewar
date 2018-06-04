@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
-
+/*
 int		what_color(int col)
 {
 	if (col == 0)
@@ -46,20 +46,20 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 	init_pair(9, COLOR_BLUE, COLOR_WHITE);
 	init_pair(10, COLOR_RED, COLOR_WHITE);
 	init_pair(11, COLOR_YELLOW, COLOR_WHITE);
-	//game->area[0].karetka = 1;    // test of PC //// delete it
+	//game->area[0].PC = 1;    // test of PC //// delete it
 	while (k < MEM_SIZE)
 	{
 		l = 0;
 		j = 3;
 		while (l++ < 64)
 		{
-			if (game->area[k].karetka == 0)
+			if (game->area[k].PC == 0)
 				attron(COLOR_PAIR(what_color(game->area[k].color)));
 			else
 				attron(COLOR_PAIR(what_color(game->area[k].color) + 5));
 			mvprintw(i, j, ft_itoa_base(game->area[k].value, 16));
 			j += 3;
-			if (game->area[k].karetka == 0)
+			if (game->area[k].PC == 0)
 				attroff(COLOR_PAIR(what_color(game->area[k].color)));
 			else
 				attroff(COLOR_PAIR(what_color(game->area[k].color) + 5));
@@ -150,3 +150,4 @@ void visual(t_game *game)
 	refresh();
 	//getch();    // wait for space or may be other button
 }
+*/

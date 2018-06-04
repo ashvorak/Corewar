@@ -101,6 +101,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Cor_common.dir/src/op_sub.c.o"
   "CMakeFiles/Cor_common.dir/src/op_and.c.o"
   "CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o"
+  "CMakeFiles/Cor_common.dir/src/op_sti.c.o"
+  "CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o"
   "Cor_common.pdb"
   "Cor_common"
 )

@@ -18,7 +18,6 @@ void	op_zjmp(t_game *game, t_process *process)
 
 	if (game->process->carry)
 	{
-		res = 0;
 		res = game->area[process->PC + 1].value << 8;
 		res = res | game->area[process->PC + 2].value;
 		process->PC = res / IDX_MOD;

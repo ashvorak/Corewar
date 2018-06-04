@@ -20,7 +20,8 @@ SRC =	./src/main.c \
 		./src/start_game.c \
 		./src/check_codage.c \
 		./src/op_aff.c \
-		./src/op_zjmp.c
+		./src/op_zjmp.c \
+		./src/op_sti.c
 		#./src/op_live.c \
 		#./src/op_add.c \
 		#./src/op_sub.c \

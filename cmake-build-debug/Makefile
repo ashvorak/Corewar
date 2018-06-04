@@ -2715,6 +2715,33 @@ src/op_live.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_live.c.s
 .PHONY : src/op_live.c.s
 
+src/op_sti.o: src/op_sti.c.o
+
+.PHONY : src/op_sti.o
+
+# target to build an object file
+src/op_sti.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_sti.c.o
+.PHONY : src/op_sti.c.o
+
+src/op_sti.i: src/op_sti.c.i
+
+.PHONY : src/op_sti.i
+
+# target to preprocess a source file
+src/op_sti.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_sti.c.i
+.PHONY : src/op_sti.c.i
+
+src/op_sti.s: src/op_sti.c.s
+
+.PHONY : src/op_sti.s
+
+# target to generate assembly for a file
+src/op_sti.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_sti.c.s
+.PHONY : src/op_sti.c.s
+
 src/op_sub.o: src/op_sub.c.o
 
 .PHONY : src/op_sub.o
@@ -2876,6 +2903,33 @@ src/visual.s: src/visual.c.s
 src/visual.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/visual.c.s
 .PHONY : src/visual.c.s
+
+src/write_2_4_bytes.o: src/write_2_4_bytes.c.o
+
+.PHONY : src/write_2_4_bytes.o
+
+# target to build an object file
+src/write_2_4_bytes.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o
+.PHONY : src/write_2_4_bytes.c.o
+
+src/write_2_4_bytes.i: src/write_2_4_bytes.c.i
+
+.PHONY : src/write_2_4_bytes.i
+
+# target to preprocess a source file
+src/write_2_4_bytes.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.i
+.PHONY : src/write_2_4_bytes.c.i
+
+src/write_2_4_bytes.s: src/write_2_4_bytes.c.s
+
+.PHONY : src/write_2_4_bytes.s
+
+# target to generate assembly for a file
+src/write_2_4_bytes.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.s
+.PHONY : src/write_2_4_bytes.c.s
 
 # Help Target
 help:
@@ -3174,6 +3228,9 @@ help:
 	@echo "... src/op_live.o"
 	@echo "... src/op_live.i"
 	@echo "... src/op_live.s"
+	@echo "... src/op_sti.o"
+	@echo "... src/op_sti.i"
+	@echo "... src/op_sti.s"
 	@echo "... src/op_sub.o"
 	@echo "... src/op_sub.i"
 	@echo "... src/op_sub.s"
@@ -3192,6 +3249,9 @@ help:
 	@echo "... src/visual.o"
 	@echo "... src/visual.i"
 	@echo "... src/visual.s"
+	@echo "... src/write_2_4_bytes.o"
+	@echo "... src/write_2_4_bytes.i"
+	@echo "... src/write_2_4_bytes.s"
 .PHONY : help
 
 

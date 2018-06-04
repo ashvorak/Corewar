@@ -324,6 +324,13 @@ CMakeFiles/Cor_common.dir/src/op_live.c.o
  /Users/oshvorak/corewar/lib/get_next_line/get_next_line.h
  /Users/oshvorak/corewar/lib/libft.h
  /Users/oshvorak/corewar/src/op_live.c
+CMakeFiles/Cor_common.dir/src/op_sti.c.o
+ /Users/oshvorak/corewar/inc/corewar_vm.h
+ /Users/oshvorak/corewar/inc/op.h
+ /Users/oshvorak/corewar/lib/ft_printf/inc/ft_printf.h
+ /Users/oshvorak/corewar/lib/get_next_line/get_next_line.h
+ /Users/oshvorak/corewar/lib/libft.h
+ /Users/oshvorak/corewar/src/op_sti.c
 CMakeFiles/Cor_common.dir/src/op_sub.c.o
  /Users/oshvorak/corewar/inc/corewar_vm.h
  /Users/oshvorak/corewar/inc/op.h
@@ -366,3 +373,10 @@ CMakeFiles/Cor_common.dir/src/visual.c.o
  /Users/oshvorak/corewar/lib/get_next_line/get_next_line.h
  /Users/oshvorak/corewar/lib/libft.h
  /Users/oshvorak/corewar/src/visual.c
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o
+ /Users/oshvorak/corewar/inc/corewar_vm.h
+ /Users/oshvorak/corewar/inc/op.h
+ /Users/oshvorak/corewar/lib/ft_printf/inc/ft_printf.h
+ /Users/oshvorak/corewar/lib/get_next_line/get_next_line.h
+ /Users/oshvorak/corewar/lib/libft.h
+ /Users/oshvorak/corewar/src/write_2_4_bytes.c

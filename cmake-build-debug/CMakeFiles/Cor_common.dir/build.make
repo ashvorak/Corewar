@@ -2505,6 +2505,54 @@ CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o.provides: CMakeFiles/Cor_common.d
 CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o.provides.build: CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o
 
 
+CMakeFiles/Cor_common.dir/src/op_sti.c.o: CMakeFiles/Cor_common.dir/flags.make
+CMakeFiles/Cor_common.dir/src/op_sti.c.o: ../src/op_sti.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/Cor_common.dir/src/op_sti.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_sti.c.o   -c /Users/oshvorak/corewar/src/op_sti.c
+
+CMakeFiles/Cor_common.dir/src/op_sti.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Cor_common.dir/src/op_sti.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oshvorak/corewar/src/op_sti.c > CMakeFiles/Cor_common.dir/src/op_sti.c.i
+
+CMakeFiles/Cor_common.dir/src/op_sti.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Cor_common.dir/src/op_sti.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oshvorak/corewar/src/op_sti.c -o CMakeFiles/Cor_common.dir/src/op_sti.c.s
+
+CMakeFiles/Cor_common.dir/src/op_sti.c.o.requires:
+
+.PHONY : CMakeFiles/Cor_common.dir/src/op_sti.c.o.requires
+
+CMakeFiles/Cor_common.dir/src/op_sti.c.o.provides: CMakeFiles/Cor_common.dir/src/op_sti.c.o.requires
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_sti.c.o.provides.build
+.PHONY : CMakeFiles/Cor_common.dir/src/op_sti.c.o.provides
+
+CMakeFiles/Cor_common.dir/src/op_sti.c.o.provides.build: CMakeFiles/Cor_common.dir/src/op_sti.c.o
+
+
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o: CMakeFiles/Cor_common.dir/flags.make
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o: ../src/write_2_4_bytes.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o   -c /Users/oshvorak/corewar/src/write_2_4_bytes.c
+
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oshvorak/corewar/src/write_2_4_bytes.c > CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.i
+
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oshvorak/corewar/src/write_2_4_bytes.c -o CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.s
+
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.requires:
+
+.PHONY : CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.requires
+
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.provides: CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.requires
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.provides.build
+.PHONY : CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.provides
+
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.provides.build: CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o
+
+
 # Object files for target Cor_common
 Cor_common_OBJECTS = \
 "CMakeFiles/Cor_common.dir/lib/ft_printf/src/active_bits.c.o" \
@@ -2608,7 +2656,9 @@ Cor_common_OBJECTS = \
 "CMakeFiles/Cor_common.dir/src/op_add.c.o" \
 "CMakeFiles/Cor_common.dir/src/op_sub.c.o" \
 "CMakeFiles/Cor_common.dir/src/op_and.c.o" \
-"CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o"
+"CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o" \
+"CMakeFiles/Cor_common.dir/src/op_sti.c.o" \
+"CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o"
 
 # External object files for target Cor_common
 Cor_common_EXTERNAL_OBJECTS =
@@ -2715,9 +2765,11 @@ Cor_common: CMakeFiles/Cor_common.dir/src/op_add.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/op_sub.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/op_and.c.o
 Cor_common: CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o
+Cor_common: CMakeFiles/Cor_common.dir/src/op_sti.c.o
+Cor_common: CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o
 Cor_common: CMakeFiles/Cor_common.dir/build.make
 Cor_common: CMakeFiles/Cor_common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Linking C executable Cor_common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Linking C executable Cor_common"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Cor_common.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2827,6 +2879,8 @@ CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_add.c.o.req
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_sub.c.o.requires
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_and.c.o.requires
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o.requires
+CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_sti.c.o.requires
+CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.requires
 
 .PHONY : CMakeFiles/Cor_common.dir/requires
 

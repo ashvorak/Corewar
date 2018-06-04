@@ -22,6 +22,8 @@ static void	execute_process(t_game *game, t_process *process)
 	//	op_sub(game, process);
 	if (process->op_id == 8)
 		op_zjmp(game, process);
+	else if (process->op_id == 10)
+		op_sti(game, process);
 	else if (process->op_id == 15)
 		op_aff(game, process);
 }
@@ -82,6 +84,6 @@ void	start_game(t_game *game)
 	{
 		execute(game);
 		game->CYCLE++;
-		visual(game);
+		//visual(game);
 	}
 }

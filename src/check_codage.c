@@ -12,10 +12,6 @@
 
 #include "../inc/corewar_vm.h"
 
-# define MASK_1 11000000
-# define MASK_2 00110000
-# define MASK_3 00001100
-
 int check_arg(int arg, int op_id, int arg_num)
 {
 	if (arg == T_REG)

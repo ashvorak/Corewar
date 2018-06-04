@@ -412,6 +412,10 @@ string.h
 ../inc/corewar_vm.h
 /Users/oshvorak/corewar/inc/corewar_vm.h
 
+/Users/oshvorak/corewar/src/op_sti.c
+../inc/corewar_vm.h
+/Users/oshvorak/corewar/inc/corewar_vm.h
+
 /Users/oshvorak/corewar/src/op_sub.c
 ../inc/corewar_vm.h
 /Users/oshvorak/corewar/inc/corewar_vm.h
@@ -433,6 +437,10 @@ string.h
 /Users/oshvorak/corewar/inc/corewar_vm.h
 
 /Users/oshvorak/corewar/src/visual.c
+../inc/corewar_vm.h
+/Users/oshvorak/corewar/inc/corewar_vm.h
+
+/Users/oshvorak/corewar/src/write_2_4_bytes.c
 ../inc/corewar_vm.h
 /Users/oshvorak/corewar/inc/corewar_vm.h
 

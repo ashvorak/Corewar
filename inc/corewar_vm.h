@@ -24,11 +24,15 @@
 
 # include "op.h"
 
+# define MASK_1 192
+# define MASK_2 48
+# define MASK_3 12
+
 typedef struct	s_area
 {
 	unsigned char	value;
 	int				color;
-	int         	karetka;
+	int         	PC;
 }				t_area;
 
 typedef struct	s_op
@@ -45,7 +49,7 @@ typedef struct	s_op
 
 typedef struct	s_process
 {
-	int					REG_NUM[REG_SIZE];
+	unsigned char		REG_NUM[REG_SIZE];
 	int					PC;
 	int					carry;
 	int					live;
@@ -56,6 +60,7 @@ typedef struct	s_process
 
 typedef struct	s_player
 {
+	int 				id;
 	unsigned int		magic;
 	char				prog_name[PROG_NAME_LENGTH + 1];
 	unsigned int		prog_size;
@@ -88,9 +93,14 @@ char		    *convert(size_t value);
 
 void			op_aff(t_game *game, t_process *process);
 void			op_zjmp(t_game *game, t_process *process);
+void			op_sti(t_game *game, t_process *process);
 void            op_live(t_game *game, t_process *process);
 void            op_add(t_game *game, t_process *process);
 void            op_sub(t_game *game, t_process *process);
+
+int				ret_arg(int codage, int MASK, int move);
+unsigned int	write_2_bytes(t_game *game, int PC, int diff);
+unsigned int	write_4_bytes(t_game *game, int PC, int diff);
 
 static const t_op    op_tab[17] =
 {

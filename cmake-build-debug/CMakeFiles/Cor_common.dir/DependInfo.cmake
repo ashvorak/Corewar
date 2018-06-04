@@ -100,12 +100,14 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/oshvorak/corewar/src/op_aff.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_aff.c.o"
   "/Users/oshvorak/corewar/src/op_and.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_and.c.o"
   "/Users/oshvorak/corewar/src/op_live.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_live.c.o"
+  "/Users/oshvorak/corewar/src/op_sti.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_sti.c.o"
   "/Users/oshvorak/corewar/src/op_sub.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_sub.c.o"
   "/Users/oshvorak/corewar/src/op_zjmp.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_zjmp.c.o"
   "/Users/oshvorak/corewar/src/read_player.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/read_player.c.o"
   "/Users/oshvorak/corewar/src/read_players.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/read_players.c.o"
   "/Users/oshvorak/corewar/src/start_game.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/start_game.c.o"
   "/Users/oshvorak/corewar/src/visual.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/visual.c.o"
+  "/Users/oshvorak/corewar/src/write_2_4_bytes.c" "/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

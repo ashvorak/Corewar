@@ -383,6 +383,9 @@
 		<Unit filename="/Users/oshvorak/corewar/src/op_live.c">
 			<Option target="Cor_common"/>
 		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_sti.c">
+			<Option target="Cor_common"/>
+		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/src/op_sub.c">
 			<Option target="Cor_common"/>
 		</Unit>
@@ -399,6 +402,9 @@
 			<Option target="Cor_common"/>
 		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/src/visual.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/write_2_4_bytes.c">
 			<Option target="Cor_common"/>
 		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/CMakeLists.txt">

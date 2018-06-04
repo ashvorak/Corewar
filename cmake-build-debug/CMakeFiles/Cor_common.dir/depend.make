@@ -324,6 +324,13 @@ CMakeFiles/Cor_common.dir/src/op_live.c.o: ../lib/get_next_line/get_next_line.h
 CMakeFiles/Cor_common.dir/src/op_live.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/op_live.c.o: ../src/op_live.c
 
+CMakeFiles/Cor_common.dir/src/op_sti.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_sti.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_sti.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_sti.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_sti.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_sti.c.o: ../src/op_sti.c
+
 CMakeFiles/Cor_common.dir/src/op_sub.c.o: ../inc/corewar_vm.h
 CMakeFiles/Cor_common.dir/src/op_sub.c.o: ../inc/op.h
 CMakeFiles/Cor_common.dir/src/op_sub.c.o: ../lib/ft_printf/inc/ft_printf.h
@@ -365,4 +372,11 @@ CMakeFiles/Cor_common.dir/src/visual.c.o: ../lib/ft_printf/inc/ft_printf.h
 CMakeFiles/Cor_common.dir/src/visual.c.o: ../lib/get_next_line/get_next_line.h
 CMakeFiles/Cor_common.dir/src/visual.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/visual.c.o: ../src/visual.c
+
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o: ../src/write_2_4_bytes.c
 
