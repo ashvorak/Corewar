@@ -95,5 +95,6 @@ int					ft_atoi_base(const char *str, int base);
 int					ft_array_size(char **arr);
 void				ft_free_arr(char **arr);
 void				ft_free_arr_int(int **arr, int size);
+char 				*ft_itoa_base(size_t value, int base);
 
 #endif

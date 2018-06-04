@@ -14,7 +14,7 @@
 
 void	op_aff(t_game *game, t_process *process)
 {
-	if (!check_codege(process->op_id, ft_atoi_base(game->area[process->PC + 1].value, 16)))
+	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
 		return ;
 	ft_printf("%c\n", game->area[process->PC + 2].value % 256);
 }

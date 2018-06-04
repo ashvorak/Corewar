@@ -14,13 +14,13 @@
 
 static void	execute_process(t_game *game, t_process *process)
 {
-	if (process->op_id == 0)
-		op_live(game, process);
-	else if (process->op_id == 3)
-		op_add(game, process);
-	else if (process->op_id == 4)
-		op_sub(game, process);
-	else if (process->op_id == 8)
+	//if (process->op_id == 0)
+	//	op_live(game, process);
+	//else if (process->op_id == 3)
+	//	op_add(game, process);
+	//else if (process->op_id == 4)
+	//	op_sub(game, process);
+	if (process->op_id == 8)
 		op_zjmp(game, process);
 	else if (process->op_id == 15)
 		op_aff(game, process);

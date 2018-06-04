@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dlytvyn/Cor_common
+CMAKE_SOURCE_DIR = /Users/oshvorak/corewar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dlytvyn/Cor_common/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/oshvorak/corewar/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles /Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oshvorak/corewar/cmake-build-debug/CMakeFiles /Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oshvorak/corewar/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -500,6 +500,33 @@ lib/ft_itoa.s: lib/ft_itoa.c.s
 lib/ft_itoa.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/lib/ft_itoa.c.s
 .PHONY : lib/ft_itoa.c.s
+
+lib/ft_itoa_base.o: lib/ft_itoa_base.c.o
+
+.PHONY : lib/ft_itoa_base.o
+
+# target to build an object file
+lib/ft_itoa_base.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o
+.PHONY : lib/ft_itoa_base.c.o
+
+lib/ft_itoa_base.i: lib/ft_itoa_base.c.i
+
+.PHONY : lib/ft_itoa_base.i
+
+# target to preprocess a source file
+lib/ft_itoa_base.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.i
+.PHONY : lib/ft_itoa_base.c.i
+
+lib/ft_itoa_base.s: lib/ft_itoa_base.c.s
+
+.PHONY : lib/ft_itoa_base.s
+
+# target to generate assembly for a file
+lib/ft_itoa_base.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.s
+.PHONY : lib/ft_itoa_base.c.s
 
 lib/ft_listsize.o: lib/ft_listsize.c.o
 
@@ -2499,33 +2526,6 @@ lib/get_next_line/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/lib/get_next_line/get_next_line.c.s
 .PHONY : lib/get_next_line/get_next_line.c.s
 
-src/Visual.o: src/Visual.c.o
-
-.PHONY : src/Visual.o
-
-# target to build an object file
-src/Visual.c.o:
-	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/Visual.c.o
-.PHONY : src/Visual.c.o
-
-src/Visual.i: src/Visual.c.i
-
-.PHONY : src/Visual.i
-
-# target to preprocess a source file
-src/Visual.c.i:
-	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/Visual.c.i
-.PHONY : src/Visual.c.i
-
-src/Visual.s: src/Visual.c.s
-
-.PHONY : src/Visual.s
-
-# target to generate assembly for a file
-src/Visual.c.s:
-	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/Visual.c.s
-.PHONY : src/Visual.c.s
-
 src/check_codage.o: src/check_codage.c.o
 
 .PHONY : src/check_codage.o
@@ -2850,6 +2850,33 @@ src/start_game.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/start_game.c.s
 .PHONY : src/start_game.c.s
 
+src/visual.o: src/visual.c.o
+
+.PHONY : src/visual.o
+
+# target to build an object file
+src/visual.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/visual.c.o
+.PHONY : src/visual.c.o
+
+src/visual.i: src/visual.c.i
+
+.PHONY : src/visual.i
+
+# target to preprocess a source file
+src/visual.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/visual.c.i
+.PHONY : src/visual.c.i
+
+src/visual.s: src/visual.c.s
+
+.PHONY : src/visual.s
+
+# target to generate assembly for a file
+src/visual.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/visual.c.s
+.PHONY : src/visual.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2901,6 +2928,9 @@ help:
 	@echo "... lib/ft_itoa.o"
 	@echo "... lib/ft_itoa.i"
 	@echo "... lib/ft_itoa.s"
+	@echo "... lib/ft_itoa_base.o"
+	@echo "... lib/ft_itoa_base.i"
+	@echo "... lib/ft_itoa_base.s"
 	@echo "... lib/ft_listsize.o"
 	@echo "... lib/ft_listsize.i"
 	@echo "... lib/ft_listsize.s"
@@ -3123,9 +3153,6 @@ help:
 	@echo "... lib/get_next_line/get_next_line.o"
 	@echo "... lib/get_next_line/get_next_line.i"
 	@echo "... lib/get_next_line/get_next_line.s"
-	@echo "... src/Visual.o"
-	@echo "... src/Visual.i"
-	@echo "... src/Visual.s"
 	@echo "... src/check_codage.o"
 	@echo "... src/check_codage.i"
 	@echo "... src/check_codage.s"
@@ -3162,6 +3189,9 @@ help:
 	@echo "... src/start_game.o"
 	@echo "... src/start_game.i"
 	@echo "... src/start_game.s"
+	@echo "... src/visual.o"
+	@echo "... src/visual.i"
+	@echo "... src/visual.s"
 .PHONY : help
 
 

@@ -57,7 +57,7 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 				attron(COLOR_PAIR(what_color(game->area[k].color)));
 			else
 				attron(COLOR_PAIR(what_color(game->area[k].color) + 5));
-			mvprintw(i, j, game->area[k].value);
+			mvprintw(i, j, ft_itoa_base(game->area[k].value, 16));
 			j += 3;
 			if (game->area[k].karetka == 0)
 				attroff(COLOR_PAIR(what_color(game->area[k].color)));
