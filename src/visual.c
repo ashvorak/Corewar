@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
-/*
+
 int		what_color(int col)
 {
 	if (col == 0)
@@ -154,4 +154,3 @@ void visual(t_game *game)
 	refresh();
 	//getch();    // wait for space or may be other button
 }
-*/

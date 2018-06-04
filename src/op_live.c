@@ -2,7 +2,7 @@
 
 void    op_live(t_game *game, t_process *process)
 {
-	unsigned int 	arg;
+	int 	arg;
 
 	process->live++;
 	arg = write_4_bytes(game, process->PC);

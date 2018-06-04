@@ -72,10 +72,36 @@ static void	execute(t_game *game)
 	}
 }
 
+static void check_procces(t_process *process)
+{
+	t_process *buf;
+	t_process *tmp;
+
+	tmp = process;
+	buf = tmp;
+	while (tmp)
+	{
+		if (!tmp->live)
+		{
+			buf->next = tmp->next;
+			buf = tmp;
+			tmp = tmp->next;
+			free(buf);
+		}
+		else
+		{
+			buf = tmp;
+			tmp = tmp->next;
+		}
+	}
+}
+
 void	start_game(t_game *game)
 {
-	t_process *process;
+	int 		cyc_to_die;
+	t_process	*process;
 
+	cyc_to_die = CYCLE_TO_DIE;
 	process = game->process;
 	while (process)
 	{
@@ -86,6 +112,8 @@ void	start_game(t_game *game)
 	{
 		execute(game);
 		game->CYCLE++;
-		//visual(game);
+		visual(game);
+		if (game->CYCLE % cyc_to_die == 0)
+			check_procces(game->process);
 	}
 }
