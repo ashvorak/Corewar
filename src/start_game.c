@@ -14,13 +14,13 @@
 
 static void	execute_process(t_game *game, t_process *process)
 {
-	//if (process->op_id == 0)
-	//	op_live(game, process);
+	if (process->op_id == 0)
+		op_live(game, process);
 	//else if (process->op_id == 3)
 	//	op_add(game, process);
 	//else if (process->op_id == 4)
 	//	op_sub(game, process);
-	if (process->op_id == 7)
+	else if (process->op_id == 5)
 		op_and(game, process);
 	else if (process->op_id == 8)
 		op_zjmp(game, process);
@@ -57,7 +57,6 @@ static void	execute(t_game *game)
 			{
 				execute_process(game, process);
 				process->op_id = 16;
-				process->PC += process->PC + 1 == MEM_SIZE ? -process->PC : 1;
 				process->CYCLE_TO_DONE = 0;
 			}
 			else
@@ -65,20 +64,22 @@ static void	execute(t_game *game)
 		}
 		else
 		{
+			game->area[process->PC].PC = 0;
 			process->PC += process->PC + 1 == MEM_SIZE ? -process->PC : 1;
-			process->op_id = push_op_id(game->area[process->PC].value);
 		}
+		process->op_id = push_op_id(game->area[process->PC].value);
+		game->area[process->PC].PC = 1;
 		process = process->next;
 	}
 }
 
-static void check_procces(t_process *process)
+static void check_procces(t_game *game)
 {
 	t_process *buf;
 	t_process *tmp;
 
-	tmp = process;
-	buf = tmp;
+	tmp = game->process;
+	buf = game->process;
 	while (tmp)
 	{
 		if (!tmp->live)
@@ -87,9 +88,11 @@ static void check_procces(t_process *process)
 			buf = tmp;
 			tmp = tmp->next;
 			free(buf);
+			buf = NULL;
 		}
 		else
 		{
+			tmp->live = 0;
 			buf = tmp;
 			tmp = tmp->next;
 		}
@@ -98,22 +101,21 @@ static void check_procces(t_process *process)
 
 void	start_game(t_game *game)
 {
-	int 		cyc_to_die;
 	t_process	*process;
-
-	cyc_to_die = CYCLE_TO_DIE;
+	
+	game->cycle_to_die = CYCLE_TO_DIE;
 	process = game->process;
 	while (process)
 	{
 		process->op_id = push_op_id(game->area[process->PC].value);
 		process = process->next;
 	}
-	while (game->process && game->CYCLE < 50)
+	while (game->process && game->CYCLE < 5000)
 	{
 		execute(game);
 		game->CYCLE++;
-		visual(game);
-		if (game->CYCLE % cyc_to_die == 0)
-			check_procces(game->process);
+		//visual(game);
+		if (game->CYCLE % game->cycle_to_die == 0)
+			check_procces(game);
 	}
 }

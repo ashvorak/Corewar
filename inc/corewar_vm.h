@@ -77,6 +77,7 @@ typedef struct	s_game
 	t_area			area[MEM_SIZE + 1];
 	t_process		*process;
 	size_t			CYCLE;
+	size_t          cycle_to_die;
 }				t_game;
 
 void			ft_error(void);
