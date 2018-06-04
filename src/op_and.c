@@ -4,18 +4,39 @@
 
 #include "../inc/corewar_vm.h"
 
+static int write_arg(unsigned int *arg, t_game *game, int tt, int PC)
+{
+	if (tt == T_DIR)
+	{
+		*arg = write_4_bytes(game, PC + 2);
+		return (4);
+	}
+	else if (tt == T_IND)
+	{
+		*arg = write_2_bytes(game, PC + 2);
+		return (2);
+	}
+	else
+	{
+		*arg = game->area[PC + 2].value;
+		return (1);
+	}
+}
+
 void    op_and(t_game *game, t_process *process)
 {
-	unsigned int res;
-
-	res = 0;
-	if (!check_codege(process->op_id, ft_atoi_base(game->area[process->PC + 1].value, 16)))
+	int             PC_buf;
+	unsigned int    arg1;
+	unsigned int    arg2;
+	unsigned int    arg3;
+	
+	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
 		return ;
-	res = ft_atoi_base(game->area[process->PC + 2].value, 16) +
-	      ft_atoi_base(game->area[process->PC + 3].value, 16);
-	ft_strdel(&game->area[process->PC + 4].value);
-	game->area[process->PC + 4].value = convert(res);
-	if (res == 0)
+	PC_buf = write_arg(&arg1, game, ret_arg(game->area[process->PC + 1].value, MASK_1, 6), process->PC);
+	PC_buf = write_arg(&arg2, game, ret_arg(game->area[process->PC + 1].value, MASK_1, 6), PC_buf);
+	arg3 = game->area[PC_buf + 2].value;
+	process->REG_NUM[arg3] = arg1 & arg2;
+	if (process->REG_NUM[arg3] == 0)
 		process->carry = 1;
 	else
 		process->carry = 0;

@@ -33,6 +33,7 @@ typedef struct	s_area
 	unsigned char	value;
 	int				color;
 	int         	PC;
+	int             player;
 }				t_area;
 
 typedef struct	s_op
@@ -49,7 +50,7 @@ typedef struct	s_op
 
 typedef struct	s_process
 {
-	unsigned char		REG_NUM[REG_NUMBER];
+	unsigned int		REG_NUM[REG_NUMBER];
 	int					PC;
 	int					carry;
 	int					live;
@@ -94,6 +95,7 @@ char		    *convert(size_t value);
 void			op_aff(t_game *game, t_process *process);
 void			op_zjmp(t_game *game, t_process *process);
 void			op_sti(t_game *game, t_process *process);
+void            op_and(t_game *game, t_process *process);
 void            op_live(t_game *game, t_process *process);
 void            op_add(t_game *game, t_process *process);
 void            op_sub(t_game *game, t_process *process);

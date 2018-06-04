@@ -32,6 +32,7 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 	int j;
 	int k;
 	int l;
+	char *tmp;
 
 	i = 2;
 	k = 0;
@@ -53,11 +54,14 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 		j = 3;
 		while (l++ < 64)
 		{
+			tmp = ft_itoa_base(game->area[k].value, 16);
+			if (ft_strlen(tmp) == 1)
+				tmp = ft_strjoin("0", tmp);
 			if (game->area[k].PC == 0)
 				attron(COLOR_PAIR(what_color(game->area[k].color)));
 			else
 				attron(COLOR_PAIR(what_color(game->area[k].color) + 5));
-			mvprintw(i, j, ft_itoa_base(game->area[k].value, 16));
+			mvprintw(i, j, tmp);
 			j += 3;
 			if (game->area[k].PC == 0)
 				attroff(COLOR_PAIR(what_color(game->area[k].color)));

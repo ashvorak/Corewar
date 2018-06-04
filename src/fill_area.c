@@ -73,6 +73,7 @@ static void fill_players(t_game *game)
 			{
 				game->area[i].value = game->players[n].opcode[j];
 				game->area[i].color = n;
+				game->area[i].player = 1;
 				i++;
 				j++;
 			}
@@ -90,7 +91,7 @@ void	fill_area(t_game *game)
 	fill_players(game);
 	while (i < MEM_SIZE)
 	{
-		if (!game->area[i].value)
+		if (!game->area[i].player)
 		{
 			game->area[i].value = 0;
 			game->area[i].color = 10;
