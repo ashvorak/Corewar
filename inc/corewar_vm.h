@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/02 14:51:49 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/04 10:53:01 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 
 typedef struct	s_area
 {
-	char		*value;
-	int			color;
+	unsigned char	value;
+	int				color;
 }				t_area;
 
 typedef struct	s_op
@@ -58,7 +58,7 @@ typedef struct	s_player
 	char				prog_name[PROG_NAME_LENGTH + 1];
 	unsigned int		prog_size;
 	char				comment[COMMENT_LENGTH + 1];
-	char				**opcode;
+	unsigned char		opcode[MEM_SIZE / 6];
 	int					color;
 }				t_player;
 

@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:16:10 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/02 15:22:07 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/04 11:23:53 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ static void	execute_process(t_game *game, t_process *process)
 	if (process->op_id == 8)
 		op_zjmp(game, process);
 	else if (process->op_id == 15)
-		op_aff(game, process);	
+		op_aff(game, process);
 }
 
-static int	push_op_id(char *value)
+static int	push_op_id(unsigned char value)
 {
 	int i;
 
 	i = 0;
 	while (i < 16)
 	{
-		if (!ft_strcmp(value, op_tab[i].hex))
+		if (value == op_tab[i].id + 1)
 			return (op_tab[i].id);
 		i++;
 	}

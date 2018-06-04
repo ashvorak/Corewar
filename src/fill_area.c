@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 18:37:49 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/01 13:07:59 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/04 11:20:49 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	push_procces(t_game *game, int location)
 	process->live = 0;
 	process->op_id = 16;
 	process->CYCLE_TO_DONE = 1;
-	process->carry = 1;
+	process->carry = 0;
 	process->next = NULL;
 	if (game->process)
 	{
@@ -92,7 +92,7 @@ void	fill_area(t_game *game)
 	{
 		if (!game->area[i].value)
 		{
-			game->area[i].value = ft_strdup("00");
+			game->area[i].value = 0;
 			game->area[i].color = 10;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/02 15:10:06 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/04 11:06:33 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	op_zjmp(t_game *game, t_process *process)
 {
-	int 	res;
-	char	*tmp;
+	unsigned int 	res;
 
 	if (game->process->carry)
 	{
-		tmp = ft_strjoin(game->area[process->PC + 1].value, game->area[process->PC + 2].value);
-		res = ft_atoi_base(tmp, 16);
+		res = 0;
+		res = game->area[process->PC + 1].value << 8;
+		res = res | game->area[process->PC + 2].value;
 		process->PC = res / IDX_MOD;
 	}
 }
