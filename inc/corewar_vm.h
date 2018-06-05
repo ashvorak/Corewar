@@ -57,6 +57,7 @@ typedef struct	s_process
 	int					op_id;
 	int					CYCLE_TO_DONE;
 	struct s_process	*next;
+	struct s_process	*prev;
 }				t_process;
 
 typedef struct	s_player
@@ -76,6 +77,7 @@ typedef struct	s_game
 	t_player		players[4];
 	t_area			area[MEM_SIZE + 1];
 	t_process		*process;
+	int             num_proc;
 	size_t			CYCLE;
 	size_t          cycle_to_die;
 }				t_game;
@@ -91,7 +93,8 @@ int				players_num(t_game *game);
 int				check_codege(int op_id, int codage);
 void			start_game(t_game *game);
 
-char		    *convert(size_t value);
+int		        what_color(int col);
+int             write_arg(unsigned int *arg, t_game *game, int tt, int PC);
 
 void			op_aff(t_game *game, t_process *process);
 void			op_zjmp(t_game *game, t_process *process);
@@ -100,6 +103,8 @@ void            op_and(t_game *game, t_process *process);
 void            op_live(t_game *game, t_process *process);
 void            op_add(t_game *game, t_process *process);
 void            op_sub(t_game *game, t_process *process);
+void            op_or(t_game *game, t_process *process);
+void            op_xor(t_game *game, t_process *process);
 
 int				ret_arg(int codage, int MASK, int move);
 unsigned int	write_2_bytes(t_game *game, int PC);

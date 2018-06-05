@@ -17,7 +17,7 @@ void	op_sti(t_game *game, t_process *process)
 	unsigned int	arg2;
 	unsigned int	arg3;
 	int 			PC_jump;
-
+	unsigned int    tmp;
 	PC_jump = 1;
 	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
 		return ;
@@ -43,14 +43,21 @@ void	op_sti(t_game *game, t_process *process)
 		arg3 = game->area[PC_jump + process->PC].value;
 		PC_jump++;
 	}
-	game->area[(process->PC + arg2 + arg3) % IDX_MOD].value = 0;
-	game->area[(process->PC + arg2 + arg3) % IDX_MOD + 1].value = 0;
-	game->area[(process->PC + arg2 + arg3) % IDX_MOD + 2].value = 0;
-	game->area[(process->PC + arg2 + arg3) % IDX_MOD + 3].value = 0;
-	game->area[(process->PC + arg2 + arg3) % IDX_MOD].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 24;
-	game->area[(process->PC + arg2 + arg3) % IDX_MOD + 1].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 16;
-	game->area[(process->PC + arg2 + arg3) % IDX_MOD + 2].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 8;
-	game->area[(process->PC + arg2 + arg3) % IDX_MOD + 3].value |= process->REG_NUM[game->area[process->PC + 2].value];
+	tmp = (process->PC + arg2 + arg3) % IDX_MOD;
+	if (tmp > 4095)
+		tmp %= 4096;
+	game->area[tmp].value = 0;
+	game->area[tmp + 1].value = 0;
+	game->area[tmp + 2].value = 0;
+	game->area[tmp + 3].value = 0;
+	game->area[tmp].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 24;
+	game->area[tmp + 1].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 16;
+	game->area[tmp + 2].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 8;
+	game->area[tmp + 3].value |= process->REG_NUM[game->area[process->PC + 2].value];
+	game->area[tmp].color = game->area[process->PC].color;
+	game->area[tmp + 1].color = game->area[process->PC].color;
+	game->area[tmp + 2].color = game->area[process->PC].color;
+	game->area[tmp + 3].color = game->area[process->PC].color;
 	game->area[process->PC].PC = 0;
 	process->PC += PC_jump;
 }

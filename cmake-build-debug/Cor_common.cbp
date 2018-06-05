@@ -383,10 +383,19 @@
 		<Unit filename="/Users/dlytvyn/Cor_common/src/op_live.c">
 			<Option target="Cor_common"/>
 		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_or.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_st.c">
+			<Option target="Cor_common"/>
+		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/op_sti.c">
 			<Option target="Cor_common"/>
 		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/op_sub.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_xor.c">
 			<Option target="Cor_common"/>
 		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/op_zjmp.c">

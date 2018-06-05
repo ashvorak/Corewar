@@ -22,6 +22,10 @@ static void	execute_process(t_game *game, t_process *process)
 	//	op_sub(game, process);
 	else if (process->op_id == 5)
 		op_and(game, process);
+//	else if (process->op_id == 6)
+//		op_or(game, process);
+//	else if (process->op_id == 7)
+//		op_xor(game, process);
 	else if (process->op_id == 8)
 		op_zjmp(game, process);
 	else if (process->op_id == 10)
@@ -56,6 +60,7 @@ static void	execute(t_game *game)
 			if (process->CYCLE_TO_DONE == op_tab[process->op_id].CYCLES)
 			{
 				execute_process(game, process);
+				
 				process->op_id = 16;
 				process->CYCLE_TO_DONE = 0;
 			}
@@ -75,28 +80,45 @@ static void	execute(t_game *game)
 
 static void check_procces(t_game *game)
 {
-	t_process *buf;
 	t_process *tmp;
 
 	tmp = game->process;
-	buf = game->process;
 	while (tmp)
 	{
 		if (!tmp->live)
 		{
-			buf->next = tmp->next;
-			buf = tmp;
-			tmp = tmp->next;
-			free(buf);
-			buf = NULL;
+			if (tmp->prev)
+			{
+				tmp->prev->next = tmp->next;
+				free(tmp);
+				tmp = NULL;
+			}
+			else
+			{
+				game->process = tmp->next;
+				free(tmp);
+				tmp = game->process;
+			}
 		}
 		else
 		{
 			tmp->live = 0;
-			buf = tmp;
 			tmp = tmp->next;
 		}
 	}
+}
+
+int     processes_number(t_process *process)
+{
+	int i;
+	
+	i = 0;
+	while (process)
+	{
+		i++;
+		process = process->next;
+	}
+	return (i);
 }
 
 void	start_game(t_game *game)
@@ -114,7 +136,8 @@ void	start_game(t_game *game)
 	{
 		execute(game);
 		game->CYCLE++;
-		//visual(game);
+		game->num_proc = processes_number(game->process);
+		visual(game);
 		if (game->CYCLE % game->cycle_to_die == 0)
 			check_procces(game);
 	}

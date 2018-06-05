@@ -2715,6 +2715,60 @@ src/op_live.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_live.c.s
 .PHONY : src/op_live.c.s
 
+src/op_or.o: src/op_or.c.o
+
+.PHONY : src/op_or.o
+
+# target to build an object file
+src/op_or.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_or.c.o
+.PHONY : src/op_or.c.o
+
+src/op_or.i: src/op_or.c.i
+
+.PHONY : src/op_or.i
+
+# target to preprocess a source file
+src/op_or.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_or.c.i
+.PHONY : src/op_or.c.i
+
+src/op_or.s: src/op_or.c.s
+
+.PHONY : src/op_or.s
+
+# target to generate assembly for a file
+src/op_or.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_or.c.s
+.PHONY : src/op_or.c.s
+
+src/op_st.o: src/op_st.c.o
+
+.PHONY : src/op_st.o
+
+# target to build an object file
+src/op_st.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_st.c.o
+.PHONY : src/op_st.c.o
+
+src/op_st.i: src/op_st.c.i
+
+.PHONY : src/op_st.i
+
+# target to preprocess a source file
+src/op_st.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_st.c.i
+.PHONY : src/op_st.c.i
+
+src/op_st.s: src/op_st.c.s
+
+.PHONY : src/op_st.s
+
+# target to generate assembly for a file
+src/op_st.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_st.c.s
+.PHONY : src/op_st.c.s
+
 src/op_sti.o: src/op_sti.c.o
 
 .PHONY : src/op_sti.o
@@ -2768,6 +2822,33 @@ src/op_sub.s: src/op_sub.c.s
 src/op_sub.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_sub.c.s
 .PHONY : src/op_sub.c.s
+
+src/op_xor.o: src/op_xor.c.o
+
+.PHONY : src/op_xor.o
+
+# target to build an object file
+src/op_xor.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_xor.c.o
+.PHONY : src/op_xor.c.o
+
+src/op_xor.i: src/op_xor.c.i
+
+.PHONY : src/op_xor.i
+
+# target to preprocess a source file
+src/op_xor.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_xor.c.i
+.PHONY : src/op_xor.c.i
+
+src/op_xor.s: src/op_xor.c.s
+
+.PHONY : src/op_xor.s
+
+# target to generate assembly for a file
+src/op_xor.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_xor.c.s
+.PHONY : src/op_xor.c.s
 
 src/op_zjmp.o: src/op_zjmp.c.o
 
@@ -3228,12 +3309,21 @@ help:
 	@echo "... src/op_live.o"
 	@echo "... src/op_live.i"
 	@echo "... src/op_live.s"
+	@echo "... src/op_or.o"
+	@echo "... src/op_or.i"
+	@echo "... src/op_or.s"
+	@echo "... src/op_st.o"
+	@echo "... src/op_st.i"
+	@echo "... src/op_st.s"
 	@echo "... src/op_sti.o"
 	@echo "... src/op_sti.i"
 	@echo "... src/op_sti.s"
 	@echo "... src/op_sub.o"
 	@echo "... src/op_sub.i"
 	@echo "... src/op_sub.s"
+	@echo "... src/op_xor.o"
+	@echo "... src/op_xor.i"
+	@echo "... src/op_xor.s"
 	@echo "... src/op_zjmp.o"
 	@echo "... src/op_zjmp.i"
 	@echo "... src/op_zjmp.s"

@@ -36,12 +36,16 @@ void	push_procces(t_game *game, int location)
 	process->CYCLE_TO_DONE = 1;
 	process->carry = 0;
 	process->next = NULL;
+	process->prev = NULL;
 	if (game->process)
 	{
 		tmp = game->process;
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = process;	
+		//while (tmp->next)
+		//	tmp = tmp->next;
+		process->next = tmp;
+		tmp->prev = process;
+		//process->prev = tmp;
+		game->process = process;
 	}
 	else
 		game->process = process;

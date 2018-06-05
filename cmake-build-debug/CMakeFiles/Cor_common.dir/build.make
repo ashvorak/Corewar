@@ -2553,6 +2553,78 @@ CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.provides: CMakeFiles/Cor_commo
 CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.provides.build: CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o
 
 
+CMakeFiles/Cor_common.dir/src/op_or.c.o: CMakeFiles/Cor_common.dir/flags.make
+CMakeFiles/Cor_common.dir/src/op_or.c.o: ../src/op_or.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/Cor_common.dir/src/op_or.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_or.c.o   -c /Users/dlytvyn/Cor_common/src/op_or.c
+
+CMakeFiles/Cor_common.dir/src/op_or.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Cor_common.dir/src/op_or.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dlytvyn/Cor_common/src/op_or.c > CMakeFiles/Cor_common.dir/src/op_or.c.i
+
+CMakeFiles/Cor_common.dir/src/op_or.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Cor_common.dir/src/op_or.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlytvyn/Cor_common/src/op_or.c -o CMakeFiles/Cor_common.dir/src/op_or.c.s
+
+CMakeFiles/Cor_common.dir/src/op_or.c.o.requires:
+
+.PHONY : CMakeFiles/Cor_common.dir/src/op_or.c.o.requires
+
+CMakeFiles/Cor_common.dir/src/op_or.c.o.provides: CMakeFiles/Cor_common.dir/src/op_or.c.o.requires
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_or.c.o.provides.build
+.PHONY : CMakeFiles/Cor_common.dir/src/op_or.c.o.provides
+
+CMakeFiles/Cor_common.dir/src/op_or.c.o.provides.build: CMakeFiles/Cor_common.dir/src/op_or.c.o
+
+
+CMakeFiles/Cor_common.dir/src/op_xor.c.o: CMakeFiles/Cor_common.dir/flags.make
+CMakeFiles/Cor_common.dir/src/op_xor.c.o: ../src/op_xor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/Cor_common.dir/src/op_xor.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_xor.c.o   -c /Users/dlytvyn/Cor_common/src/op_xor.c
+
+CMakeFiles/Cor_common.dir/src/op_xor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Cor_common.dir/src/op_xor.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dlytvyn/Cor_common/src/op_xor.c > CMakeFiles/Cor_common.dir/src/op_xor.c.i
+
+CMakeFiles/Cor_common.dir/src/op_xor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Cor_common.dir/src/op_xor.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlytvyn/Cor_common/src/op_xor.c -o CMakeFiles/Cor_common.dir/src/op_xor.c.s
+
+CMakeFiles/Cor_common.dir/src/op_xor.c.o.requires:
+
+.PHONY : CMakeFiles/Cor_common.dir/src/op_xor.c.o.requires
+
+CMakeFiles/Cor_common.dir/src/op_xor.c.o.provides: CMakeFiles/Cor_common.dir/src/op_xor.c.o.requires
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_xor.c.o.provides.build
+.PHONY : CMakeFiles/Cor_common.dir/src/op_xor.c.o.provides
+
+CMakeFiles/Cor_common.dir/src/op_xor.c.o.provides.build: CMakeFiles/Cor_common.dir/src/op_xor.c.o
+
+
+CMakeFiles/Cor_common.dir/src/op_st.c.o: CMakeFiles/Cor_common.dir/flags.make
+CMakeFiles/Cor_common.dir/src/op_st.c.o: ../src/op_st.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/Cor_common.dir/src/op_st.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_st.c.o   -c /Users/dlytvyn/Cor_common/src/op_st.c
+
+CMakeFiles/Cor_common.dir/src/op_st.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Cor_common.dir/src/op_st.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dlytvyn/Cor_common/src/op_st.c > CMakeFiles/Cor_common.dir/src/op_st.c.i
+
+CMakeFiles/Cor_common.dir/src/op_st.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Cor_common.dir/src/op_st.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlytvyn/Cor_common/src/op_st.c -o CMakeFiles/Cor_common.dir/src/op_st.c.s
+
+CMakeFiles/Cor_common.dir/src/op_st.c.o.requires:
+
+.PHONY : CMakeFiles/Cor_common.dir/src/op_st.c.o.requires
+
+CMakeFiles/Cor_common.dir/src/op_st.c.o.provides: CMakeFiles/Cor_common.dir/src/op_st.c.o.requires
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_st.c.o.provides.build
+.PHONY : CMakeFiles/Cor_common.dir/src/op_st.c.o.provides
+
+CMakeFiles/Cor_common.dir/src/op_st.c.o.provides.build: CMakeFiles/Cor_common.dir/src/op_st.c.o
+
+
 # Object files for target Cor_common
 Cor_common_OBJECTS = \
 "CMakeFiles/Cor_common.dir/lib/ft_printf/src/active_bits.c.o" \
@@ -2658,7 +2730,10 @@ Cor_common_OBJECTS = \
 "CMakeFiles/Cor_common.dir/src/op_and.c.o" \
 "CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o" \
 "CMakeFiles/Cor_common.dir/src/op_sti.c.o" \
-"CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o"
+"CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o" \
+"CMakeFiles/Cor_common.dir/src/op_or.c.o" \
+"CMakeFiles/Cor_common.dir/src/op_xor.c.o" \
+"CMakeFiles/Cor_common.dir/src/op_st.c.o"
 
 # External object files for target Cor_common
 Cor_common_EXTERNAL_OBJECTS =
@@ -2767,9 +2842,12 @@ Cor_common: CMakeFiles/Cor_common.dir/src/op_and.c.o
 Cor_common: CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/op_sti.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o
+Cor_common: CMakeFiles/Cor_common.dir/src/op_or.c.o
+Cor_common: CMakeFiles/Cor_common.dir/src/op_xor.c.o
+Cor_common: CMakeFiles/Cor_common.dir/src/op_st.c.o
 Cor_common: CMakeFiles/Cor_common.dir/build.make
 Cor_common: CMakeFiles/Cor_common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Linking C executable Cor_common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Linking C executable Cor_common"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Cor_common.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2881,6 +2959,9 @@ CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_and.c.o.req
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/lib/ft_itoa_base.c.o.requires
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_sti.c.o.requires
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o.requires
+CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_or.c.o.requires
+CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_xor.c.o.requires
+CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_st.c.o.requires
 
 .PHONY : CMakeFiles/Cor_common.dir/requires
 
