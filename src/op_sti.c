@@ -18,6 +18,7 @@ void	op_sti(t_game *game, t_process *process)
 	unsigned int	arg3;
 	int 			PC_jump;
 	unsigned int    tmp;
+
 	PC_jump = 1;
 	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
 		return ;
