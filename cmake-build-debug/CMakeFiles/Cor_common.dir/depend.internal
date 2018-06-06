@@ -325,6 +325,7 @@ CMakeFiles/Cor_common.dir/src/op_live.c.o
  /Users/oshvorak/corewar/lib/libft.h
  /Users/oshvorak/corewar/src/op_live.c
 CMakeFiles/Cor_common.dir/src/op_or.c.o
+<<<<<<< HEAD
  /Users/oshvorak/corewar/inc/corewar_vm.h
  /Users/oshvorak/corewar/inc/op.h
  /Users/oshvorak/corewar/lib/ft_printf/inc/ft_printf.h
@@ -338,6 +339,21 @@ CMakeFiles/Cor_common.dir/src/op_st.c.o
  /Users/oshvorak/corewar/lib/get_next_line/get_next_line.h
  /Users/oshvorak/corewar/lib/libft.h
  /Users/oshvorak/corewar/src/op_st.c
+=======
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
+ /Users/dlytvyn/Cor_common/src/op_or.c
+CMakeFiles/Cor_common.dir/src/op_st.c.o
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
+ /Users/dlytvyn/Cor_common/src/op_st.c
+>>>>>>> fbcb6ec8369575369a8c5d2e00d1a764b47ea79c
 CMakeFiles/Cor_common.dir/src/op_sti.c.o
  /Users/oshvorak/corewar/inc/corewar_vm.h
  /Users/oshvorak/corewar/inc/op.h
@@ -346,6 +362,7 @@ CMakeFiles/Cor_common.dir/src/op_sti.c.o
  /Users/oshvorak/corewar/lib/libft.h
  /Users/oshvorak/corewar/src/op_sti.c
 CMakeFiles/Cor_common.dir/src/op_sub.c.o
+<<<<<<< HEAD
  /Users/oshvorak/corewar/inc/corewar_vm.h
  /Users/oshvorak/corewar/inc/op.h
  /Users/oshvorak/corewar/lib/ft_printf/inc/ft_printf.h
@@ -359,6 +376,21 @@ CMakeFiles/Cor_common.dir/src/op_xor.c.o
  /Users/oshvorak/corewar/lib/get_next_line/get_next_line.h
  /Users/oshvorak/corewar/lib/libft.h
  /Users/oshvorak/corewar/src/op_xor.c
+=======
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
+ /Users/dlytvyn/Cor_common/src/op_sub.c
+CMakeFiles/Cor_common.dir/src/op_xor.c.o
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
+ /Users/dlytvyn/Cor_common/src/op_xor.c
+>>>>>>> fbcb6ec8369575369a8c5d2e00d1a764b47ea79c
 CMakeFiles/Cor_common.dir/src/op_zjmp.c.o
  /Users/oshvorak/corewar/inc/corewar_vm.h
  /Users/oshvorak/corewar/inc/op.h

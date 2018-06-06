@@ -416,7 +416,15 @@ string.h
 ../inc/corewar_vm.h
 /Users/oshvorak/corewar/inc/corewar_vm.h
 
+<<<<<<< HEAD
 /Users/oshvorak/corewar/src/op_st.c
+=======
+/Users/dlytvyn/Cor_common/src/op_st.c
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
+
+/Users/dlytvyn/Cor_common/src/op_sti.c
+>>>>>>> fbcb6ec8369575369a8c5d2e00d1a764b47ea79c
 ../inc/corewar_vm.h
 /Users/oshvorak/corewar/inc/corewar_vm.h
 
@@ -424,7 +432,15 @@ string.h
 ../inc/corewar_vm.h
 /Users/oshvorak/corewar/inc/corewar_vm.h
 
+<<<<<<< HEAD
 /Users/oshvorak/corewar/src/op_sub.c
+=======
+/Users/dlytvyn/Cor_common/src/op_xor.c
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
+
+/Users/dlytvyn/Cor_common/src/op_zjmp.c
+>>>>>>> fbcb6ec8369575369a8c5d2e00d1a764b47ea79c
 ../inc/corewar_vm.h
 /Users/oshvorak/corewar/inc/corewar_vm.h
 

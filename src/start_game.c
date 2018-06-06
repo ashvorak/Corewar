@@ -90,12 +90,15 @@ static void check_procces(t_game *game)
 			if (tmp->prev)
 			{
 				tmp->prev->next = tmp->next;
+				tmp->next->prev = tmp->prev;
 				free(tmp);
 				tmp = NULL;
 			}
 			else
 			{
 				game->process = tmp->next;
+				if (tmp->next)
+					tmp->next->prev = NULL;
 				free(tmp);
 				tmp = game->process;
 			}
@@ -121,10 +124,25 @@ int     processes_number(t_process *process)
 	return (i);
 }
 
+void    my_pause(void)
+{
+	int s;
+	
+	s = -1;
+	while (1)
+	{
+		s = getch();
+		if (s == 32)
+			break;
+	}
+}
+
 void	start_game(t_game *game)
 {
 	t_process	*process;
+	int         action;
 	
+	action = -1;
 	game->cycle_to_die = CYCLE_TO_DIE;
 	process = game->process;
 	while (process)
@@ -132,7 +150,7 @@ void	start_game(t_game *game)
 		process->op_id = push_op_id(game->area[process->PC].value);
 		process = process->next;
 	}
-	while (game->process && game->CYCLE < 5000)
+	while (game->process && game->CYCLE < 30000)
 	{
 		execute(game);
 		game->CYCLE++;
@@ -140,5 +158,8 @@ void	start_game(t_game *game)
 		visual(game);
 		if (game->CYCLE % game->cycle_to_die == 0)
 			check_procces(game);
+		action = getch();
+		if (action == 32)
+			my_pause();
 	}
 }

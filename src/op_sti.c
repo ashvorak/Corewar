@@ -44,17 +44,20 @@ void	op_sti(t_game *game, t_process *process)
 		arg3 = game->area[PC_jump + process->PC].value;
 		PC_jump++;
 	}
-	tmp = (process->PC + arg2 + arg3) % IDX_MOD;
+	tmp = (process->PC + arg2 + arg3);
 	if (tmp > 4095)
 		tmp %= 4096;
 	game->area[tmp].value = 0;
 	game->area[tmp + 1].value = 0;
 	game->area[tmp + 2].value = 0;
 	game->area[tmp + 3].value = 0;
-	game->area[tmp].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 24;
-	game->area[tmp + 1].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 16;
-	game->area[tmp + 2].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 8;
-	game->area[tmp + 3].value |= process->REG_NUM[game->area[process->PC + 2].value];
+	game->area[tmp].value |= process->REG_NUM[game->area[process->PC + 2].value - 1] >> 24;
+	game->area[tmp + 1].value |= process->REG_NUM[game->area[process->PC + 2].value - 1] >> 16;
+	game->area[tmp + 2].value |= process->REG_NUM[game->area[process->PC + 2].value - 1] >> 8;
+	game->area[tmp + 3].value |= process->REG_NUM[game->area[process->PC + 2].value - 1];
+	
+	process->REG_NUM[game->area[process->PC + 2].value - 1] = 0;
+
 	game->area[tmp].color = game->area[process->PC].color;
 	game->area[tmp + 1].color = game->area[process->PC].color;
 	game->area[tmp + 2].color = game->area[process->PC].color;
