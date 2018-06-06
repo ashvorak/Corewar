@@ -24,9 +24,12 @@ int	main(int ac, char **av)
 
 	initscr();
 	noecho();
+	cbreak();
+	nodelay(stdscr, TRUE);
 	curs_set(FALSE);
 	game = read_players(av, ac, 1);
 	start_game(game);
+	while (1);
 	endwin();
 	return (0);
 }

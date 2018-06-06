@@ -87,7 +87,7 @@ void			ft_error(void);
 t_game			*read_players(char **av, int ac, int i);
 t_player		read_player(char *file);
 void			fill_area(t_game *game);
-void			push_procces(t_game *game, int location);
+void	        push_procces(t_game *game, int location, unsigned int reg1);
 void			visual(t_game *game);
 int				players_num(t_game *game);
 int				check_codege(int op_id, int codage);

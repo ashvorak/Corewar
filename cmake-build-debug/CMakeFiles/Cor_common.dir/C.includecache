@@ -416,11 +416,19 @@ string.h
 ../inc/corewar_vm.h
 /Users/dlytvyn/Cor_common/inc/corewar_vm.h
 
+/Users/dlytvyn/Cor_common/src/op_st.c
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
+
 /Users/dlytvyn/Cor_common/src/op_sti.c
 ../inc/corewar_vm.h
 /Users/dlytvyn/Cor_common/inc/corewar_vm.h
 
 /Users/dlytvyn/Cor_common/src/op_sub.c
+../inc/corewar_vm.h
+/Users/dlytvyn/Cor_common/inc/corewar_vm.h
+
+/Users/dlytvyn/Cor_common/src/op_xor.c
 ../inc/corewar_vm.h
 /Users/dlytvyn/Cor_common/inc/corewar_vm.h
 

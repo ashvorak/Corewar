@@ -22,7 +22,7 @@ int	players_num(t_game *game)
 	return (i - 1);
 }
 
-void	push_procces(t_game *game, int location)
+void	push_procces(t_game *game, int location, unsigned int reg1)
 {
 	t_process *tmp;
 	t_process *process;
@@ -30,6 +30,7 @@ void	push_procces(t_game *game, int location)
 	if (!(process = (t_process*)malloc(sizeof(t_process))))
 		exit(1);
 	ft_bzero(process->REG_NUM, 16);
+	process->REG_NUM[0] = reg1;
 	process->PC = location;
 	process->live = 0;
 	process->op_id = 16;
@@ -57,10 +58,11 @@ static void fill_players(t_game *game)
 	int		j;
 	int		n;
 	int		pn;
+	unsigned int    reg1;
 
 	i = 0;
-	j = 0;
 	n = 0;
+	reg1 = 4294967295;
 	pn = players_num(game);
 	while (i < MEM_SIZE)
 	{
@@ -68,12 +70,12 @@ static void fill_players(t_game *game)
 		if (n <= pn)
 		{
 			i = (0 + (MEM_SIZE / (pn + 1))) * n;
-			if (i % 64 != 0)
-			{
-				i /= 64;
-				i *= 64;
-			}
-			push_procces(game, i);
+//			if (i % 64 != 0)
+//			{
+//				i /= 64;
+//				i *= 64;
+//			}
+			push_procces(game, i, reg1--);
 			while (j < (int)game->players[n].prog_size)
 			{
 				game->area[i].value = game->players[n].opcode[j];

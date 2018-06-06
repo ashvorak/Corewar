@@ -102,7 +102,7 @@ void	print_frame(WINDOW *stdscr)
 			mvprintw(i, 196, " ");
 		}
 		i++;
-		usleep(2000);
+		usleep(50);
 	}
 	attroff(COLOR_PAIR(1));
 }
