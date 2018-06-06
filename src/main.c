@@ -29,7 +29,8 @@ int	main(int ac, char **av)
 	curs_set(FALSE);
 	game = read_players(av, ac, 1);
 	start_game(game);
-	while (1);
+	nodelay(stdscr, FALSE);
+	manage_keys(game, getch());
 	endwin();
 	return (0);
 }

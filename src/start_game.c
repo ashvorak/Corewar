@@ -124,16 +124,49 @@ int     processes_number(t_process *process)
 	return (i);
 }
 
-void    my_pause(void)
+void    my_pause(t_game *game)
 {
 	int s;
 	
 	s = -1;
+	game->pause = 1;
 	while (1)
 	{
+		visual(game);
 		s = getch();
 		if (s == 32)
+		{
+			game->pause = 0;
 			break;
+		}
+		else if (s == 27)
+		{
+			endwin();
+			exit(0);
+		}
+	}
+}
+
+void    manage_keys(t_game *game, int action)
+{
+	if (action == 32 || game->pause == 1)
+		my_pause(game);
+	else if (action == 27)
+	{
+		endwin();
+		exit(0);
+	}
+	else if (action == 43)
+	{
+		game->speed /= 2;
+		if (game->speed < 30)
+			game->speed = 30;
+	}
+	else if (action == 45)
+	{
+		game->speed *= 2;
+		if (game->speed > 4000)
+			game->speed = 4000;
 	}
 }
 
@@ -142,6 +175,8 @@ void	start_game(t_game *game)
 	t_process	*process;
 	int         action;
 	
+	game->pause = 1;
+	game->speed = 2000;
 	action = -1;
 	game->cycle_to_die = CYCLE_TO_DIE;
 	process = game->process;
@@ -152,6 +187,7 @@ void	start_game(t_game *game)
 	}
 	while (game->process && game->CYCLE < 30000)
 	{
+		manage_keys(game, action);
 		execute(game);
 		game->CYCLE++;
 		game->num_proc = processes_number(game->process);
@@ -159,7 +195,6 @@ void	start_game(t_game *game)
 		if (game->CYCLE % game->cycle_to_die == 0)
 			check_procces(game);
 		action = getch();
-		if (action == 32)
-			my_pause();
+		//ft_printf("action: %d\n", action);
 	}
 }

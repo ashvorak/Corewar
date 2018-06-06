@@ -70,6 +70,8 @@ typedef struct	s_player
 	unsigned char		opcode[MEM_SIZE / 6];
 	int					color;
 	int                 live;
+	int                 last_live;
+	int                 lives_in_CP;
 }				t_player;
 
 typedef struct	s_game
@@ -80,6 +82,8 @@ typedef struct	s_game
 	int             num_proc;
 	size_t			CYCLE;
 	size_t          cycle_to_die;
+	int             pause;
+	int             speed;
 }				t_game;
 
 void			ft_error(void);
@@ -95,6 +99,8 @@ void			start_game(t_game *game);
 
 int		        what_color(int col);
 int             write_arg(unsigned int *arg, t_game *game, int tt, int PC);
+void            my_pause(t_game *game);
+void            manage_keys(t_game *game, int action);
 
 void			op_aff(t_game *game, t_process *process);
 void			op_zjmp(t_game *game, t_process *process);

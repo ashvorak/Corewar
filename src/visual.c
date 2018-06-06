@@ -36,7 +36,6 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 
 	i = 2;
 	k = 0;
-	//start_color();
 	init_pair(2, COLOR_WHITE, COLOR_BLACK);
 	init_pair(3, COLOR_GREEN, COLOR_BLACK);
 	init_pair(4, COLOR_BLUE, COLOR_BLACK);
@@ -47,7 +46,6 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 	init_pair(9, COLOR_BLUE, COLOR_WHITE);
 	init_pair(10, COLOR_RED, COLOR_WHITE);
 	init_pair(11, COLOR_YELLOW, COLOR_WHITE);
-	//game->area[0].PC = 1;    // test of PC //// delete it
 	while (k < MEM_SIZE)
 	{
 		l = 0;
@@ -74,7 +72,7 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 	return (stdscr);
 }
 
-void	print_frame(WINDOW *stdscr)
+void	print_frame(WINDOW *stdscr, int speed)
 {
 	int i;
 	int j;
@@ -87,11 +85,12 @@ void	print_frame(WINDOW *stdscr)
 	while (i < 70)
 	{
 		j = 0;
-		if (i == 0  || i == 70 - 1)
+		if (i == 0  || i == 70 - 1 || i == 55)
 		{
 			while (j < 250)
 			{
-				mvprintw(i, j, " ");
+				if (i == 0  || i == 70 - 1 || (i == 55 && (j > 195 || j == 0)))
+					mvprintw(i, j, " ");
 				j++;
 			}
 		}
@@ -102,9 +101,52 @@ void	print_frame(WINDOW *stdscr)
 			mvprintw(i, 196, " ");
 		}
 		i++;
-		usleep(50);
+		usleep(speed);
 	}
 	attroff(COLOR_PAIR(1));
+}
+
+char    *prog_name(char *name)
+{
+	char *res;
+	
+	res = NULL;
+	if (ft_strlen(name) > 38)
+	{
+		res = ft_strnew(39);
+		ft_strncpy(res, name, 38);
+		return (res);
+	}
+	else
+		return (name);
+}
+
+void    speed(t_game *game, int y)
+{
+	int i;
+	int j;
+	int num;
+	
+	i = 0;
+	j = 210;
+	num = (game->speed * 100 / 4000 * 15) / 100;
+	num = (num + 15) % 15;
+	num = num == 0 ? 15 : num;
+	mvprintw(y += 4, 200, "%s", "Speed:   | ");
+	while (i < 15)
+	{
+		if (i < num)
+			attron(COLOR_PAIR(3));
+		else
+			attron(COLOR_PAIR(2));
+		mvprintw(y, j++, "%s", "#");
+		i++;
+		if (i < num)
+			attroff(COLOR_PAIR(3));
+		else
+			attroff(COLOR_PAIR(2));
+	}
+	mvprintw(y, 226, "%s", " |");
 }
 
 void	right_menu(t_game *game)
@@ -120,14 +162,20 @@ void	right_menu(t_game *game)
 		ft_error();
 	attron(A_BOLD);
 	attron(COLOR_PAIR(2));
+	if (!game->pause)
+		mvprintw(3, 200, "%s", "**   RUNNING  **");
+	else
+		mvprintw(3, 200, "%s", "**   PAUSED   **");
 	mvprintw(5, 200, "%s %d", "CYClES :", game->CYCLE);
 	mvprintw(7, 200, "%s %d", "PROCESSES :", game->num_proc);
 	while (i <= pn + 1)
 	{
 		mvprintw(y, 200, "%s %d %s", "Player", i, ":");
 		attron(COLOR_PAIR(what_color(i - 1)));
-		mvprintw(y, 211, game->players[i - 1].prog_name);
+		mvprintw(y, 211, prog_name(game->players[i - 1].prog_name));
 		attroff(COLOR_PAIR(what_color(i - 1)));
+		mvprintw(y += 2, 205, "%s %d", "Last live :              ", game->players[i - 1].last_live);
+		mvprintw(y += 2, 205, "%s %d", "Lives in current period :", game->players[i - 1].lives_in_CP);
 		i++;
 		y += 2;
 	}
@@ -135,15 +183,20 @@ void	right_menu(t_game *game)
 	mvprintw(y + 4, 200, "%s %d", "CYCLE_DELTA :", CYCLE_DELTA);
 	mvprintw(y + 6, 200, "%s %d", "NBR_LIVE :", NBR_LIVE);
 	mvprintw(y + 8, 200, "%s %d", "MAX_CHECKS :", MAX_CHECKS);
+	speed(game, y + 8);
+	mvprintw(57, 210, "HOTKEYS INFO:");
+	mvprintw(59, 200, "Right ' + '   Increase speed");
+	mvprintw(61, 200, "Right ' - '   Decrease speed");
+	mvprintw(63, 200, "' Space '     Pause");
+	mvprintw(65, 200, "' Esc '       Exit game");
 	attroff(COLOR_PAIR(2));
 	attroff(A_BOLD);
 }
 
 void visual(t_game *game)
 {
-	print_frame(stdscr);
+	print_frame(stdscr, game->speed);
 	print_data(stdscr, game);
 	right_menu(game);
 	refresh();
-	//getch();    // wait for space or may be other button
 }
