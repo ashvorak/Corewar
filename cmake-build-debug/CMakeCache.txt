@@ -135,7 +135,7 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 CMAKE_OSX_SYSROOT:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Cor_common
+CMAKE_PROJECT_NAME:STATIC=corewar
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
@@ -194,6 +194,12 @@ Cor_common_SOURCE_DIR:STATIC=/Users/oshvorak/corewar
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
+
+//Value Computed by CMake
+corewar_BINARY_DIR:STATIC=/Users/oshvorak/corewar/cmake-build-debug
+
+//Value Computed by CMake
+corewar_SOURCE_DIR:STATIC=/Users/oshvorak/corewar
 
 
 ########################

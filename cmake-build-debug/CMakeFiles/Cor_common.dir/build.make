@@ -2627,16 +2627,16 @@ CMakeFiles/Cor_common.dir/src/op_st.c.o.provides.build: CMakeFiles/Cor_common.di
 
 CMakeFiles/Cor_common.dir/src/op_fork.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/op_fork.c.o: ../src/op_fork.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/Cor_common.dir/src/op_fork.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_fork.c.o   -c /Users/dlytvyn/Cor_common/src/op_fork.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/Cor_common.dir/src/op_fork.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_fork.c.o   -c /Users/oshvorak/corewar/src/op_fork.c
 
 CMakeFiles/Cor_common.dir/src/op_fork.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Cor_common.dir/src/op_fork.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dlytvyn/Cor_common/src/op_fork.c > CMakeFiles/Cor_common.dir/src/op_fork.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oshvorak/corewar/src/op_fork.c > CMakeFiles/Cor_common.dir/src/op_fork.c.i
 
 CMakeFiles/Cor_common.dir/src/op_fork.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Cor_common.dir/src/op_fork.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlytvyn/Cor_common/src/op_fork.c -o CMakeFiles/Cor_common.dir/src/op_fork.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oshvorak/corewar/src/op_fork.c -o CMakeFiles/Cor_common.dir/src/op_fork.c.s
 
 CMakeFiles/Cor_common.dir/src/op_fork.c.o.requires:
 
@@ -2651,16 +2651,16 @@ CMakeFiles/Cor_common.dir/src/op_fork.c.o.provides.build: CMakeFiles/Cor_common.
 
 CMakeFiles/Cor_common.dir/src/op_lfork.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/op_lfork.c.o: ../src/op_lfork.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/Cor_common.dir/src/op_lfork.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_lfork.c.o   -c /Users/dlytvyn/Cor_common/src/op_lfork.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/Cor_common.dir/src/op_lfork.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_lfork.c.o   -c /Users/oshvorak/corewar/src/op_lfork.c
 
 CMakeFiles/Cor_common.dir/src/op_lfork.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Cor_common.dir/src/op_lfork.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dlytvyn/Cor_common/src/op_lfork.c > CMakeFiles/Cor_common.dir/src/op_lfork.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oshvorak/corewar/src/op_lfork.c > CMakeFiles/Cor_common.dir/src/op_lfork.c.i
 
 CMakeFiles/Cor_common.dir/src/op_lfork.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Cor_common.dir/src/op_lfork.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlytvyn/Cor_common/src/op_lfork.c -o CMakeFiles/Cor_common.dir/src/op_lfork.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oshvorak/corewar/src/op_lfork.c -o CMakeFiles/Cor_common.dir/src/op_lfork.c.s
 
 CMakeFiles/Cor_common.dir/src/op_lfork.c.o.requires:
 
@@ -2899,11 +2899,7 @@ Cor_common: CMakeFiles/Cor_common.dir/src/op_fork.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/op_lfork.c.o
 Cor_common: CMakeFiles/Cor_common.dir/build.make
 Cor_common: CMakeFiles/Cor_common.dir/link.txt
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Linking C executable Cor_common"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Linking C executable Cor_common"
->>>>>>> d582fca474421099690e69635a25bba8cab8f6d6
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/oshvorak/corewar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Linking C executable Cor_common"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Cor_common.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

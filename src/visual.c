@@ -12,7 +12,6 @@
 
 #include "../inc/corewar_vm.h"
 
-
 void    initialize_colors(void)
 {
 	start_color();

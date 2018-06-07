@@ -380,17 +380,13 @@
 		<Unit filename="/Users/oshvorak/corewar/src/op_and.c">
 			<Option target="Cor_common"/>
 		</Unit>
-<<<<<<< HEAD
+		<Unit filename="/Users/oshvorak/corewar/src/op_fork.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_lfork.c">
+			<Option target="Cor_common"/>
+		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/src/op_live.c">
-=======
-		<Unit filename="/Users/dlytvyn/Cor_common/src/op_fork.c">
-			<Option target="Cor_common"/>
-		</Unit>
-		<Unit filename="/Users/dlytvyn/Cor_common/src/op_lfork.c">
-			<Option target="Cor_common"/>
-		</Unit>
-		<Unit filename="/Users/dlytvyn/Cor_common/src/op_live.c">
->>>>>>> d582fca474421099690e69635a25bba8cab8f6d6
 			<Option target="Cor_common"/>
 		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/src/op_or.c">

@@ -6,9 +6,13 @@
 
 void    op_add(t_game *game, t_process *process)
 {
-	if (!check_codege(process->op_id,
-	    ft_atoi_base(game->area[process->PC + 1].value, 16)))
-		return ;
+	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
+	{
+		game->area[process->PC].PC = 0;
+		process->PC++;
+		process->op_id = 16;
+		return;
+	}
 	game->process->REG_NUM[process->PC + 4] = process->REG_NUM[game->area[process->PC
 		+ 2].value] & process->REG_NUM[game->area[process->PC + 3].value];
 	if (game->process->REG_NUM[process->PC + 4] == 0)

@@ -28,8 +28,8 @@ void                clone_process(t_game *game, t_process *process, int location
 	clone = copy_reg(clone, process);
 	clone->PC = location;
 	clone->live = process->live;
-	clone->op_id = process->op_id;
-	clone->CYCLE_TO_DONE = process->CYCLE_TO_DONE;
+	clone->op_id = push_op_id(game->area[clone->PC].value);
+	clone->CYCLE_TO_DONE = 0;
 	clone->carry = process->carry;
 	clone->next = NULL;
 	clone->prev = NULL;
@@ -49,5 +49,8 @@ void                op_fork(t_game *game, t_process *process)
 	int arg;
 	
 	arg = write_2_bytes(game, process->PC + 1);
-	clone_process(game, process, arg % IDX_MOD);
+	game->area[process->PC].PC = 0;
+	clone_process(game, process, (arg % IDX_MOD) + process->PC);
+	process->PC += 3;
+	game->area[game->process->PC].PC = 1;
 }
