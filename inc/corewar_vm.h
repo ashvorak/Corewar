@@ -116,6 +116,7 @@ void            op_xor(t_game *game, t_process *process);
 void            op_fork(t_game *game, t_process *process);
 void            op_lfork(t_game *game, t_process *process);
 void			op_ld(t_game *game, t_process *process);
+void			op_ldi(t_game *game, t_process *process);
 
 int				ret_arg(int codage, int MASK, int move);
 unsigned int	write_2_bytes(t_game *game, int PC);

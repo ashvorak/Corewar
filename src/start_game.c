@@ -30,6 +30,8 @@ static void	execute_process(t_game *game, t_process *process)
 		op_xor(game, process);
 	else if (process->op_id == 8)
 		op_zjmp(game, process);
+	else if (process->op_id == 9)
+		op_ldi(game, process);
 	else if (process->op_id == 10)
 		op_sti(game, process);
 	else if (process->op_id == 11)

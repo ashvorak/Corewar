@@ -19,32 +19,38 @@ void	op_sti(t_game *game, t_process *process)
 	int 			PC_jump;
 	unsigned int    tmp;
 
-	PC_jump = 1;
+	PC_jump = 3;
 	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
 		return ;
-	if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_DIR || ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)
+	if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_DIR)
 	{
 		arg2 = write_2_bytes(game, process->PC + 3);
-		PC_jump += 4;
-		if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)
-			arg2 %= IDX_MOD;
+		PC_jump += 2;
+	}
+	else if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)
+	{
+		arg2 = write_4_bytes(game, game->area[process->PC + 3].value % IDX_MOD);
+		PC_jump += 2;
 	}
 	else
 	{
-		arg2 = game->area[process->PC + 3].value;
-		PC_jump += 3;
+		arg2 = process->REG_NUM[game->area[process->PC + 3].value - 1];
+		PC_jump += 1;
 	}
-	if (ret_arg(game->area[process->PC + 1].value, MASK_3, 2) == T_DIR || ret_arg(game->area[process->PC + 1].value, MASK_3, 2) == T_IND)
+	if (ret_arg(game->area[process->PC + 1].value, MASK_3, 2) == T_DIR)
 	{
 		arg3 = write_2_bytes(game, PC_jump + process->PC);
 		PC_jump += 2;
 	}
 	else
 	{
-		arg3 = game->area[PC_jump + process->PC].value;
+		arg3 = process->REG_NUM[game->area[process->PC + PC_jump].value - 1];
 		PC_jump++;
 	}
-	tmp = (process->PC + arg2 + arg3);
+	tmp = (process->PC + ((arg2 + arg3)));
+	//ft_printf("arg2 %d\n", arg2);
+	//ft_printf("arg3 %d\n", arg3);
+	//ft_printf("tmp %d\n", tmp);
 	if (tmp > 4095)
 		tmp %= 4096;
 	game->area[tmp].value = 0;

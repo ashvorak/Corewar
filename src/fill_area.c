@@ -22,6 +22,18 @@ int	players_num(t_game *game)
 	return (i - 1);
 }
 
+static  void   fill_reg(t_process *process)
+{
+	int i;
+
+	i = 0;
+	while (i < 16)
+	{
+		process->REG_NUM[i] = 0;
+		i++;
+	}
+}
+
 void	push_procces(t_game *game, int location, unsigned int reg1)
 {
 	t_process *tmp;
@@ -29,7 +41,7 @@ void	push_procces(t_game *game, int location, unsigned int reg1)
 
 	if (!(process = (t_process*)malloc(sizeof(t_process))))
 		exit(1);
-	ft_bzero(process->REG_NUM, 16);
+	fill_reg(process);
 	process->REG_NUM[0] = reg1;
 	process->PC = location;
 	process->live = 0;

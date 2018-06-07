@@ -30,7 +30,7 @@ void    op_ld(t_game *game, t_process *process)
 	{
 		t_reg = game->area[process->PC + 3].value;
 		t_ind = write_2_bytes(game, process->PC + 2);
-		process->REG_NUM[t_reg - 1] = write_2_bytes(game, process->PC + t_ind);
+		process->REG_NUM[t_reg - 1] = write_4_bytes(game, process->PC + t_ind);
 		game->area[process->PC].PC = 0;
 		process->PC += 5;
 	}
