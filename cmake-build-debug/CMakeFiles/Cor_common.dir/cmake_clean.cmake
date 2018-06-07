@@ -106,6 +106,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Cor_common.dir/src/op_or.c.o"
   "CMakeFiles/Cor_common.dir/src/op_xor.c.o"
   "CMakeFiles/Cor_common.dir/src/op_st.c.o"
+  "CMakeFiles/Cor_common.dir/src/op_fork.c.o"
+  "CMakeFiles/Cor_common.dir/src/op_lfork.c.o"
   "Cor_common.pdb"
   "Cor_common"
 )

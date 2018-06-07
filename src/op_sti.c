@@ -27,7 +27,7 @@ void	op_sti(t_game *game, t_process *process)
 		arg2 = write_2_bytes(game, process->PC + 3);
 		PC_jump += 4;
 		if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)
-			arg2 %= 256;
+			arg2 %= IDX_MOD;
 	}
 	else
 	{

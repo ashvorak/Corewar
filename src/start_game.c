@@ -16,20 +16,24 @@ static void	execute_process(t_game *game, t_process *process)
 {
 	if (process->op_id == 0)
 		op_live(game, process);
-	//else if (process->op_id == 3)
-	//	op_add(game, process);
-	//else if (process->op_id == 4)
-	//	op_sub(game, process);
+//	else if (process->op_id == 3)
+//		op_add(game, process);
+//	else if (process->op_id == 4)
+//		op_sub(game, process);
 	else if (process->op_id == 5)
 		op_and(game, process);
-//	else if (process->op_id == 6)
-//		op_or(game, process);
-//	else if (process->op_id == 7)
-//		op_xor(game, process);
+	else if (process->op_id == 6)
+		op_or(game, process);
+	else if (process->op_id == 7)
+		op_xor(game, process);
 	else if (process->op_id == 8)
 		op_zjmp(game, process);
 	else if (process->op_id == 10)
 		op_sti(game, process);
+	else if (process->op_id == 11)
+		op_fork(game, process);
+	else if (process->op_id == 14)
+		op_lfork(game, process);
 	else if (process->op_id == 15)
 		op_aff(game, process);
 }
@@ -124,16 +128,47 @@ int     processes_number(t_process *process)
 	return (i);
 }
 
-void    my_pause(void)
+void    my_pause(t_game *game)
 {
 	int s;
 	
 	s = -1;
+	game->pause = 1;
 	while (1)
 	{
+		visual(game);
 		s = getch();
 		if (s == 32)
+		{
+			game->pause = 0;
 			break;
+		}
+		else if (s == 27)
+		{
+			endwin();
+			exit(0);
+		}
+	}
+}
+
+void    manage_keys(t_game *game, int action)
+{
+	if (action == 32 || game->pause == 1)
+		my_pause(game);
+	else if (action == 27)
+	{
+		endwin();
+		exit(0);
+	}
+	else if (action == 43)
+	{
+		game->speed -= 132;
+		game->speed = (game->speed < 30) ? 30 : game->speed;
+	}
+	else if (action == 45)
+	{
+		game->speed += 132;
+		game->speed = (game->speed > 4000) ? 4000 : game->speed;
 	}
 }
 
@@ -142,6 +177,8 @@ void	start_game(t_game *game)
 	t_process	*process;
 	int         action;
 	
+	game->pause = 1;
+	game->speed = 2000;
 	action = -1;
 	game->cycle_to_die = CYCLE_TO_DIE;
 	process = game->process;
@@ -152,6 +189,7 @@ void	start_game(t_game *game)
 	}
 	while (game->process && game->CYCLE < 30000)
 	{
+		manage_keys(game, action);
 		execute(game);
 		game->CYCLE++;
 		game->num_proc = processes_number(game->process);
@@ -159,7 +197,6 @@ void	start_game(t_game *game)
 		if (game->CYCLE % game->cycle_to_die == 0)
 			check_procces(game);
 		action = getch();
-		if (action == 32)
-			my_pause();
+		//ft_printf("action: %d\n", action);
 	}
 }

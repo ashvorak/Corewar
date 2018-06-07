@@ -23,9 +23,12 @@ t_game	*read_players(char **av, int ac, int i)
 	j = 0;
 	while (i < ac && j < 4)
 	{
-		game->players[j].id = j + 1;
-		game->players[j].color = j;
 		game->players[j] = read_player(av[i]);
+		game->players[j].id = j + 1;
+		game->players[j].live = 1;
+		game->players[j].color = j;
+		game->players[j].last_live = 0;
+		game->players[j].lives_in_CP = 0;
 		i++;
 		j++;
 	}
