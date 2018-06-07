@@ -99,6 +99,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/dlytvyn/Cor_common/src/op_add.c" "/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_add.c.o"
   "/Users/dlytvyn/Cor_common/src/op_aff.c" "/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_aff.c.o"
   "/Users/dlytvyn/Cor_common/src/op_and.c" "/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_and.c.o"
+  "/Users/dlytvyn/Cor_common/src/op_fork.c" "/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_fork.c.o"
+  "/Users/dlytvyn/Cor_common/src/op_lfork.c" "/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_lfork.c.o"
   "/Users/dlytvyn/Cor_common/src/op_live.c" "/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_live.c.o"
   "/Users/dlytvyn/Cor_common/src/op_or.c" "/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_or.c.o"
   "/Users/dlytvyn/Cor_common/src/op_st.c" "/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/Cor_common.dir/src/op_st.c.o"

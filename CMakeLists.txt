@@ -105,4 +105,4 @@ add_executable(Cor_common
         src/read_player.c
         src/read_players.c
         src/start_game.c
-        src/visual.c src/op_live.c src/op_add.c src/op_sub.c src/op_and.c lib/ft_itoa_base.c src/op_sti.c src/write_2_4_bytes.c src/op_or.c src/op_xor.c src/op_st.c)
+        src/visual.c src/op_live.c src/op_add.c src/op_sub.c src/op_and.c lib/ft_itoa_base.c src/op_sti.c src/write_2_4_bytes.c src/op_or.c src/op_xor.c src/op_st.c src/op_fork.c src/op_lfork.c)

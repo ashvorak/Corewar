@@ -96,6 +96,7 @@ void			visual(t_game *game);
 int				players_num(t_game *game);
 int				check_codege(int op_id, int codage);
 void			start_game(t_game *game);
+void            clone_process(t_game *game, t_process *process, int location);
 
 int		        what_color(int col);
 int             write_arg(unsigned int *arg, t_game *game, int tt, int PC);
@@ -111,6 +112,8 @@ void            op_add(t_game *game, t_process *process);
 void            op_sub(t_game *game, t_process *process);
 void            op_or(t_game *game, t_process *process);
 void            op_xor(t_game *game, t_process *process);
+void            op_fork(t_game *game, t_process *process);
+void            op_lfork(t_game *game, t_process *process);
 
 int				ret_arg(int codage, int MASK, int move);
 unsigned int	write_2_bytes(t_game *game, int PC);

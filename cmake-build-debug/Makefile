@@ -2688,6 +2688,60 @@ src/op_and.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_and.c.s
 .PHONY : src/op_and.c.s
 
+src/op_fork.o: src/op_fork.c.o
+
+.PHONY : src/op_fork.o
+
+# target to build an object file
+src/op_fork.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_fork.c.o
+.PHONY : src/op_fork.c.o
+
+src/op_fork.i: src/op_fork.c.i
+
+.PHONY : src/op_fork.i
+
+# target to preprocess a source file
+src/op_fork.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_fork.c.i
+.PHONY : src/op_fork.c.i
+
+src/op_fork.s: src/op_fork.c.s
+
+.PHONY : src/op_fork.s
+
+# target to generate assembly for a file
+src/op_fork.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_fork.c.s
+.PHONY : src/op_fork.c.s
+
+src/op_lfork.o: src/op_lfork.c.o
+
+.PHONY : src/op_lfork.o
+
+# target to build an object file
+src/op_lfork.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lfork.c.o
+.PHONY : src/op_lfork.c.o
+
+src/op_lfork.i: src/op_lfork.c.i
+
+.PHONY : src/op_lfork.i
+
+# target to preprocess a source file
+src/op_lfork.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lfork.c.i
+.PHONY : src/op_lfork.c.i
+
+src/op_lfork.s: src/op_lfork.c.s
+
+.PHONY : src/op_lfork.s
+
+# target to generate assembly for a file
+src/op_lfork.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lfork.c.s
+.PHONY : src/op_lfork.c.s
+
 src/op_live.o: src/op_live.c.o
 
 .PHONY : src/op_live.o
@@ -3306,6 +3360,12 @@ help:
 	@echo "... src/op_and.o"
 	@echo "... src/op_and.i"
 	@echo "... src/op_and.s"
+	@echo "... src/op_fork.o"
+	@echo "... src/op_fork.i"
+	@echo "... src/op_fork.s"
+	@echo "... src/op_lfork.o"
+	@echo "... src/op_lfork.i"
+	@echo "... src/op_lfork.s"
 	@echo "... src/op_live.o"
 	@echo "... src/op_live.i"
 	@echo "... src/op_live.s"

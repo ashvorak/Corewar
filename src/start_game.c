@@ -16,20 +16,24 @@ static void	execute_process(t_game *game, t_process *process)
 {
 	if (process->op_id == 0)
 		op_live(game, process);
-	//else if (process->op_id == 3)
-	//	op_add(game, process);
-	//else if (process->op_id == 4)
-	//	op_sub(game, process);
+//	else if (process->op_id == 3)
+//		op_add(game, process);
+//	else if (process->op_id == 4)
+//		op_sub(game, process);
 	else if (process->op_id == 5)
 		op_and(game, process);
-//	else if (process->op_id == 6)
-//		op_or(game, process);
-//	else if (process->op_id == 7)
-//		op_xor(game, process);
+	else if (process->op_id == 6)
+		op_or(game, process);
+	else if (process->op_id == 7)
+		op_xor(game, process);
 	else if (process->op_id == 8)
 		op_zjmp(game, process);
 	else if (process->op_id == 10)
 		op_sti(game, process);
+	else if (process->op_id == 11)
+		op_fork(game, process);
+	else if (process->op_id == 14)
+		op_lfork(game, process);
 	else if (process->op_id == 15)
 		op_aff(game, process);
 }
@@ -158,15 +162,13 @@ void    manage_keys(t_game *game, int action)
 	}
 	else if (action == 43)
 	{
-		game->speed /= 2;
-		if (game->speed < 30)
-			game->speed = 30;
+		game->speed -= 132;
+		game->speed = (game->speed < 30) ? 30 : game->speed;
 	}
 	else if (action == 45)
 	{
-		game->speed *= 2;
-		if (game->speed > 4000)
-			game->speed = 4000;
+		game->speed += 132;
+		game->speed = (game->speed > 4000) ? 4000 : game->speed;
 	}
 }
 

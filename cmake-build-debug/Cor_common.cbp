@@ -380,6 +380,12 @@
 		<Unit filename="/Users/dlytvyn/Cor_common/src/op_and.c">
 			<Option target="Cor_common"/>
 		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_fork.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_lfork.c">
+			<Option target="Cor_common"/>
+		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/op_live.c">
 			<Option target="Cor_common"/>
 		</Unit>

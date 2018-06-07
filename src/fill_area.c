@@ -41,11 +41,8 @@ void	push_procces(t_game *game, int location, unsigned int reg1)
 	if (game->process)
 	{
 		tmp = game->process;
-		//while (tmp->next)
-		//	tmp = tmp->next;
 		process->next = tmp;
 		tmp->prev = process;
-		//process->prev = tmp;
 		game->process = process;
 	}
 	else
@@ -70,11 +67,6 @@ static void fill_players(t_game *game)
 		if (n <= pn)
 		{
 			i = (0 + (MEM_SIZE / (pn + 1))) * n;
-//			if (i % 64 != 0)
-//			{
-//				i /= 64;
-//				i *= 64;
-//			}
 			push_procces(game, i, reg1--);
 			while (j < (int)game->players[n].prog_size)
 			{
