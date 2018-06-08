@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/08 13:38:38 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/08 16:10:23 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void            clone_process(t_game *game, t_process *process, int location);
 
 int		        what_color(int col);
 unsigned int    write_arg(t_process *process, t_game *game, int tt, int PC);
-int             plus_PC(int codage);
+int				plus_PC(int codage, int MASK, int move);
 void            my_pause(t_game *game);
 void            manage_keys(t_game *game, int action);
 int				push_op_id(unsigned char value);
