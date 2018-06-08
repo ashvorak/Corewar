@@ -23,11 +23,11 @@ unsigned int     write_arg(t_process *process, t_game *game, int tt, int PC)
 	}
 }
 
-int     plus_PC(int codage)
+int     plus_PC(int codage, int MASK, int move)
 {
-	if (ret_arg(codage, MASK_1, 6) == T_REG)
+	if (ret_arg(codage, MASK, move) == T_REG)
 		return (1);
-	else if (ret_arg(codage, MASK_2, 4) == T_DIR)
+	else if (ret_arg(codage, MASK, move) == T_DIR)
 		return (4);
 	else
 		return (2);
@@ -43,14 +43,14 @@ void    op_and(t_game *game, t_process *process)
 	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
 		return ;
 	PC_buf = 2;
-	arg1 = write_arg(process, game, ret_arg(game->area[process->PC + 1].value, MASK_1, 6), process->PC + 2);
-	PC_buf += plus_PC(game->area[process->PC + 1].value);
-	arg2 = write_arg(process, game, ret_arg(game->area[process->PC + 1].value, MASK_2, 4), PC_buf);
-	PC_buf += plus_PC(game->area[process->PC + 1].value);
-	arg3 = game->area[PC_buf].value;
+	arg1 = write_arg(process, game, ret_arg(game->area[process->PC + 1].value, MASK_1, 6), process->PC + PC_buf);
+	PC_buf += plus_PC(game->area[process->PC + 1].value, MASK_1, 6);
+	arg2 = write_arg(process, game, ret_arg(game->area[process->PC + 1].value, MASK_2, 4), process->PC + PC_buf);
+	PC_buf += plus_PC(game->area[process->PC + 1].value, MASK_2, 4);
+	arg3 = game->area[process->PC + PC_buf].value;
 	PC_buf += 1;
-	process->REG_NUM[arg3] = arg1 & arg2;
-	if (process->REG_NUM[arg3] == 0)
+	process->REG_NUM[arg3 - 1] = arg1 & arg2;
+	if (process->REG_NUM[arg3 - 1] == 0)
 		process->carry = 1;
 	else
 		process->carry = 0;
