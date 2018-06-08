@@ -99,7 +99,7 @@ void			start_game(t_game *game);
 void            clone_process(t_game *game, t_process *process, int location);
 
 int		        what_color(int col);
-int             write_arg(unsigned int *arg, t_game *game, int tt, int PC);
+unsigned int    write_arg(t_process *process, t_game *game, int tt, int PC);
 void            my_pause(t_game *game);
 void            manage_keys(t_game *game, int action);
 
