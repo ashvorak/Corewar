@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_ld.c                                            :+:      :+:    :+:   */
+/*   op_lld.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 11:52:06 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/08 13:58:50 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/08 13:36:02 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-void    op_ld(t_game *game, t_process *process)
+void    op_lld(t_game *game, t_process *process)
 {
 	int		t_reg;
 	int 	t_ind;
@@ -29,10 +29,7 @@ void    op_ld(t_game *game, t_process *process)
 	else
 	{
 		t_reg = game->area[process->PC + 4].value;
-		//t_ind = write_2_bytes(game, process->PC + 2);
-		t_ind = write_2_bytes(game, process->PC + 2) % IDX_MOD;
-		game->area[process->PC + 2].value |= t_ind >> 8;
-		game->area[process->PC + 2].value |= t_ind;
+		t_ind = write_2_bytes(game, process->PC + 2);
 		process->REG_NUM[t_reg - 1] = write_4_bytes(game, process->PC + t_ind);
 		game->area[process->PC].PC = 0;
 		process->PC += 5;

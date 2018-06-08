@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:16:10 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/08 12:57:40 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/08 13:37:35 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ static void	execute_process(t_game *game, t_process *process)
 		op_sti(game, process);
 	else if (process->op_id == 11)
 		op_fork(game, process);
+	else if (process->op_id == 12)
+		op_lld(game, process);
+	else if (process->op_id == 13)
+		op_lldi(game, process);
 	else if (process->op_id == 14)
 		op_lfork(game, process);
 	else if (process->op_id == 15)

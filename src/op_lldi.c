@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_ldi.c                                           :+:      :+:    :+:   */
+/*   op_lldi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 11:52:06 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/08 14:00:23 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/08 13:40:15 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-void    op_ldi(t_game *game, t_process *process)
+void    op_lldi(t_game *game, t_process *process)
 {
 	unsigned int 	arg1;
 	unsigned int 	arg2;
@@ -59,6 +59,5 @@ void    op_ldi(t_game *game, t_process *process)
 		process->PC += 1;
 	}
 	arg3 = game->area[process->PC++].value;
-	//process->REG_NUM[arg3 - 1] = write_4_bytes(game, ((arg1 + arg2)) + PC_buf);
-	process->REG_NUM[arg3 - 1] = write_4_bytes(game, ((arg1 + arg2) % IDX_MOD) + PC_buf);
+	process->REG_NUM[arg3 - 1] = write_4_bytes(game, ((arg1 + arg2)) + PC_buf);
 }
