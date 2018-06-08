@@ -48,9 +48,6 @@ void	op_sti(t_game *game, t_process *process)
 		PC_jump++;
 	}
 	tmp = (process->PC + ((arg2 + arg3)));
-	//ft_printf("arg2 %d\n", arg2);
-	//ft_printf("arg3 %d\n", arg3);
-	//ft_printf("tmp %d\n", tmp);
 	if (tmp > 4095)
 		tmp %= 4096;
 	game->area[tmp].value = 0;
@@ -61,9 +58,10 @@ void	op_sti(t_game *game, t_process *process)
 	game->area[tmp + 1].value |= process->REG_NUM[game->area[process->PC + 2].value - 1] >> 16;
 	game->area[tmp + 2].value |= process->REG_NUM[game->area[process->PC + 2].value - 1] >> 8;
 	game->area[tmp + 3].value |= process->REG_NUM[game->area[process->PC + 2].value - 1];
-	
-	//process->REG_NUM[game->area[process->PC + 2].value - 1] = 0;
-
+	game->area[tmp].bold = 10;
+	game->area[tmp + 1].bold = 10;
+	game->area[tmp + 2].bold = 10;
+	game->area[tmp + 3].bold = 10;
 	game->area[tmp].color = game->area[process->PC].color;
 	game->area[tmp + 1].color = game->area[process->PC].color;
 	game->area[tmp + 2].color = game->area[process->PC].color;

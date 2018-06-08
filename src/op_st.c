@@ -17,8 +17,6 @@ void	op_st(t_game *game, t_process *process)
 	{
 		arg2 = write_2_bytes(game, process->PC + 3);
 		PC_jump += 2;
-		//if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)    why do we need it?
-		//	arg2 %= 256;
 		tmp = process->PC + (arg2 % IDX_MOD);
 		if (tmp > 4095)
 			tmp %= 4096;
@@ -34,6 +32,10 @@ void	op_st(t_game *game, t_process *process)
 		game->area[tmp + 1].color = game->area[process->PC].color;
 		game->area[tmp + 2].color = game->area[process->PC].color;
 		game->area[tmp + 3].color = game->area[process->PC].color;
+		game->area[tmp].bold = 10;
+		game->area[tmp + 1].bold = 10;
+		game->area[tmp + 2].bold = 10;
+		game->area[tmp + 3].bold = 10;
 	}
 	else if(ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_REG)
 	{
@@ -43,5 +45,3 @@ void	op_st(t_game *game, t_process *process)
 	game->area[process->PC].PC = 0;
 	process->PC += PC_jump;
 }
-
-// записати 0 в той регістр з якого витягнули значення?

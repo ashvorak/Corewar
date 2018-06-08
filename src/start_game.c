@@ -97,10 +97,14 @@ static void	execute(t_game *game)
 static void check_procces(t_game *game)
 {
 	t_process *tmp;
-
+	int         live;
+	
+	live = 0;
+	game->checks++;
 	tmp = game->process;
 	while (tmp)
 	{
+		live += tmp->live;
 		if (!tmp->live)
 		{
 			if (tmp->prev)
@@ -124,6 +128,11 @@ static void check_procces(t_game *game)
 			tmp->live = 0;
 			tmp = tmp->next;
 		}
+	}
+	if (live >= 21 || game->checks == MAX_CHECKS)
+	{
+		game->cycle_to_die -= CYCLE_DELTA;
+		game->checks = 0;
 	}
 }
 
@@ -191,6 +200,7 @@ void	start_game(t_game *game)
 	
 	game->pause = 1;
 	game->speed = 2000;
+	game->checks = 0;
 	action = -1;
 	game->cycle_to_die = CYCLE_TO_DIE;
 	process = game->process;

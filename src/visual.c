@@ -61,16 +61,24 @@ WINDOW	*print_data(WINDOW *stdscr, t_game *game)
 			tmp = ft_itoa_base(game->area[k].value, 16);
 			if (ft_strlen(tmp) == 1)
 				tmp = ft_strjoin("0", tmp);
+			if (game->area[k].bold > 0)
+				attron(A_BOLD);
 			if (game->area[k].PC == 0)
 				attron(COLOR_PAIR(what_color(game->area[k].color)));
 			else
 				attron(COLOR_PAIR(what_color(game->area[k].color) + 5));
 			mvprintw(i, j, tmp);
+			ft_strdel(&tmp);
 			j += 3;
 			if (game->area[k].PC == 0)
 				attroff(COLOR_PAIR(what_color(game->area[k].color)));
 			else
 				attroff(COLOR_PAIR(what_color(game->area[k].color) + 5));
+			if (game->area[k].bold > 0)
+			{
+				attroff(A_BOLD);
+				game->area[k].bold--;
+			}
 			k++;
 		}
 		i++;
