@@ -53,5 +53,4 @@ void                op_fork(t_game *game, t_process *process)
 	game->area[process->PC].PC = 0;
 	clone_process(game, process, (arg % IDX_MOD) + process->PC);
 	process->PC += 3;
-	//game->area[game->process->PC].PC = 1;
 }

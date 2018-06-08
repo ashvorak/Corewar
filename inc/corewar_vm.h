@@ -35,6 +35,7 @@ typedef struct	s_area
 	unsigned char	value;
 	int				color;
 	int         	PC;
+	int             bold;
 	int             player;
 }				t_area;
 
@@ -87,6 +88,7 @@ typedef struct	s_game
 	size_t          cycle_to_die;
 	int             pause;
 	int             speed;
+	int             checks;
 }				t_game;
 
 void			ft_error(void);
