@@ -395,6 +395,12 @@
 		<Unit filename="/Users/dlytvyn/Cor_common/src/op_live.c">
 			<Option target="Cor_common"/>
 		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_lld.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_lldi.c">
+			<Option target="Cor_common"/>
+		</Unit>
 		<Unit filename="/Users/dlytvyn/Cor_common/src/op_or.c">
 			<Option target="Cor_common"/>
 		</Unit>

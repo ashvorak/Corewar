@@ -18,8 +18,7 @@ void	op_st(t_game *game, t_process *process)
 		arg2 = write_2_bytes(game, process->PC + 3);
 		PC_jump += 2;
 		tmp = process->PC + (arg2 % IDX_MOD);
-		if (tmp > 4095)
-			tmp %= 4096;
+		tmp %= 4096;
 		game->area[tmp].value = 0;
 		game->area[tmp + 1].value = 0;
 		game->area[tmp + 2].value = 0;

@@ -2823,6 +2823,60 @@ src/op_live.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_live.c.s
 .PHONY : src/op_live.c.s
 
+src/op_lld.o: src/op_lld.c.o
+
+.PHONY : src/op_lld.o
+
+# target to build an object file
+src/op_lld.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lld.c.o
+.PHONY : src/op_lld.c.o
+
+src/op_lld.i: src/op_lld.c.i
+
+.PHONY : src/op_lld.i
+
+# target to preprocess a source file
+src/op_lld.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lld.c.i
+.PHONY : src/op_lld.c.i
+
+src/op_lld.s: src/op_lld.c.s
+
+.PHONY : src/op_lld.s
+
+# target to generate assembly for a file
+src/op_lld.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lld.c.s
+.PHONY : src/op_lld.c.s
+
+src/op_lldi.o: src/op_lldi.c.o
+
+.PHONY : src/op_lldi.o
+
+# target to build an object file
+src/op_lldi.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lldi.c.o
+.PHONY : src/op_lldi.c.o
+
+src/op_lldi.i: src/op_lldi.c.i
+
+.PHONY : src/op_lldi.i
+
+# target to preprocess a source file
+src/op_lldi.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lldi.c.i
+.PHONY : src/op_lldi.c.i
+
+src/op_lldi.s: src/op_lldi.c.s
+
+.PHONY : src/op_lldi.s
+
+# target to generate assembly for a file
+src/op_lldi.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lldi.c.s
+.PHONY : src/op_lldi.c.s
+
 src/op_or.o: src/op_or.c.o
 
 .PHONY : src/op_or.o
@@ -3429,6 +3483,12 @@ help:
 	@echo "... src/op_live.o"
 	@echo "... src/op_live.i"
 	@echo "... src/op_live.s"
+	@echo "... src/op_lld.o"
+	@echo "... src/op_lld.i"
+	@echo "... src/op_lld.s"
+	@echo "... src/op_lldi.o"
+	@echo "... src/op_lldi.i"
+	@echo "... src/op_lldi.s"
 	@echo "... src/op_or.o"
 	@echo "... src/op_or.i"
 	@echo "... src/op_or.s"

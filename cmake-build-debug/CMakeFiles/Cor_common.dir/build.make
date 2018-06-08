@@ -2457,9 +2457,57 @@ CMakeFiles/Cor_common.dir/src/op_live.c.o.provides: CMakeFiles/Cor_common.dir/sr
 CMakeFiles/Cor_common.dir/src/op_live.c.o.provides.build: CMakeFiles/Cor_common.dir/src/op_live.c.o
 
 
+CMakeFiles/Cor_common.dir/src/op_lld.c.o: CMakeFiles/Cor_common.dir/flags.make
+CMakeFiles/Cor_common.dir/src/op_lld.c.o: ../src/op_lld.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/Cor_common.dir/src/op_lld.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_lld.c.o   -c /Users/dlytvyn/Cor_common/src/op_lld.c
+
+CMakeFiles/Cor_common.dir/src/op_lld.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Cor_common.dir/src/op_lld.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dlytvyn/Cor_common/src/op_lld.c > CMakeFiles/Cor_common.dir/src/op_lld.c.i
+
+CMakeFiles/Cor_common.dir/src/op_lld.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Cor_common.dir/src/op_lld.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlytvyn/Cor_common/src/op_lld.c -o CMakeFiles/Cor_common.dir/src/op_lld.c.s
+
+CMakeFiles/Cor_common.dir/src/op_lld.c.o.requires:
+
+.PHONY : CMakeFiles/Cor_common.dir/src/op_lld.c.o.requires
+
+CMakeFiles/Cor_common.dir/src/op_lld.c.o.provides: CMakeFiles/Cor_common.dir/src/op_lld.c.o.requires
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lld.c.o.provides.build
+.PHONY : CMakeFiles/Cor_common.dir/src/op_lld.c.o.provides
+
+CMakeFiles/Cor_common.dir/src/op_lld.c.o.provides.build: CMakeFiles/Cor_common.dir/src/op_lld.c.o
+
+
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o: CMakeFiles/Cor_common.dir/flags.make
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o: ../src/op_lldi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/Cor_common.dir/src/op_lldi.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_lldi.c.o   -c /Users/dlytvyn/Cor_common/src/op_lldi.c
+
+CMakeFiles/Cor_common.dir/src/op_lldi.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Cor_common.dir/src/op_lldi.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dlytvyn/Cor_common/src/op_lldi.c > CMakeFiles/Cor_common.dir/src/op_lldi.c.i
+
+CMakeFiles/Cor_common.dir/src/op_lldi.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Cor_common.dir/src/op_lldi.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlytvyn/Cor_common/src/op_lldi.c -o CMakeFiles/Cor_common.dir/src/op_lldi.c.s
+
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o.requires:
+
+.PHONY : CMakeFiles/Cor_common.dir/src/op_lldi.c.o.requires
+
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o.provides: CMakeFiles/Cor_common.dir/src/op_lldi.c.o.requires
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/op_lldi.c.o.provides.build
+.PHONY : CMakeFiles/Cor_common.dir/src/op_lldi.c.o.provides
+
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o.provides.build: CMakeFiles/Cor_common.dir/src/op_lldi.c.o
+
+
 CMakeFiles/Cor_common.dir/src/op_or.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/op_or.c.o: ../src/op_or.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/Cor_common.dir/src/op_or.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/Cor_common.dir/src/op_or.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_or.c.o   -c /Users/dlytvyn/Cor_common/src/op_or.c
 
 CMakeFiles/Cor_common.dir/src/op_or.c.i: cmake_force
@@ -2483,7 +2531,7 @@ CMakeFiles/Cor_common.dir/src/op_or.c.o.provides.build: CMakeFiles/Cor_common.di
 
 CMakeFiles/Cor_common.dir/src/op_st.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/op_st.c.o: ../src/op_st.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/Cor_common.dir/src/op_st.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/Cor_common.dir/src/op_st.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_st.c.o   -c /Users/dlytvyn/Cor_common/src/op_st.c
 
 CMakeFiles/Cor_common.dir/src/op_st.c.i: cmake_force
@@ -2507,7 +2555,7 @@ CMakeFiles/Cor_common.dir/src/op_st.c.o.provides.build: CMakeFiles/Cor_common.di
 
 CMakeFiles/Cor_common.dir/src/op_sti.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/op_sti.c.o: ../src/op_sti.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/Cor_common.dir/src/op_sti.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/Cor_common.dir/src/op_sti.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_sti.c.o   -c /Users/dlytvyn/Cor_common/src/op_sti.c
 
 CMakeFiles/Cor_common.dir/src/op_sti.c.i: cmake_force
@@ -2531,7 +2579,7 @@ CMakeFiles/Cor_common.dir/src/op_sti.c.o.provides.build: CMakeFiles/Cor_common.d
 
 CMakeFiles/Cor_common.dir/src/op_sub.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/op_sub.c.o: ../src/op_sub.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/Cor_common.dir/src/op_sub.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/Cor_common.dir/src/op_sub.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_sub.c.o   -c /Users/dlytvyn/Cor_common/src/op_sub.c
 
 CMakeFiles/Cor_common.dir/src/op_sub.c.i: cmake_force
@@ -2555,7 +2603,7 @@ CMakeFiles/Cor_common.dir/src/op_sub.c.o.provides.build: CMakeFiles/Cor_common.d
 
 CMakeFiles/Cor_common.dir/src/op_xor.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/op_xor.c.o: ../src/op_xor.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/Cor_common.dir/src/op_xor.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/Cor_common.dir/src/op_xor.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_xor.c.o   -c /Users/dlytvyn/Cor_common/src/op_xor.c
 
 CMakeFiles/Cor_common.dir/src/op_xor.c.i: cmake_force
@@ -2579,7 +2627,7 @@ CMakeFiles/Cor_common.dir/src/op_xor.c.o.provides.build: CMakeFiles/Cor_common.d
 
 CMakeFiles/Cor_common.dir/src/op_zjmp.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/op_zjmp.c.o: ../src/op_zjmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/Cor_common.dir/src/op_zjmp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/Cor_common.dir/src/op_zjmp.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/op_zjmp.c.o   -c /Users/dlytvyn/Cor_common/src/op_zjmp.c
 
 CMakeFiles/Cor_common.dir/src/op_zjmp.c.i: cmake_force
@@ -2603,7 +2651,7 @@ CMakeFiles/Cor_common.dir/src/op_zjmp.c.o.provides.build: CMakeFiles/Cor_common.
 
 CMakeFiles/Cor_common.dir/src/read_player.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/read_player.c.o: ../src/read_player.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/Cor_common.dir/src/read_player.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/Cor_common.dir/src/read_player.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/read_player.c.o   -c /Users/dlytvyn/Cor_common/src/read_player.c
 
 CMakeFiles/Cor_common.dir/src/read_player.c.i: cmake_force
@@ -2627,7 +2675,7 @@ CMakeFiles/Cor_common.dir/src/read_player.c.o.provides.build: CMakeFiles/Cor_com
 
 CMakeFiles/Cor_common.dir/src/read_players.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/read_players.c.o: ../src/read_players.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/Cor_common.dir/src/read_players.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/Cor_common.dir/src/read_players.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/read_players.c.o   -c /Users/dlytvyn/Cor_common/src/read_players.c
 
 CMakeFiles/Cor_common.dir/src/read_players.c.i: cmake_force
@@ -2651,7 +2699,7 @@ CMakeFiles/Cor_common.dir/src/read_players.c.o.provides.build: CMakeFiles/Cor_co
 
 CMakeFiles/Cor_common.dir/src/start_game.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/start_game.c.o: ../src/start_game.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/Cor_common.dir/src/start_game.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/Cor_common.dir/src/start_game.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/start_game.c.o   -c /Users/dlytvyn/Cor_common/src/start_game.c
 
 CMakeFiles/Cor_common.dir/src/start_game.c.i: cmake_force
@@ -2675,7 +2723,7 @@ CMakeFiles/Cor_common.dir/src/start_game.c.o.provides.build: CMakeFiles/Cor_comm
 
 CMakeFiles/Cor_common.dir/src/visual.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/visual.c.o: ../src/visual.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/Cor_common.dir/src/visual.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/Cor_common.dir/src/visual.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/visual.c.o   -c /Users/dlytvyn/Cor_common/src/visual.c
 
 CMakeFiles/Cor_common.dir/src/visual.c.i: cmake_force
@@ -2699,7 +2747,7 @@ CMakeFiles/Cor_common.dir/src/visual.c.o.provides.build: CMakeFiles/Cor_common.d
 
 CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o: CMakeFiles/Cor_common.dir/flags.make
 CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o: ../src/write_2_4_bytes.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o   -c /Users/dlytvyn/Cor_common/src/write_2_4_bytes.c
 
 CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.i: cmake_force
@@ -2823,6 +2871,8 @@ Cor_common_OBJECTS = \
 "CMakeFiles/Cor_common.dir/src/op_ldi.c.o" \
 "CMakeFiles/Cor_common.dir/src/op_lfork.c.o" \
 "CMakeFiles/Cor_common.dir/src/op_live.c.o" \
+"CMakeFiles/Cor_common.dir/src/op_lld.c.o" \
+"CMakeFiles/Cor_common.dir/src/op_lldi.c.o" \
 "CMakeFiles/Cor_common.dir/src/op_or.c.o" \
 "CMakeFiles/Cor_common.dir/src/op_st.c.o" \
 "CMakeFiles/Cor_common.dir/src/op_sti.c.o" \
@@ -2938,6 +2988,8 @@ Cor_common: CMakeFiles/Cor_common.dir/src/op_ld.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/op_ldi.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/op_lfork.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/op_live.c.o
+Cor_common: CMakeFiles/Cor_common.dir/src/op_lld.c.o
+Cor_common: CMakeFiles/Cor_common.dir/src/op_lldi.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/op_or.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/op_st.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/op_sti.c.o
@@ -2951,7 +3003,7 @@ Cor_common: CMakeFiles/Cor_common.dir/src/visual.c.o
 Cor_common: CMakeFiles/Cor_common.dir/src/write_2_4_bytes.c.o
 Cor_common: CMakeFiles/Cor_common.dir/build.make
 Cor_common: CMakeFiles/Cor_common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Linking C executable Cor_common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Linking C executable Cor_common"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Cor_common.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -3059,6 +3111,8 @@ CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_ld.c.o.requ
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_ldi.c.o.requires
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_lfork.c.o.requires
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_live.c.o.requires
+CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_lld.c.o.requires
+CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_lldi.c.o.requires
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_or.c.o.requires
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_st.c.o.requires
 CMakeFiles/Cor_common.dir/requires: CMakeFiles/Cor_common.dir/src/op_sti.c.o.requires

@@ -99,6 +99,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Cor_common.dir/src/op_ldi.c.o"
   "CMakeFiles/Cor_common.dir/src/op_lfork.c.o"
   "CMakeFiles/Cor_common.dir/src/op_live.c.o"
+  "CMakeFiles/Cor_common.dir/src/op_lld.c.o"
+  "CMakeFiles/Cor_common.dir/src/op_lldi.c.o"
   "CMakeFiles/Cor_common.dir/src/op_or.c.o"
   "CMakeFiles/Cor_common.dir/src/op_st.c.o"
   "CMakeFiles/Cor_common.dir/src/op_sti.c.o"
