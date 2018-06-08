@@ -18,10 +18,12 @@ static void	execute_process(t_game *game, t_process *process)
 		op_live(game, process);
 	else if (process->op_id == 1)
 		op_ld(game, process);
+	else if (process->op_id == 2)
+		op_st(game, process);
 	else if (process->op_id == 3)
 		op_add(game, process);
-//	else if (process->op_id == 4)
-//		op_sub(game, process);
+	else if (process->op_id == 4)
+		op_sub(game, process);
 	else if (process->op_id == 5)
 		op_and(game, process);
 	else if (process->op_id == 6)
@@ -59,12 +61,12 @@ int	push_op_id(unsigned char value)
 static void	execute(t_game *game)
 {
 	t_process *process;
-	//int			action;
+	int			action;
 
 	process = game->process;
 	while (process)
 	{
-	//	manage_keys(game, action);
+		manage_keys(game, action);
 		if (process->op_id != 16)
 		{
 			if (process->CYCLE_TO_DONE == op_tab[process->op_id].CYCLES)
@@ -84,7 +86,7 @@ static void	execute(t_game *game)
 		process->op_id = push_op_id(game->area[process->PC].value);
 		game->area[process->PC].PC = 1;
 		process = process->next;
-		//action = getch();
+		action = getch();
 	}
 }
 
@@ -142,7 +144,7 @@ void    my_pause(t_game *game)
 	game->pause = 1;
 	while (1)
 	{
-		//s = getch();
+		s = getch();
 		if (s == 32)
 		{
 			game->pause = 0;
@@ -150,10 +152,10 @@ void    my_pause(t_game *game)
 		}
 		else if (s == 27)
 		{
-		//	endwin();
+			endwin();
 			exit(0);
 		}
-		//visual(game);
+		visual(game);
 	}
 }
 
@@ -163,7 +165,7 @@ void    manage_keys(t_game *game, int action)
 		my_pause(game);
 	else if (action == 27)
 	{
-		//endwin();
+		endwin();
 		exit(0);
 	}
 	else if (action == 43)
@@ -195,15 +197,15 @@ void	start_game(t_game *game)
 	}
 	while (game->process && game->CYCLE < 30000)
 	{
-		//manage_keys(game, action);
+		manage_keys(game, action);
 		execute(game);
 		game->CYCLE++;
 		//game->num_proc = processes_number(game->process);
 		if (game->CYCLE % game->cycle_to_die == 0)
 			check_procces(game);
 		game->num_proc = processes_number(game->process);
-		//visual(game);
-		//action = getch();
+		visual(game);
+		action = getch();
 		//ft_printf("action: %d\n", action);
 	}
 }

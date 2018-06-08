@@ -111,6 +111,7 @@ int				push_op_id(unsigned char value);
 void			op_aff(t_game *game, t_process *process);
 void			op_zjmp(t_game *game, t_process *process);
 void			op_sti(t_game *game, t_process *process);
+void	        op_st(t_game *game, t_process *process);
 void            op_and(t_game *game, t_process *process);
 void            op_live(t_game *game, t_process *process);
 void            op_add(t_game *game, t_process *process);

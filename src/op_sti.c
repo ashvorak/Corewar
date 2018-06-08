@@ -62,7 +62,7 @@ void	op_sti(t_game *game, t_process *process)
 	game->area[tmp + 2].value |= process->REG_NUM[game->area[process->PC + 2].value - 1] >> 8;
 	game->area[tmp + 3].value |= process->REG_NUM[game->area[process->PC + 2].value - 1];
 	
-	process->REG_NUM[game->area[process->PC + 2].value - 1] = 0;
+	//process->REG_NUM[game->area[process->PC + 2].value - 1] = 0;
 
 	game->area[tmp].color = game->area[process->PC].color;
 	game->area[tmp + 1].color = game->area[process->PC].color;
