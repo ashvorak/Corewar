@@ -18,13 +18,15 @@ void	op_zjmp(t_game *game, t_process *process)
 
 	if (game->process->carry)
 	{
-		res = game->area[process->PC + 1].value << 8;
-		res = res | game->area[process->PC + 2].value;
+		res = write_2_bytes(game, process->PC + 1);
 		game->area[process->PC].PC = 0;
-		process->PC = res / IDX_MOD;
+		process->PC += res % IDX_MOD;
 		if (process->PC > 4095)
 			process->PC %= 4096;
 	}
+	else
+	{
+		game->area[process->PC].PC = 0;
+		process->PC++;
+	}
 }
-
-

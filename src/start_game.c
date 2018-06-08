@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:16:10 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/04 11:23:53 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/07 13:16:10 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ static void	execute_process(t_game *game, t_process *process)
 {
 	if (process->op_id == 0)
 		op_live(game, process);
-//	else if (process->op_id == 3)
-//		op_add(game, process);
+	else if (process->op_id == 1)
+		op_ld(game, process);
+	else if (process->op_id == 3)
+		op_add(game, process);
 //	else if (process->op_id == 4)
 //		op_sub(game, process);
 	else if (process->op_id == 5)
@@ -28,6 +30,8 @@ static void	execute_process(t_game *game, t_process *process)
 		op_xor(game, process);
 	else if (process->op_id == 8)
 		op_zjmp(game, process);
+	else if (process->op_id == 9)
+		op_ldi(game, process);
 	else if (process->op_id == 10)
 		op_sti(game, process);
 	else if (process->op_id == 11)
@@ -38,7 +42,7 @@ static void	execute_process(t_game *game, t_process *process)
 		op_aff(game, process);
 }
 
-static int	push_op_id(unsigned char value)
+int	push_op_id(unsigned char value)
 {
 	int i;
 
@@ -55,16 +59,17 @@ static int	push_op_id(unsigned char value)
 static void	execute(t_game *game)
 {
 	t_process *process;
+	int			action;
 
 	process = game->process;
 	while (process)
 	{
+		manage_keys(game, action);
 		if (process->op_id != 16)
 		{
 			if (process->CYCLE_TO_DONE == op_tab[process->op_id].CYCLES)
 			{
 				execute_process(game, process);
-				
 				process->op_id = 16;
 				process->CYCLE_TO_DONE = 0;
 			}
@@ -79,6 +84,7 @@ static void	execute(t_game *game)
 		process->op_id = push_op_id(game->area[process->PC].value);
 		game->area[process->PC].PC = 1;
 		process = process->next;
+		action = getch();
 	}
 }
 
@@ -136,7 +142,6 @@ void    my_pause(t_game *game)
 	game->pause = 1;
 	while (1)
 	{
-		visual(game);
 		s = getch();
 		if (s == 32)
 		{
@@ -148,6 +153,7 @@ void    my_pause(t_game *game)
 			endwin();
 			exit(0);
 		}
+		visual(game);
 	}
 }
 
@@ -192,10 +198,11 @@ void	start_game(t_game *game)
 		manage_keys(game, action);
 		execute(game);
 		game->CYCLE++;
-		game->num_proc = processes_number(game->process);
-		visual(game);
+		//game->num_proc = processes_number(game->process);
 		if (game->CYCLE % game->cycle_to_die == 0)
 			check_procces(game);
+		game->num_proc = processes_number(game->process);
+		visual(game);
 		action = getch();
 		//ft_printf("action: %d\n", action);
 	}

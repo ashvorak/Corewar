@@ -6,7 +6,7 @@
 #    By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/23 11:59:18 by oshvorak          #+#    #+#              #
-#    Updated: 2018/06/02 15:21:32 by oshvorak         ###   ########.fr        #
+#    Updated: 2018/06/07 12:39:01 by oshvorak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,10 @@ SRC =	./src/main.c \
         ./src/op_lfork.c \
         ./src/op_or.c \
         ./src/op_xor.c \
-		#./src/op_add.c \
-		#./src/op_sub.c \
+		./src/op_ld.c \
+		./src/op_add.c \
+		./src/op_ldi.c \
+		./src/op_sub.c
 
 MLIB = make -C lib
 

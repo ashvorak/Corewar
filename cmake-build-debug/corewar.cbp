@@ -128,6 +128,9 @@
 		<Unit filename="/Users/oshvorak/corewar/lib/ft_itoa.c">
 			<Option target="corewar"/>
 		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/lib/ft_itoa_base.c">
+			<Option target="corewar"/>
+		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/lib/ft_listsize.c">
 			<Option target="corewar"/>
 		</Unit>
@@ -359,9 +362,6 @@
 		<Unit filename="/Users/oshvorak/corewar/lib/libft.h">
 			<Option target="corewar"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/Visual.c">
-			<Option target="corewar"/>
-		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/src/check_codage.c">
 			<Option target="corewar"/>
 		</Unit>
@@ -371,7 +371,43 @@
 		<Unit filename="/Users/oshvorak/corewar/src/main.c">
 			<Option target="corewar"/>
 		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_add.c">
+			<Option target="corewar"/>
+		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/src/op_aff.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_and.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_fork.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_ld.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_ldi.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_lfork.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_live.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_or.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_st.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_sti.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_sub.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/op_xor.c">
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/src/op_zjmp.c">
@@ -384,6 +420,12 @@
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/src/start_game.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/visual.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/oshvorak/corewar/src/write_2_4_bytes.c">
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/oshvorak/corewar/CMakeLists.txt">

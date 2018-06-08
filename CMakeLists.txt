@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.9)
-project(Cor_common)
+project(corewar)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Cor_common
+add_executable(corewar
         inc/corewar_vm.h
         inc/op.h
         lib/ft_printf/inc/ft_printf.h
@@ -42,6 +42,7 @@ add_executable(Cor_common
         lib/ft_isdigit.c
         lib/ft_isprint.c
         lib/ft_itoa.c
+        lib/ft_itoa_base.c
         lib/ft_listsize.c
         lib/ft_lstadd.c
         lib/ft_lstdel.c
@@ -100,9 +101,21 @@ add_executable(Cor_common
         src/check_codage.c
         src/fill_area.c
         src/main.c
+        src/op_add.c
         src/op_aff.c
+        src/op_and.c
+        src/op_fork.c
+        src/op_ld.c
+        src/op_lfork.c
+        src/op_live.c
+        src/op_or.c
+        src/op_st.c
+        src/op_sti.c
+        src/op_sub.c
+        src/op_xor.c
         src/op_zjmp.c
         src/read_player.c
         src/read_players.c
         src/start_game.c
-        src/visual.c src/op_live.c src/op_add.c src/op_sub.c src/op_and.c lib/ft_itoa_base.c src/op_sti.c src/write_2_4_bytes.c src/op_or.c src/op_xor.c src/op_st.c src/op_fork.c src/op_lfork.c)
+        src/visual.c
+        src/write_2_4_bytes.c src/op_ldi.c)

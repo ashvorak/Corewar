@@ -20,6 +20,7 @@ t_game	*read_players(char **av, int ac, int i)
 	if (!(game = (t_game*)malloc(sizeof(t_game))))
 		return (0);
 	game->process = NULL;
+	game->CYCLE = 0;
 	j = 0;
 	while (i < ac && j < 4)
 	{
