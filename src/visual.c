@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Visual.c                                           :+:      :+:    :+:   */
+/*   visual.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:55:28 by dlytvyn           #+#    #+#             */
-/*   Updated: 2018/05/31 18:41:53 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/08 12:38:53 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
-/*
+
 void    initialize_colors(void)
 {
 	start_color();
@@ -202,4 +202,3 @@ void visual(t_game *game)
 	right_menu(game);
 	refresh();
 }
-*/

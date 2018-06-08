@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/04 11:06:50 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/08 12:49:44 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	op_sti(t_game *game, t_process *process)
 	game->area[tmp + 2].value |= process->REG_NUM[game->area[process->PC + 2].value - 1] >> 8;
 	game->area[tmp + 3].value |= process->REG_NUM[game->area[process->PC + 2].value - 1];
 	
-	process->REG_NUM[game->area[process->PC + 2].value - 1] = 0;
+	//process->REG_NUM[game->area[process->PC + 2].value - 1] = 0;
 
 	game->area[tmp].color = game->area[process->PC].color;
 	game->area[tmp + 1].color = game->area[process->PC].color;

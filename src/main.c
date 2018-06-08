@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:26:00 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/01 14:40:32 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/08 12:38:36 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ int	main(int ac, char **av)
 	t_game	*game;
 
 	number = 2;
-	//initscr();
-	//noecho();
-	//cbreak();
-	//nodelay(stdscr, TRUE);
-	//curs_set(FALSE);
+	initscr();
+	noecho();
+	cbreak();
+	nodelay(stdscr, TRUE);
+	curs_set(FALSE);
 	game = read_players(av, ac, 1);
 	start_game(game);
-	//nodelay(stdscr, FALSE);
-//	manage_keys(game, getch());
-//	endwin();
+	nodelay(stdscr, FALSE);
+	manage_keys(game, getch());
+	endwin();
 	return (0);
 }
