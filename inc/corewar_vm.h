@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/07 12:38:29 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/08 13:38:38 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,8 @@ void            op_fork(t_game *game, t_process *process);
 void            op_lfork(t_game *game, t_process *process);
 void			op_ld(t_game *game, t_process *process);
 void			op_ldi(t_game *game, t_process *process);
+void			op_lld(t_game *game, t_process *process);
+void			op_lldi(t_game *game, t_process *process);
 
 int				ret_arg(int codage, int MASK, int move);
 unsigned int	write_2_bytes(t_game *game, int PC);
