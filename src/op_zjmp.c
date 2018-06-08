@@ -20,7 +20,7 @@ void	op_zjmp(t_game *game, t_process *process)
 	{
 		res = write_2_bytes(game, process->PC + 1);
 		game->area[process->PC].PC = 0;
-		process->PC += res % IDX_MOD;
+		process->PC += res;
 		if (process->PC > 4095)
 			process->PC %= 4096;
 	}

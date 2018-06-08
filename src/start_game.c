@@ -18,10 +18,12 @@ static void	execute_process(t_game *game, t_process *process)
 		op_live(game, process);
 	else if (process->op_id == 1)
 		op_ld(game, process);
+	else if (process->op_id == 2)
+		op_st(game, process);
 	else if (process->op_id == 3)
 		op_add(game, process);
-//	else if (process->op_id == 4)
-//		op_sub(game, process);
+	else if (process->op_id == 4)
+		op_sub(game, process);
 	else if (process->op_id == 5)
 		op_and(game, process);
 	else if (process->op_id == 6)

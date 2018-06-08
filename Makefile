@@ -22,6 +22,7 @@ SRC =	./src/main.c \
 		./src/op_aff.c \
 		./src/op_zjmp.c \
 		./src/op_sti.c \
+		./src/op_st.c \
 		./src/write_2_4_bytes.c \
 	    ./src/op_live.c \
 	    ./src/op_and.c \
@@ -32,7 +33,7 @@ SRC =	./src/main.c \
 		./src/op_ld.c \
 		./src/op_add.c \
 		./src/op_ldi.c \
-		./src/op_sub.c
+		./src/op_sub.c \
 
 MLIB = make -C lib
 

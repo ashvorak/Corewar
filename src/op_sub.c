@@ -16,9 +16,8 @@ void    op_sub(t_game *game, t_process *process)
 		process->op_id = 16;
 		return;
 	}
-	res = game->area[process->PC + 2].value - game->area[process->PC + 3].value;
-	//ft_strdel(&game->area[process->PC + 4].value);
-	//game->area[process->PC + 4].value = res;
+	res = process->REG_NUM[game->area[process->PC + 2].value - 1] - process->REG_NUM[game->area[process->PC + 3].value - 1];
+	process->REG_NUM[game->area[process->PC + 4].value - 1] = res;
 	if (res == 0)
 		process->carry = 1;
 	else
