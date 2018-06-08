@@ -13,11 +13,13 @@ void    op_xor(t_game *game, t_process *process)
 	
 	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
 		return ;
-	PC_buf = 1;
-	PC_buf += write_arg(&arg1, game, ret_arg(game->area[process->PC + 1].value, MASK_1, 6), process->PC);
-	PC_buf += write_arg(&arg2, game, ret_arg(game->area[process->PC + 1].value, MASK_2, 4), PC_buf);
-	arg3 = game->area[PC_buf + 2].value;
-	PC_buf += 2;
+	PC_buf = 2;
+	arg1 = write_arg(process, game, ret_arg(game->area[process->PC + 1].value, MASK_1, 6), process->PC + 2);
+	PC_buf += plus_PC(game->area[process->PC + 1].value);
+	arg2 = write_arg(process, game, ret_arg(game->area[process->PC + 1].value, MASK_2, 4), PC_buf);
+	PC_buf += plus_PC(game->area[process->PC + 1].value);
+	arg3 = game->area[PC_buf].value;
+	PC_buf += 1;
 	process->REG_NUM[arg3] = arg1 ^ arg2;
 	if (process->REG_NUM[arg3] == 0)
 		process->carry = 1;

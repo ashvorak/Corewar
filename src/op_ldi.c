@@ -18,7 +18,7 @@ void    op_ldi(t_game *game, t_process *process)
 	unsigned int 	arg2;
 	unsigned int 	arg3;
 	unsigned int 	codage;
-	int 	t_ind;
+	int 	        t_ind;
 	int 			PC_buf;
 
 	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
@@ -34,7 +34,7 @@ void    op_ldi(t_game *game, t_process *process)
 	if (ret_arg(codage, MASK_1, 6) == T_DIR)
 	{
 		arg1 = write_2_bytes(game, process->PC + 2);
-		game->area[process->PC].PC = 0;
+	//	game->area[process->PC].PC = 0;
 		process->PC += 4;
 	}
 	else if (ret_arg(game->area[process->PC + 1].value, MASK_1, 6) == T_IND)
@@ -55,9 +55,9 @@ void    op_ldi(t_game *game, t_process *process)
 	}
 	else
 	{
-		arg2 = process->REG_NUM[game->area[process->PC].value];
+		arg2 = process->REG_NUM[game->area[process->PC].value - 1];
 		process->PC += 1;
 	}
 	arg3 = game->area[process->PC++].value;
-	process->REG_NUM[arg3 - 1] = write_4_bytes(game, ((arg1 + arg2) % IDX_MOD) + PC_buf);
+	process->REG_NUM[arg3 - 1] = write_4_bytes(game, ((arg1 + arg2)) + PC_buf);
 }

@@ -48,6 +48,7 @@ void	push_procces(t_game *game, int location, unsigned int reg1)
 	process->op_id = 16;
 	process->CYCLE_TO_DONE = 1;
 	process->carry = 0;
+	process->num = 1;
 	process->next = NULL;
 	process->prev = NULL;
 	if (game->process)

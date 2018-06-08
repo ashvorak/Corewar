@@ -28,6 +28,8 @@
 # define MASK_2 48
 # define MASK_3 12
 
+int number;
+
 typedef struct	s_area
 {
 	unsigned char	value;
@@ -56,6 +58,7 @@ typedef struct	s_process
 	int					live;
 	int					op_id;
 	int					CYCLE_TO_DONE;
+	int                 num;
 	struct s_process	*next;
 	struct s_process	*prev;
 }				t_process;
@@ -100,6 +103,7 @@ void            clone_process(t_game *game, t_process *process, int location);
 
 int		        what_color(int col);
 unsigned int    write_arg(t_process *process, t_game *game, int tt, int PC);
+int             plus_PC(int codage);
 void            my_pause(t_game *game);
 void            manage_keys(t_game *game, int action);
 int				push_op_id(unsigned char value);

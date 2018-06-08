@@ -37,11 +37,11 @@ void	op_st(t_game *game, t_process *process)
 	}
 	else if(ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_REG)
 	{
-		process->REG_NUM[game->area[process->PC + 3].value] = game->area[process->PC + 2].value;
-		//arg2 = game->area[process->PC + 3].value;
+		process->REG_NUM[game->area[process->PC + 3].value - 1] = process->REG_NUM[game->area[process->PC + 2].value - 1];
 		PC_jump += 1;
 	}
-	
 	game->area[process->PC].PC = 0;
 	process->PC += PC_jump;
 }
+
+// записати 0 в той регістр з якого витягнули значення?

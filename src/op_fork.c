@@ -31,6 +31,7 @@ void                clone_process(t_game *game, t_process *process, int location
 	clone->op_id = push_op_id(game->area[clone->PC].value);
 	clone->CYCLE_TO_DONE = 0;
 	clone->carry = process->carry;
+	clone->num = number++;
 	clone->next = NULL;
 	clone->prev = NULL;
 	if (game->process)
@@ -52,5 +53,5 @@ void                op_fork(t_game *game, t_process *process)
 	game->area[process->PC].PC = 0;
 	clone_process(game, process, (arg % IDX_MOD) + process->PC);
 	process->PC += 3;
-	game->area[game->process->PC].PC = 1;
+	//game->area[game->process->PC].PC = 1;
 }

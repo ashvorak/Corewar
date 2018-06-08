@@ -28,11 +28,11 @@ void    op_ld(t_game *game, t_process *process)
 	}
 	else
 	{
-		t_reg = game->area[process->PC + 3].value;
+		t_reg = game->area[process->PC + 4].value;
 		t_ind = write_2_bytes(game, process->PC + 2);
 		process->REG_NUM[t_reg - 1] = write_4_bytes(game, process->PC + t_ind);
 		game->area[process->PC].PC = 0;
 		process->PC += 5;
 	}
-	process->carry = game->process->REG_NUM[t_reg] == 0 ? 1 : 0;
+	process->carry = game->process->REG_NUM[t_reg - 1] == 0 ? 1 : 0;
 }

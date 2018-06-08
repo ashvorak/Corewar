@@ -317,6 +317,34 @@ CMakeFiles/Cor_common.dir/src/op_and.c.o: ../lib/get_next_line/get_next_line.h
 CMakeFiles/Cor_common.dir/src/op_and.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/op_and.c.o: ../src/op_and.c
 
+CMakeFiles/Cor_common.dir/src/op_fork.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_fork.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_fork.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_fork.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_fork.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_fork.c.o: ../src/op_fork.c
+
+CMakeFiles/Cor_common.dir/src/op_ld.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_ld.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_ld.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_ld.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_ld.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_ld.c.o: ../src/op_ld.c
+
+CMakeFiles/Cor_common.dir/src/op_ldi.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_ldi.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_ldi.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_ldi.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_ldi.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_ldi.c.o: ../src/op_ldi.c
+
+CMakeFiles/Cor_common.dir/src/op_lfork.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_lfork.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_lfork.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_lfork.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_lfork.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_lfork.c.o: ../src/op_lfork.c
+
 CMakeFiles/Cor_common.dir/src/op_live.c.o: ../inc/corewar_vm.h
 CMakeFiles/Cor_common.dir/src/op_live.c.o: ../inc/op.h
 CMakeFiles/Cor_common.dir/src/op_live.c.o: ../lib/ft_printf/inc/ft_printf.h
