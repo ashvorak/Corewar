@@ -109,6 +109,8 @@ add_executable(Cor_common
         src/op_ldi.c
         src/op_lfork.c
         src/op_live.c
+        src/op_lld.c
+        src/op_lldi.c
         src/op_or.c
         src/op_st.c
         src/op_sti.c

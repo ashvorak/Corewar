@@ -12,7 +12,7 @@
 
 #include "../inc/corewar_vm.h"
 
-int	players_num(t_game *game)
+int				players_num(t_game *game)
 {
 	int i;
 
@@ -22,7 +22,7 @@ int	players_num(t_game *game)
 	return (i - 1);
 }
 
-static  void   fill_reg(t_process *process)
+static	void	fill_reg(t_process *process)
 {
 	int i;
 
@@ -34,7 +34,7 @@ static  void   fill_reg(t_process *process)
 	}
 }
 
-void	push_procces(t_game *game, int location, unsigned int reg1)
+void			push_procces(t_game *game, int location, unsigned int reg1)
 {
 	t_process *tmp;
 	t_process *process;
@@ -62,42 +62,38 @@ void	push_procces(t_game *game, int location, unsigned int reg1)
 		game->process = process;
 }
 
-static void fill_players(t_game *game)
+static	void	fill_players(t_game *game)
 {
-	int		i;
-	int		j;
-	int		n;
-	int		pn;
-	unsigned int    reg1;
+	int				i;
+	int				j;
+	int				n;
+	int				pn;
+	unsigned int	reg1;
 
-	i = 0;
-	n = 0;
+	i = -1;
+	n = -1;
 	reg1 = 4294967295;
 	pn = players_num(game);
-	while (i < MEM_SIZE)
+	while (++i < MEM_SIZE)
 	{
 		j = 0;
-		if (n <= pn)
+		if (++n <= pn)
 		{
 			i = (0 + (MEM_SIZE / (pn + 1))) * n;
 			push_procces(game, i, reg1--);
 			while (j < (int)game->players[n].prog_size)
 			{
-				game->area[i].value = game->players[n].opcode[j];
+				game->area[i].value = game->players[n].opcode[j++];
 				game->area[i].color = n;
-				game->area[i].player = 1;
-				i++;
-				j++;
+				game->area[i++].player = 1;
 			}
-			n++;
 		}
-		i++;
 	}
 }
 
-void	fill_area(t_game *game)
+void			fill_area(t_game *game)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	fill_players(game);

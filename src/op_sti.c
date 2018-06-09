@@ -24,7 +24,7 @@ void	op_sti(t_game *game, t_process *process)
 		return ;
 	if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_DIR)
 	{
-		arg2 = write_2_bytes(game, process->PC + 3);
+		arg2 = (short)write_2_bytes(game, process->PC + 3);
 		PC_jump += 2;
 	}
 	else if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)
@@ -48,8 +48,7 @@ void	op_sti(t_game *game, t_process *process)
 		PC_jump++;
 	}
 	tmp = (process->PC + ((arg2 + arg3)));
-	if (tmp > 4095)
-		tmp %= 4096;
+	tmp %= 4096;
 	game->area[tmp].value = 0;
 	game->area[tmp + 1].value = 0;
 	game->area[tmp + 2].value = 0;

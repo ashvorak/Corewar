@@ -12,7 +12,7 @@
 
 #include "../inc/corewar_vm.h"
 
-static void	execute_process(t_game *game, t_process *process)
+static	void	execute_process(t_game *game, t_process *process)
 {
 	if (process->op_id == 0)
 		op_live(game, process);
@@ -48,7 +48,7 @@ static void	execute_process(t_game *game, t_process *process)
 		op_aff(game, process);
 }
 
-int	push_op_id(unsigned char value)
+int				push_op_id(unsigned char value)
 {
 	int i;
 
@@ -62,9 +62,9 @@ int	push_op_id(unsigned char value)
 	return (16);
 }
 
-static void	execute(t_game *game)
+static	void	execute(t_game *game)
 {
-	t_process *process;
+	t_process	*process;
 	int			action;
 
 	process = game->process;
@@ -94,17 +94,17 @@ static void	execute(t_game *game)
 	}
 }
 
-static void check_procces(t_game *game)
+static	void	check_procces(t_game *game)
 {
-	t_process *tmp;
-	int         live;
-	
+	t_process	*tmp;
+	int			live;
+
 	live = 0;
 	game->checks++;
 	tmp = game->process;
 	while (tmp)
 	{
-		live += tmp->live;
+		//live += tmp->live;
 		if (!tmp->live)
 		{
 			if (tmp->prev)
@@ -129,14 +129,16 @@ static void check_procces(t_game *game)
 			tmp = tmp->next;
 		}
 	}
+	/*
 	if (live >= 21 || game->checks == MAX_CHECKS)
 	{
 		game->cycle_to_die -= CYCLE_DELTA;
 		game->checks = 0;
 	}
+	 */
 }
 
-int     processes_number(t_process *process)
+int				processes_number(t_process *process)
 {
 	int i;
 	
@@ -149,7 +151,7 @@ int     processes_number(t_process *process)
 	return (i);
 }
 
-void    my_pause(t_game *game)
+void			my_pause(t_game *game)
 {
 	int s;
 	
@@ -172,7 +174,7 @@ void    my_pause(t_game *game)
 	}
 }
 
-void    manage_keys(t_game *game, int action)
+void			manage_keys(t_game *game, int action)
 {
 	if (action == 32 || game->pause == 1)
 		my_pause(game);
@@ -193,7 +195,7 @@ void    manage_keys(t_game *game, int action)
 	}
 }
 
-void	start_game(t_game *game)
+void			start_game(t_game *game)
 {
 	t_process	*process;
 	int         action;
@@ -214,12 +216,10 @@ void	start_game(t_game *game)
 		manage_keys(game, action);
 		execute(game);
 		game->CYCLE++;
-		//game->num_proc = processes_number(game->process);
 		if (game->CYCLE % game->cycle_to_die == 0)
 			check_procces(game);
 		game->num_proc = processes_number(game->process);
 		visual(game);
 		action = getch();
-		//ft_printf("action: %d\n", action);
 	}
 }

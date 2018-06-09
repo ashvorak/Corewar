@@ -17,7 +17,7 @@ static  t_process   *copy_reg(t_process *clone, t_process *process)
 	return (clone);
 }
 
-void                clone_process(t_game *game, t_process *process, int location)
+void                clone_process(t_game *game, t_process *process, unsigned int location)
 {
 	t_process *tmp;
 	t_process *clone;
@@ -47,10 +47,10 @@ void                clone_process(t_game *game, t_process *process, int location
 
 void                op_fork(t_game *game, t_process *process)
 {
-	int arg;
+	unsigned int arg;
 	
-	arg = write_2_bytes(game, process->PC + 1);
+	arg = write_2_bytes(game, (process->PC + 1) % MEM_SIZE);
 	game->area[process->PC].PC = 0;
-	clone_process(game, process, (arg % IDX_MOD) + process->PC);
+	clone_process(game, process, (process->PC + ((short)arg % IDX_MOD)) % MEM_SIZE);
 	process->PC += 3;
 }

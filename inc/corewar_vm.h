@@ -54,7 +54,7 @@ typedef struct	s_op
 typedef struct	s_process
 {
 	unsigned int		REG_NUM[REG_NUMBER];
-	int					PC;
+	unsigned int		PC;
 	int					carry;
 	int					live;
 	int					op_id;
@@ -101,9 +101,8 @@ void			visual(t_game *game);
 int				players_num(t_game *game);
 int				check_codege(int op_id, int codage);
 void			start_game(t_game *game);
-void            clone_process(t_game *game, t_process *process, int location);
+void            clone_process(t_game *game, t_process *process, unsigned int location);
 
-int		        what_color(int col);
 unsigned int    write_arg(t_process *process, t_game *game, int tt, int PC);
 int				plus_PC(int codage, int MASK, int move);
 void            my_pause(t_game *game);

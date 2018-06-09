@@ -18,7 +18,7 @@ void	ft_error(void)
 	exit(1);
 }
 
-int	main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	t_game	*game;
 
