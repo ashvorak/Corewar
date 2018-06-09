@@ -17,7 +17,7 @@ static  t_process   *copy_reg(t_process *clone, t_process *process)
 	return (clone);
 }
 
-void                clone_process(t_game *game, t_process *process, int location)
+void                clone_process(t_game *game, t_process *process, unsigned int location)
 {
 	t_process *tmp;
 	t_process *clone;
