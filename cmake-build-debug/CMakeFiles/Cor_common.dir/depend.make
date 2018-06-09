@@ -352,6 +352,20 @@ CMakeFiles/Cor_common.dir/src/op_live.c.o: ../lib/get_next_line/get_next_line.h
 CMakeFiles/Cor_common.dir/src/op_live.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/op_live.c.o: ../src/op_live.c
 
+CMakeFiles/Cor_common.dir/src/op_lld.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_lld.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_lld.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_lld.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_lld.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_lld.c.o: ../src/op_lld.c
+
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o: ../src/op_lldi.c
+
 CMakeFiles/Cor_common.dir/src/op_or.c.o: ../inc/corewar_vm.h
 CMakeFiles/Cor_common.dir/src/op_or.c.o: ../inc/op.h
 CMakeFiles/Cor_common.dir/src/op_or.c.o: ../lib/ft_printf/inc/ft_printf.h

@@ -12,7 +12,12 @@ void    op_xor(t_game *game, t_process *process)
 	unsigned int    arg3;
 	
 	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
+	{
+		game->area[process->PC].PC = 0;
+		process->PC++;
+		process->op_id = 16;
 		return ;
+	}
 	PC_buf = 2;
 	arg1 = write_arg(process, game, ret_arg(game->area[process->PC + 1].value, MASK_1, 6), process->PC + PC_buf);
 	PC_buf += plus_PC(game->area[process->PC + 1].value, MASK_1, 6);

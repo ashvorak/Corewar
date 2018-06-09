@@ -6,8 +6,10 @@
 
 void                op_lfork(t_game *game, t_process *process)
 {
-	int arg;
+	unsigned int arg;
 	
-	arg = write_2_bytes(game, process->PC + 1);
-	clone_process(game, process, arg);
+	arg = write_2_bytes(game, (process->PC + 1) % MEM_SIZE);
+	game->area[process->PC].PC = 0;
+	clone_process(game, process, (process->PC + ((short)arg)) % MEM_SIZE);
+	process->PC += 3;
 }

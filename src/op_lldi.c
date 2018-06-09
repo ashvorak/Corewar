@@ -35,12 +35,13 @@ void    op_lldi(t_game *game, t_process *process)
 	{
 		arg1 = write_2_bytes(game, process->PC + 2);
 	//	game->area[process->PC].PC = 0;
+		arg1 = (short)arg1;
 		process->PC += 4;
 	}
 	else if (ret_arg(game->area[process->PC + 1].value, MASK_1, 6) == T_IND)
 	{
 		t_ind = write_2_bytes(game, process->PC + 2);
-		arg1 = write_4_bytes(game, (t_ind % IDX_MOD) + process->PC);
+		arg1 = write_4_bytes(game, ((short)t_ind % IDX_MOD) + process->PC);
 		process->PC += 4;
 	}
 	else
@@ -51,6 +52,7 @@ void    op_lldi(t_game *game, t_process *process)
 	if (ret_arg(codage, MASK_2, 4) == T_DIR)
 	{
 		arg2 = write_2_bytes(game, process->PC);
+		arg2 = (short)arg2;
 		process->PC += 2;
 	}
 	else

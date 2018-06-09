@@ -31,14 +31,13 @@ void                clone_process(t_game *game, t_process *process, unsigned int
 	clone->op_id = push_op_id(game->area[clone->PC].value);
 	clone->CYCLE_TO_DONE = 0;
 	clone->carry = process->carry;
+	clone->color = process->color;
 	clone->num = number++;
 	clone->next = NULL;
-	clone->prev = NULL;
 	if (game->process)
 	{
 		tmp = game->process;
 		clone->next = tmp;
-		tmp->prev = clone;
 		game->process = clone;
 	}
 	else

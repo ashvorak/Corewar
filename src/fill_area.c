@@ -34,7 +34,7 @@ static	void	fill_reg(t_process *process)
 	}
 }
 
-void			push_procces(t_game *game, int location, unsigned int reg1)
+void			push_procces(t_game *game, unsigned int location, unsigned int reg1, int num)
 {
 	t_process *tmp;
 	t_process *process;
@@ -48,14 +48,13 @@ void			push_procces(t_game *game, int location, unsigned int reg1)
 	process->op_id = 16;
 	process->CYCLE_TO_DONE = 1;
 	process->carry = 0;
+	process->color = num;
 	process->num = 1;
 	process->next = NULL;
-	process->prev = NULL;
 	if (game->process)
 	{
 		tmp = game->process;
 		process->next = tmp;
-		tmp->prev = process;
 		game->process = process;
 	}
 	else
@@ -80,7 +79,7 @@ static	void	fill_players(t_game *game)
 		if (++n <= pn)
 		{
 			i = (0 + (MEM_SIZE / (pn + 1))) * n;
-			push_procces(game, i, reg1--);
+			push_procces(game, i, reg1--, n);
 			while (j < (int)game->players[n].prog_size)
 			{
 				game->area[i].value = game->players[n].opcode[j++];

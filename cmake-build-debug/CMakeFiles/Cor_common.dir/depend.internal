@@ -352,6 +352,20 @@ CMakeFiles/Cor_common.dir/src/op_live.c.o
  /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
  /Users/dlytvyn/Cor_common/lib/libft.h
  /Users/dlytvyn/Cor_common/src/op_live.c
+CMakeFiles/Cor_common.dir/src/op_lld.c.o
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
+ /Users/dlytvyn/Cor_common/src/op_lld.c
+CMakeFiles/Cor_common.dir/src/op_lldi.c.o
+ /Users/dlytvyn/Cor_common/inc/corewar_vm.h
+ /Users/dlytvyn/Cor_common/inc/op.h
+ /Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h
+ /Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h
+ /Users/dlytvyn/Cor_common/lib/libft.h
+ /Users/dlytvyn/Cor_common/src/op_lldi.c
 CMakeFiles/Cor_common.dir/src/op_or.c.o
  /Users/dlytvyn/Cor_common/inc/corewar_vm.h
  /Users/dlytvyn/Cor_common/inc/op.h
