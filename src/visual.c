@@ -6,13 +6,13 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:55:28 by dlytvyn           #+#    #+#             */
-/*   Updated: 2018/06/08 12:38:53 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/09 16:32:15 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <printf.h>
 #include "../inc/corewar_vm.h"
-
+/*
 static	void	initialize_colors(void)
 {
 	start_color();
@@ -233,3 +233,4 @@ void			visual(t_game *game)
 	right_menu(game);
 	refresh();
 }
+*/
