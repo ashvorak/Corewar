@@ -22,11 +22,11 @@ static	void	initialize_colors(void)
 	init_pair(4, COLOR_BLUE, COLOR_BLACK);
 	init_pair(5, COLOR_RED, COLOR_BLACK);
 	init_pair(6, COLOR_YELLOW, COLOR_BLACK);
-	init_pair(7, COLOR_WHITE, COLOR_WHITE);
-	init_pair(8, COLOR_GREEN, COLOR_WHITE);
-	init_pair(9, COLOR_BLUE, COLOR_WHITE);
-	init_pair(10, COLOR_RED, COLOR_WHITE);
-	init_pair(11, COLOR_YELLOW, COLOR_WHITE);
+	init_pair(7, COLOR_BLACK, COLOR_WHITE);
+	init_pair(8, COLOR_BLACK, COLOR_GREEN);
+	init_pair(9, COLOR_BLACK, COLOR_BLUE);
+	init_pair(10, COLOR_BLACK, COLOR_RED);
+	init_pair(11, COLOR_BLACK, COLOR_YELLOW);
 }
 
 static	int		what_color(int col)
