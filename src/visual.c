@@ -6,13 +6,13 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:55:28 by dlytvyn           #+#    #+#             */
-/*   Updated: 2018/06/09 16:32:15 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/09 18:48:54 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <printf.h>
 #include "../inc/corewar_vm.h"
-/*
+
 static	void	initialize_colors(void)
 {
 	start_color();
@@ -22,11 +22,11 @@ static	void	initialize_colors(void)
 	init_pair(4, COLOR_BLUE, COLOR_BLACK);
 	init_pair(5, COLOR_RED, COLOR_BLACK);
 	init_pair(6, COLOR_YELLOW, COLOR_BLACK);
-	init_pair(7, COLOR_WHITE, COLOR_WHITE);
-	init_pair(8, COLOR_GREEN, COLOR_WHITE);
-	init_pair(9, COLOR_BLUE, COLOR_WHITE);
-	init_pair(10, COLOR_RED, COLOR_WHITE);
-	init_pair(11, COLOR_YELLOW, COLOR_WHITE);
+	init_pair(7, COLOR_BLACK, COLOR_WHITE);
+	init_pair(8, COLOR_BLACK, COLOR_GREEN);
+	init_pair(9, COLOR_BLACK, COLOR_BLUE);
+	init_pair(10, COLOR_BLACK, COLOR_RED);
+	init_pair(11, COLOR_BLACK, COLOR_YELLOW);
 }
 
 static	int		what_color(int col)
@@ -233,4 +233,3 @@ void			visual(t_game *game)
 	right_menu(game);
 	refresh();
 }
-*/

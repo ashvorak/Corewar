@@ -6,7 +6,7 @@
 #    By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/23 11:59:18 by oshvorak          #+#    #+#              #
-#    Updated: 2018/06/08 13:39:01 by oshvorak         ###   ########.fr        #
+#    Updated: 2018/06/09 18:28:31 by oshvorak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRC =	./src/main.c \
 		./src/op_ldi.c \
 		./src/op_lld.c \
 		./src/op_lldi.c \
-		./src/op_sub.c
+		./src/op_sub.c \
+		./src/jump_pc.c
 
 MLIB = make -C lib
 
