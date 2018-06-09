@@ -21,10 +21,16 @@ void	op_sti(t_game *game, t_process *process)
 
 	PC_jump = 3;
 	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
+	{
+		game->area[process->PC].PC = 0;
+		process->PC++;
+		process->op_id = 16;
 		return ;
+	}
 	if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_DIR)
 	{
-		arg2 = (short)write_2_bytes(game, process->PC + 3);
+		arg2 = write_2_bytes(game, process->PC + 3);
+		arg2 = (short)arg2;
 		PC_jump += 2;
 	}
 	else if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)
@@ -40,6 +46,7 @@ void	op_sti(t_game *game, t_process *process)
 	if (ret_arg(game->area[process->PC + 1].value, MASK_3, 2) == T_DIR)
 	{
 		arg3 = write_2_bytes(game, PC_jump + process->PC);
+		arg3 = (short)arg3;
 		PC_jump += 2;
 	}
 	else
@@ -47,8 +54,7 @@ void	op_sti(t_game *game, t_process *process)
 		arg3 = process->REG_NUM[game->area[process->PC + PC_jump].value - 1];
 		PC_jump++;
 	}
-	tmp = (process->PC + ((arg2 + arg3)));
-	tmp %= 4096;
+	tmp = (process->PC + ((arg2 + arg3))) % MEM_SIZE;
 	game->area[tmp].value = 0;
 	game->area[tmp + 1].value = 0;
 	game->area[tmp + 2].value = 0;
@@ -61,10 +67,10 @@ void	op_sti(t_game *game, t_process *process)
 	game->area[tmp + 1].bold = 10;
 	game->area[tmp + 2].bold = 10;
 	game->area[tmp + 3].bold = 10;
-	game->area[tmp].color = game->area[process->PC].color;
-	game->area[tmp + 1].color = game->area[process->PC].color;
-	game->area[tmp + 2].color = game->area[process->PC].color;
-	game->area[tmp + 3].color = game->area[process->PC].color;
+	game->area[tmp].color = process->color;
+	game->area[tmp + 1].color = process->color;
+	game->area[tmp + 2].color = process->color;
+	game->area[tmp + 3].color = process->color;
 	game->area[process->PC].PC = 0;
 	process->PC += PC_jump;
 }

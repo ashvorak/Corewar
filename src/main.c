@@ -29,6 +29,7 @@ int		main(int ac, char **av)
 	//nodelay(stdscr, TRUE);
 	//curs_set(FALSE);
 	game = read_players(av, ac, 1);
+	game->players_num = players_num(game) + 1;
 	start_game(game);
 	//nodelay(stdscr, FALSE);
 	//manage_keys(game, getch());

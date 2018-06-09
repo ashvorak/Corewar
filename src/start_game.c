@@ -96,6 +96,7 @@ static	void	execute(t_game *game)
 
 static	void	check_procces(t_game *game)
 {
+<<<<<<< HEAD
 	t_process	*tmp;
 	t_process	*buf;
 	int			live;
@@ -104,13 +105,23 @@ static	void	check_procces(t_game *game)
 	game->checks+
 
 			+;
+=======
+	t_process    *tmp;
+	t_process    *buf;
+	int          i;
+	
+	game->checks++;
+>>>>>>> 577445d38330e6d1a9786ece023dc46a218e0dab
 	tmp = game->process;
 	buf = NULL;
 	while (tmp)
 	{
-		//live += tmp->live;
 		if (!tmp->live)
 		{
+<<<<<<< HEAD
+=======
+			game->area[tmp->PC].PC = 0;
+>>>>>>> 577445d38330e6d1a9786ece023dc46a218e0dab
 			if (buf)
 			{
 				buf->next = tmp->next;
@@ -126,18 +137,25 @@ static	void	check_procces(t_game *game)
 		}
 		else
 		{
+			game->players[tmp->color].count_lives += tmp->live;
 			tmp->live = 0;
 			buf = tmp;
 			tmp = tmp->next;
 		}
 	}
-	/*
-	if (live >= 21 || game->checks == MAX_CHECKS)
+	i = 0;
+	while (i < game->players_num)
 	{
-		game->cycle_to_die -= CYCLE_DELTA;
-		game->checks = 0;
+		if (game->players[i].count_lives > 21 || game->checks == MAX_CHECKS)
+		{
+			game->cycle_to_die -= CYCLE_DELTA;
+			game->checks = 0;
+		}
+		i++;
 	}
-	 */
+	i = 0;
+	while (i < game->players_num)
+		game->players[i++].count_lives = 0;
 }
 
 int				processes_number(t_process *process)
@@ -201,6 +219,7 @@ void			start_game(t_game *game)
 {
 	t_process	*process;
 	int         action;
+	int         i;
 	
 	game->pause = 1;
 	game->speed = 2000;
@@ -213,15 +232,25 @@ void			start_game(t_game *game)
 		process->op_id = push_op_id(game->area[process->PC].value);
 		process = process->next;
 	}
+	i = 1;
 	while (game->process && game->CYCLE < 30000)
 	{
 		//manage_keys(game, action);
 		execute(game);
 		game->CYCLE++;
-		if (game->CYCLE % game->cycle_to_die == 0)
+		if (i % game->cycle_to_die == 0)
+		{
 			check_procces(game);
+			i = 0;
+		}
 		game->num_proc = processes_number(game->process);
+<<<<<<< HEAD
 		//visual(game);
 		//action = getch();
+=======
+		visual(game);
+		action = getch();
+		i++;
+>>>>>>> 577445d38330e6d1a9786ece023dc46a218e0dab
 	}
 }

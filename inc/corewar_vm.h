@@ -58,10 +58,10 @@ typedef struct	s_process
 	int					carry;
 	int					live;
 	int					op_id;
+	int                 color;
 	int					CYCLE_TO_DONE;
 	int                 num;
 	struct s_process	*next;
-	struct s_process	*prev;
 }				t_process;
 
 typedef struct	s_player
@@ -74,6 +74,7 @@ typedef struct	s_player
 	unsigned char		opcode[MEM_SIZE / 6];
 	int					color;
 	int                 live;
+	int                 count_lives;
 	int                 last_live;
 	int                 lives_in_CP;
 }				t_player;
@@ -84,6 +85,7 @@ typedef struct	s_game
 	t_area			area[MEM_SIZE + 1];
 	t_process		*process;
 	int             num_proc;
+	int             players_num;
 	size_t			CYCLE;
 	size_t          cycle_to_die;
 	int             pause;
@@ -96,7 +98,7 @@ void			ft_error(void);
 t_game			*read_players(char **av, int ac, int i);
 t_player		read_player(char *file);
 void			fill_area(t_game *game);
-void	        push_procces(t_game *game, int location, unsigned int reg1);
+void			push_procces(t_game *game, unsigned int location, unsigned int reg1, int num);
 void			visual(t_game *game);
 int				players_num(t_game *game);
 int				check_codege(int op_id, int codage);
