@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/09 18:25:57 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/11 18:51:46 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	op_sti(t_game *game, t_process *process)
 {
 	unsigned int	arg2;
 	unsigned int	arg3;
+	unsigned int	t_ind;
 	int 			PC_jump;
 	unsigned int    tmp;
 
@@ -35,11 +36,19 @@ void	op_sti(t_game *game, t_process *process)
 	}
 	else if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)
 	{
-		arg2 = write_4_bytes(game, game->area[process->PC + 3].value % IDX_MOD);
+		t_ind = write_2_bytes(game, game->area[process->PC + 3].value);
+		arg2 = write_4_bytes(game, t_ind % IDX_MOD);
 		PC_jump += 2;
 	}
 	else
 	{
+		if (game->area[process->PC + 3].value > 16 || game->area[process->PC + 3].value < 1)
+		{
+			game->area[process->PC].PC = 0;
+			process->PC += jump_pc(game->area[process->PC + 1].value, process->op_id);
+			process->op_id = 16;
+			return ;
+		}	
 		arg2 = process->REG_NUM[game->area[process->PC + 3].value - 1];
 		PC_jump += 1;
 	}
@@ -51,10 +60,19 @@ void	op_sti(t_game *game, t_process *process)
 	}
 	else
 	{
+		if (game->area[process->PC + PC_jump].value > 16 || game->area[process->PC + PC_jump].value < 1)
+		{
+			game->area[process->PC].PC = 0;
+			process->PC += jump_pc(game->area[process->PC + 1].value, process->op_id);
+			process->op_id = 16;
+			return ;
+		}	
 		arg3 = process->REG_NUM[game->area[process->PC + PC_jump].value - 1];
 		PC_jump++;
 	}
-	tmp = (process->PC + ((arg2 + arg3))) % MEM_SIZE;
+	tmp = ((process->PC + (((int)arg2 + (int)arg3) % IDX_MOD)) % MEM_SIZE);
+	//tmp += ((arg2 + arg3));
+	//tmp %= MEM_SIZE;
 	game->area[tmp].value = 0;
 	game->area[tmp + 1].value = 0;
 	game->area[tmp + 2].value = 0;
