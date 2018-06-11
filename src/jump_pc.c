@@ -34,8 +34,10 @@ int		jump_pc(unsigned char codage, int op_id)
 	int PC_jump;
 
 	PC_jump = 2;
-	PC_jump += ret_jump(codage, MASK_1, 6, op_id);
-	PC_jump += ret_jump(codage, MASK_2, 4, op_id);
-	PC_jump += ret_jump(codage, MASK_3, 2, op_id);
+	codage = 0;
+	op_id = 0;
+	//PC_jump += ret_jump(codage, MASK_1, 6, op_id);
+	//PC_jump += ret_jump(codage, MASK_2, 4, op_id);
+	//PC_jump += ret_jump(codage, MASK_3, 2, op_id);
 	return (PC_jump);
 }

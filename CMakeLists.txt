@@ -100,6 +100,7 @@ add_executable(Cor_common
         lib/libft.h
         src/check_codage.c
         src/fill_area.c
+        src/jump_pc.c
         src/main.c
         src/op_add.c
         src/op_aff.c

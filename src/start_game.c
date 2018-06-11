@@ -120,6 +120,7 @@ static	void	check_procces(t_game *game)
 				free(tmp);
 				tmp = game->process;
 			}
+			
 		}
 		else
 		{

@@ -171,7 +171,7 @@ static	int		print_players(t_game *game, int pn, int y)
 {
 	int i;
 
-	i = 1;                          // change it, there should be a given value of n
+	i = 1;                          // change it, there should be a given value of n (instead of i)
 	while (i <= pn + 1)
 	{
 		mvprintw(y, 200, "%s %d %s", "Player", i, ":");
