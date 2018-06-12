@@ -19,7 +19,7 @@ static t_process	*copy_reg(t_process *clone, t_process *process)
 	i = 0;
 	while (i < 16)
 	{
-		clone->REG_NUM[i] = process->REG_NUM[i];
+		clone->reg_num[i] = process->reg_num[i];
 		i++;
 	}
 	return (clone);
@@ -32,15 +32,15 @@ void				clone_process(t_game *game, t_process *p, unsigned int pc)
 
 	if (!(clone = (t_process*)malloc(sizeof(t_process))))
 		exit(1);
-	ft_bzero(clone->REG_NUM, 16);
+	ft_bzero(clone->reg_num, 16);
 	clone = copy_reg(clone, p);
-	clone->PC = pc;
+	clone->pc = pc;
 	clone->live = p->live;
-	clone->op_id = push_op_id(game->area[clone->PC].value);
-	clone->CYCLE_TO_DONE = 0;
+	clone->op_id = push_op_id(game->area[clone->pc].value);
+	clone->cycle_to_done = 0;
 	clone->carry = p->carry;
 	clone->color = p->color;
-	clone->num = number++;
+	clone->num = g_number++;
 	clone->next = NULL;
 	if (game->process)
 	{
@@ -56,9 +56,9 @@ void				op_fork(t_game *game, t_process *process)
 {
 	unsigned int arg;
 
-	arg = write_2_bytes(game, (process->PC + 1) % MEM_SIZE);
-	game->area[process->PC].PC = 0;
-	clone_process(game, process, (process->PC + \
+	arg = write_2_bytes(game, (process->pc + 1) % MEM_SIZE);
+	game->area[process->pc].pc = 0;
+	clone_process(game, process, (process->pc + \
 	((short)arg % IDX_MOD)) % MEM_SIZE);
-	process->PC += 3;
+	process->pc += 3;
 }

@@ -14,16 +14,16 @@
 
 void	op_aff(t_game *game, t_process *process)
 {
-	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
+	if (!check_codege(process->op_id, game->area[process->pc + 1].value))
 	{
-		game->area[process->PC].PC = 0;
-		process->PC += jump_pc(game->area[process->PC + 1].value, \
+		game->area[process->pc].pc = 0;
+		process->pc += jump_pc(game->area[process->pc + 1].value, \
 		process->op_id);
 		process->op_id = 16;
 		return ;
 	}
-	game->area[process->PC].PC = 0;
-	process->PC += 3;
-	ft_printf("%c\n", process->REG_NUM[game->area[process->PC + 2].value] \
+	game->area[process->pc].pc = 0;
+	process->pc += 3;
+	ft_printf("%c\n", process->reg_num[game->area[process->pc + 2].value] \
 	% 256);
 }

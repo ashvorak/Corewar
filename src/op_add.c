@@ -14,21 +14,21 @@
 
 void	op_add(t_game *game, t_process *process)
 {
-	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
+	if (!check_codege(process->op_id, game->area[process->pc + 1].value))
 	{
-		game->area[process->PC].PC = 0;
-		process->PC += jump_pc(game->area[process->PC + 1].value, \
+		game->area[process->pc].pc = 0;
+		process->pc += jump_pc(game->area[process->pc + 1].value, \
 		process->op_id);
 		process->op_id = 16;
 		return ;
 	}
-	game->process->REG_NUM[game->area[process->PC + 4].value - 1] =
-		process->REG_NUM[game->area[process->PC
-		+ 2].value - 1] + process->REG_NUM[game->area[process->PC +
+	game->process->reg_num[game->area[process->pc + 4].value - 1] =
+		process->reg_num[game->area[process->pc
+		+ 2].value - 1] + process->reg_num[game->area[process->pc +
 		3].value - 1];
-	game->area[process->PC].PC = 0;
-	process->PC += 5;
-	if (game->process->REG_NUM[game->area[process->PC + 4].value - 1] == 0)
+	game->area[process->pc].pc = 0;
+	process->pc += 5;
+	if (game->process->reg_num[game->area[process->pc + 4].value - 1] == 0)
 		process->carry = 1;
 	else
 		process->carry = 0;
