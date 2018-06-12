@@ -1,9 +1,17 @@
 cmake_minimum_required(VERSION 3.9)
+<<<<<<< HEAD
 project(vm)
 
 set(CMAKE_CXX_STANDARD 11)
 
 add_executable(vm
+=======
+project(vm_corewar)
+
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(vm_corewar
+>>>>>>> 0679d884e44ce6083f500ec23bfb80e39864eafd
         inc/corewar_vm.h
         inc/op.h
         lib/ft_printf/inc/ft_printf.h

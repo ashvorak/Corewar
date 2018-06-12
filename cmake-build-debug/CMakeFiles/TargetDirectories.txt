@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 /Users/aryabenk/vm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/aryabenk/vm/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/aryabenk/vm/cmake-build-debug/CMakeFiles/vm.dir
+=======
+/Users/amazurok/Documents/vm_corewar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/amazurok/Documents/vm_corewar/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/amazurok/Documents/vm_corewar/cmake-build-debug/CMakeFiles/vm_corewar.dir
+>>>>>>> 0679d884e44ce6083f500ec23bfb80e39864eafd

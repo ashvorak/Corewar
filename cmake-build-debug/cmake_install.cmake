@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /Users/aryabenk/vm
+=======
+# Install script for directory: /Users/amazurok/Documents/vm_corewar
+>>>>>>> 0679d884e44ce6083f500ec23bfb80e39864eafd
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +39,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/Users/aryabenk/vm/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/Users/amazurok/Documents/vm_corewar/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> 0679d884e44ce6083f500ec23bfb80e39864eafd
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

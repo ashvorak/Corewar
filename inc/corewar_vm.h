@@ -101,7 +101,7 @@ typedef struct	s_game
 	int             checks;
 }				t_game;
 
-void			ft_error(void);
+void			ft_error(char *str);
 
 t_fla			*create_fla(t_fla *flag);
 int				flags_read(char **argv, int argc, t_fla *flag);
