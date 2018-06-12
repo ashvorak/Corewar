@@ -19,8 +19,8 @@ int				push_op_id(unsigned char value)
 	i = 0;
 	while (i < 16)
 	{
-		if (value == op_tab[i].id + 1)
-			return (op_tab[i].id);
+		if (value == g_op_tab[i].id + 1)
+			return (g_op_tab[i].id);
 		i++;
 	}
 	return (16);
@@ -30,7 +30,7 @@ static	void	execute_add(t_game *game, t_process *process)
 {
 	if (process->op_id != 16)
 	{
-		if (process->CYCLE_TO_DONE == op_tab[process->op_id].CYCLES)
+		if (process->CYCLE_TO_DONE == g_op_tab[process->op_id].CYCLES)
 		{
 			execute_process(game, process);
 			process->op_id = 16;
@@ -41,8 +41,8 @@ static	void	execute_add(t_game *game, t_process *process)
 	}
 	else
 	{
-		game->area[process->PC].PC = 0;
-		process->PC += process->PC + 1 == MEM_SIZE ? -process->PC : 1;
+		game->area[process->pc].pc = 0;
+		process->pc += process->pc + 1 == MEM_SIZE ? -process->pc : 1;
 	}
 }
 
@@ -58,8 +58,8 @@ void			execute(t_game *game)
 		if (game->flags.v)
 			manage_keys(game, action);
 		execute_add(game, process);
-		process->op_id = push_op_id(game->area[process->PC].value);
-		game->area[process->PC].PC = 1;
+		process->op_id = push_op_id(game->area[process->pc].value);
+		game->area[process->pc].pc = 1;
 		process = process->next;
 		if (game->flags.v)
 			action = getch();
@@ -71,7 +71,7 @@ static void		check_process_add(t_game *game, t_process *tmp, t_process *buf)
 	while (tmp)
 		if (!tmp->live)
 		{
-			game->area[tmp->PC].PC = 0;
+			game->area[tmp->pc].pc = 0;
 			if (buf)
 			{
 				buf->next = tmp->next;

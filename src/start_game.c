@@ -119,11 +119,11 @@ void	start_game(t_game *game)
 		process = process->next;
 	}
 	i = 1;
-	while (game->process && game->CYCLE < 30000)
+	while (game->process)
 	{
 		(game->flags.v) ? manage_keys(game, action) : 1;
 		execute(game);
-		game->CYCLE++;
+		game->cycle++;
 		if (i % game->cycle_to_die == 0)
 			i = check_procces(game);
 		game->num_proc = processes_number(game->process);
