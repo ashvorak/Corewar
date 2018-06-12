@@ -6,7 +6,7 @@
 /*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:42:40 by aryabenk          #+#    #+#             */
-/*   Updated: 2018/06/12 13:47:14 by aryabenk         ###   ########.fr       */
+/*   Updated: 2018/06/12 13:51:24 by aryabenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int flags_read(char **argv, int argc, t_fla *flag)
 		if (argv[i][0] == '-' && argv[i][1] == 'v')
 			flag->v++;
 		else if (argv[i][0] == '-')
-			ft_printf("")
+			ft_printf(" ");
 		else
 			return (i);
 		i++;
