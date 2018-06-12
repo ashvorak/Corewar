@@ -36,10 +36,10 @@ void	op_st(t_game *game, t_process *process)
 		game->area[tmp + 1].color = process->color;
 		game->area[tmp + 2].color = process->color;
 		game->area[tmp + 3].color = process->color;
-		game->area[tmp].bold = 10;
-		game->area[tmp + 1].bold = 10;
-		game->area[tmp + 2].bold = 10;
-		game->area[tmp + 3].bold = 10;
+		game->area[tmp].bold = 20;
+		game->area[tmp + 1].bold = 20;
+		game->area[tmp + 2].bold = 20;
+		game->area[tmp + 3].bold = 20;
 	}
 	else if(ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_REG)
 	{

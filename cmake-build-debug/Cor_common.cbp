@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/oshvorak/corewar/cmake-build-debug"/>
+				<Option working_dir="/Users/dlytvyn/Cor_common/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/oshvorak/corewar/cmake-build-debug"/>
+				<Option working_dir="/Users/dlytvyn/Cor_common/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/oshvorak/corewar/cmake-build-debug"/>
+				<Option working_dir="/Users/dlytvyn/Cor_common/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Cor_common">
-				<Option output="/Users/oshvorak/corewar/cmake-build-debug/Cor_common" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/oshvorak/corewar/cmake-build-debug"/>
+				<Option output="/Users/dlytvyn/Cor_common/cmake-build-debug/Cor_common" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dlytvyn/Cor_common/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -52,15 +52,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Cor_common"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 Cor_common"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Cor_common/fast">
-				<Option output="/Users/oshvorak/corewar/cmake-build-debug/Cor_common" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/oshvorak/corewar/cmake-build-debug"/>
+				<Option output="/Users/dlytvyn/Cor_common/cmake-build-debug/Cor_common" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dlytvyn/Cor_common/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -73,368 +73,371 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Cor_common/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/oshvorak/corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 Cor_common/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlytvyn/Cor_common/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/oshvorak/corewar/inc/corewar_vm.h">
+		<Unit filename="/Users/dlytvyn/Cor_common/inc/corewar_vm.h">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/inc/op.h">
+		<Unit filename="/Users/dlytvyn/Cor_common/inc/op.h">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_array_size.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_array_size.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_atoi.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_atoi.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_atoi_base.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_atoi_base.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_bzero.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_bzero.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_charreplace.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_charreplace.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_factorial.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_factorial.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_free_arr.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_free_arr.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_free_arr_int.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_free_arr_int.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_isalnum.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_isalnum.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_isalpha.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_isalpha.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_isascii.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_isascii.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_isdigit.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_isdigit.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_isprint.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_isprint.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_itoa.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_itoa.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_itoa_base.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_itoa_base.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_listsize.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_listsize.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_lstadd.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_lstadd.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_lstdel.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_lstdel.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_lstdelone.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_lstdelone.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_lstiter.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_lstiter.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_lstmap.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_lstmap.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_lstnew.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_lstnew.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_memalloc.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_memalloc.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_memccpy.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_memccpy.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_memchr.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_memchr.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_memcmp.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_memcmp.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_memcpy.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_memcpy.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_memdel.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_memdel.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_memmove.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_memmove.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_memset.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_memset.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/inc/ft_printf.h">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/inc/ft_printf.h">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/active_bits.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/active_bits.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/convert_base.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/convert_base.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/convert_float.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/convert_float.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/convert_int.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/convert_int.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/ft_printf.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/ft_printf.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/ft_putwchar.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/ft_putwchar.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/ft_realloc.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/ft_realloc.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/handle_char.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/handle_char.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/handle_float.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/handle_float.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/handle_n.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/handle_n.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/handle_num.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/handle_num.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/handle_qualifier.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/handle_qualifier.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/handle_str.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/handle_str.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/handle_value.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/handle_value.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/handle_wchar.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/handle_wchar.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/handle_wstr.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/handle_wstr.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/is_type.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/is_type.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/make_colors.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/make_colors.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_printf/src/size_char.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_printf/src/size_char.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_putchar.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_putchar.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_putchar_fd.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_putchar_fd.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_putendl.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_putendl.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_putendl_fd.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_putendl_fd.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_putnbr.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_putnbr.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_putnbr_fd.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_putnbr_fd.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_putstr.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_putstr.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_putstr_fd.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_putstr_fd.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_sqrt.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_sqrt.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strcapitalize.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strcapitalize.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strcat.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strcat.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strchr.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strchr.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strclr.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strclr.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strcmp.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strcmp.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strcpy.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strcpy.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strdel.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strdel.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strdup.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strdup.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strequ.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strequ.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_striter.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_striter.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_striteri.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_striteri.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strjoin.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strjoin.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strlcat.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strlcat.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strlen.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strlen.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strmap.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strmap.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strmapi.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strmapi.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strncat.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strncat.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strncmp.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strncmp.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strncpy.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strncpy.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strnequ.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strnequ.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strnew.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strnew.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strnstr.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strnstr.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strrchr.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strrchr.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strsplit.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strsplit.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strstr.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strstr.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strsub.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strsub.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_strtrim.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_strtrim.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_swap.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_swap.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_tolower.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_tolower.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/ft_toupper.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/ft_toupper.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/get_next_line/get_next_line.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/get_next_line/get_next_line.h">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/get_next_line/get_next_line.h">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/lib/libft.h">
+		<Unit filename="/Users/dlytvyn/Cor_common/lib/libft.h">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/check_codage.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/check_codage.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/fill_area.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/fill_area.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/main.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/jump_pc.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_add.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/main.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_aff.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_add.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_and.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_aff.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_fork.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_and.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_ld.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_fork.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_ldi.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_ld.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_lfork.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_ldi.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_live.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_lfork.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_lld.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_live.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_lldi.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_lld.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_or.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_lldi.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_st.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_or.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_sti.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_st.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_sub.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_sti.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_xor.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_sub.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/op_zjmp.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_xor.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/read_player.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/op_zjmp.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/read_players.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/read_player.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/start_game.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/read_players.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/visual.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/start_game.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/src/write_2_4_bytes.c">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/visual.c">
 			<Option target="Cor_common"/>
 		</Unit>
-		<Unit filename="/Users/oshvorak/corewar/CMakeLists.txt">
+		<Unit filename="/Users/dlytvyn/Cor_common/src/write_2_4_bytes.c">
+			<Option target="Cor_common"/>
+		</Unit>
+		<Unit filename="/Users/dlytvyn/Cor_common/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -60,19 +60,16 @@ void	op_sti(t_game *game, t_process *process)
 	}
 	else
 	{
-		if (game->area[process->PC + PC_jump].value > 16 || game->area[process->PC + PC_jump].value < 1)
-		{
+		if (game->area[process->PC + PC_jump].value > 16 || game->area[process->PC + PC_jump].value < 1) {
 			game->area[process->PC].PC = 0;
 			process->PC += jump_pc(game->area[process->PC + 1].value, process->op_id);
 			process->op_id = 16;
-			return ;
-		}	
+			return;
+		}
 		arg3 = process->REG_NUM[game->area[process->PC + PC_jump].value - 1];
 		PC_jump++;
 	}
 	tmp = ((process->PC + (((int)arg2 + (int)arg3) % IDX_MOD)) % MEM_SIZE);
-	//tmp += ((arg2 + arg3));
-	//tmp %= MEM_SIZE;
 	game->area[tmp].value = 0;
 	game->area[tmp + 1].value = 0;
 	game->area[tmp + 2].value = 0;
@@ -81,10 +78,10 @@ void	op_sti(t_game *game, t_process *process)
 	game->area[tmp + 1].value |= process->REG_NUM[game->area[process->PC + 2].value - 1] >> 16;
 	game->area[tmp + 2].value |= process->REG_NUM[game->area[process->PC + 2].value - 1] >> 8;
 	game->area[tmp + 3].value |= process->REG_NUM[game->area[process->PC + 2].value - 1];
-	game->area[tmp].bold = 10;
-	game->area[tmp + 1].bold = 10;
-	game->area[tmp + 2].bold = 10;
-	game->area[tmp + 3].bold = 10;
+	game->area[tmp].bold = 20;
+	game->area[tmp + 1].bold = 20;
+	game->area[tmp + 2].bold = 20;
+	game->area[tmp + 3].bold = 20;
 	game->area[tmp].color = process->color;
 	game->area[tmp + 1].color = process->color;
 	game->area[tmp + 2].color = process->color;

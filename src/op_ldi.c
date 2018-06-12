@@ -61,6 +61,5 @@ void    op_ldi(t_game *game, t_process *process)
 		process->PC += 1;
 	}
 	arg3 = game->area[process->PC++].value;
-	//process->REG_NUM[arg3 - 1] = write_4_bytes(game, ((arg1 + arg2)) + PC_buf);
-	process->REG_NUM[arg3 - 1] = write_4_bytes(game, ((arg1 + arg2) % IDX_MOD) + PC_buf);
+	process->REG_NUM[arg3 - 1] = write_4_bytes(game, (((int)arg1 + (int)arg2) % IDX_MOD) + PC_buf);
 }

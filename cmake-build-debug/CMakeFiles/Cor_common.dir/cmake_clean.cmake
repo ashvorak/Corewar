@@ -90,6 +90,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Cor_common.dir/lib/ft_toupper.c.o"
   "CMakeFiles/Cor_common.dir/src/check_codage.c.o"
   "CMakeFiles/Cor_common.dir/src/fill_area.c.o"
+  "CMakeFiles/Cor_common.dir/src/jump_pc.c.o"
   "CMakeFiles/Cor_common.dir/src/main.c.o"
   "CMakeFiles/Cor_common.dir/src/op_add.c.o"
   "CMakeFiles/Cor_common.dir/src/op_aff.c.o"

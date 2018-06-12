@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/oshvorak/corewar
+CMAKE_SOURCE_DIR = /Users/dlytvyn/Cor_common
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/oshvorak/corewar/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dlytvyn/Cor_common/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oshvorak/corewar/cmake-build-debug/CMakeFiles /Users/oshvorak/corewar/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles /Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oshvorak/corewar/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dlytvyn/Cor_common/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -2580,6 +2580,33 @@ src/fill_area.c.s:
 	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/fill_area.c.s
 .PHONY : src/fill_area.c.s
 
+src/jump_pc.o: src/jump_pc.c.o
+
+.PHONY : src/jump_pc.o
+
+# target to build an object file
+src/jump_pc.c.o:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/jump_pc.c.o
+.PHONY : src/jump_pc.c.o
+
+src/jump_pc.i: src/jump_pc.c.i
+
+.PHONY : src/jump_pc.i
+
+# target to preprocess a source file
+src/jump_pc.c.i:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/jump_pc.c.i
+.PHONY : src/jump_pc.c.i
+
+src/jump_pc.s: src/jump_pc.c.s
+
+.PHONY : src/jump_pc.s
+
+# target to generate assembly for a file
+src/jump_pc.c.s:
+	$(MAKE) -f CMakeFiles/Cor_common.dir/build.make CMakeFiles/Cor_common.dir/src/jump_pc.c.s
+.PHONY : src/jump_pc.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -3456,6 +3483,9 @@ help:
 	@echo "... src/fill_area.o"
 	@echo "... src/fill_area.i"
 	@echo "... src/fill_area.s"
+	@echo "... src/jump_pc.o"
+	@echo "... src/jump_pc.i"
+	@echo "... src/jump_pc.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

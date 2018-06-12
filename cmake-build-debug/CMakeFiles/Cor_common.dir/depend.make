@@ -289,6 +289,13 @@ CMakeFiles/Cor_common.dir/src/fill_area.c.o: ../lib/get_next_line/get_next_line.
 CMakeFiles/Cor_common.dir/src/fill_area.c.o: ../lib/libft.h
 CMakeFiles/Cor_common.dir/src/fill_area.c.o: ../src/fill_area.c
 
+CMakeFiles/Cor_common.dir/src/jump_pc.c.o: ../inc/corewar_vm.h
+CMakeFiles/Cor_common.dir/src/jump_pc.c.o: ../inc/op.h
+CMakeFiles/Cor_common.dir/src/jump_pc.c.o: ../lib/ft_printf/inc/ft_printf.h
+CMakeFiles/Cor_common.dir/src/jump_pc.c.o: ../lib/get_next_line/get_next_line.h
+CMakeFiles/Cor_common.dir/src/jump_pc.c.o: ../lib/libft.h
+CMakeFiles/Cor_common.dir/src/jump_pc.c.o: ../src/jump_pc.c
+
 CMakeFiles/Cor_common.dir/src/main.c.o: ../inc/corewar_vm.h
 CMakeFiles/Cor_common.dir/src/main.c.o: ../inc/op.h
 CMakeFiles/Cor_common.dir/src/main.c.o: ../lib/ft_printf/inc/ft_printf.h
