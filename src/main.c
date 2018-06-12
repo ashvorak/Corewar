@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:26:00 by oshvorak          #+#    #+#             */
 /*   Updated: 2018/06/12 14:33:58 by aryabenk         ###   ########.fr       */
