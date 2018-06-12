@@ -42,5 +42,5 @@ void    op_ld(t_game *game, t_process *process)
 		game->area[process->PC].PC = 0;
 		process->PC += 5;
 	}
-	process->carry = game->process->REG_NUM[t_reg - 1] == 0 ? 1 : 0;
+	process->carry = process->REG_NUM[t_reg - 1] == 0 ? 1 : 0;
 }

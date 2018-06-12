@@ -54,7 +54,7 @@ void	op_sti(t_game *game, t_process *process)
 		arg3 = process->REG_NUM[game->area[process->PC + PC_jump].value - 1];
 		PC_jump++;
 	}
-	tmp = (process->PC + ((arg2 + arg3))) % MEM_SIZE;
+	tmp = (process->PC + (((int)arg2 + (int)arg3) % IDX_MOD)) % MEM_SIZE;
 	game->area[tmp].value = 0;
 	game->area[tmp + 1].value = 0;
 	game->area[tmp + 2].value = 0;

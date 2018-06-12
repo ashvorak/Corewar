@@ -12,7 +12,7 @@
 
 #include <printf.h>
 #include "../inc/corewar_vm.h"
-
+/*
 static	void	initialize_colors(void)
 {
 	start_color();
@@ -233,3 +233,4 @@ void			visual(t_game *game)
 	right_menu(game);
 	refresh();
 }
+*/
