@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:26:00 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/09 18:28:55 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/12 15:29:45 by aryabenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <errno.h>
 #include "../inc/corewar_vm.h"
 
-void	ft_error(void)
+void	ft_error(char *str)
 {
-	ft_printf("Error\n");
+	errno = 5;
+	perror(str);
 	exit(1);
 }
 
