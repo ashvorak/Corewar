@@ -29,7 +29,7 @@ static	void	fill_reg(t_process *process)
 	i = 0;
 	while (i < 16)
 	{
-		process->REG_NUM[i] = 0;
+		process->reg_num[i] = 0;
 		i++;
 	}
 }
@@ -43,11 +43,11 @@ void			push_procces(t_game *game, unsigned int location,
 	if (!(process = (t_process*)malloc(sizeof(t_process))))
 		exit(1);
 	fill_reg(process);
-	process->REG_NUM[0] = reg1;
-	process->PC = location;
+	process->reg_num[0] = reg1;
+	process->pc = location;
 	process->live = 0;
 	process->op_id = 16;
-	process->CYCLE_TO_DONE = 1;
+	process->cycle_to_done = 1;
 	process->carry = 0;
 	process->color = num;
 	process->num = 1;

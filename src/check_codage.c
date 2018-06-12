@@ -16,26 +16,26 @@ int		check_arg(int arg, int op_id, int arg_num)
 {
 	if (arg == T_REG)
 	{
-		if ((arg == op_tab[op_id].arg_type[arg_num]) || ((arg | T_DIR) ==
-			op_tab[op_id].arg_type[arg_num]) \
-			|| ((arg | T_IND) == op_tab[op_id].arg_type[arg_num]) ||
-			((arg | T_DIR | T_IND) == op_tab[op_id].arg_type[arg_num]))
+		if ((arg == g_op_tab[op_id].arg_type[arg_num]) || ((arg | T_DIR) ==
+			g_op_tab[op_id].arg_type[arg_num]) \
+			|| ((arg | T_IND) == g_op_tab[op_id].arg_type[arg_num]) ||
+			((arg | T_DIR | T_IND) == g_op_tab[op_id].arg_type[arg_num]))
 			return (1);
 	}
 	else if (arg == T_DIR)
 	{
-		if ((arg == op_tab[op_id].arg_type[arg_num]) || ((arg | T_REG) ==
-			op_tab[op_id].arg_type[arg_num]) \
-			|| ((arg | T_IND) == op_tab[op_id].arg_type[arg_num]) ||
-			((arg | T_REG | T_IND) == op_tab[op_id].arg_type[arg_num]))
+		if ((arg == g_op_tab[op_id].arg_type[arg_num]) || ((arg | T_REG) ==
+			g_op_tab[op_id].arg_type[arg_num]) \
+			|| ((arg | T_IND) == g_op_tab[op_id].arg_type[arg_num]) ||
+			((arg | T_REG | T_IND) == g_op_tab[op_id].arg_type[arg_num]))
 			return (1);
 	}
 	else if (arg == T_IND)
 	{
-		if ((arg == op_tab[op_id].arg_type[arg_num]) || ((arg | T_DIR) ==
-			op_tab[op_id].arg_type[arg_num]) \
-			|| ((arg | T_REG) == op_tab[op_id].arg_type[arg_num]) ||
-			((arg | T_DIR | T_REG) == op_tab[op_id].arg_type[arg_num]))
+		if ((arg == g_op_tab[op_id].arg_type[arg_num]) || ((arg | T_DIR) ==
+			g_op_tab[op_id].arg_type[arg_num]) \
+			|| ((arg | T_REG) == g_op_tab[op_id].arg_type[arg_num]) ||
+			((arg | T_DIR | T_REG) == g_op_tab[op_id].arg_type[arg_num]))
 			return (1);
 	}
 	return (0);

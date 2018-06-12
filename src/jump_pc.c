@@ -22,16 +22,16 @@ int		ret_jump(unsigned char codage, int mask, int move, int op_id)
 		a = 1;
 	else
 		a = 2;
-	if (ret_arg(codage, mask, move) == T_DIR && op_tab[op_id].arg_type[a])
+	if (ret_arg(codage, mask, move) == T_DIR && g_op_tab[op_id].arg_type[a])
 	{
-		if (op_tab[op_id].label == 4)
+		if (g_op_tab[op_id].label == 4)
 			return (4);
 		else
 			return (2);
 	}
-	else if (ret_arg(codage, mask, move) == T_IND && op_tab[op_id].arg_type[a])
+	else if (ret_arg(codage, mask, move) == T_IND && g_op_tab[op_id].arg_type[a])
 		return (2);
-	else if (ret_arg(codage, mask, move) == T_REG && op_tab[op_id].arg_type[a])
+	else if (ret_arg(codage, mask, move) == T_REG && g_op_tab[op_id].arg_type[a])
 		return (1);
 	else
 		return (0);
