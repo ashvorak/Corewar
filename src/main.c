@@ -23,14 +23,16 @@ void	ft_error(char *str)
 int		main(int ac, char **av)
 {
 	t_game	*game;
+	t_fla	flag;
 
+	create_fla(&flag);
 	number = 2;
 	initscr();
 	noecho();
 	cbreak();
 	nodelay(stdscr, TRUE);
 	curs_set(FALSE);
-	game = read_players(av, ac, 1);
+	game = read_players(av, ac, flags_read(av, ac, &flag));
 	game->players_num = players_num(game) + 1;
 	start_game(game);
 	nodelay(stdscr, FALSE);
