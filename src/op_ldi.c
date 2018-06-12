@@ -6,20 +6,20 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 11:52:06 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/11 18:05:32 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/12 16:18:36 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-void    op_ldi(t_game *game, t_process *process)
+void	op_ldi(t_game *game, t_process *process)
 {
-	unsigned int 	arg1;
-	unsigned int 	arg2;
-	unsigned int 	arg3;
-	unsigned int 	codage;
-	int 	        t_ind;
-	int 			PC_buf;
+	unsigned int	arg1;
+	unsigned int	arg2;
+	unsigned int	arg3;
+	unsigned int	codage;
+	int				t_ind;
+	int				PC_buf;
 
 	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
 	{
@@ -34,7 +34,6 @@ void    op_ldi(t_game *game, t_process *process)
 	if (ret_arg(codage, MASK_1, 6) == T_DIR)
 	{
 		arg1 = write_2_bytes(game, process->PC + 2);
-	//	game->area[process->PC].PC = 0;
 		arg1 = (short)arg1;
 		process->PC += 4;
 	}

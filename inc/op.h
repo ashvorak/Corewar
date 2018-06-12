@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/10/04 11:33:27 by zaz               #+#    #+#             */
-/*   Updated: 2018/06/02 13:10:52 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/12 13:46:00 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef char	t_arg_type;
 
 #define T_REG					1
 #define T_DIR					2
-#define T_IND					4
+#define T_IND					3
 #define T_LAB					8
 
 # define PROG_NAME_LENGTH		(128)

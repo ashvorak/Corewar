@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 12:10:37 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/12 12:39:21 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define MASK_2 48
 # define MASK_3 12
 
-# define COLOR_GREY 10
+# define COLOR_GREY 8
 
 int number;
 
