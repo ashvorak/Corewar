@@ -96,7 +96,7 @@ typedef struct	s_game
 	int             checks;
 }				t_game;
 
-void			ft_error(void);
+void			ft_error(char *str);
 
 t_game			*read_players(char **av, int ac, int i);
 t_player		read_player(char *file);

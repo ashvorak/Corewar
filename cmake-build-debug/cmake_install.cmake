@@ -1,4 +1,4 @@
-# Install script for directory: /Users/dlytvyn/Cor_common
+# Install script for directory: /Users/amazurok/Documents/vm_corewar
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/dlytvyn/Cor_common/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/amazurok/Documents/vm_corewar/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

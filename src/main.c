@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <errno.h>
 #include "../inc/corewar_vm.h"
 
-void	ft_error(void)
+void	ft_error(char *str)
 {
-	ft_printf("Error\n");
+	errno = 5;
+	perror(str);
 	exit(1);
 }
 
