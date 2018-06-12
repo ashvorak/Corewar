@@ -90,7 +90,7 @@ typedef struct			s_player
 typedef struct			s_game
 {
 	t_player			players[4];
-	t_fla				flag;
+	t_fla				flags;
 	t_area				area[MEM_SIZE + 1];
 	t_process			*process;
 	int					num_proc;
@@ -118,6 +118,14 @@ int						check_codege(int op_id, int codage);
 void					start_game(t_game *game);
 void					clone_process(t_game *game, \
 t_process *process, unsigned int location);
+void					print_frame(WINDOW *stdscr, int speed);
+void					initialize_colors(void);
+void					print_data(t_game *game);
+void					right_menu(t_game *game);
+int						what_color(int col);
+int						check_procces(t_game *game);
+void					execute_process(t_game *game, t_process *process);
+int						check_reg_ind(t_game *game, t_process *process, int in);
 
 unsigned int			write_arg(t_process *process, \
 t_game *game, int tt, int pc);
@@ -147,14 +155,15 @@ int						ret_arg(int codage, int mask, int move);
 int						jump_pc(unsigned char codage, int op_id);
 unsigned int			write_2_bytes(t_game *game, int pc);
 unsigned int			write_4_bytes(t_game *game, int pc);
+void					execute(t_game *game);
 
 static const t_op		g_op_tab[17] =
 {
 	{0, "01", {T_DIR}, 1, 10, 4},
 	{1, "02", {T_DIR | T_IND, T_REG}, 2, 5, 4},
 	{2, "03", {T_REG, T_IND | T_REG}, 2, 5, 4},
-	{3, "04", {T_REG, T_REG, T_REG}, 3, 10, 1, 4},
-	{4, "05", {T_REG, T_REG, T_REG}, 3, 10, 1, 4},
+	{3, "04", {T_REG, T_REG, T_REG}, 3, 10, 4},
+	{4, "05", {T_REG, T_REG, T_REG}, 3, 10, 4},
 	{5, "06", {T_REG | T_DIR | T_IND, T_REG | T_IND | T_DIR, T_REG}, 3, 6, 4},
 	{6, "07", {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 3, 6, 4},
 	{7, "08", {T_REG | T_IND | T_DIR, T_REG | T_IND | T_DIR, T_REG}, 3, 6, 4},
@@ -166,7 +175,7 @@ static const t_op		g_op_tab[17] =
 	{13, "0e", {T_REG | T_DIR | T_IND, T_DIR | T_REG, T_REG}, 3, 50, 2},
 	{14, "0f", {T_DIR}, 1, 1000, 2},
 	{15, "10", {T_REG}, 1, 2, 4},
-	{16, 0, 0, {0}, 0, 0, 0}
+	{16, 0, {0}, 0, 0, 0}
 };
 
 #endif

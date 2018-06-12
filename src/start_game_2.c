@@ -30,14 +30,14 @@ static	void	execute_add(t_game *game, t_process *process)
 {
 	if (process->op_id != 16)
 	{
-		if (process->CYCLE_TO_DONE == g_op_tab[process->op_id].CYCLES)
+		if (process->cycle_to_done == g_op_tab[process->op_id].cycles)
 		{
 			execute_process(game, process);
 			process->op_id = 16;
-			process->CYCLE_TO_DONE = 1;
+			process->cycle_to_done = 1;
 		}
 		else
-			process->CYCLE_TO_DONE++;
+			process->cycle_to_done++;
 	}
 	else
 	{

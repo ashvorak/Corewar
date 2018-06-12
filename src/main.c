@@ -32,7 +32,7 @@ int			main(int ac, char **av)
 {
 	t_game	*game;
 
-	number = 2;
+	g_number = 2;
 	game = read_players(av, ac, 1);
 	game->players_num = players_num(game) + 1;
 	init(game);

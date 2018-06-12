@@ -115,7 +115,7 @@ void	start_game(t_game *game)
 	process = game->process;
 	while (process)
 	{
-		process->op_id = push_op_id(game->area[process->PC].value);
+		process->op_id = push_op_id(game->area[process->pc].value);
 		process = process->next;
 	}
 	i = 1;

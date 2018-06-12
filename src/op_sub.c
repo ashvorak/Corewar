@@ -24,9 +24,9 @@ void	op_sub(t_game *game, t_process *process)
 		process->op_id = 16;
 		return ;
 	}
-	res = process->REG_NUM[game->area[process->pc + 2].value - 1] -
-		process->REG_NUM[game->area[process->pc + 3].value - 1];
-	process->REG_NUM[game->area[process->pc + 4].value - 1] = res;
+	res = process->reg_num[game->area[process->pc + 2].value - 1] -
+		process->reg_num[game->area[process->pc + 3].value - 1];
+	process->reg_num[game->area[process->pc + 4].value - 1] = res;
 	game->area[process->pc].pc = 0;
 	process->pc += 5;
 	if (res == 0)

@@ -63,7 +63,7 @@ int		print_players(t_game *game, int pn, int y)
 		mvprintw(y += 2, 205, "%s %d", "Last live :              ",
 			game->players[i - 1].last_live);
 		mvprintw(y += 2, 205, "%s %d", "Lives in current period :",
-			game->players[i - 1].lives_in_CP);
+			game->players[i - 1].lives_in_cp);
 		i++;
 		y += 2;
 	}
@@ -99,7 +99,7 @@ void	right_menu(t_game *game)
 		mvprintw(3, 200, "%s", "**   RUNNING  **");
 	else
 		mvprintw(3, 200, "%s", "**   PAUSED   **");
-	mvprintw(5, 200, "%s %d", "CYClES :", game->CYCLE);
+	mvprintw(5, 200, "%s %d", "CYClES :", game->cycle);
 	mvprintw(7, 200, "%s %d", "PROCESSES :", game->num_proc);
 	y = print_players(game, pn, y);
 	print_info(game, y);

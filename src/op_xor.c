@@ -35,8 +35,8 @@ void	op_xor(t_game *game, t_process *pr)
 	pc_buf += plus_pc(game->area[pr->pc + 1].value, MASK_2, 4);
 	arg3 = game->area[pr->pc + pc_buf].value;
 	pc_buf += 1;
-	pr->REG_NUM[arg3 - 1] = arg1 ^ arg2;
-	pr->carry = (pr->REG_NUM[arg3 - 1] == 0) ? 1 : 0;
+	pr->reg_num[arg3 - 1] = arg1 ^ arg2;
+	pr->carry = (pr->reg_num[arg3 - 1] == 0) ? 1 : 0;
 	game->area[pr->pc].pc = 0;
 	pr->pc += pc_buf;
 }
