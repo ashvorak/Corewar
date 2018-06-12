@@ -6,7 +6,7 @@
 /*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 14:01:11 by aryabenk         ###   ########.fr       */
+/*   Updated: 2018/06/12 15:29:45 by aryabenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef struct	s_player
 	unsigned char		opcode[MEM_SIZE / 6];
 	int					color;
 	int                 live;
+  	int 				n;
 	int                 count_lives;
 	int                 last_live;
 	int                 lives_in_CP;
@@ -92,6 +93,7 @@ typedef struct	s_player
 typedef struct	s_game
 {
 	t_player		players[4];
+  	t_fla			flag;
 	t_area			area[MEM_SIZE + 1];
 	t_process		*process;
 	int             num_proc;
@@ -99,6 +101,7 @@ typedef struct	s_game
 	size_t			CYCLE;
 	size_t          cycle_to_die;
 	int             pause;
+  	int 			n;
 	int             speed;
 	int             checks;
 }				t_game;
