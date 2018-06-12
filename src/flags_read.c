@@ -6,7 +6,7 @@
 /*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:42:40 by aryabenk          #+#    #+#             */
-/*   Updated: 2018/06/12 14:30:47 by aryabenk         ###   ########.fr       */
+/*   Updated: 2018/06/12 14:33:58 by aryabenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int flags_read(char **argv, int argc, t_fla *flag)
 		if (!ft_strcmp(argv[i], "-v"))
 			flag->v++;
 		else if (!ft_strcmp(argv[i], "-n") && argv[i + 1] \
-				&& ft_arr_dig(argv[i + 1]))
+				&& ft_arr_dig(argv[i + 1] + (argv[i + 1][0] == '-')))
 			flag->n = ft_atoi(argv[++i]);
 		else if (!ft_strcmp(argv[i], "-dump") && argv[i + 1] \
 				&& ft_arr_dig(argv[i + 1]))
