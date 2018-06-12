@@ -6,7 +6,7 @@
 /*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:42:40 by aryabenk          #+#    #+#             */
-/*   Updated: 2018/06/12 14:33:58 by aryabenk         ###   ########.fr       */
+/*   Updated: 2018/06/12 15:29:45 by aryabenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	create_fla(t_fla *flag)
 	flag->dump = -1;
 }
 
-int ft_arr_dig(char *arr)
+int		ft_arr_dig(char *arr)
 {
 	int i;
 
@@ -33,18 +33,21 @@ int ft_arr_dig(char *arr)
 	return (1);
 }
 
-int flags_read(char **argv, int argc, t_fla *flag)
+int		flags_read(char **argv, int argc, t_fla *flag)
 {
 	int i;
 
-	i = 1;
+	i = 0;
 	while (i < argc && argv[i])
 	{
 		if (!ft_strcmp(argv[i], "-v"))
 			flag->v++;
 		else if (!ft_strcmp(argv[i], "-n") && argv[i + 1] \
 				&& ft_arr_dig(argv[i + 1] + (argv[i + 1][0] == '-')))
+		{
 			flag->n = ft_atoi(argv[++i]);
+			return (i + 1);
+		}
 		else if (!ft_strcmp(argv[i], "-dump") && argv[i + 1] \
 				&& ft_arr_dig(argv[i + 1]))
 			flag->dump = ft_atoi(argv[++i]);

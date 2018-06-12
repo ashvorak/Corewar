@@ -34,7 +34,8 @@ static	void	fill_reg(t_process *process)
 	}
 }
 
-void			push_procces(t_game *game, unsigned int location, unsigned int reg1, int num)
+void			push_procces(t_game *game, unsigned int location,
+	unsigned int reg1, int num)
 {
 	t_process *tmp;
 	t_process *process;

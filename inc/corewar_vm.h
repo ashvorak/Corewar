@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corewar_vm.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 14:01:11 by aryabenk         ###   ########.fr       */
+/*   Updated: 2018/06/12 16:20:35 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef struct	s_player
 	unsigned char		opcode[MEM_SIZE / 6];
 	int					color;
 	int                 live;
+  	int 				n;
 	int                 count_lives;
 	int                 last_live;
 	int                 lives_in_CP;
@@ -100,6 +101,7 @@ typedef struct	s_game
 	size_t			CYCLE;
 	size_t          cycle_to_die;
 	int             pause;
+  	int 			n;
 	int             speed;
 	int             checks;
 }				t_game;
@@ -119,12 +121,21 @@ void			start_game(t_game *game);
 void            clone_process(t_game *game, t_process *process, unsigned int location);
 int             flags_read(char **argv, int argc, t_fla *flag);
 int				check_reg_ind(t_game *game, t_process *process, int in);
+int				plus_pc(int codage, int mask, int move);
+void			initialize_colors(void);
+void			print_data(t_game *game);
+void			print_frame(WINDOW *stdscr, int speed);
+void			right_menu(t_game *game);
+int				what_color(int col);
 
 unsigned int    write_arg(t_process *process, t_game *game, int tt, int PC);
 int				plus_PC(int codage, int MASK, int move);
 void            my_pause(t_game *game);
 void            manage_keys(t_game *game, int action);
 int				push_op_id(unsigned char value);
+void			execute_process(t_game *game, t_process *process);
+void			execute(t_game *game);
+int				check_procces(t_game *game);
 
 void			op_aff(t_game *game, t_process *process);
 void			op_zjmp(t_game *game, t_process *process);

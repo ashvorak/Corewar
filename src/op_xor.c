@@ -29,10 +29,10 @@ void	op_xor(t_game *game, t_process *pr)
 	pc_buf = 2;
 	arg1 = write_arg(pr, game,
 		ret_arg(game->area[pr->PC + 1].value, MASK_1, 6), pr->PC + pc_buf);
-	pc_buf += plus_PC(game->area[pr->PC + 1].value, MASK_1, 6);
+	pc_buf += plus_pc(game->area[pr->PC + 1].value, MASK_1, 6);
 	arg2 = write_arg(pr, game,
 		ret_arg(game->area[pr->PC + 1].value, MASK_2, 4), pr->PC + pc_buf);
-	pc_buf += plus_PC(game->area[pr->PC + 1].value, MASK_2, 4);
+	pc_buf += plus_pc(game->area[pr->PC + 1].value, MASK_2, 4);
 	arg3 = game->area[pr->PC + pc_buf].value;
 	pc_buf += 1;
 	pr->REG_NUM[arg3 - 1] = arg1 ^ arg2;

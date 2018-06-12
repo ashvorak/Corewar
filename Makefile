@@ -17,7 +17,10 @@ SRC =	./src/main.c \
 		./src/read_players.c \
 		./src/fill_area.c \
 		./src/visual.c \
+		./src/visual_2.c \
+		./src/visual_3.c \
 		./src/start_game.c \
+		./src/start_game_2.c \
 		./src/check_codage.c \
 		./src/op_aff.c \
 		./src/op_zjmp.c \
