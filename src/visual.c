@@ -27,6 +27,7 @@ static	void	initialize_colors(void)
 	init_pair(9, COLOR_BLACK, COLOR_BLUE);
 	init_pair(10, COLOR_BLACK, COLOR_RED);
 	init_pair(11, COLOR_BLACK, COLOR_YELLOW);
+	init_pair(12, COLOR_WHITE, COLOR_BLACK);
 }
 
 static	int		what_color(int col)
@@ -212,7 +213,7 @@ static	void	right_menu(t_game *game)
 	if (pn < 0)
 		ft_error();
 	attron(A_BOLD);
-	attron(COLOR_PAIR(2));
+	attron(COLOR_PAIR(12));
 	if (!game->pause)
 		mvprintw(3, 200, "%s", "**   RUNNING  **");
 	else
@@ -221,7 +222,7 @@ static	void	right_menu(t_game *game)
 	mvprintw(7, 200, "%s %d", "PROCESSES :", game->num_proc);
 	y = print_players(game, pn, y);
 	print_info(game, y);
-	attroff(COLOR_PAIR(2));
+	attroff(COLOR_PAIR(12));
 	attroff(A_BOLD);
 }
 
