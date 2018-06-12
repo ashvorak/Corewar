@@ -1,3 +1,0 @@
-/Users/amazurok/Documents/vm_corewar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/amazurok/Documents/vm_corewar/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/amazurok/Documents/vm_corewar/cmake-build-debug/CMakeFiles/vm_corewar.dir
