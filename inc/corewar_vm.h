@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corewar_vm.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/11 19:01:26 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/12 14:01:11 by aryabenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@
 # define COLOR_GREY 8
 
 int number;
+
+typedef struct	s_fla
+{
+	int v;
+	int n;
+	int dump;
+}				t_fla;
 
 typedef struct	s_area
 {
@@ -85,6 +92,7 @@ typedef struct	s_player
 typedef struct	s_game
 {
 	t_player		players[4];
+	t_fla           flags;
 	t_area			area[MEM_SIZE + 1];
 	t_process		*process;
 	int             num_proc;
@@ -96,8 +104,10 @@ typedef struct	s_game
 	int             checks;
 }				t_game;
 
-void			ft_error(void);
+void			ft_error(char *str);
 
+void			create_fla(t_fla *flag);
+int				flags_read(char **argv, int argc, t_fla *flag);
 t_game			*read_players(char **av, int ac, int i);
 t_player		read_player(char *file);
 void			fill_area(t_game *game);
