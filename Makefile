@@ -36,7 +36,8 @@ SRC =	./src/main.c \
 		./src/op_lld.c \
 		./src/op_lldi.c \
 		./src/op_sub.c \
-		./src/jump_pc.c
+		./src/jump_pc.c \
+		./src/flags_read.c
 
 MLIB = make -C lib
 

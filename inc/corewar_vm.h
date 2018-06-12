@@ -117,6 +117,8 @@ int				players_num(t_game *game);
 int				check_codege(int op_id, int codage);
 void			start_game(t_game *game);
 void            clone_process(t_game *game, t_process *process, unsigned int location);
+int             flags_read(char **argv, int argc, t_fla *flag);
+int				check_reg_ind(t_game *game, t_process *process, int in);
 
 unsigned int    write_arg(t_process *process, t_game *game, int tt, int PC);
 int				plus_PC(int codage, int MASK, int move);
