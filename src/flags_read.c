@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   flags_read.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/25 16:26:00 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 13:42:37 by aryabenk         ###   ########.fr       */
+/*   Created: 2018/06/12 13:42:40 by aryabenk          #+#    #+#             */
+/*   Updated: 2018/06/12 13:47:14 by aryabenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-void	ft_error(void)
+t_fla	*create_fla(t_fla *flag)
 {
-	ft_printf("Error\n");
-	exit(1);
+	flag = (t_fla*)malloc(sizeof(t_fla));
+	flag->v = 0;
+	return (flag);
 }
 
-int		main(int ac, char **av)
+int flags_read(char **argv, int argc, t_fla *flag)
 {
-	t_game	*game;
-	t_fla	*flag;
+	int i;
 
-	flag = create_fla(NULL);
-	number = 2;
-	initscr();
-	noecho();
-	cbreak();
-	nodelay(stdscr, TRUE);
-	curs_set(FALSE);
-	game = read_players(av, ac, flags_read(av, ac, flag));
-	game->players_num = players_num(game) + 1;
-	start_game(game);
-	nodelay(stdscr, FALSE);
-	manage_keys(game, getch());
-	endwin();
-	return (0);
+	i = 1;
+	while (i < argc && argv[i][0] && argv[i][1] && !argv[i][2])
+	{
+		if (argv[i][0] == '-' && argv[i][1] == 'v')
+			flag->v++;
+		else if (argv[i][0] == '-')
+			ft_printf("")
+		else
+			return (i);
+		i++;
+	}
+	return (i);
 }
