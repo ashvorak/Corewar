@@ -18,14 +18,14 @@ void	op_zjmp(t_game *game, t_process *process)
 
 	if (process->carry)
 	{
-		res = write_2_bytes(game, process->PC + 1);
-		game->area[process->PC].PC = 0;
-		process->PC += (((short)res) % IDX_MOD);
-		process->PC %= MEM_SIZE;
+		res = write_2_bytes(game, process->pc + 1);
+		game->area[process->pc].pc = 0;
+		process->pc += (((short)res) % IDX_MOD);
+		process->pc %= MEM_SIZE;
 	}
 	else
 	{
-		game->area[process->PC].PC = 0;
-		process->PC += 3;
+		game->area[process->pc].pc = 0;
+		process->pc += 3;
 	}
 }
