@@ -6,7 +6,7 @@
 /*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 13:42:37 by aryabenk         ###   ########.fr       */
+/*   Updated: 2018/06/12 14:01:11 by aryabenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int number;
 typedef struct	s_fla
 {
 	int v;
+	int n;
+	int dump;
 }				t_fla;
 
 typedef struct	s_area
@@ -103,7 +105,7 @@ typedef struct	s_game
 
 void			ft_error(char *str);
 
-t_fla			*create_fla(t_fla *flag);
+void			create_fla(t_fla *flag);
 int				flags_read(char **argv, int argc, t_fla *flag);
 t_game			*read_players(char **av, int ac, int i);
 t_player		read_player(char *file);

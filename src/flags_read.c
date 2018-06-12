@@ -6,17 +6,17 @@
 /*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 13:42:40 by aryabenk          #+#    #+#             */
-/*   Updated: 2018/06/12 13:51:24 by aryabenk         ###   ########.fr       */
+/*   Updated: 2018/06/12 14:12:10 by aryabenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-t_fla	*create_fla(t_fla *flag)
+void	create_fla(t_fla *flag)
 {
-	flag = (t_fla*)malloc(sizeof(t_fla));
 	flag->v = 0;
-	return (flag);
+	flag->n = 0;
+	flag->dump = 0;
 }
 
 int flags_read(char **argv, int argc, t_fla *flag)
@@ -24,12 +24,16 @@ int flags_read(char **argv, int argc, t_fla *flag)
 	int i;
 
 	i = 1;
-	while (i < argc && argv[i][0] && argv[i][1] && !argv[i][2])
+	while (i < argc && argv[i])
 	{
-		if (argv[i][0] == '-' && argv[i][1] == 'v')
+		if (!ft_strcmp(argv[i], "-v"))
 			flag->v++;
-		else if (argv[i][0] == '-')
-			ft_printf(" ");
+		else if (!ft_strcmp(argv[i], "-n"))
+			flag->n++;
+		else if (!ft_strcmp(argv[i], "-dump"))
+			flag->dump++;
+		else if (argv[i][0] == '-' && !ft_strstr(argv[i], ".cor"))
+			ft_error("There is no such flag");
 		else
 			return (i);
 		i++;
