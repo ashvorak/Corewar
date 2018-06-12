@@ -1,51 +1,76 @@
-//
-// Created by Dmytro LYTVYN on 6/5/18.
-//
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   op_st.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dlytvyn <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/06/12 16:37:25 by dlytvyn           #+#    #+#             */
+/*   Updated: 2018/06/12 16:37:26 by dlytvyn          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-void	op_st(t_game *game, t_process *process)
+static	void	set_value(t_game *game, t_process *pr, unsigned int tmp)
+{
+	game->area[tmp].value = 0;
+	game->area[tmp + 1].value = 0;
+	game->area[tmp + 2].value = 0;
+	game->area[tmp + 3].value = 0;
+	game->area[tmp].value |= pr->REG_NUM[game->area[pr->PC \
+	+ 2].value] >> 24;
+	game->area[tmp + 1].value |= pr->REG_NUM[game->area[pr->PC \
+	+ 2].value] >> 16;
+	game->area[tmp + 2].value |= pr->REG_NUM[game->area[pr->PC \
+	+ 2].value] >> 8;
+	game->area[tmp + 3].value |= pr->REG_NUM[game->area[pr->PC \
+	+ 2].value];
+	game->area[tmp].color = pr->color;
+	game->area[tmp + 1].color = pr->color;
+	game->area[tmp + 2].color = pr->color;
+	game->area[tmp + 3].color = pr->color;
+	game->area[tmp].bold = 20;
+	game->area[tmp + 1].bold = 20;
+	game->area[tmp + 2].bold = 20;
+	game->area[tmp + 3].bold = 20;
+}
+
+static	int		else_if(t_game *game, t_process *pr, int *pc_jump)
+{
+	if (!check_reg_ind(game, pr, game->area[pr->PC + 3].value))
+		return (0);
+	pr->REG_NUM[game->area[pr->PC + 3].value - 1] = \
+	pr->REG_NUM[game->area[pr->PC + 2].value - 1];
+	*pc_jump += 1;
+	return (1);
+}
+
+void			op_st(t_game *game, t_process *pr)
 {
 	unsigned int	arg2;
-	int 			PC_jump;
-	unsigned int    tmp;
-	PC_jump = 3;
-	
-	if (!check_codege(process->op_id, game->area[process->PC + 1].value))
+	int				pc_jump;
+	unsigned int	tmp;
+
+	pc_jump = 3;
+	if (!check_codege(pr->op_id, game->area[pr->PC + 1].value))
 	{
-		game->area[process->PC].PC = 0;
-		process->PC += jump_pc(game->area[process->PC + 1].value, process->op_id);
-		process->op_id = 16;
+		game->area[pr->PC].PC = 0;
+		pr->PC += jump_pc(game->area[pr->PC + 1].value, pr->op_id);
+		pr->op_id = 16;
 		return ;
 	}
-	if (ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_IND)
+	if (ret_arg(game->area[pr->PC + 1].value, MASK_2, 4) == T_IND)
 	{
-		arg2 = write_2_bytes(game, process->PC + 3);
-		PC_jump += 2;
-		tmp = (process->PC + ((short)arg2 % IDX_MOD)) % MEM_SIZE;
-		game->area[tmp].value = 0;
-		game->area[tmp + 1].value = 0;
-		game->area[tmp + 2].value = 0;
-		game->area[tmp + 3].value = 0;
-		game->area[tmp].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 24;
-		game->area[tmp + 1].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 16;
-		game->area[tmp + 2].value |= process->REG_NUM[game->area[process->PC + 2].value] >> 8;
-		game->area[tmp + 3].value |= process->REG_NUM[game->area[process->PC + 2].value];
-		game->area[tmp].color = process->color;
-		game->area[tmp + 1].color = process->color;
-		game->area[tmp + 2].color = process->color;
-		game->area[tmp + 3].color = process->color;
-		game->area[tmp].bold = 20;
-		game->area[tmp + 1].bold = 20;
-		game->area[tmp + 2].bold = 20;
-		game->area[tmp + 3].bold = 20;
+		arg2 = write_2_bytes(game, pr->PC + 3);
+		pc_jump += 2;
+		tmp = (pr->PC + ((short)arg2 % IDX_MOD)) % MEM_SIZE;
+		if (!check_reg_ind(game, pr, game->area[pr->PC + 2].value))
+			return ;
+		set_value(game, pr, tmp);
 	}
-	else if(ret_arg(game->area[process->PC + 1].value, MASK_2, 4) == T_REG)
-	{
-		process->REG_NUM[game->area[process->PC + 3].value - 1] = process->REG_NUM[game->area[process->PC + 2].value - 1];
-		PC_jump += 1;
-	}
-	game->area[process->PC].PC = 0;
-	process->PC += PC_jump;
+	else if (ret_arg(game->area[pr->PC + 1].value, MASK_2, 4) == T_REG)
+		if (else_if(game, pr, &pc_jump) == 0)
+			return ;
+	(pr->PC += pc_jump) && (game->area[pr->PC].PC = 0);
 }

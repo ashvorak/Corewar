@@ -27,17 +27,23 @@ int		main(int ac, char **av)
 
 	create_fla(&flag);
 	number = 2;
-	initscr();
-	noecho();
-	cbreak();
-	nodelay(stdscr, TRUE);
-	curs_set(FALSE);
+	if (flag.v)
+	{
+		initscr();
+		noecho();
+		cbreak();
+		nodelay(stdscr, TRUE);
+		curs_set(FALSE);
+	}
 	game = read_players(av, ac, flags_read(av, ac, &flag));
 	game->flags = flag;
 	game->players_num = players_num(game) + 1;
 	start_game(game);
-	//nodelay(stdscr, FALSE);
-	//manage_keys(game, getch());
-	//endwin();
+	if (flag.v)
+	{
+		nodelay(stdscr, FALSE);
+		manage_keys(game, getch());
+		endwin();
+	}
 	return (0);
 }

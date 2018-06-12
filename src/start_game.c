@@ -65,12 +65,14 @@ int				push_op_id(unsigned char value)
 static	void	execute(t_game *game)
 {
 	t_process	*process;
-	//int			action;
+	int			action;
 
+	action = -1;
 	process = game->process;
 	while (process)
 	{
-		//manage_keys(game, action);
+		if (game->flags.v)
+			manage_keys(game, action);
 		if (process->op_id != 16)
 		{
 			if (process->CYCLE_TO_DONE == op_tab[process->op_id].CYCLES)
@@ -90,7 +92,8 @@ static	void	execute(t_game *game)
 		process->op_id = push_op_id(game->area[process->PC].value);
 		game->area[process->PC].PC = 1;
 		process = process->next;
-		//action = getch();
+		if (game->flags.v)
+			action = getch();
 	}
 }
 
@@ -165,7 +168,7 @@ void			my_pause(t_game *game)
 	game->pause = 1;
 	while (1)
 	{
-	//	s = getch();
+		s = (game->flags.v) ? getch() : -1;
 		if (s == 32)
 		{
 			game->pause = 0;
@@ -173,10 +176,11 @@ void			my_pause(t_game *game)
 		}
 		else if (s == 27)
 		{
-	//		endwin();
+	
+			(game->flags.v) ? endwin() : 1;
 			exit(0);
 		}
-	//	visual(game);
+		(game->flags.v) ? visual(game) : 1;
 	}
 }
 
@@ -186,7 +190,7 @@ void			manage_keys(t_game *game, int action)
 		my_pause(game);
 	else if (action == 27)
 	{
-	//	endwin();
+		(game->flags.v) ? endwin() : 1;
 		exit(0);
 	}
 	else if (action == 43)
@@ -221,7 +225,7 @@ void			start_game(t_game *game)
 	i = 1;
 	while (game->process && game->CYCLE < 30000)
 	{
-		//manage_keys(game, action);
+		(game->flags.v) ? manage_keys(game, action) : 1;
 		execute(game);
 		game->CYCLE++;
 		if (i % game->cycle_to_die == 0)
@@ -230,8 +234,8 @@ void			start_game(t_game *game)
 			i = 0;
 		}
 		game->num_proc = processes_number(game->process);
-	//	visual(game);
-	//	action = getch();
+		(game->flags.v) ? visual(game) : 1;
+		action = (game->flags.v) ? getch() : -1;
 		i++;
 	}
 }
