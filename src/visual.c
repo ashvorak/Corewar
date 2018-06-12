@@ -6,23 +6,23 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 15:55:28 by dlytvyn           #+#    #+#             */
-/*   Updated: 2018/06/09 18:48:54 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/11 19:02:50 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <printf.h>
 #include "../inc/corewar_vm.h"
-/*
+
 static	void	initialize_colors(void)
 {
 	start_color();
-	init_pair(1, COLOR_BLACK, COLOR_WHITE);
-	init_pair(2, COLOR_WHITE, COLOR_BLACK);
+	init_pair(1, COLOR_BLACK, COLOR_GREY);
+	init_pair(2, COLOR_GREY, COLOR_BLACK);
 	init_pair(3, COLOR_GREEN, COLOR_BLACK);
 	init_pair(4, COLOR_BLUE, COLOR_BLACK);
 	init_pair(5, COLOR_RED, COLOR_BLACK);
 	init_pair(6, COLOR_YELLOW, COLOR_BLACK);
-	init_pair(7, COLOR_BLACK, COLOR_WHITE);
+	init_pair(7, COLOR_BLACK, COLOR_GREY);
 	init_pair(8, COLOR_BLACK, COLOR_GREEN);
 	init_pair(9, COLOR_BLACK, COLOR_BLUE);
 	init_pair(10, COLOR_BLACK, COLOR_RED);
@@ -233,4 +233,3 @@ void			visual(t_game *game)
 	right_menu(game);
 	refresh();
 }
-*/

@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 11:52:06 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/09 18:25:22 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/11 15:03:18 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void    op_ld(t_game *game, t_process *process)
 	else
 	{
 		t_reg = game->area[process->PC + 4].value;
-		//t_ind = write_2_bytes(game, process->PC + 2);
 		t_ind = write_2_bytes(game, process->PC + 2) % IDX_MOD;
 		game->area[process->PC + 2].value |= (short)t_ind >> 8;
 		game->area[process->PC + 2].value |= (short)t_ind;
