@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amazurok <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 12:44:42 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 13:49:39 by amazurok         ###   ########.fr       */
+/*   Updated: 2018/06/13 13:56:44 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ t_player		read_player(char *file, t_game *game)
 	ft_chartoint(buf) ? ft_error("Name must be followed by NULL", game) : 0;
 	read(fd, buf, 4);
 	player.prog_size = ft_chartoint(buf);
+	(player.prog_size > CHAMP_MAX_SIZE) ? ft_error("Champion is over CHAMP_MAX_SIZE", game) : 0;
 	read(fd, player.comment, sizeof(player.comment) - 1);
 	read(fd, buf, 4);
 	ft_chartoint(buf) ? ft_error("Comment must be followed by NULL", game) : 0;
