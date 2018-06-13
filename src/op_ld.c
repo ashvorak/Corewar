@@ -17,12 +17,9 @@ static	unsigned int	ret_t_reg(t_game *game, t_process *process)
 	unsigned int	t_reg;
 	unsigned int	t_ind;
 
-	if (ret_arg(game->area[(process->pc + 1) % MEM_SIZE].value, MASK_1, 6)
-	    == T_DIR)
+	if (ret_arg(game->area[process->pc + 1].value, MASK_1, 6) == T_DIR)
 	{
-		t_reg = game->area[(process->pc + 6) % MEM_SIZE].value;
-		if (!check_reg_ind(game, process, t_reg))
-			return (0);
+		t_reg = game->area[process->pc + 6].value;
 		process->reg_num[(unsigned char)t_reg - 1] = \
 		write_4_bytes(game, process->pc + 2);
 		game->area[process->pc].pc = 0;
@@ -30,16 +27,14 @@ static	unsigned int	ret_t_reg(t_game *game, t_process *process)
 	}
 	else
 	{
-		t_reg = game->area[(process->pc + 4) % MEM_SIZE].value;
-		t_ind = write_2_bytes(game, (process->pc + 2) % MEM_SIZE) % IDX_MOD;
-		game->area[(process->pc + 2) % MEM_SIZE].value |= (short)t_ind >> 8;
-		game->area[(process->pc + 3) % MEM_SIZE].value |= (short)t_ind;
-		if (!check_reg_ind(game, process, t_reg))
-			return (0);
+		t_reg = game->area[process->pc + 4].value;
+		t_ind = write_2_bytes(game, process->pc + 2) % IDX_MOD;
+		game->area[process->pc + 2].value |= (short)t_ind >> 8;
+		game->area[process->pc + 3].value |= (short)t_ind;
 		process->reg_num[t_reg - 1] = \
-		write_4_bytes(game, (process->pc + (short)t_ind) % MEM_SIZE);
+		write_4_bytes(game, process->pc + (short)t_ind);
 		game->area[process->pc].pc = 0;
-		process->pc = (process->pc + 5) % MEM_SIZE;
+		process->pc += 5;
 	}
 	return (t_reg);
 }
@@ -48,16 +43,14 @@ void					op_ld(t_game *game, t_process *process)
 {
 	unsigned int	t_reg;
 
-	if (!check_codege(process->op_id, game->area[(process->pc + 1) %
-	                                             MEM_SIZE].value))
+	if (!check_codege(process->op_id, game->area[process->pc + 1].value))
 	{
 		game->area[process->pc].pc = 0;
-		process->pc += jump_pc(game->area[(process->pc + 1) % MEM_SIZE].value, \
+		process->pc += jump_pc(game->area[process->pc + 1].value, \
 		process->op_id);
 		process->op_id = 16;
 		return ;
 	}
-	if (!(t_reg = ret_t_reg(game, process)))
-		return ;
+	t_reg = ret_t_reg(game, process);
 	process->carry = process->reg_num[t_reg - 1] == 0 ? 1 : 0;
 }

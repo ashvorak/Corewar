@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:16:10 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/13 14:31:57 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/13 14:21:22 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,5 @@ void	start_game(t_game *game)
 		(game->flags.v) ? visual(game) : 1;
 		action = (game->flags.v) ? getch() : -1;
 		i++;
-		ft_printf("Cycle: %d\n", game->cycle);
 	}
 }

@@ -21,7 +21,7 @@ void	op_live(t_game *game, t_process *process)
 	if (arg < 4 && game->players[arg].magic)
 		game->players[arg].live = 1;
 	game->area[process->pc].pc = 0;
-	process->pc = (process->pc + 5) % MEM_SIZE;
+	process->pc += 5;
 	game->players[process->color].last_live = game->cycle;
 	game->players[process->color].lives_in_cp++;
 }
