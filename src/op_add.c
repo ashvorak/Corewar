@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 15:22:35 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 15:26:44 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/13 19:45:43 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	op_add(t_game *game, t_process *process)
 		process->op_id = 16;
 		return ;
 	}
-	game->process->reg_num[game->area[process->pc + 4].value - 1] =
+	process->reg_num[game->area[process->pc + 4].value - 1] =
 		process->reg_num[game->area[process->pc
 		+ 2].value - 1] + process->reg_num[game->area[process->pc +
 		3].value - 1];
 	game->area[process->pc].pc = 0;
 	process->pc += 5;
-	if (game->process->reg_num[game->area[process->pc + 4].value - 1] == 0)
+	if (process->reg_num[game->area[process->pc + 4].value - 1] == 0)
 		process->carry = 1;
 	else
 		process->carry = 0;
