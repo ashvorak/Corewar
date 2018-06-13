@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/11 18:51:46 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/13 21:30:14 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,98 +28,86 @@ int				check_reg_ind(t_game *game, t_process *process, int in)
 
 static void		set_value(t_game *game, t_process *process, unsigned int tmp)
 {
-	game->area[tmp].value = 0;
-	game->area[tmp + 1].value = 0;
-	game->area[tmp + 2].value = 0;
-	game->area[tmp + 3].value = 0;
-	game->area[tmp].value |= process->reg_num[game->area[process->pc
-		+ 2].value - 1] >> 24;
-	game->area[tmp + 1].value |= process->reg_num[game->area[process->pc
-		+ 2].value - 1] >> 16;
-	game->area[tmp + 2].value |= process->reg_num[game->area[process->pc
-		+ 2].value - 1] >> 8;
-	game->area[tmp + 3].value |= process->reg_num[game->area[process->pc
-		+ 2].value - 1];
-	game->area[tmp].bold = 20;
-	game->area[tmp + 1].bold = 20;
-	game->area[tmp + 2].bold = 20;
-	game->area[tmp + 3].bold = 20;
-	game->area[tmp].color = process->color;
-	game->area[tmp + 1].color = process->color;
-	game->area[tmp + 2].color = process->color;
-	game->area[tmp + 3].color = process->color;
+	int i;
+	int num;
+	unsigned int mem;
+	unsigned int nem;
+
+	i = 0;
+	num = 24;
+	nem = process->reg_num[game->area[(process->pc + 2) % MEM_SIZE].value - 1];
+	while (i < 4)
+	{
+		mem = nem;
+		game->area[(tmp + i) % MEM_SIZE].value = 0;
+		game->area[(tmp + i) % MEM_SIZE].value |= mem >> num;
+		game->area[(tmp + i) % MEM_SIZE].bold = 20;
+		game->area[(tmp + i) % MEM_SIZE].color = process->color;
+		i++;
+		num -=8;
+	}
 	game->area[process->pc].pc = 0;
 }
 
-static int		first_if(t_game *game, t_process *process,
-	unsigned int *arg2, int *pc_jump)
-{
-	unsigned int	t_ind;
 
+unsigned int    second_arg(t_game *game, t_process *pr, int *jump)
+{
+	unsigned int t_ind;
+	
 	t_ind = 0;
-	if (ret_arg(game->area[process->pc + 1].value, MASK_2, 4) == T_DIR)
+	if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4) == T_REG)
 	{
-		*arg2 = write_2_bytes(game, process->pc + 3);
-		*arg2 = (short)*arg2;
-		*pc_jump += 2;
+		*jump = *jump + 4;
+		//if (!check_reg_ind(game, pr, game->area[(pr->pc + 3) % MEM_SIZE].value))
+		//	return (-1);
+		return (pr->reg_num[game->area[(pr->pc + 3) % MEM_SIZE].value - 1]);
 	}
-	else if (ret_arg(game->area[process->pc + 1].value, MASK_2, 4) == T_IND)
+	else if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4) == T_IND)
 	{
-		t_ind = write_2_bytes(game, game->area[process->pc + 3].value);
-		*arg2 = write_4_bytes(game, t_ind % IDX_MOD);
-		*pc_jump += 2;
-	}
-	else
-	{
-		if (!check_reg_ind(game, process, game->area[process->pc + 3].value))
-			return (0);
-		*arg2 = process->reg_num[game->area[process->pc + 3].value - 1];
-		*pc_jump += 1;
-	}
-	return (1);
-}
-
-static int		second_if(t_game *game, t_process *process,
-	unsigned int *arg3, int *pc_jump)
-{
-	if (ret_arg(game->area[process->pc + 1].value, MASK_3, 2) == T_DIR)
-	{
-		*arg3 = write_2_bytes(game, *pc_jump + process->pc);
-		*arg3 = (short)*arg3;
-		*pc_jump += 2;
+		t_ind = (short)write_2_bytes(game, (pr->pc + 3) % MEM_SIZE);
+		*jump = *jump + 5;
+		return (write_4_bytes(game, (pr->pc + t_ind) % MEM_SIZE));
 	}
 	else
 	{
-		if (!check_reg_ind(game, process, game->area[process->pc +
-			*pc_jump].value))
-			return (0);
-		*arg3 = process->reg_num[game->area[process->pc + *pc_jump].value - 1];
-		*pc_jump += 1;
+		*jump = *jump + 5;
+		return (write_2_bytes(game, (pr->pc + 3) % MEM_SIZE));
 	}
-	return (1);
 }
 
-void			op_sti(t_game *game, t_process *process)
+unsigned int    third_arg(t_game *game, t_process *pr, int *jump)
 {
-	unsigned int	arg2;
-	unsigned int	arg3;
-	int				pc_jump;
-	unsigned int	tmp;
-
-	pc_jump = 3;
-	if (!check_codege(process->op_id, game->area[process->pc + 1].value))
+	unsigned int res;
+	if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_3, 2) == T_REG)
 	{
-		game->area[process->pc].pc = 0;
-		process->pc += jump_pc(game->area[process->pc +
-			1].value, process->op_id);
-		process->op_id = 16;
+		res = pr->reg_num[game->area[(pr->pc + *jump) % MEM_SIZE].value - 1];
+		*jump = *jump + 1;
+		return (res);
+	}
+	else
+	{
+		res = (short)write_2_bytes(game, (pr->pc + *jump) % MEM_SIZE);
+		*jump = *jump + 2;
+		return (res);
+	}
+}
+
+void            op_sti(t_game *game, t_process *pr)
+{
+	unsigned int    arg2;
+	unsigned int    arg3;
+	int             jump;
+	
+	if (!check_codege(pr->op_id, game->area[(pr->pc + 1) % MEM_SIZE].value))
+	{
+		game->area[pr->pc].pc = 0;
+		pr->pc = (pr->pc + jump_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, pr->op_id)) % MEM_SIZE;
+		pr->op_id = 16;
 		return ;
 	}
-	if (!first_if(game, process, &arg2, &pc_jump))
-		return ;
-	if (!second_if(game, process, &arg3, &pc_jump))
-		return ;
-	tmp = ((process->pc + (((int)arg2 + (int)arg3) % IDX_MOD)) % MEM_SIZE);
-	set_value(game, process, tmp);
-	process->pc += pc_jump;
+	jump = 0;
+	arg2 = second_arg(game, pr, &jump);
+	arg3 = third_arg(game, pr, &jump);
+	set_value(game, pr, (pr->pc + (((int)arg2 + (int)arg3) % IDX_MOD)) % MEM_SIZE);
+	pr->pc += jump;
 }

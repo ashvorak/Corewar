@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 11:52:06 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 16:35:17 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/13 21:40:22 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static int	ret_arg1(t_game *game, t_process *process, unsigned int codage)
 	}
 	else if (ret_arg(game->area[process->pc + 1].value, MASK_1, 6) == T_IND)
 	{
-		t_ind = write_2_bytes(game, process->pc + 2);
-		arg1 = write_4_bytes(game, ((short)t_ind % IDX_MOD) + process->pc);
+		t_ind = (short)write_2_bytes(game, (process->pc + 2) % MEM_SIZE);
+		arg1 = write_4_bytes(game, ((t_ind % IDX_MOD) + process->pc) % MEM_SIZE);
 		process->pc += 4;
 	}
 	else
@@ -54,6 +54,11 @@ static int	ret_arg2(t_game *game, t_process *process, unsigned int codage)
 	}
 	return (arg2);
 }
+int mod(int num)
+{
+	return ((num > 0) ? num : 4096 + num);
+}
+
 
 void		op_ldi(t_game *game, t_process *process)
 {
@@ -77,6 +82,10 @@ void		op_ldi(t_game *game, t_process *process)
 	arg1 = ret_arg1(game, process, codage);
 	arg2 = ret_arg2(game, process, codage);
 	arg3 = game->area[process->pc++].value;
-	process->reg_num[arg3 - 1] = write_4_bytes(game, (((int)arg1 \
-	+ (int)arg2) % IDX_MOD) + pc_buf);
+	ft_printf("index %d\n", mod(((((int)arg1 + (int)arg2) % IDX_MOD) % MEM_SIZE + pc_buf) % MEM_SIZE));
+	process->reg_num[arg3 - 1] = write_4_bytes(game, mod(((((int)arg1 \
+	+ (int)arg2) % IDX_MOD) % MEM_SIZE + pc_buf) % MEM_SIZE));
+	ft_printf("%u\n", arg1);
+	ft_printf("%u\n", arg2);
+	ft_printf("%u\n", process->reg_num[arg3 - 1]);
 }
