@@ -132,5 +132,6 @@ void	start_game(t_game *game)
 		(game->flags.v) ? visual(game) : 1;
 		action = (game->flags.v) ? getch() : -1;
 		i++;
+		ft_printf("Cycle: %d\n", game->cycle);
 	}
 }

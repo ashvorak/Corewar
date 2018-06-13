@@ -79,8 +79,12 @@ void	print_info(t_game *game, int y)
 	mvprintw(y + 8, 200, "%s %d", "MAX_CHECKS :", MAX_CHECKS);
 	speed(game, y + 8);
 	if (game->finish)
+	{
+		attron(COLOR_PAIR(what_color(game->winner)));
 		mvprintw(y + 16, 200, "The winner is : %s",
-			game->players[game->winner].prog_name);
+		         game->players[game->winner].prog_name);
+		attroff(COLOR_PAIR(what_color(game->winner)));
+	}
 	mvprintw(57, 210, "HOTKEYS INFO:");
 	mvprintw(59, 200, "Right ' + '   Increase speed");
 	mvprintw(61, 200, "Right ' - '   Decrease speed");
