@@ -53,10 +53,11 @@ int		print_players(t_game *game, int pn, int y)
 {
 	int i;
 
-	i = 1;                          // change it, there should be a given value of n (instead of i)
+	i = 1;
 	while (i <= pn + 1)
 	{
-		mvprintw(y, 200, "%s %d %s", "Player", i, ":");
+		mvprintw(y, 200, "%s %d %s", "Player",
+			(int)get_first_reg(game->players[i - 1].n, game, i - i), ":");
 		attron(COLOR_PAIR(what_color(i - 1)));
 		mvprintw(y, 211, prog_name(game->players[i - 1].prog_name));
 		attroff(COLOR_PAIR(what_color(i - 1)));
@@ -77,6 +78,9 @@ void	print_info(t_game *game, int y)
 	mvprintw(y + 6, 200, "%s %d", "NBR_LIVE :", NBR_LIVE);
 	mvprintw(y + 8, 200, "%s %d", "MAX_CHECKS :", MAX_CHECKS);
 	speed(game, y + 8);
+	if (game->finish)
+		mvprintw(y + 16, 200, "The winner is : %s",
+			game->players[game->winner].prog_name);
 	mvprintw(57, 210, "HOTKEYS INFO:");
 	mvprintw(59, 200, "Right ' + '   Increase speed");
 	mvprintw(61, 200, "Right ' - '   Decrease speed");

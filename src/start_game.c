@@ -123,6 +123,8 @@ void	start_game(t_game *game)
 	{
 		(game->flags.v) ? manage_keys(game, action) : 1;
 		execute(game);
+		if (game->flags.dump > 0 && game->cycle == game->flags.dump)
+			dump_memory(game);
 		game->cycle++;
 		if (i % game->cycle_to_die == 0)
 			i = check_procces(game);

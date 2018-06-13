@@ -116,6 +116,10 @@ int				check_procces(t_game *game)
 	}
 	i = 0;
 	while (i < game->players_num)
-		game->players[i++].count_lives = 0;
+	{
+		game->players[i].count_lives = 0;
+		game->players[i++].lives_in_cp = 0;
+	}
+	finish_game(game);
 	return (0);
 }

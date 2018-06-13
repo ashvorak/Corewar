@@ -36,7 +36,7 @@ typedef struct			s_fla
 {
 	int					v;
 	int					n;
-	int					dump;
+	size_t				dump;
 }						t_fla;
 
 typedef struct			s_area
@@ -98,9 +98,11 @@ typedef struct			s_game
 	size_t				cycle;
 	size_t				cycle_to_die;
 	int					pause;
-	int					n;
+	unsigned int		n;
 	int					speed;
 	int					checks;
+	int					winner;
+	int					finish;
 }						t_game;
 
 void					ft_error(char *str);
@@ -126,6 +128,10 @@ int						what_color(int col);
 int						check_procces(t_game *game);
 void					execute_process(t_game *game, t_process *process);
 int						check_reg_ind(t_game *game, t_process *process, int in);
+int						get_first_reg(int n, t_game *game, int pos);
+void					dump_memory(t_game *game);
+void					finish_game(t_game *game);
+void					show_players(t_game *game);
 
 unsigned int			write_arg(t_process *process, \
 t_game *game, int tt, int pc);

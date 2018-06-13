@@ -12,6 +12,19 @@
 
 #include "../inc/corewar_vm.h"
 
+int		get_first_reg(int n, t_game *game, int pos)
+{
+	if (n != -1)
+		return (n);
+	else
+	{
+		if (pos - 1 >= 0)
+			return (game->players[pos - 1].n - 1);
+		else
+			return (n);
+	}
+}
+
 void			visual(t_game *game)
 {
 	initialize_colors();

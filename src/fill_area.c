@@ -68,11 +68,9 @@ static	void	fill_players(t_game *game)
 	int				j;
 	int				n;
 	int				pn;
-	unsigned int	reg1;
 
 	i = -1;
 	n = -1;
-	reg1 = 4294967295;
 	pn = players_num(game);
 	while (++i < MEM_SIZE)
 	{
@@ -80,7 +78,7 @@ static	void	fill_players(t_game *game)
 		if (++n <= pn)
 		{
 			i = (0 + (MEM_SIZE / (pn + 1))) * n;
-			push_procces(game, i, reg1--, n);
+			push_procces(game, i, get_first_reg(game->players[n].n, game, n), n);
 			while (j < (int)game->players[n].prog_size)
 			{
 				game->area[i].value = game->players[n].opcode[j++];

@@ -44,6 +44,8 @@ int			main(int ac, char **av)
 		nodelay(stdscr, TRUE);
 		curs_set(FALSE);
 	}
+	if (!game->flags.v)
+		show_players(game);
 	start_game(game);
 	if (game->flags.v)
 	{
