@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 18:16:58 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/13 14:14:14 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ typedef struct			s_game
 
 void	                ft_error(char *str, t_game *game);
 void					create_fla(t_fla *flag);
-int						flags_read(char **argv, int argc, t_fla *flag, t_game *game);
+int						flags_read(char **argv, int argc, t_fla *flag);
 t_game					*read_players(char **av, int ac, int i);
 t_player				read_player(char *file, t_game *game);
 void					fill_area(t_game *game);
@@ -163,6 +163,7 @@ int						jump_pc(unsigned char codage, int op_id);
 unsigned int			write_2_bytes(t_game *game, int pc);
 unsigned int			write_4_bytes(t_game *game, int pc);
 void					execute(t_game *game);
+void					ft_usage(void);
 
 static const t_op		g_op_tab[17] =
 {

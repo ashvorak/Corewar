@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:26:00 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 15:29:45 by aryabenk         ###   ########.fr       */
+/*   Updated: 2018/06/13 14:10:56 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@ void    exit_game(t_game *game)
 	free(game);
 	game = NULL;
 	exit(0);
+}
+
+void	ft_usage(void)
+{
+	ft_printf("Usage: ./corewar [-dump N -n N -v <champion1.cor> <...>\n");
+	ft_printf("       -dump N   : Dumps memory after N cycles then exits\n");
+	ft_printf("       -n N      : sets the number of the next player\n");
+	ft_printf("       -v        : Ncurses output mode\n");
+	exit(1);
 }
 
 void    init(t_game *game)
@@ -51,6 +60,7 @@ int		main(int ac, char **av)
 	t_game	*game;
 
 	g_number = 2;
+	(ac < 2) ? ft_usage() : 0;
 	game = read_players(av, ac, 1);
 	game->players_num = players_num(game) + 1;
 	if (game->flags.v)

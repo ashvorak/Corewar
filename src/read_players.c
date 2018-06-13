@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_players.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aryabenk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/29 10:53:13 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 15:41:25 by aryabenk         ###   ########.fr       */
+/*   Updated: 2018/06/13 14:14:36 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_game	*read_players(char **av, int ac, int i)
 	create_fla(&game->flags);
 	while (i < ac)
 	{
-		i += flags_read(av + i, ac, &game->flags, game);
+		i += flags_read(av + i, ac, &game->flags);
 		if (i < ac && j < 4)
 		{
 			add_player(game, av[i], j);
