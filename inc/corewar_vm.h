@@ -105,12 +105,11 @@ typedef struct			s_game
 	int					finish;
 }						t_game;
 
-void					ft_error(char *str);
-
+void	                ft_error(char *str, t_game *game);
 void					create_fla(t_fla *flag);
-int						flags_read(char **argv, int argc, t_fla *flag);
+int						flags_read(char **argv, int argc, t_fla *flag, t_game *game);
 t_game					*read_players(char **av, int ac, int i);
-t_player				read_player(char *file);
+t_player				read_player(char *file, t_game *game);
 void					fill_area(t_game *game);
 void					push_procces(t_game *game, \
 unsigned int location, unsigned int reg1, int num);
@@ -132,6 +131,8 @@ int						get_first_reg(int n, t_game *game, int pos);
 void					dump_memory(t_game *game);
 void					finish_game(t_game *game);
 void					show_players(t_game *game);
+void	                init(t_game *game);
+void                    exit_game(t_game *game);
 
 unsigned int			write_arg(t_process *process, \
 t_game *game, int tt, int pc);

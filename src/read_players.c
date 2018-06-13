@@ -14,7 +14,7 @@
 
 void	add_player(t_game *game, char *file, int j)
 {
-	game->players[j] = read_player(file);
+	game->players[j] = read_player(file, game);
 	game->players[j].id = j + 1;
 	game->players[j].live = 1;
 	game->players[j].count_lives = 0;
@@ -33,13 +33,12 @@ t_game	*read_players(char **av, int ac, int i)
 
 	if (!(game = (t_game*)malloc(sizeof(t_game))))
 		return (0);
-	game->process = NULL;
-	game->cycle = 0;
+	init(game);
 	j = 0;
 	create_fla(&game->flags);
 	while (i < ac)
 	{
-		i += flags_read(av + i, ac, &game->flags);
+		i += flags_read(av + i, ac, &game->flags, game);
 		if (i < ac && j < 4)
 		{
 			add_player(game, av[i], j);

@@ -19,9 +19,9 @@ void	dump_memory(t_game *game)
 	i = 0;
 	while (i < MEM_SIZE)
 	{
-		if (i % 64 == 0)	
+		if (i % 64 == 0)
 			ft_printf("\n0x%.4x : ", i);
-		ft_printf("%.2x", game->area[i].value);
+		ft_printf("%.2x ", game->area[i].value);
 		i++;
 	}
 	printf("\n");

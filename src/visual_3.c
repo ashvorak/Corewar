@@ -96,7 +96,7 @@ void	right_menu(t_game *game)
 	y = 10;
 	pn = players_num(game);
 	if (pn < 0)
-		ft_error("No players");
+		ft_error("No players", game);
 	attron(A_BOLD);
 	attron(COLOR_PAIR(12));
 	if (!game->pause)

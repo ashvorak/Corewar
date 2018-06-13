@@ -91,7 +91,7 @@ void	manage_keys(t_game *game, int action)
 	else if (action == 27)
 	{
 		(game->flags.v) ? endwin() : 1;
-		exit(0);
+		exit_game(game);
 	}
 	else if (action == 43)
 	{

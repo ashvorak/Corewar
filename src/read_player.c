@@ -24,30 +24,31 @@ unsigned	int	ft_chartoint(unsigned char *str)
 	return (res);
 }
 
-t_player		read_player(char *file)
+t_player		read_player(char *file, t_game *game)
 {
 	int				fd;
 	t_player		player;
 	unsigned char	buf[4];
 
 	if ((fd = open(file, O_RDONLY)) < 0)
-		ft_error("There is no such file");
+		ft_error("There is no such file", game);
 	ft_bzero(player.prog_name, sizeof(player.prog_name));
 	ft_bzero(player.comment, sizeof(player.comment));
 	read(fd, buf, 4);
 	player.magic = ft_chartoint(buf);
-	player.magic != COREWAR_EXEC_MAGIC ? ft_error("Incorrect magic number") : 0;
+	player.magic != COREWAR_EXEC_MAGIC ?
+		ft_error("Incorrect magic number", game) : 0;
 	read(fd, player.prog_name, sizeof(player.prog_name) - 1);
 	read(fd, buf, 4);
-	ft_chartoint(buf) ? ft_error("Name must be followed by NULL") : 0;
+	ft_chartoint(buf) ? ft_error("Name must be followed by NULL", game) : 0;
 	read(fd, buf, 4);
 	player.prog_size = ft_chartoint(buf);
 	read(fd, player.comment, sizeof(player.comment) - 1);
 	read(fd, buf, 4);
-	ft_chartoint(buf) ? ft_error("Comment must be followed by NULL") : 0;
+	ft_chartoint(buf) ? ft_error("Comment must be followed by NULL", game) : 0;
 	ft_bzero(player.opcode, MEM_SIZE / 6);
 	read(fd, player.opcode, player.prog_size);
 	if (read(fd, buf, 1) > 0)
-		ft_error("Invalid program size");
+		ft_error("Invalid program size", game);
 	return (player);
 }
