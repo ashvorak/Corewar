@@ -79,9 +79,9 @@ void		op_ldi(t_game *game, t_process *process)
 	pc_buf = process->pc;
 	codage = game->area[(process->pc + 1) % MEM_SIZE].value;
 	game->area[process->pc].pc = 0;
-	if ((arg1 = ret_arg1(game, process, codage)) == -1)
+	if ((arg1 = ret_arg1(game, process, codage)) == (unsigned int)-1)
 		return ;
-	if ((arg2 = ret_arg2(game, process, codage)) == -1)
+	if ((arg2 = ret_arg2(game, process, codage)) == (unsigned int)-1)
 		return ;
 	arg3 = game->area[process->pc++].value;
 	process->pc %= MEM_SIZE;

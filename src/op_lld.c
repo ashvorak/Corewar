@@ -29,7 +29,7 @@ static int	first_if(t_game *game, t_process *process, unsigned int *t_reg,
 	{
 		*t_reg = game->area[(process->pc + 4) % MEM_SIZE].value;
 		*t_ind = write_2_bytes(game, (process->pc + 2) % MEM_SIZE);
-		if (!check_reg_ind(game, process, t_reg))
+		if (!check_reg_ind(game, process, *t_reg))
 			return (0);
 		process->reg_num[*t_reg - 1] = write_4_bytes(game,
 		                                             (process->pc + (short)*t_ind)) % MEM_SIZE;

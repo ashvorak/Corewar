@@ -31,7 +31,7 @@ void	op_or(t_game *game, t_process *pr)
 		ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_1, 6), (pr->pc + pc_buf) % MEM_SIZE);
 	pc_buf = (pc_buf + plus_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_1, 6)) % MEM_SIZE;
 	arg2 = write_arg(pr, game,
-		ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4), (pr->pc + pc_buf) % MEM_SIZE)) % MEM_SIZE;
+		ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4), (pr->pc + pc_buf) % MEM_SIZE) % MEM_SIZE;
 	pc_buf = (pc_buf + plus_pc(game->area[pr->pc + 1].value, MASK_2, 4)) % MEM_SIZE;
 	arg3 = game->area[(pr->pc + pc_buf) % MEM_SIZE].value;
 	pc_buf += 1;
