@@ -22,13 +22,19 @@ void	op_add(t_game *game, t_process *process)
 		process->op_id = 16;
 		return ;
 	}
-	game->process->reg_num[game->area[process->pc + 4].value - 1] =
-		process->reg_num[game->area[process->pc
-		+ 2].value - 1] + process->reg_num[game->area[process->pc +
+	if (!check_reg_ind(game, process, game->area[(process->pc + 4) %
+	                                             MEM_SIZE].value))
+		return ;
+	game->process->reg_num[game->area[(process->pc + 4) % MEM_SIZE].value - 1] =
+		process->reg_num[game->area[(process->pc
+		+ 2) % MEM_SIZE].value - 1] + process->reg_num[game->area[process->pc +
 		3].value - 1];
 	game->area[process->pc].pc = 0;
 	process->pc += 5;
-	if (game->process->reg_num[game->area[process->pc + 4].value - 1] == 0)
+	if (!check_reg_ind(game, process, game->area[(process->pc + 4) %
+	                                             MEM_SIZE].value))
+		return ;
+	if (game->process->reg_num[game->area[(process->pc + 4) % MEM_SIZE].value - 1] == 0)
 		process->carry = 1;
 	else
 		process->carry = 0;

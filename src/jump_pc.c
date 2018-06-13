@@ -45,5 +45,6 @@ int		jump_pc(unsigned char codage, int op_id)
 	pc_jump += ret_jump(codage, MASK_1, 6, op_id);
 	pc_jump += ret_jump(codage, MASK_2, 4, op_id);
 	pc_jump += ret_jump(codage, MASK_3, 2, op_id);
+	pc_jump %= MEM_SIZE;
 	return (pc_jump);
 }

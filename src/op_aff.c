@@ -24,6 +24,9 @@ void	op_aff(t_game *game, t_process *process)
 	}
 	game->area[process->pc].pc = 0;
 	process->pc += 3;
-	ft_printf("%c\n", process->reg_num[game->area[process->pc + 2].value] \
-	% 256);
+	if(!check_reg_ind(game, process, game->area[(process->pc + 2) %
+	                                            MEM_SIZE].value))
+		return ;
+	ft_printf("%c\n", process->reg_num[game->area[(process->pc + 2) %
+	                                              MEM_SIZE].value] % 256);
 }

@@ -60,5 +60,5 @@ void				op_fork(t_game *game, t_process *process)
 	game->area[process->pc].pc = 0;
 	clone_process(game, process, (process->pc + \
 	((short)arg % IDX_MOD)) % MEM_SIZE);
-	process->pc += 3;
+	process->pc = (process->pc + 3) % MEM_SIZE;
 }
