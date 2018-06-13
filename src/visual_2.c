@@ -74,8 +74,7 @@ void	print_data(t_game *game)
 	int		j;
 	int		k;
 	int		l;
-	char	*tmp;
-
+	
 	i = 2;
 	k = 0;
 	while (k < MEM_SIZE)
@@ -84,12 +83,8 @@ void	print_data(t_game *game)
 		j = 3;
 		while (l++ < 64)
 		{
-			tmp = ft_itoa_base(game->area[k].value, 16);
-			if (ft_strlen(tmp) == 1)
-				tmp = ft_strjoin("0", tmp);
 			switcher(game, k, 1);
-			mvprintw(i, j, tmp);
-			ft_strdel(&tmp);
+			mvprintw(i, j, "%.2x", game->area[k].value);
 			j += 3;
 			switcher(game, k++, 2);
 		}
