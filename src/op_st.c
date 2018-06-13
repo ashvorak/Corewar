@@ -50,7 +50,7 @@ void			op_st(t_game *game, t_process *pr)
 	{
 		t_ind = write_2_bytes(game, (pr->pc + 3) % MEM_SIZE);
 		arg2 = write_4_bytes(game, (pr->pc + t_ind) % MEM_SIZE);
-		set_value(game, pr, (pr->pc + (arg2 % IDX_MOD)) % MEM_SIZE))
+		set_value(game, pr, (pr->pc + (arg2 % IDX_MOD)) % MEM_SIZE);
 		game->area[pr->pc].pc = 0;
 		pr->pc = (pr->pc + 5) % MEM_SIZE;
 	}
