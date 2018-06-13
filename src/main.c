@@ -13,29 +13,46 @@
 #include <errno.h>
 #include "../inc/corewar_vm.h"
 
-void		ft_error(char *str)
+void	ft_error(char *str, t_game *game)
 {
 	errno = 5;
 	perror(str);
+	free(game);
+	game = NULL;
 	exit(1);
 }
 
-static void	init(t_game *game)
+void    exit_game(t_game *game)
+{
+	free(game);
+	game = NULL;
+	exit(0);
+}
+
+void    init(t_game *game)
 {
 	game->pause = 1;
 	game->speed = 2000;
 	game->checks = 0;
 	game->cycle_to_die = CYCLE_TO_DIE;
+	game->num_proc = 0;
+	game->players_num = 0;
+	game->cycle = 0;
+	game->n = 0;
+	game->winner = 0;
+	game->finish = 0;
+	ft_bzero(&game->area, sizeof(game->area));
+	ft_bzero(&game->players, sizeof(game->players));
+	game->process = NULL;
 }
 
-int			main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	t_game	*game;
 
 	g_number = 2;
 	game = read_players(av, ac, 1);
 	game->players_num = players_num(game) + 1;
-	init(game);
 	if (game->flags.v)
 	{
 		initscr();
@@ -53,5 +70,6 @@ int			main(int ac, char **av)
 		manage_keys(game, getch());
 		endwin();
 	}
+	exit_game(game);
 	return (0);
 }

@@ -44,7 +44,7 @@ void    finish_game(t_game *game)
         if (game->flags.v)
             visual(game);
         else
-            ft_printf("The winner is Player %d : %s", game->winner + 1,
+            ft_printf("The winner is Player %d : %s\n", game->winner + 1,
                 game->players[game->winner].prog_name);
     }
 }
