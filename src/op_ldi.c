@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 11:52:06 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/13 21:46:38 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/14 12:30:41 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,6 @@ static int	ret_arg2(t_game *game, t_process *process, unsigned int codage)
 	}
 	return (arg2);
 }
-int mod(int num)
-{
-	return ((num > 0) ? num : 4096 + num);
-}
-
 
 void		op_ldi(t_game *game, t_process *process)
 {
@@ -82,10 +77,9 @@ void		op_ldi(t_game *game, t_process *process)
 	arg1 = ret_arg1(game, process, codage);
 	arg2 = ret_arg2(game, process, codage);
 	arg3 = game->area[process->pc++].value;
-	ft_printf("index %d\n", mod(((((int)arg1 + (int)arg2) % IDX_MOD) % MEM_SIZE + pc_buf) % MEM_SIZE));
-	process->reg_num[arg3 - 1] = write_4_bytes(game, mod(((((int)arg1 \
-	+ (int)arg2) % IDX_MOD) % MEM_SIZE + pc_buf) % MEM_SIZE));
-	ft_printf("%u\n", arg1);
-	ft_printf("%u\n", arg2);
-	ft_printf("%u\n", process->reg_num[arg3 - 1]);
+	//ft_printf("index %d\n", mod(((((int)arg1 + (int)arg2) % IDX_MOD) % MEM_SIZE + pc_buf) % MEM_SIZE));
+	process->reg_num[arg3 - 1] = write_4_bytes(game, ((((int)arg1 + (int)arg2) % IDX_MOD) + pc_buf) % MEM_SIZE);
+	//ft_printf("%u\n", arg1);
+	//ft_printf("%u\n", arg2);
+	//ft_printf("%u\n", process->reg_num[arg3 - 1]);
 }
