@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/13 21:45:42 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/14 15:23:17 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ void            op_sti(t_game *game, t_process *pr)
 	jump = 0;
 	arg2 = second_arg(game, pr, &jump);
 	arg3 = third_arg(game, pr, &jump);
-	set_value(game, pr, (pr->pc + (arg2 + arg3) % IDX_MOD) % MEM_SIZE);
+	set_value(game, pr, (pr->pc + ((int)arg2 + (int)arg3) % IDX_MOD) % MEM_SIZE);
 	pr->pc += jump;
+	pr->pc %= MEM_SIZE;
 }
