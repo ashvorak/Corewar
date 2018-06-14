@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 16:01:28 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 16:05:34 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/14 19:08:26 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void				clone_process(t_game *game, t_process *p, int pc)
 void				op_fork(t_game *game, t_process *process)
 {
 	int arg;
-	
+
 	arg = (short)write_2_bytes(game, (process->pc + 1) % MEM_SIZE);
 	game->area[process->pc].pc = 0;
 	clone_process(game, process, (process->pc + (arg % IDX_MOD)) % MEM_SIZE);

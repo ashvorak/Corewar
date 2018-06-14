@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:16:10 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/13 14:21:22 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/14 22:41:22 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,16 @@ void	start_game(t_game *game)
 		game->cycle++;
 		if (i % game->cycle_to_die == 0)
 			i = check_procces(game);
+		if (game->cycle == 3841)
+		{
+			t_process *tmp;
+			tmp = game->process;
+			while (tmp)
+			{
+				//ft_printf("proc %d\n", tmp->pc);
+				tmp = tmp->next;
+			}
+		}	
 		game->num_proc = processes_number(game->process);
 		(game->flags.v) ? visual(game) : 1;
 		action = (game->flags.v) ? getch() : -1;

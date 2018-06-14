@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/14 16:12:03 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/14 23:14:18 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int				check_reg_ind(t_game *game, t_process *process, int in)
 	else
 	{
 		game->area[process->pc].pc = 0;
-		process->pc += jump_pc(game->area[process->pc + 1].value,
-			process->op_id);
 		process->op_id = 16;
 		return (0);
 	}
@@ -100,7 +98,7 @@ void            op_sti(t_game *game, t_process *pr)
 	int    arg3;
 	int    jump;
 	int    er;
-	
+
 	er = 0;
 	if (!check_codege(pr->op_id, game->area[(pr->pc + 1) % MEM_SIZE].value))
 	{
@@ -112,7 +110,22 @@ void            op_sti(t_game *game, t_process *pr)
 	jump = 0;
 	arg2 = second_arg(game, pr, &jump, &er);
 	arg3 = third_arg(game, pr, &jump, &er);
-	(er == 0) ? set_value(game, pr, (pr->pc + (arg2 + arg3) % IDX_MOD) % MEM_SIZE) : 0;
+	if (er == 0)
+		set_value(game, pr, (pr->pc + (arg2 + arg3) % IDX_MOD) % MEM_SIZE) ;
+	//if (er == 1)
+	//{
+		//ft_printf("pc %d\n", pr->pc);
+		//ft_printf("jump %d er %d\n", jump, er);
+		//ft_printf("jump + pc: %d\n", pr->pc + jump);
+	//}
+	if (game->cycle > 3830)
+	{
+	ft_printf("pc %u\n", pr->pc);
+	ft_printf("reg %x\n", pr->reg_num[game->area[(pr->pc + 2) % MEM_SIZE].value - 1]);
+	}
+	game->area[pr->pc].pc = 0;
 	pr->pc += jump;
+	//if (er == 1)
+		//ft_printf("pc %d\n", pr->pc);
 	pr->pc %= MEM_SIZE;
 }
