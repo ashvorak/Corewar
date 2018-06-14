@@ -61,9 +61,9 @@ int		print_players(t_game *game, int pn, int y)
 		attron(COLOR_PAIR(what_color(i - 1)));
 		mvprintw(y, 211, prog_name(game->players[i - 1].prog_name));
 		attroff(COLOR_PAIR(what_color(i - 1)));
-		mvprintw(y += 2, 205, "%s %d", "Last live :              ",
+		mvprintw(y += 2, 205, "%s %d      ", "Last live :              ",
 			game->players[i - 1].last_live);
-		mvprintw(y += 2, 205, "%s %d", "Lives in current period :",
+		mvprintw(y += 2, 205, "%s %d      ", "Lives in current period :",
 			game->players[i - 1].lives_in_cp);
 		i++;
 		y += 2;
@@ -73,14 +73,14 @@ int		print_players(t_game *game, int pn, int y)
 
 void	print_info(t_game *game, int y)
 {
-	mvprintw(y + 2, 200, "%s %d", "CYCLE_TO_DIE :", game->cycle_to_die);
+	mvprintw(y + 2, 200, "%s %d   ", "CYCLE_TO_DIE :", game->cycle_to_die);
 	mvprintw(y + 4, 200, "%s %d", "CYCLE_DELTA :", CYCLE_DELTA);
 	mvprintw(y + 6, 200, "%s %d", "NBR_LIVE :", NBR_LIVE);
 	mvprintw(y + 8, 200, "%s %d", "MAX_CHECKS :", MAX_CHECKS);
 	speed(game, y + 8);
 	if (game->finish)
 		mvprintw(y + 16, 200, "The winner is : %s",
-			game->players[game->winner].prog_name);
+			prog_name(game->players[game->winner].prog_name));
 	mvprintw(57, 210, "HOTKEYS INFO:");
 	mvprintw(59, 200, "Right ' + '   Increase speed");
 	mvprintw(61, 200, "Right ' - '   Decrease speed");
@@ -103,8 +103,8 @@ void	right_menu(t_game *game)
 		mvprintw(3, 200, "%s", "**   RUNNING  **");
 	else
 		mvprintw(3, 200, "%s", "**   PAUSED   **");
-	mvprintw(5, 200, "%s %d", "CYClES :", game->cycle);
-	mvprintw(7, 200, "%s %d", "PROCESSES :", game->num_proc);
+	mvprintw(5, 200, "%s %d         ", "CYClES :", game->cycle);
+	mvprintw(7, 200, "%s %d             ", "PROCESSES :", game->num_proc);
 	y = print_players(game, pn, y);
 	print_info(game, y);
 	attroff(COLOR_PAIR(12));

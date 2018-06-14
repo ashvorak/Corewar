@@ -61,14 +61,6 @@ void				op_fork(t_game *game, t_process *process)
 	
 	arg = (short)write_2_bytes(game, (process->pc + 1) % MEM_SIZE);
 	game->area[process->pc].pc = 0;
-//	if (process->pc == 182 && game->cycle > 3760) {
-		//ft_printf("PC->now: %d\n", process->pc);
-		//ft_printf("PC: %d\n", (process->pc + (arg % IDX_MOD)) % MEM_SIZE);
-		//ft_printf("ARG: %d\n", arg);
-//	}
 	clone_process(game, process, (process->pc + (arg % IDX_MOD)) % MEM_SIZE);
-	//if (process->pc == 182 && game->cycle > 3760) {
-		//ft_printf("Pos: %d\n", (process->pc + (arg % IDX_MOD)) % MEM_SIZE);
-	//}
 	process->pc = (process->pc + 3) % MEM_SIZE;
 }

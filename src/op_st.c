@@ -20,7 +20,6 @@ void           set_value(t_game *game, t_process *pr, int in)
 	unsigned int nem;
 	
 	i = 0;
-	ft_printf("in: %u\n", in);
 	in = mod(in);
 	num = 24;
 	nem = pr->reg_num[game->area[(pr->pc + 2) % MEM_SIZE].value - 1];

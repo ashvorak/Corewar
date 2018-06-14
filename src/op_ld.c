@@ -16,8 +16,7 @@ static	unsigned int	ret_t_reg(t_game *game, t_process *process)
 {
 	unsigned int	t_reg;
 	int	            t_ind;
-//	unsigned int	arg_ind;
-
+	
 	if (ret_arg(game->area[(process->pc + 1) % MEM_SIZE].value, MASK_1, 6) == T_DIR)
 	{
 		t_reg = game->area[(process->pc + 6) % MEM_SIZE].value;

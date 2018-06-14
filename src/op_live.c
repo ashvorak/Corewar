@@ -19,9 +19,11 @@ void	op_live(t_game *game, t_process *process)
 	process->live++;
 	arg = write_4_bytes(game, process->pc);
 	if (arg < 4 && game->players[arg].magic)
+	{
 		game->players[arg].live = 1;
+		game->players[process->color].last_live = (int)game->cycle;
+		game->players[process->color].lives_in_cp++;
+	}
 	game->area[process->pc].pc = 0;
 	process->pc = (process->pc + 5) % MEM_SIZE;
-	game->players[process->color].last_live = game->cycle;
-	game->players[process->color].lives_in_cp++;
 }

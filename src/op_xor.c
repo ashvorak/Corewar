@@ -19,24 +19,26 @@ void	op_xor(t_game *game, t_process *pr)
 	unsigned int	arg2;
 	unsigned int	arg3;
 
-	if (!check_codege(pr->op_id, game->area[pr->pc + 1].value))
+	if (!check_codege(pr->op_id, game->area[(pr->pc + 1) % MEM_SIZE].value))
 	{
 		game->area[pr->pc].pc = 0;
-		pr->pc += jump_pc(game->area[pr->pc + 1].value, pr->op_id);
+		pr->pc += jump_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, pr->op_id);
 		pr->op_id = 16;
+		pr->pc %= MEM_SIZE;
 		return ;
 	}
 	pc_buf = 2;
 	arg1 = write_arg(pr, game,
-		ret_arg(game->area[pr->pc + 1].value, MASK_1, 6), pr->pc + pc_buf);
-	pc_buf += plus_pc(game->area[pr->pc + 1].value, MASK_1, 6);
+		ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_1, 6), (pr->pc + pc_buf) % MEM_SIZE);
+	pc_buf += plus_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_1, 6);
 	arg2 = write_arg(pr, game,
-		ret_arg(game->area[pr->pc + 1].value, MASK_2, 4), pr->pc + pc_buf);
-	pc_buf += plus_pc(game->area[pr->pc + 1].value, MASK_2, 4);
-	arg3 = game->area[pr->pc + pc_buf].value;
+		ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4), (pr->pc + pc_buf) % MEM_SIZE);
+	pc_buf += plus_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4);
+	arg3 = game->area[(pr->pc + pc_buf) % MEM_SIZE].value;
 	pc_buf += 1;
 	pr->reg_num[arg3 - 1] = arg1 ^ arg2;
 	pr->carry = (pr->reg_num[arg3 - 1] == 0) ? 1 : 0;
 	game->area[pr->pc].pc = 0;
 	pr->pc += pc_buf;
+	pr->pc %= MEM_SIZE;
 }
