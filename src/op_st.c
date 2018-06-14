@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   op_st.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlytvyn <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 16:37:25 by dlytvyn           #+#    #+#             */
-/*   Updated: 2018/06/12 16:37:26 by dlytvyn          ###   ########.fr       */
+/*   Updated: 2018/06/14 16:32:16 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-void           set_value(t_game *game, t_process *pr, unsigned int in)
+void           set_value(t_game *game, t_process *pr, int in)
 {
 	int i;
 	int num;
@@ -20,6 +20,8 @@ void           set_value(t_game *game, t_process *pr, unsigned int in)
 	unsigned int nem;
 	
 	i = 0;
+	ft_printf("in: %u\n", in);
+	in = mod(in);
 	num = 24;
 	nem = pr->reg_num[game->area[(pr->pc + 2) % MEM_SIZE].value - 1];
 	if (!check_reg_ind(game, pr, game->area[(pr->pc + 2) % MEM_SIZE].value))
@@ -38,7 +40,8 @@ void           set_value(t_game *game, t_process *pr, unsigned int in)
 
 void			op_st(t_game *game, t_process *pr)
 {
-	unsigned  int   arg2;
+	//unsigned int	t_ind;
+	unsigned int	arg2;
 	
 	if (!check_codege(pr->op_id, game->area[(pr->pc + 1) % MEM_SIZE].value))
 	{
@@ -49,8 +52,9 @@ void			op_st(t_game *game, t_process *pr)
 	}
 	if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4) == T_IND)
 	{
-		arg2 = (short)write_2_bytes(game, (pr->pc + 3) % MEM_SIZE);
-		set_value(game, pr, (pr->pc + (arg2 % IDX_MOD)) % MEM_SIZE);
+		arg2 = write_2_bytes(game, (pr->pc + 3) % MEM_SIZE);
+		//t_ind = write_4_bytes(game, (pr->pc + (short)arg2) % MEM_SIZE);
+		set_value(game, pr, (pr->pc + ((short)arg2 % IDX_MOD)) % MEM_SIZE);
 		game->area[pr->pc].pc = 0;
 		pr->pc = (pr->pc + 5) % MEM_SIZE;
 	}

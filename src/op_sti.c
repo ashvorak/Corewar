@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/14 15:23:17 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/14 16:12:03 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ unsigned int    second_arg(t_game *game, t_process *pr, int *jump)
 	{
 		t_ind = (short)write_2_bytes(game, (pr->pc + 3) % MEM_SIZE);
 		*jump = *jump + 5;
-		t_ind = write_4_bytes(game, ((pr->pc + t_ind) % IDX_MOD)) % MEM_SIZE;
+		t_ind = write_4_bytes(game, ((pr->pc + (t_ind % IDX_MOD)) % MEM_SIZE));
 		return (t_ind);
 	}
 	else
