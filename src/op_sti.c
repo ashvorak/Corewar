@@ -66,12 +66,13 @@ unsigned int    second_arg(t_game *game, t_process *pr, int *jump)
 	{
 		t_ind = (short)write_2_bytes(game, (pr->pc + 3) % MEM_SIZE);
 		*jump = *jump + 5;
-		return (write_4_bytes(game, (pr->pc + t_ind) % MEM_SIZE));
+		t_ind = write_4_bytes(game, ((pr->pc + t_ind) % IDX_MOD)) % MEM_SIZE;
+		return (t_ind);
 	}
 	else
 	{
 		*jump = *jump + 5;
-		return (write_2_bytes(game, (pr->pc + 3) % MEM_SIZE));
+		return ((short)write_2_bytes(game, (pr->pc + 3) % MEM_SIZE));
 	}
 }
 
@@ -94,9 +95,9 @@ unsigned int    third_arg(t_game *game, t_process *pr, int *jump)
 
 void            op_sti(t_game *game, t_process *pr)
 {
-	unsigned int    arg2;
-	unsigned int    arg3;
-	int             jump;
+	int    arg2;
+	int    arg3;
+	int    jump;
 	
 	if (!check_codege(pr->op_id, game->area[(pr->pc + 1) % MEM_SIZE].value))
 	{
@@ -108,6 +109,6 @@ void            op_sti(t_game *game, t_process *pr)
 	jump = 0;
 	arg2 = second_arg(game, pr, &jump);
 	arg3 = third_arg(game, pr, &jump);
-	set_value(game, pr, (pr->pc + (((int)arg2 + (int)arg3) % IDX_MOD)) % MEM_SIZE);
+	set_value(game, pr, (pr->pc + (arg2 + arg3) % IDX_MOD) % MEM_SIZE);
 	pr->pc += jump;
 }

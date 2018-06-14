@@ -25,7 +25,9 @@ static t_process	*copy_reg(t_process *clone, t_process *process)
 	return (clone);
 }
 
-void				clone_process(t_game *game, t_process *p, unsigned int pc)
+
+
+void				clone_process(t_game *game, t_process *p, int pc)
 {
 	t_process *tmp;
 	t_process *clone;
@@ -34,7 +36,8 @@ void				clone_process(t_game *game, t_process *p, unsigned int pc)
 		exit(1);
 	ft_bzero(clone->reg_num, 16);
 	clone = copy_reg(clone, p);
-	clone->pc = pc;
+	pc = mod(pc);
+	clone->pc = (unsigned int)pc;
 	clone->live = p->live;
 	clone->op_id = push_op_id(game->area[clone->pc].value);
 	clone->cycle_to_done = 0;
@@ -54,11 +57,18 @@ void				clone_process(t_game *game, t_process *p, unsigned int pc)
 
 void				op_fork(t_game *game, t_process *process)
 {
-	unsigned int arg;
-
-	arg = write_2_bytes(game, (process->pc + 1) % MEM_SIZE);
+	int arg;
+	
+	arg = (short)write_2_bytes(game, (process->pc + 1) % MEM_SIZE);
 	game->area[process->pc].pc = 0;
-	clone_process(game, process, (process->pc + \
-	((short)arg % IDX_MOD)) % MEM_SIZE);
-	process->pc += 3;
+//	if (process->pc == 182 && game->cycle > 3760) {
+		//ft_printf("PC->now: %d\n", process->pc);
+		//ft_printf("PC: %d\n", (process->pc + (arg % IDX_MOD)) % MEM_SIZE);
+		//ft_printf("ARG: %d\n", arg);
+//	}
+	clone_process(game, process, (process->pc + (arg % IDX_MOD)) % MEM_SIZE);
+	//if (process->pc == 182 && game->cycle > 3760) {
+		//ft_printf("Pos: %d\n", (process->pc + (arg % IDX_MOD)) % MEM_SIZE);
+	//}
+	process->pc = (process->pc + 3) % MEM_SIZE;
 }
