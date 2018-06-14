@@ -118,7 +118,7 @@ int						players_num(t_game *game);
 int						check_codege(int op_id, int codage);
 void					start_game(t_game *game);
 void					clone_process(t_game *game, \
-t_process *process, unsigned int location);
+t_process *process, int location);
 void					print_frame(WINDOW *stdscr, int speed);
 void					initialize_colors(void);
 void					print_data(t_game *game);
@@ -156,7 +156,7 @@ void					op_lfork(t_game *game, t_process *process);
 void					op_ld(t_game *game, t_process *process);
 void					op_ldi(t_game *game, t_process *process);
 void					op_lld(t_game *game, t_process *process);
-void					op_lldi(t_game *game, t_process *process);
+void		            op_lldi(t_game *game, t_process *process);
 
 int						ret_arg(int codage, int mask, int move);
 int						jump_pc(unsigned char codage, int op_id);
@@ -164,6 +164,7 @@ unsigned int			write_2_bytes(t_game *game, int pc);
 unsigned int			write_4_bytes(t_game *game, int pc);
 void					execute(t_game *game);
 void					ft_usage(void);
+int                     mod(int num);
 
 static const t_op		g_op_tab[17] =
 {

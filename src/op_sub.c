@@ -16,19 +16,20 @@ void	op_sub(t_game *game, t_process *process)
 {
 	unsigned int res;
 
-	if (!check_codege(process->op_id, game->area[process->pc + 1].value))
+	if (!check_codege(process->op_id, game->area[(process->pc + 1) % MEM_SIZE].value))
 	{
 		game->area[process->pc].pc = 0;
-		process->pc += jump_pc(game->area[process->pc + 1].value,
+		process->pc += jump_pc(game->area[(process->pc + 1) % MEM_SIZE].value,
 			process->op_id);
+		process->pc %= MEM_SIZE;
 		process->op_id = 16;
 		return ;
 	}
-	res = process->reg_num[game->area[process->pc + 2].value - 1] -
-		process->reg_num[game->area[process->pc + 3].value - 1];
-	process->reg_num[game->area[process->pc + 4].value - 1] = res;
+	res = process->reg_num[game->area[(process->pc + 2) % MEM_SIZE].value - 1] -
+		process->reg_num[game->area[(process->pc + 3) % MEM_SIZE].value - 1];
+	process->reg_num[game->area[(process->pc + 4) % MEM_SIZE].value - 1] = res;
 	game->area[process->pc].pc = 0;
-	process->pc += 5;
+	process->pc = (process->pc + 5) % MEM_SIZE;
 	if (res == 0)
 		process->carry = 1;
 	else

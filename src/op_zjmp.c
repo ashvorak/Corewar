@@ -26,6 +26,6 @@ void	op_zjmp(t_game *game, t_process *process)
 	else
 	{
 		game->area[process->pc].pc = 0;
-		process->pc += 3;
+		process->pc = (process->pc + 3) % MEM_SIZE;
 	}
 }

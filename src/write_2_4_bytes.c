@@ -6,13 +6,13 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 17:54:13 by dlytvyn           #+#    #+#             */
-/*   Updated: 2018/06/14 12:23:39 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/14 14:59:48 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-static int mod(int num)
+int  mod(int num)
 {
 	return ((num > 0) ? num : 4096 + num);
 }
