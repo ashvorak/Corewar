@@ -60,8 +60,6 @@ void			execute(t_game *game)
 		execute_add(game, process);
 		if (process->op_id == 16)
 			process->op_id = push_op_id(game->area[process->pc].value);
-		//if (process->pc == 182 && game->cycle > 3750)
-		//	ft_printf("GOT OP_ID: %d\n", process->op_id);
 		game->area[process->pc].pc = 1;
 		process = process->next;
 		if (game->flags.v)

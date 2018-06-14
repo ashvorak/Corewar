@@ -63,7 +63,7 @@ void		op_ldi(t_game *game, t_process *process)
 	unsigned int	codage;
 	int				pc_buf;
 
-	if (!check_codege(process->op_id, game->area[process->pc + 1].value))
+	if (!check_codege(process->op_id, game->area[(process->pc + 1) % MEM_SIZE].value))
 	{
 		game->area[process->pc].pc = 0;
 		process->pc += jump_pc(game->area[(process->pc + 1) % MEM_SIZE].value, \

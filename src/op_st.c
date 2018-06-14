@@ -20,7 +20,6 @@ void           set_value(t_game *game, t_process *pr, int in)
 	unsigned int nem;
 	
 	i = 0;
-	ft_printf("in: %u\n", in);
 	in = mod(in);
 	num = 24;
 	nem = pr->reg_num[game->area[(pr->pc + 2) % MEM_SIZE].value - 1];
@@ -40,7 +39,6 @@ void           set_value(t_game *game, t_process *pr, int in)
 
 void			op_st(t_game *game, t_process *pr)
 {
-	//unsigned int	t_ind;
 	unsigned int	arg2;
 	
 	if (!check_codege(pr->op_id, game->area[(pr->pc + 1) % MEM_SIZE].value))
@@ -53,7 +51,6 @@ void			op_st(t_game *game, t_process *pr)
 	if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4) == T_IND)
 	{
 		arg2 = write_2_bytes(game, (pr->pc + 3) % MEM_SIZE);
-		//t_ind = write_4_bytes(game, (pr->pc + (short)arg2) % MEM_SIZE);
 		set_value(game, pr, (pr->pc + ((short)arg2 % IDX_MOD)) % MEM_SIZE);
 		game->area[pr->pc].pc = 0;
 		pr->pc = (pr->pc + 5) % MEM_SIZE;

@@ -21,7 +21,7 @@ unsigned int	write_2_bytes(t_game *game, int pc)
 {
 	unsigned int arg;
 
-	pc = mod(pc);
+	pc = mod(pc) % MEM_SIZE;
 	arg = game->area[pc].value << 8;
 	arg = arg | game->area[pc + 1].value;
 	return (arg);
@@ -31,7 +31,7 @@ unsigned int	write_4_bytes(t_game *game, int pc)
 {
 	unsigned int arg;
 
-	pc = mod(pc);
+	pc = mod(pc) % MEM_SIZE;
 	arg = game->area[pc].value << 24;
 	arg = arg | (game->area[pc + 1].value << 16);
 	arg = arg | (game->area[pc + 2].value << 8);
