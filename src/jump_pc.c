@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 18:12:18 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 15:21:59 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 17:41:13 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ int		ret_jump(unsigned char codage, int mask, int move, int op_id)
 		else
 			return (2);
 	}
-	else if (ret_arg(codage, mask, move) == T_IND && g_op_tab[op_id].arg_type[a])
+	else if (ret_arg(codage, mask, move) == T_IND \
+	&& g_op_tab[op_id].arg_type[a])
 		return (2);
-	else if (ret_arg(codage, mask, move) == T_REG && g_op_tab[op_id].arg_type[a])
+	else if (ret_arg(codage, mask, move) == T_REG \
+	&& g_op_tab[op_id].arg_type[a])
 		return (1);
 	else
 		return (0);

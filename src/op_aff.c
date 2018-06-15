@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 15:42:41 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 20:26:45 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	op_aff(t_game *game, t_process *process)
 		return ;
 	}
 	game->area[process->pc].pc = 0;
-	if (check_reg_ind(game, process, game->area[process->pc + 2].value))
+	if (check_reg_ind(game->area[process->pc + 2].value))
 		ft_printf("%c\n", process->reg_num[game->area[process->pc + 2].value] \
 	% 256);
 	process->pc += 3;

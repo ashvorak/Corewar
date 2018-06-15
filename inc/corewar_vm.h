@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/13 14:14:14 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 20:32:52 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include <ncurses.h>
 # include "../lib/libft.h"
 # include "../lib/get_next_line/get_next_line.h"
@@ -36,7 +37,7 @@ typedef struct			s_fla
 	int					v;
 	int					n;
 	int                 c;
-	int                 l;
+	int					l;
 	size_t				dump;
 }						t_fla;
 
@@ -97,15 +98,16 @@ typedef struct			s_game
 	int					num_proc;
 	int					players_num;
 	size_t				cycle;
-	ssize_t				cycle_to_die;
+	size_t				cycle_to_die;
 	int					pause;
 	unsigned int		n;
+	unsigned int		live_count;
 	int					speed;
 	int					checks;
 	int					winner;
 	int					finish;
 	int                 er;
-	int                 live_count;
+	int         fd;
 }						t_game;
 
 void	                ft_error(char *str, t_game *game);
@@ -129,7 +131,7 @@ void					right_menu(t_game *game);
 int						what_color(int col);
 int						check_procces(t_game *game);
 void					execute_process(t_game *game, t_process *process);
-int						check_reg_ind(t_game *game, t_process *process, int in);
+int						check_reg_ind(int in);
 int						get_first_reg(int n, t_game *game, int pos);
 void					dump_memory(t_game *game);
 void					finish_game(t_game *game);
@@ -169,6 +171,7 @@ unsigned int			write_4_bytes(t_game *game, int pc);
 void					execute(t_game *game);
 void					ft_usage(void);
 int                     mod(int num);
+void					write_reg(t_game *game, unsigned int reg, t_process *p);
 
 static const t_op		g_op_tab[17] =
 {

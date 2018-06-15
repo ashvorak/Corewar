@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dump.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlytvyn <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/13 09:29:19 by dlytvyn           #+#    #+#             */
-/*   Updated: 2018/06/13 09:29:19 by dlytvyn          ###   ########.fr       */
+/*   Updated: 2018/06/15 17:33:02 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	dump_memory(t_game *game)
 {
-	unsigned int		i;
-	
+	unsigned int i;
+
 	i = 0;
 	while (i < MEM_SIZE)
 	{
@@ -25,5 +25,5 @@ void	dump_memory(t_game *game)
 		i++;
 	}
 	printf("\n");
-	exit (0);
+	exit(0);
 }
