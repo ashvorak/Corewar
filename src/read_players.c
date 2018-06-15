@@ -39,8 +39,10 @@ t_game	*read_players(char **av, int ac, int i)
 	while (i < ac)
 	{
 		i += flags_read(av + i, ac, &game->flags);
-		if (i < ac && j < 4)
+		if (i < ac)
 		{
+			if (j > 3)
+				ft_usage();
 			add_player(game, av[i], j);
 			i++;
 			j++;

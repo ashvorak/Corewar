@@ -126,19 +126,9 @@ void	start_game(t_game *game)
 		if (game->flags.dump > 0 && game->cycle == game->flags.dump)
 			dump_memory(game);
 		game->cycle++;
-		printf("Cycle: %zu\n", game->cycle);
+		(game->flags.c) ? ft_printf("Cycle: %zu\n", game->cycle) : 0;
 		if (i % game->cycle_to_die == 0)
 			i = check_procces(game);
-		if (game->cycle == 3841)
-		{
-			t_process *tmp;
-			tmp = game->process;
-			while (tmp)
-			{
-				//ft_printf("proc %d\n", tmp->pc);
-				tmp = tmp->next;
-			}
-		}	
 		game->num_proc = processes_number(game->process);
 		(game->flags.v) ? visual(game) : 1;
 		action = (game->flags.v) ? getch() : -1;

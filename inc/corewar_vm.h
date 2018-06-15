@@ -36,6 +36,7 @@ typedef struct			s_fla
 {
 	int					v;
 	int					n;
+	int                 c;
 	size_t				dump;
 }						t_fla;
 

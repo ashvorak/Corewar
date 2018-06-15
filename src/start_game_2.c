@@ -112,6 +112,7 @@ int				check_procces(t_game *game)
 		{
 			game->cycle_to_die -= CYCLE_DELTA;
 			game->checks = 0;
+			break ;
 		}
 		i++;
 	}
