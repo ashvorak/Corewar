@@ -22,7 +22,7 @@ void	ft_error(char *str, t_game *game)
 	exit(1);
 }
 
-void    exit_game(t_game *game)
+void	exit_game(t_game *game)
 {
 	free(game);
 	game = NULL;
@@ -40,7 +40,7 @@ void	ft_usage(void)
 	exit(1);
 }
 
-void    init(t_game *game)
+void	init(t_game *game)
 {
 	game->pause = 1;
 	game->speed = 2000;

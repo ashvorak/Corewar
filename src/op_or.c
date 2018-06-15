@@ -24,10 +24,12 @@ void	op_or(t_game *game, t_process *pr)
 			return ;
 	pc_buf = 2;
 	arg1 = write_arg(pr, game,
-		ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_1, 6), (pr->pc + pc_buf) % MEM_SIZE);
+		ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_1, 6),
+		(pr->pc + pc_buf) % MEM_SIZE);
 	pc_buf += plus_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_1, 6);
 	arg2 = write_arg(pr, game,
-		ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4), (pr->pc + pc_buf) % MEM_SIZE);
+		ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4),
+		(pr->pc + pc_buf) % MEM_SIZE);
 	pc_buf += plus_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4);
 	arg3 = game->area[(pr->pc + pc_buf) % MEM_SIZE].value;
 	pc_buf += 1;

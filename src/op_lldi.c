@@ -12,18 +12,19 @@
 
 #include "../inc/corewar_vm.h"
 
-static unsigned int	ret_arg1(t_game *game, t_process *p, unsigned int codage)
+static unsigned	int	ret_arg1(t_game *game, t_process *p, unsigned int codage)
 {
 	unsigned int	arg1;
 	unsigned int	t_ind;
-	
+
 	if (ret_arg(codage, MASK_1, 6) == T_DIR)
 	{
 		arg1 = write_2_bytes(game, (p->pc + 2) % MEM_SIZE);
 		arg1 = (short)arg1;
 		p->pc = (p->pc + 4) % MEM_SIZE;
 	}
-	else if (ret_arg(game->area[(p->pc + 1) % MEM_SIZE].value, MASK_1, 6) == T_IND)
+	else if (ret_arg(game->area[(p->pc + 1) % MEM_SIZE].value, MASK_1, 6) ==
+		T_IND)
 	{
 		t_ind = (short)write_2_bytes(game, (p->pc + 2) % MEM_SIZE);
 		arg1 = write_4_bytes(game, ((t_ind % IDX_MOD) + p->pc) % MEM_SIZE);
@@ -46,7 +47,7 @@ static unsigned int	ret_arg1(t_game *game, t_process *p, unsigned int codage)
 static unsigned int	ret_arg2(t_game *game, t_process *p, unsigned int codage)
 {
 	unsigned int	arg2;
-	
+
 	if (ret_arg(codage, MASK_2, 4) == T_DIR)
 	{
 		arg2 = write_2_bytes(game, p->pc);
@@ -67,14 +68,14 @@ static unsigned int	ret_arg2(t_game *game, t_process *p, unsigned int codage)
 	return (arg2);
 }
 
-void		op_lldi(t_game *game, t_process *p)
+void				op_lldi(t_game *game, t_process *p)
 {
 	unsigned int	arg1;
 	unsigned int	arg2;
 	unsigned int	arg3;
 	unsigned int	codage;
 	int				pc_buf;
-	
+
 	if (!check_codege(p->op_id, game->area[p->pc + 1].value))
 		if (wrong_codage(game, p))
 			return ;

@@ -12,7 +12,7 @@
 
 #include "../inc/corewar_vm.h"
 
-int  mod(int num)
+int				mod(int num)
 {
 	return ((num > 0) ? num : 4096 + num);
 }

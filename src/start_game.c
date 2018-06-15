@@ -50,8 +50,8 @@ void	execute_process(t_game *game, t_process *process)
 
 int		processes_number(t_game *game)
 {
-	int i;
-	t_process *tmp;
+	int			i;
+	t_process	*tmp;
 
 	i = 0;
 	tmp = game->process;
@@ -107,10 +107,10 @@ void	manage_keys(t_game *game, int action)
 	}
 }
 
-void    set_pc(t_game *game)
+void	set_pc(t_game *game)
 {
 	t_process *pr;
-	
+
 	pr = game->process;
 	while (pr)
 	{

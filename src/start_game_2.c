@@ -60,7 +60,6 @@ void			execute(t_game *game)
 		execute_add(game, process);
 		if (process->op_id == 16)
 			process->op_id = push_op_id(game->area[process->pc].value);
-		//game->area[process->pc].pc = 1;
 		process = process->next;
 		if (game->flags.v)
 			action = getch();

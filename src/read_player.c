@@ -43,7 +43,8 @@ t_player		read_player(char *file, t_game *game)
 	ft_chartoint(buf) ? ft_error("Name must be followed by NULL", game) : 0;
 	read(fd, buf, 4);
 	player.prog_size = ft_chartoint(buf);
-	(player.prog_size > CHAMP_MAX_SIZE) ? ft_error("Champion is over CHAMP_MAX_SIZE", game) : 0;
+	(player.prog_size > CHAMP_MAX_SIZE) ?
+		ft_error("Champion is over CHAMP_MAX_SIZE", game) : 0;
 	read(fd, player.comment, sizeof(player.comment) - 1);
 	read(fd, buf, 4);
 	ft_chartoint(buf) ? ft_error("Comment must be followed by NULL", game) : 0;

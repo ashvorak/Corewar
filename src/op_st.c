@@ -50,10 +50,13 @@ void			op_st(t_game *game, t_process *pr)
 		game->area[pr->pc].pc = 0;
 		pr->pc = (pr->pc + 5) % MEM_SIZE;
 	}
-	else if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4) == T_REG)
+	else if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4)
+		== T_REG)
 	{
-		if (check_reg_ind(game->area[(pr->pc + 3) % MEM_SIZE].value) && check_reg_ind(game->area[pr->pc + 2].value))
-			pr->reg_num[(game->area[(pr->pc + 3)].value) - 1] = pr->reg_num[(game->area[pr->pc + 2].value) - 1];
+		if (check_reg_ind(game->area[(pr->pc + 3) % MEM_SIZE].value) &&
+			check_reg_ind(game->area[pr->pc + 2].value))
+			pr->reg_num[(game->area[(pr->pc + 3)].value) - 1] =
+			pr->reg_num[(game->area[pr->pc + 2].value) - 1];
 		game->area[pr->pc].pc = 0;
 		pr->pc = (pr->pc + 4) % MEM_SIZE;
 	}

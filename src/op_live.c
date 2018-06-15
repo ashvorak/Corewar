@@ -12,10 +12,10 @@
 
 #include "../inc/corewar_vm.h"
 
-int     get_player_num(t_game *game, int arg)
+int		get_player_num(t_game *game, int arg)
 {
 	int i;
-	
+
 	i = 0;
 	while (i < game->players_num)
 	{
@@ -26,10 +26,10 @@ int     get_player_num(t_game *game, int arg)
 	return (0);
 }
 
-char    *get_name(t_game *game, int arg)
+char	*get_name(t_game *game, int arg)
 {
 	int i;
-	
+
 	i = 0;
 	while (i < game->players_num)
 	{
@@ -43,8 +43,8 @@ char    *get_name(t_game *game, int arg)
 void	op_live(t_game *game, t_process *process)
 {
 	unsigned int	arg;
-	int             num;
-	
+	int				num;
+
 	num = 0;
 	game->live_count++;
 	process->live++;
@@ -54,7 +54,8 @@ void	op_live(t_game *game, t_process *process)
 	{
 		num = get_player_num(game, arg);
 		if (!game->flags.v && game->flags.l)
-			ft_printf("A process shows that player %d ( %s ) is alive\n", num, get_name(game, arg));
+			ft_printf("A process shows that player %d ( %s )is alive\n",
+			num, get_name(game, arg));
 		game->players[num - 1].live = 1;
 		game->players[num - 1].last_live = (int)game->cycle;
 		game->players[num - 1].lives_in_cp++;
