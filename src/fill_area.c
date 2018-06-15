@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 18:37:49 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/04 11:20:49 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 17:36:19 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ static	void	fill_players(t_game *game)
 		if (++n <= pn)
 		{
 			i = (0 + (MEM_SIZE / (pn + 1))) * n;
-			push_procces(game, i, get_first_reg(game->players[n].n, game, n), n);
+			push_procces(game, i, \
+			get_first_reg(game->players[n].n, game, n), n);
 			while (j < (int)game->players[n].prog_size)
 			{
 				game->area[i].value = game->players[n].opcode[j++];

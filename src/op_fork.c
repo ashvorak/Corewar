@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 16:01:28 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/15 15:03:35 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 18:25:47 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ static t_process	*copy_reg(t_process *clone, t_process *process)
 	}
 	return (clone);
 }
-
-
 
 void				clone_process(t_game *game, t_process *p, int pc)
 {

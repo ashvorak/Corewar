@@ -6,45 +6,44 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 15:22:35 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/13 19:45:43 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 17:45:05 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-int     checking_regs(t_game *game, t_process *process, int i)
+int		checking_regs(t_game *game, t_process *p, int i)
 {
-	if (!check_reg_ind(game, process, game->area[(process->pc + i) % MEM_SIZE].value))
+	if (!check_reg_ind(game, p, game->area[(p->pc + i) % MEM_SIZE].value))
 		return (0);
-	if (!check_reg_ind(game, process, game->area[(process->pc + i + 1) % MEM_SIZE].value))
+	if (!check_reg_ind(game, p, game->area[(p->pc + i + 1) % MEM_SIZE].value))
 		return (0);
-	if (!check_reg_ind(game, process, game->area[(process->pc + i + 2) % MEM_SIZE].value))
+	if (!check_reg_ind(game, p, game->area[(p->pc + i + 2) % MEM_SIZE].value))
 		return (0);
 	return (1);
 }
 
-void	op_add(t_game *game, t_process *process)
+void	op_add(t_game *game, t_process *p)
 {
-	if (!check_codege(process->op_id, game->area[(process->pc + 1) % MEM_SIZE].value))
+	if (!check_codege(p->op_id, game->area[(p->pc + 1) % MEM_SIZE].value))
 	{
-		game->area[process->pc].pc = 0;
-		process->pc += jump_pc(game->area[(process->pc + 1) % MEM_SIZE].value, \
-		process->op_id);
-		process->pc %= MEM_SIZE;
-		process->op_id = 16;
+		game->area[p->pc].pc = 0;
+		p->pc += jump_pc(game->area[(p->pc + 1) % MEM_SIZE].value, \
+		p->op_id);
+		p->pc %= MEM_SIZE;
+		p->op_id = 16;
 		return ;
 	}
-	if (checking_regs(game, process, 2))
+	if (checking_regs(game, p, 2))
 	{
-		process->reg_num[game->area[(process->pc + 4) % MEM_SIZE].value - 1] =
-				process->reg_num[game->area[(process->pc
-				                             + 2) % MEM_SIZE].value - 1] + process->reg_num[game->area[(process->pc +
-				                                                                                        3) % MEM_SIZE].value - 1];
-		if (process->reg_num[game->area[(process->pc + 4) % MEM_SIZE].value - 1] == 0)
-			process->carry = 1;
+		p->reg_num[game->area[(p->pc + 4) % MEM_SIZE].value - 1] = \
+		p->reg_num[game->area[(p->pc + 2) % MEM_SIZE].value - 1] \
+		+ p->reg_num[game->area[(p->pc + 3) % MEM_SIZE].value - 1];
+		if (p->reg_num[game->area[(p->pc + 4) % MEM_SIZE].value - 1] == 0)
+			p->carry = 1;
 		else
-			process->carry = 0;
+			p->carry = 0;
 	}
-	game->area[process->pc].pc = 0;
-	process->pc = (process->pc + 5);
+	game->area[p->pc].pc = 0;
+	p->pc = (p->pc + 5);
 }

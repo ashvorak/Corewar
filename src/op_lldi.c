@@ -6,68 +6,68 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 11:52:06 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/14 15:26:38 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 19:56:45 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-static unsigned int	ret_arg1(t_game *game, t_process *process, unsigned int codage)
+static unsigned int	ret_arg1(t_game *game, t_process *p, unsigned int codage)
 {
 	unsigned int	arg1;
 	unsigned int	t_ind;
 	
 	if (ret_arg(codage, MASK_1, 6) == T_DIR)
 	{
-		arg1 = write_2_bytes(game, (process->pc + 2) % MEM_SIZE);
+		arg1 = write_2_bytes(game, (p->pc + 2) % MEM_SIZE);
 		arg1 = (short)arg1;
-		process->pc = (process->pc + 4) % MEM_SIZE;
+		p->pc = (p->pc + 4) % MEM_SIZE;
 	}
-	else if (ret_arg(game->area[(process->pc + 1) % MEM_SIZE].value, MASK_1, 6) == T_IND)
+	else if (ret_arg(game->area[(p->pc + 1) % MEM_SIZE].value, MASK_1, 6) == T_IND)
 	{
-		t_ind = (short)write_2_bytes(game, (process->pc + 2) % MEM_SIZE);
-		arg1 = write_4_bytes(game, ((t_ind % IDX_MOD) + process->pc) % MEM_SIZE);
-		process->pc = (process->pc + 4) % MEM_SIZE;
+		t_ind = (short)write_2_bytes(game, (p->pc + 2) % MEM_SIZE);
+		arg1 = write_4_bytes(game, ((t_ind % IDX_MOD) + p->pc) % MEM_SIZE);
+		p->pc = (p->pc + 4) % MEM_SIZE;
 	}
 	else
 	{
-		if (check_reg_ind(game, process, game->area[(process->pc + 2) % MEM_SIZE].value))
-			arg1 = process->reg_num[game->area[(process->pc + 2) % MEM_SIZE].value - 1];
+		if (check_reg_ind(game, p, game->area[(p->pc + 2) % MEM_SIZE].value))
+			arg1 = p->reg_num[game->area[(p->pc + 2) % MEM_SIZE].value - 1];
 		else
 		{
 			arg1 = 0;
 			game->er = 1;
 		}
-		process->pc = (process->pc + 3) % MEM_SIZE;
+		p->pc = (p->pc + 3) % MEM_SIZE;
 	}
 	return (arg1);
 }
 
-static unsigned int	ret_arg2(t_game *game, t_process *process, unsigned int codage)
+static unsigned int	ret_arg2(t_game *game, t_process *p, unsigned int codage)
 {
 	unsigned int	arg2;
 	
 	if (ret_arg(codage, MASK_2, 4) == T_DIR)
 	{
-		arg2 = write_2_bytes(game, process->pc);
+		arg2 = write_2_bytes(game, p->pc);
 		arg2 = (short)arg2;
-		process->pc = (process->pc + 2) % MEM_SIZE;
+		p->pc = (p->pc + 2) % MEM_SIZE;
 	}
 	else
 	{
-		if (check_reg_ind(game, process, game->area[process->pc].value))
-			arg2 = process->reg_num[game->area[process->pc].value - 1];
+		if (check_reg_ind(game, p, game->area[p->pc].value))
+			arg2 = p->reg_num[game->area[p->pc].value - 1];
 		else
 		{
 			arg2 = 0;
 			game->er = 1;
 		}
-		process->pc = (process->pc + 1) % MEM_SIZE;
+		p->pc = (p->pc + 1) % MEM_SIZE;
 	}
 	return (arg2);
 }
 
-void		op_lldi(t_game *game, t_process *process)
+void		op_lldi(t_game *game, t_process *p)
 {
 	unsigned int	arg1;
 	unsigned int	arg2;
@@ -75,27 +75,27 @@ void		op_lldi(t_game *game, t_process *process)
 	unsigned int	codage;
 	int				pc_buf;
 	
-	if (!check_codege(process->op_id, game->area[process->pc + 1].value))
+	if (!check_codege(p->op_id, game->area[p->pc + 1].value))
 	{
-		game->area[process->pc].pc = 0;
-		process->pc += jump_pc(game->area[(process->pc + 1) % MEM_SIZE].value, \
-		process->op_id);
-		process->pc %= MEM_SIZE;
-		process->op_id = 16;
+		game->area[p->pc].pc = 0;
+		p->pc += jump_pc(game->area[(p->pc + 1) % MEM_SIZE].value, \
+		p->op_id);
+		p->pc %= MEM_SIZE;
+		p->op_id = 16;
 		return ;
 	}
-	pc_buf = process->pc;
-	codage = game->area[(process->pc + 1) % MEM_SIZE].value;
-	game->area[process->pc].pc = 0;
-	arg1 = ret_arg1(game, process, codage);
-	arg2 = ret_arg2(game, process, codage);
-	arg3 = game->area[process->pc++].value;
-	process->pc %= MEM_SIZE;
-	if (check_reg_ind(game, process, arg3) && game->er == 0)
+	pc_buf = p->pc;
+	codage = game->area[(p->pc + 1) % MEM_SIZE].value;
+	game->area[p->pc].pc = 0;
+	arg1 = ret_arg1(game, p, codage);
+	arg2 = ret_arg2(game, p, codage);
+	arg3 = game->area[p->pc++].value;
+	p->pc %= MEM_SIZE;
+	if (check_reg_ind(game, p, arg3) && game->er == 0)
 	{
-		process->reg_num[arg3 - 1] = write_4_bytes(game, (((int)arg1 \
+		p->reg_num[arg3 - 1] = write_4_bytes(game, (((int)arg1 \
 	+ (int)arg2) + pc_buf) % MEM_SIZE);
-		process->carry = (process->reg_num[arg3 - 1] == 0) ? 1 : 0;
+		p->carry = (p->reg_num[arg3 - 1] == 0) ? 1 : 0;
 	}
 	game->er = 0;
 }
