@@ -32,10 +32,10 @@ void    finish_game(t_game *game)
 
     i = 1;
     tmp = game->players[0].last_live;
-    if (game->process == NULL)
+    if (!game->process || game->cycle_to_die <= 0)
     {
         game->finish = 1;
-        while (game->players[i].magic && i < 4)
+        while (i < game->players_num)
         {
             if (game->players[i].last_live > tmp)
                 game->winner = i;

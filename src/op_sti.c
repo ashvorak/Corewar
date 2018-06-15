@@ -12,9 +12,6 @@
 
 #include "../inc/corewar_vm.h"
 
-
-#include <stdio.h>
-
 int				check_reg_ind(t_game *game, t_process *process, int in)
 {
 	if (in > 0 && in < 17)
@@ -36,32 +33,6 @@ static void		set_value(t_game *game, t_process *process, unsigned int tmp)
 
 	i = 0;
 	num = 24;
-	
-	
-	
-	dprintf(game->fd, "Process pc %d, CYCLE: %zu\n", process->pc, game->cycle);
-	if (game->cycle > 3839 && game->cycle < 3843)
-	{
-		int j = 0;
-		dprintf(game->fd, "Cycle: %zu\n", game->cycle);
-		t_process *tmp;
-		
-		tmp = game->process;
-		while (tmp)
-		{
-			dprintf(game->fd, "It's position:    %d\n", tmp->pc);
-			tmp = tmp->next;
-		}
-		dprintf(game->fd, "Process->pc: %d\n", process->pc);
-		while (j < 16)
-		{
-			dprintf(game->fd, "reg num %d, value: %x\n", j, process->reg_num[j]);
-			j++;
-		}
-	}
-	
-	
-	
 	nem = process->reg_num[game->area[(process->pc + 2) % MEM_SIZE].value - 1];
 	while (i < 4)
 	{

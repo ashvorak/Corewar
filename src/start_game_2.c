@@ -88,7 +88,6 @@ static void		check_process_add(t_game *game, t_process *tmp, t_process *buf)
 		}
 		else
 		{
-			game->players[tmp->color].count_lives += tmp->live;
 			tmp->live = 0;
 			buf = tmp;
 			tmp = tmp->next;
@@ -108,7 +107,7 @@ int				check_procces(t_game *game)
 	i = 0;
 	while (i < game->players_num)
 	{
-		if (game->players[i].count_lives >= 21 || game->checks == MAX_CHECKS)
+		if (game->live_count >= 21 || game->checks == MAX_CHECKS)
 		{
 			game->cycle_to_die -= CYCLE_DELTA;
 			game->checks = 0;
@@ -122,6 +121,6 @@ int				check_procces(t_game *game)
 		game->players[i].count_lives = 0;
 		game->players[i++].lives_in_cp = 0;
 	}
-	finish_game(game);
+	game->live_count = 0;
 	return (0);
 }

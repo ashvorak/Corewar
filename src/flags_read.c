@@ -17,6 +17,7 @@ void	create_fla(t_fla *flag)
 	flag->v = 0;
 	flag->c = 0;
 	flag->n = -1;
+	flag->l = 0;
 	flag->dump = -1;
 }
 
@@ -45,6 +46,8 @@ int		flags_read(char **argv, int argc, t_fla *flag)
 			flag->v++;
 		else if (!ft_strcmp(argv[i], "-c"))
 			flag->c++;
+		else if (!ft_strcmp(argv[i], "-l"))
+			flag->l++;
 		else if (!ft_strcmp(argv[i], "-n") && argv[i + 1] \
 				&& ft_arr_dig(argv[i + 1] + (argv[i + 1][0] == '-')))
 		{
