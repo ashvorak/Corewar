@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/14 23:14:18 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 14:05:42 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ static void		set_value(t_game *game, t_process *process, unsigned int tmp)
 	num = 24;
 	
 	
-	
-	dprintf(game->fd, "Process pc %d, CYCLE: %zu\n", process->pc, game->cycle);
+	/*
+	//dprintf(game->fd, "Process pc %d, CYCLE: %zu\n", process->pc, game->cycle);
 	if (game->cycle > 3839 && game->cycle < 3843)
 	{
 		int j = 0;
@@ -49,17 +49,17 @@ static void		set_value(t_game *game, t_process *process, unsigned int tmp)
 		tmp = game->process;
 		while (tmp)
 		{
-			dprintf(game->fd, "It's position:    %d\n", tmp->pc);
+			//dprintf(game->fd, "It's position:    %d\n", tmp->pc);
 			tmp = tmp->next;
 		}
-		dprintf(game->fd, "Process->pc: %d\n", process->pc);
+		dprintf(game->fd, "Process->pc: %d, CTD: %d\n", process->pc, process->cycle_to_done);
 		while (j < 16)
 		{
-			dprintf(game->fd, "reg num %d, value: %x\n", j, process->reg_num[j]);
+			//dprintf(game->fd, "reg num %d, value: %x\n", j, process->reg_num[j]);
 			j++;
 		}
 	}
-	
+	*/
 	
 	
 	nem = process->reg_num[game->area[(process->pc + 2) % MEM_SIZE].value - 1];

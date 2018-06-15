@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:16:10 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/14 22:41:22 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 13:46:16 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ void	start_game(t_game *game)
 		if (game->flags.dump > 0 && game->cycle == game->flags.dump)
 			dump_memory(game);
 		game->cycle++;
-		printf("Cycle: %zu\n", game->cycle);
+		//printf("Cycle: %zu\n", game->cycle);
 		if (i % game->cycle_to_die == 0)
 			i = check_procces(game);
 		if (game->cycle == 3841)

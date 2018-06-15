@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 16:01:28 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/14 19:08:26 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 15:03:35 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void				clone_process(t_game *game, t_process *p, int pc)
 	clone->pc = (unsigned int)pc;
 	clone->live = p->live;
 	clone->op_id = push_op_id(game->area[clone->pc].value);
-	clone->cycle_to_done = 0;
+	clone->cycle_to_done = 1;
 	clone->carry = p->carry;
 	clone->color = p->color;
 	clone->num = g_number++;
