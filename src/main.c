@@ -64,8 +64,6 @@ int		main(int ac, char **av)
 	g_number = 2;
 	(ac < 2) ? ft_usage() : 0;
 	game = read_players(av, ac, 1);
-	game->players_num = players_num(game) + 1;
-	
 	game->fd = open("traces.txt", O_WRONLY);
 	
 	if (game->flags.v)

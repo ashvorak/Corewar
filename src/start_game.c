@@ -105,6 +105,18 @@ void	manage_keys(t_game *game, int action)
 	}
 }
 
+void    set_pc(t_game *game)
+{
+	t_process *pr;
+	
+	pr = game->process;
+	while (pr)
+	{
+		game->area[pr->pc].pc = 1;
+		pr = pr->next;
+	}
+}
+
 void	start_game(t_game *game)
 {
 	t_process	*process;
@@ -122,10 +134,11 @@ void	start_game(t_game *game)
 	while (game->process)
 	{
 		(game->flags.v) ? manage_keys(game, action) : 1;
+		game->cycle++;
 		execute(game);
+		set_pc(game);
 		if (game->flags.dump > 0 && game->cycle == game->flags.dump)
 			dump_memory(game);
-		game->cycle++;
 		(game->flags.c) ? ft_printf("Cycle: %zu\n", game->cycle) : 0;
 		if (i % game->cycle_to_die == 0)
 			i = check_procces(game);

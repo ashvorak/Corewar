@@ -49,12 +49,13 @@ void	speed(t_game *game, int y)
 	mvprintw(y, 240, "%s", "|");
 }
 
-int		print_players(t_game *game, int pn, int y)
+int		print_players(t_game *game, int y)
 {
 	int i;
 
 	i = 1;
-	while (i <= pn + 1)
+	i = 1;
+	while (i <= game->players_num)
 	{
 		mvprintw(y, 200, "%s %d %s", "Player",
 			(int)get_first_reg(game->players[i - 1].n, game, i - i), ":");
@@ -94,7 +95,7 @@ void	right_menu(t_game *game)
 	int y;
 
 	y = 10;
-	pn = players_num(game);
+	pn = game->players_num - 1;
 	if (pn < 0)
 		ft_error("No players", game);
 	attron(A_BOLD);
@@ -105,7 +106,7 @@ void	right_menu(t_game *game)
 		mvprintw(3, 200, "%s", "**   PAUSED   **");
 	mvprintw(5, 200, "%s %d         ", "CYClES :", game->cycle);
 	mvprintw(7, 200, "%s %d             ", "PROCESSES :", game->num_proc);
-	y = print_players(game, pn, y);
+	y = print_players(game, y);
 	print_info(game, y);
 	attroff(COLOR_PAIR(12));
 	attroff(A_BOLD);

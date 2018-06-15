@@ -44,6 +44,7 @@ t_game	*read_players(char **av, int ac, int i)
 			if (j > 3)
 				ft_usage();
 			add_player(game, av[i], j);
+			game->players_num++;
 			i++;
 			j++;
 		}

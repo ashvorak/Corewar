@@ -150,7 +150,5 @@ void            op_sti(t_game *game, t_process *pr)
 	(er == 0) ? set_value(game, pr, (pr->pc + (arg2 + arg3) % IDX_MOD) % MEM_SIZE) : 0;
 	game->area[pr->pc].pc = 0;
 	pr->pc += jump;
-	//if (er == 1)
-		//ft_printf("pc %d\n", pr->pc);
 	pr->pc %= MEM_SIZE;
 }

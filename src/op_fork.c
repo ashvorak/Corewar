@@ -40,7 +40,7 @@ void				clone_process(t_game *game, t_process *p, int pc)
 	clone->pc = (unsigned int)pc;
 	clone->live = p->live;
 	clone->op_id = push_op_id(game->area[clone->pc].value);
-	clone->cycle_to_done = 0;
+	clone->cycle_to_done = 1;
 	clone->carry = p->carry;
 	clone->color = p->color;
 	clone->num = g_number++;

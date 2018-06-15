@@ -12,16 +12,6 @@
 
 #include "../inc/corewar_vm.h"
 
-int				players_num(t_game *game)
-{
-	int i;
-
-	i = 0;
-	while (game->players[i].prog_size)
-		i++;
-	return (i - 1);
-}
-
 static	void	fill_reg(t_process *process)
 {
 	int i;
@@ -71,7 +61,7 @@ static	void	fill_players(t_game *game)
 
 	i = -1;
 	n = -1;
-	pn = players_num(game);
+	pn = game->players_num - 1;
 	while (++i < MEM_SIZE)
 	{
 		j = 0;

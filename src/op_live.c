@@ -51,8 +51,8 @@ void	op_live(t_game *game, t_process *process)
 	if (get_player_num(game, arg) > 0)
 	{
 		num = get_player_num(game, arg);
-		if (!game->flags.v)
-			ft_printf("A process shows that player %d ( %s ) is alive\n", num, get_name(game, arg));
+		//if (!game->flags.v)
+		//	ft_printf("A process shows that player %d ( %s ) is alive\n", num, get_name(game, arg));
 		game->players[num - 1].live = 1;
 		game->players[num - 1].last_live = (int)game->cycle;
 		game->players[num - 1].lives_in_cp++;
