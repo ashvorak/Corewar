@@ -34,6 +34,7 @@ void	ft_usage(void)
 	ft_printf("Usage: ./corewar [-dump N -n N -v <champion1.cor> <...>\n");
 	ft_printf("       -dump N   : Dumps memory after N cycles then exits\n");
 	ft_printf("       -n N      : sets the number of the next player\n");
+	ft_printf("       -c        : Show cycles\n");
 	ft_printf("       -v        : Ncurses output mode\n");
 	exit(1);
 }
@@ -63,8 +64,6 @@ int		main(int ac, char **av)
 	g_number = 2;
 	(ac < 2) ? ft_usage() : 0;
 	game = read_players(av, ac, 1);
-	game->players_num = players_num(game) + 1;
-	
 	game->fd = open("traces.txt", O_WRONLY);
 	
 	if (game->flags.v)

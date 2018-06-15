@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:16:10 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/15 13:46:16 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 17:14:34 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,18 @@ void	manage_keys(t_game *game, int action)
 	}
 }
 
+void    set_pc(t_game *game)
+{
+	t_process *pr;
+	
+	pr = game->process;
+	while (pr)
+	{
+		game->area[pr->pc].pc = 1;
+		pr = pr->next;
+	}
+}
+
 void	start_game(t_game *game)
 {
 	t_process	*process;
@@ -122,23 +134,14 @@ void	start_game(t_game *game)
 	while (game->process)
 	{
 		(game->flags.v) ? manage_keys(game, action) : 1;
+		game->cycle++;
 		execute(game);
+		set_pc(game);
 		if (game->flags.dump > 0 && game->cycle == game->flags.dump)
 			dump_memory(game);
-		game->cycle++;
-		//printf("Cycle: %zu\n", game->cycle);
+		(game->flags.c) ? ft_printf("Cycle: %zu\n", game->cycle) : 0;
 		if (i % game->cycle_to_die == 0)
 			i = check_procces(game);
-		if (game->cycle == 3841)
-		{
-			t_process *tmp;
-			tmp = game->process;
-			while (tmp)
-			{
-				//ft_printf("proc %d\n", tmp->pc);
-				tmp = tmp->next;
-			}
-		}	
 		game->num_proc = processes_number(game->process);
 		(game->flags.v) ? visual(game) : 1;
 		action = (game->flags.v) ? getch() : -1;
