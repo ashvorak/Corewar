@@ -6,22 +6,18 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/15 18:25:29 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 20:30:43 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/corewar_vm.h"
 
-int				check_reg_ind(t_game *game, t_process *process, int in)
+int				check_reg_ind(int in)
 {
 	if (in > 0 && in < 17)
 		return (1);
 	else
-	{
-		game->area[process->pc].pc = 0;
-		process->op_id = 16;
 		return (0);
-	}
 }
 
 static void		set_value(t_game *game, t_process *process, unsigned int tmp)
@@ -55,7 +51,7 @@ unsigned int    second_arg(t_game *game, t_process *pr, int *jump, int *er)
 	if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4) == T_REG)
 	{
 		*jump = *jump + 4;
-		if (check_reg_ind(game, pr, game->area[(pr->pc + 3) % MEM_SIZE].value))
+		if (check_reg_ind(game->area[(pr->pc + 3) % MEM_SIZE].value))
 			return (pr->reg_num[game->area[(pr->pc + 3) % MEM_SIZE].value - 1]);
 		else
 		{
@@ -82,7 +78,7 @@ unsigned int    third_arg(t_game *game, t_process *pr, int *jump, int *er)
 	unsigned int res;
 	if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_3, 2) == T_REG)
 	{
-		if (check_reg_ind(game, pr, game->area[(pr->pc + *jump) % MEM_SIZE].value))
+		if (check_reg_ind(game->area[(pr->pc + *jump) % MEM_SIZE].value))
 			res = pr->reg_num[game->area[(pr->pc + *jump) % MEM_SIZE].value - 1];
 		else
 		{

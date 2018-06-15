@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 11:52:06 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/15 20:02:35 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 20:27:58 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ret_arg1(t_game *game, t_process *p, unsigned int codage)
 	}
 	else
 	{
-		if (check_reg_ind(game, p, game->area[p->pc + 2].value))
+		if (check_reg_ind(game->area[p->pc + 2].value))
 			arg1 = p->reg_num[game->area[p->pc + 2].value - 1];
 		else
 		{
@@ -55,7 +55,7 @@ static int	ret_arg2(t_game *game, t_process *p, unsigned int codage)
 	}
 	else
 	{
-		if (check_reg_ind(game, p, game->area[p->pc].value))
+		if (check_reg_ind(game->area[p->pc].value))
 			arg2 = p->reg_num[game->area[p->pc].value - 1];
 		else
 		{
@@ -90,7 +90,7 @@ void		op_ldi(t_game *game, t_process *p)
 	arg2 = (unsigned int)ret_arg2(game, p, codage);
 	arg3 = game->area[p->pc++].value;
 	p->pc %= MEM_SIZE;
-	if (check_reg_ind(game, p, arg3) && game->er == 0)
+	if (check_reg_ind(arg3) && game->er == 0)
 		p->reg_num[arg3 - 1] = write_4_bytes(game, ((((int)arg1 \
 	+ (int)arg2) % IDX_MOD) % MEM_SIZE + pc_buf) % MEM_SIZE);
 	game->er = 0;

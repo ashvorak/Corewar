@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 15:22:35 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/15 17:45:05 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 20:23:12 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int		checking_regs(t_game *game, t_process *p, int i)
 {
-	if (!check_reg_ind(game, p, game->area[(p->pc + i) % MEM_SIZE].value))
+	if (!check_reg_ind(game->area[(p->pc + i) % MEM_SIZE].value))
 		return (0);
-	if (!check_reg_ind(game, p, game->area[(p->pc + i + 1) % MEM_SIZE].value))
+	if (!check_reg_ind(game->area[(p->pc + i + 1) % MEM_SIZE].value))
 		return (0);
-	if (!check_reg_ind(game, p, game->area[(p->pc + i + 2) % MEM_SIZE].value))
+	if (!check_reg_ind(game->area[(p->pc + i + 2) % MEM_SIZE].value))
 		return (0);
 	return (1);
 }

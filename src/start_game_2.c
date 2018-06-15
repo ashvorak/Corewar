@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 18:45:31 by dlytvyn           #+#    #+#             */
-/*   Updated: 2018/06/15 14:09:28 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 20:07:25 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,29 +65,6 @@ void			execute(t_game *game)
 		if (game->flags.v)
 			action = getch();
 	}
-
-	if (game->cycle > 5 && game->cycle < 3900)
-	{
-		//int j = 0;
-		dprintf(game->fd, "Cycle: %zu\n", game->cycle);
-		t_process *tmp;
-
-		tmp = game->process;
-		while (tmp)
-		{
-			dprintf(game->fd, "Process->pc: %d, CTD: %d\n", tmp->pc, tmp->cycle_to_done);
-			tmp = tmp->next;
-		}		
-		//while (j < 16)
-		//{
-			//dprintf(game->fd, "reg num %d, value: %x\n", j, process->reg_num[j]);
-		//	j++;
-		//}
-	}
-
-
-
-
 }
 
 static void		check_process_add(t_game *game, t_process *tmp, t_process *buf)

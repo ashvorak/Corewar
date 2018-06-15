@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 15:43:04 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/14 19:20:17 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 20:39:14 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ unsigned int	write_arg(t_process *pr, t_game *game, int tt, int pc)
 	else
 	{
 		tmp = game->area[pc].value;
-		if (check_reg_ind(game, pr, tmp))
+		if (check_reg_ind(tmp))
 			return (pr->reg_num[(unsigned char)tmp - 1]);
 		else
 		{
@@ -70,13 +70,12 @@ void			op_and(t_game *game, t_process *pr)
 	pc_buf += plus_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4);
 	arg3 = game->area[(pr->pc + pc_buf) % MEM_SIZE].value;
 	pc_buf += 1;
-	if (check_reg_ind(game, pr, arg3) && game->er == 0)
+	if (check_reg_ind(arg3) && game->er == 0)
 	{
 		pr->reg_num[arg3 - 1] = arg1 & arg2;
 		pr->carry = (pr->reg_num[arg3 - 1] == 0) ? 1 : 0;
 	}
 	game->area[pr->pc].pc = 0;
-	pr->pc += pc_buf;
-	pr->pc %= MEM_SIZE;
+	pr->pc = (pr->pc + pc_buf) % MEM_SIZE;
 	game->er = 0;
 }
