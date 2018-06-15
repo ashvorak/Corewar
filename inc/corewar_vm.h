@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 16:28:02 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/13 14:14:14 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/15 19:51:38 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,6 +169,7 @@ unsigned int			write_4_bytes(t_game *game, int pc);
 void					execute(t_game *game);
 void					ft_usage(void);
 int                     mod(int num);
+void					write_reg(t_game *game, unsigned int reg, t_process *p);
 
 static const t_op		g_op_tab[17] =
 {
