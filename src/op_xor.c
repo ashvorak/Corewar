@@ -36,8 +36,11 @@ void	op_xor(t_game *game, t_process *pr)
 	pc_buf += plus_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4);
 	arg3 = game->area[(pr->pc + pc_buf) % MEM_SIZE].value;
 	pc_buf += 1;
-	pr->reg_num[arg3 - 1] = arg1 ^ arg2;
-	pr->carry = (pr->reg_num[arg3 - 1] == 0) ? 1 : 0;
+	if (check_reg_ind(game, pr, arg3))
+	{
+		pr->reg_num[arg3 - 1] = arg1 ^ arg2;
+		pr->carry = (pr->reg_num[arg3 - 1] == 0) ? 1 : 0;
+	}
 	game->area[pr->pc].pc = 0;
 	pr->pc += pc_buf;
 	pr->pc %= MEM_SIZE;

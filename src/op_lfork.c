@@ -19,5 +19,5 @@ void	op_lfork(t_game *game, t_process *process)
 	arg = write_2_bytes(game, (process->pc + 1) % MEM_SIZE);
 	game->area[process->pc].pc = 0;
 	clone_process(game, process, (process->pc + ((short)arg)) % MEM_SIZE);
-	process->pc += 3;
+	process->pc = (process->pc + 3) % MEM_SIZE;
 }

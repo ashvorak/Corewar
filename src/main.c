@@ -50,6 +50,7 @@ void    init(t_game *game)
 	game->n = 0;
 	game->winner = 0;
 	game->finish = 0;
+	game->er = 0;
 	ft_bzero(&game->area, sizeof(game->area));
 	ft_bzero(&game->players, sizeof(game->players));
 	game->process = NULL;
@@ -63,6 +64,9 @@ int		main(int ac, char **av)
 	(ac < 2) ? ft_usage() : 0;
 	game = read_players(av, ac, 1);
 	game->players_num = players_num(game) + 1;
+	
+	game->fd = open("traces.txt", O_WRONLY);
+	
 	if (game->flags.v)
 	{
 		initscr();
@@ -78,6 +82,7 @@ int		main(int ac, char **av)
 	{
 		nodelay(stdscr, FALSE);
 		manage_keys(game, getch());
+		nocbreak();
 		endwin();
 	}
 	exit_game(game);

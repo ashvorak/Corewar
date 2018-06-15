@@ -103,6 +103,8 @@ typedef struct			s_game
 	int					checks;
 	int					winner;
 	int					finish;
+	int                 er;
+	int         fd;
 }						t_game;
 
 void	                ft_error(char *str, t_game *game);
@@ -133,6 +135,7 @@ void					finish_game(t_game *game);
 void					show_players(t_game *game);
 void	                init(t_game *game);
 void                    exit_game(t_game *game);
+int                     checking_regs(t_game *game, t_process *process, int i);
 
 unsigned int			write_arg(t_process *process, \
 t_game *game, int tt, int pc);

@@ -31,7 +31,13 @@ static unsigned int	ret_arg1(t_game *game, t_process *process, unsigned int coda
 	}
 	else
 	{
-		arg1 = process->reg_num[game->area[(process->pc + 2) % MEM_SIZE].value - 1];
+		if (check_reg_ind(game, process, game->area[(process->pc + 2) % MEM_SIZE].value))
+			arg1 = process->reg_num[game->area[(process->pc + 2) % MEM_SIZE].value - 1];
+		else
+		{
+			arg1 = 0;
+			game->er = 1;
+		}
 		process->pc = (process->pc + 3) % MEM_SIZE;
 	}
 	return (arg1);
@@ -49,7 +55,13 @@ static unsigned int	ret_arg2(t_game *game, t_process *process, unsigned int coda
 	}
 	else
 	{
-		arg2 = process->reg_num[game->area[process->pc].value - 1];
+		if (check_reg_ind(game, process, game->area[process->pc].value))
+			arg2 = process->reg_num[game->area[process->pc].value - 1];
+		else
+		{
+			arg2 = 0;
+			game->er = 1;
+		}
 		process->pc = (process->pc + 1) % MEM_SIZE;
 	}
 	return (arg2);
@@ -79,7 +91,11 @@ void		op_lldi(t_game *game, t_process *process)
 	arg2 = ret_arg2(game, process, codage);
 	arg3 = game->area[process->pc++].value;
 	process->pc %= MEM_SIZE;
-	process->reg_num[arg3 - 1] = write_4_bytes(game, (((int)arg1 \
+	if (check_reg_ind(game, process, arg3) && game->er == 0)
+	{
+		process->reg_num[arg3 - 1] = write_4_bytes(game, (((int)arg1 \
 	+ (int)arg2) + pc_buf) % MEM_SIZE);
-	process->carry = (process->reg_num[arg3 - 1] == 0) ? 1 : 0;
+		process->carry = (process->reg_num[arg3 - 1] == 0) ? 1 : 0;
+	}
+	game->er = 0;
 }

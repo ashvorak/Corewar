@@ -12,6 +12,9 @@
 
 #include "../inc/corewar_vm.h"
 
+
+#include <stdio.h>
+
 int				check_reg_ind(t_game *game, t_process *process, int in)
 {
 	if (in > 0 && in < 17)
@@ -19,8 +22,6 @@ int				check_reg_ind(t_game *game, t_process *process, int in)
 	else
 	{
 		game->area[process->pc].pc = 0;
-		process->pc += jump_pc(game->area[process->pc + 1].value,
-			process->op_id);
 		process->op_id = 16;
 		return (0);
 	}
@@ -35,6 +36,32 @@ static void		set_value(t_game *game, t_process *process, unsigned int tmp)
 
 	i = 0;
 	num = 24;
+	
+	
+	
+	dprintf(game->fd, "Process pc %d, CYCLE: %zu\n", process->pc, game->cycle);
+	if (game->cycle > 3839 && game->cycle < 3843)
+	{
+		int j = 0;
+		dprintf(game->fd, "Cycle: %zu\n", game->cycle);
+		t_process *tmp;
+		
+		tmp = game->process;
+		while (tmp)
+		{
+			dprintf(game->fd, "It's position:    %d\n", tmp->pc);
+			tmp = tmp->next;
+		}
+		dprintf(game->fd, "Process->pc: %d\n", process->pc);
+		while (j < 16)
+		{
+			dprintf(game->fd, "reg num %d, value: %x\n", j, process->reg_num[j]);
+			j++;
+		}
+	}
+	
+	
+	
 	nem = process->reg_num[game->area[(process->pc + 2) % MEM_SIZE].value - 1];
 	while (i < 4)
 	{
@@ -57,9 +84,13 @@ unsigned int    second_arg(t_game *game, t_process *pr, int *jump, int *er)
 	if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4) == T_REG)
 	{
 		*jump = *jump + 4;
-		if (!check_reg_ind(game, pr, game->area[(pr->pc + 3) % MEM_SIZE].value))
+		if (check_reg_ind(game, pr, game->area[(pr->pc + 3) % MEM_SIZE].value))
+			return (pr->reg_num[game->area[(pr->pc + 3) % MEM_SIZE].value - 1]);
+		else
+		{
 			*er = 1;
-		return (pr->reg_num[game->area[(pr->pc + 3) % MEM_SIZE].value - 1]);
+			return (0);
+		}
 	}
 	else if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4) == T_IND)
 	{
@@ -80,9 +111,13 @@ unsigned int    third_arg(t_game *game, t_process *pr, int *jump, int *er)
 	unsigned int res;
 	if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_3, 2) == T_REG)
 	{
-		if (!check_reg_ind(game, pr, game->area[(pr->pc + *jump) % MEM_SIZE].value))
+		if (check_reg_ind(game, pr, game->area[(pr->pc + *jump) % MEM_SIZE].value))
+			res = pr->reg_num[game->area[(pr->pc + *jump) % MEM_SIZE].value - 1];
+		else
+		{
 			*er = 1;
-		res = pr->reg_num[game->area[(pr->pc + *jump) % MEM_SIZE].value - 1];
+			res = 0;
+		}
 		*jump = *jump + 1;
 		return (res);
 	}
@@ -113,6 +148,7 @@ void            op_sti(t_game *game, t_process *pr)
 	arg2 = second_arg(game, pr, &jump, &er);
 	arg3 = third_arg(game, pr, &jump, &er);
 	(er == 0) ? set_value(game, pr, (pr->pc + (arg2 + arg3) % IDX_MOD) % MEM_SIZE) : 0;
+	game->area[pr->pc].pc = 0;
 	pr->pc += jump;
 	pr->pc %= MEM_SIZE;
 }
