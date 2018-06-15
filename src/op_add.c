@@ -12,6 +12,16 @@
 
 #include "../inc/corewar_vm.h"
 
+int     wrong_codage(t_game *game, t_process *p)
+{
+	game->area[p->pc].pc = 0;
+	p->pc += jump_pc(game->area[(p->pc + 1) % MEM_SIZE].value, \
+		p->op_id);
+	p->pc %= MEM_SIZE;
+	p->op_id = 16;
+	return (1);
+}
+
 int		checking_regs(t_game *game, t_process *p, int i)
 {
 	if (!check_reg_ind(game->area[(p->pc + i) % MEM_SIZE].value))
@@ -26,14 +36,8 @@ int		checking_regs(t_game *game, t_process *p, int i)
 void	op_add(t_game *game, t_process *p)
 {
 	if (!check_codege(p->op_id, game->area[(p->pc + 1) % MEM_SIZE].value))
-	{
-		game->area[p->pc].pc = 0;
-		p->pc += jump_pc(game->area[(p->pc + 1) % MEM_SIZE].value, \
-		p->op_id);
-		p->pc %= MEM_SIZE;
-		p->op_id = 16;
-		return ;
-	}
+		if (wrong_codage(game, p))
+			return ;
 	if (checking_regs(game, p, 2))
 	{
 		p->reg_num[game->area[(p->pc + 4) % MEM_SIZE].value - 1] = \

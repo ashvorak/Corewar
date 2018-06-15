@@ -15,14 +15,8 @@
 void	op_aff(t_game *game, t_process *process)
 {
 	if (!check_codege(process->op_id, game->area[process->pc + 1].value))
-	{
-		game->area[process->pc].pc = 0;
-		process->pc += jump_pc(game->area[(process->pc + 1) % MEM_SIZE].value, \
-		process->op_id);
-		process->op_id = 16;
-		process->pc %= MEM_SIZE;
-		return ;
-	}
+		if (wrong_codage(game, process))
+			return ;
 	game->area[process->pc].pc = 0;
 	if (check_reg_ind(game->area[process->pc + 2].value))
 		ft_printf("%c\n", process->reg_num[game->area[process->pc + 2].value] \

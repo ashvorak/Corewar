@@ -105,12 +105,8 @@ void            op_sti(t_game *game, t_process *pr)
 
 	er = 0;
 	if (!check_codege(pr->op_id, game->area[(pr->pc + 1) % MEM_SIZE].value))
-	{
-		game->area[pr->pc].pc = 0;
-		pr->pc = (pr->pc + jump_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, pr->op_id)) % MEM_SIZE;
-		pr->op_id = 16;
-		return ;
-	}
+		if (wrong_codage(game, pr))
+			return ;
 	jump = 0;
 	arg2 = second_arg(game, pr, &jump, &er);
 	arg3 = third_arg(game, pr, &jump, &er);

@@ -52,13 +52,8 @@ void					op_ld(t_game *game, t_process *p)
 	unsigned int	t_reg;
 
 	if (!check_codege(p->op_id, game->area[(p->pc + 1) % MEM_SIZE].value))
-	{
-		game->area[p->pc].pc = 0;
-		p->pc += jump_pc(game->area[(p->pc + 1) % MEM_SIZE].value, \
-		p->op_id);
-		p->op_id = 16;
-		return ;
-	}
+		if (wrong_codage(game, p))
+			return ;
 	t_reg = ret_t_reg(game, p);
 	if (check_reg_ind(t_reg) && game->er == 0)
 		p->carry = p->reg_num[t_reg - 1] == 0 ? 1 : 0;

@@ -20,13 +20,8 @@ void	op_or(t_game *game, t_process *pr)
 	unsigned int	arg3;
 
 	if (!check_codege(pr->op_id, game->area[(pr->pc + 1) % MEM_SIZE].value))
-	{
-		game->area[pr->pc].pc = 0;
-		pr->pc += jump_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, pr->op_id);
-		pr->pc %= MEM_SIZE;
-		pr->op_id = 16;
-		return ;
-	}
+		if (wrong_codage(game, pr))
+			return ;
 	pc_buf = 2;
 	arg1 = write_arg(pr, game,
 		ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_1, 6), (pr->pc + pc_buf) % MEM_SIZE);

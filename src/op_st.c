@@ -40,12 +40,8 @@ void			op_st(t_game *game, t_process *pr)
 	unsigned int	arg2;
 
 	if (!check_codege(pr->op_id, game->area[(pr->pc + 1) % MEM_SIZE].value))
-	{
-		game->area[pr->pc].pc = 0;
-		pr->pc = (pr->pc + jump_pc(game->area[(pr->pc + 1) % MEM_SIZE].value, pr->op_id)) % MEM_SIZE;
-		pr->op_id = 16;
-		return ;
-	}
+		if (wrong_codage(game, pr))
+			return ;
 	if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4) == T_IND)
 	{
 		arg2 = write_2_bytes(game, (pr->pc + 3) % MEM_SIZE);

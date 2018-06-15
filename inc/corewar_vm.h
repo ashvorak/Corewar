@@ -139,6 +139,7 @@ void					show_players(t_game *game);
 void	                init(t_game *game);
 void                    exit_game(t_game *game);
 int                     checking_regs(t_game *game, t_process *process, int i);
+int                     wrong_codage(t_game *game, t_process *p);
 
 unsigned int			write_arg(t_process *process, \
 t_game *game, int tt, int pc);
