@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/02 12:47:38 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/14 16:12:03 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/14 23:14:18 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ void            op_sti(t_game *game, t_process *pr)
 	int    arg3;
 	int    jump;
 	int    er;
-	
+
 	er = 0;
 	if (!check_codege(pr->op_id, game->area[(pr->pc + 1) % MEM_SIZE].value))
 	{
@@ -150,5 +150,7 @@ void            op_sti(t_game *game, t_process *pr)
 	(er == 0) ? set_value(game, pr, (pr->pc + (arg2 + arg3) % IDX_MOD) % MEM_SIZE) : 0;
 	game->area[pr->pc].pc = 0;
 	pr->pc += jump;
+	//if (er == 1)
+		//ft_printf("pc %d\n", pr->pc);
 	pr->pc %= MEM_SIZE;
 }

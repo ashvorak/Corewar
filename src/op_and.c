@@ -6,7 +6,7 @@
 /*   By: oshvorak <oshvorak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/12 15:43:04 by oshvorak          #+#    #+#             */
-/*   Updated: 2018/06/12 16:00:41 by oshvorak         ###   ########.fr       */
+/*   Updated: 2018/06/14 19:20:17 by oshvorak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ unsigned int	write_arg(t_process *pr, t_game *game, int tt, int pc)
 	else if (tt == T_IND)
 	{
 		tmp = write_2_bytes(game, pc);
-		return (write_4_bytes(game, pc + (short)tmp));
+		return (write_4_bytes(game, (pc + (short)tmp) % MEM_SIZE));
 	}
 	else
 	{
