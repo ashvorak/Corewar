@@ -16,7 +16,6 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <ncurses.h>
 # include "../lib/libft.h"
 # include "../lib/get_next_line/get_next_line.h"
@@ -37,6 +36,7 @@ typedef struct			s_fla
 	int					v;
 	int					n;
 	int                 c;
+	int                 l;
 	size_t				dump;
 }						t_fla;
 
@@ -97,7 +97,7 @@ typedef struct			s_game
 	int					num_proc;
 	int					players_num;
 	size_t				cycle;
-	size_t				cycle_to_die;
+	ssize_t				cycle_to_die;
 	int					pause;
 	unsigned int		n;
 	int					speed;
@@ -105,7 +105,7 @@ typedef struct			s_game
 	int					winner;
 	int					finish;
 	int                 er;
-	int         fd;
+	int                 live_count;
 }						t_game;
 
 void	                ft_error(char *str, t_game *game);

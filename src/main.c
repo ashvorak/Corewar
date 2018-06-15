@@ -35,6 +35,7 @@ void	ft_usage(void)
 	ft_printf("       -dump N   : Dumps memory after N cycles then exits\n");
 	ft_printf("       -n N      : sets the number of the next player\n");
 	ft_printf("       -c        : Show cycles\n");
+	ft_printf("       -l        : Show lives\n");
 	ft_printf("       -v        : Ncurses output mode\n");
 	exit(1);
 }
@@ -52,6 +53,7 @@ void    init(t_game *game)
 	game->winner = 0;
 	game->finish = 0;
 	game->er = 0;
+	game->live_count = 0;
 	ft_bzero(&game->area, sizeof(game->area));
 	ft_bzero(&game->players, sizeof(game->players));
 	game->process = NULL;
@@ -64,8 +66,6 @@ int		main(int ac, char **av)
 	g_number = 2;
 	(ac < 2) ? ft_usage() : 0;
 	game = read_players(av, ac, 1);
-	game->fd = open("traces.txt", O_WRONLY);
-	
 	if (game->flags.v)
 	{
 		initscr();

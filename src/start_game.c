@@ -48,15 +48,17 @@ void	execute_process(t_game *game, t_process *process)
 		op_aff(game, process);
 }
 
-int		processes_number(t_process *process)
+int		processes_number(t_game *game)
 {
 	int i;
+	t_process *tmp;
 
 	i = 0;
-	while (process)
+	tmp = game->process;
+	while (tmp)
 	{
 		i++;
-		process = process->next;
+		tmp = tmp->next;
 	}
 	return (i);
 }
@@ -131,7 +133,7 @@ void	start_game(t_game *game)
 		process = process->next;
 	}
 	i = 1;
-	while (game->process)
+	while (game->process && game->cycle_to_die > 0)
 	{
 		(game->flags.v) ? manage_keys(game, action) : 1;
 		game->cycle++;
@@ -142,9 +144,10 @@ void	start_game(t_game *game)
 		(game->flags.c) ? ft_printf("Cycle: %zu\n", game->cycle) : 0;
 		if (i % game->cycle_to_die == 0)
 			i = check_procces(game);
-		game->num_proc = processes_number(game->process);
+		game->num_proc = processes_number(game);
 		(game->flags.v) ? visual(game) : 1;
 		action = (game->flags.v) ? getch() : -1;
 		i++;
 	}
+	finish_game(game);
 }
