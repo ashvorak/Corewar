@@ -17,6 +17,12 @@ void	dump_memory(t_game *game)
 	unsigned int i;
 
 	i = 0;
+	if (game->flags.v)
+	{
+		nodelay(stdscr, FALSE);
+		nocbreak();
+		endwin();
+	}
 	while (i < MEM_SIZE)
 	{
 		if (i % 64 == 0)
@@ -25,5 +31,5 @@ void	dump_memory(t_game *game)
 		i++;
 	}
 	printf("\n");
-	finish_game(game);
+	exit_game(game);
 }
