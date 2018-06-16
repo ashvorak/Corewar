@@ -12,7 +12,7 @@
 
 #include "../inc/corewar_vm.h"
 
-void	create_fla(t_fla *flag)
+void			create_fla(t_fla *flag)
 {
 	flag->v = 0;
 	flag->c = 0;
@@ -21,7 +21,7 @@ void	create_fla(t_fla *flag)
 	flag->dump = -1;
 }
 
-int		ft_arr_dig(char *arr)
+int				ft_arr_dig(char *arr)
 {
 	int i;
 
@@ -35,7 +35,16 @@ int		ft_arr_dig(char *arr)
 	return (1);
 }
 
-int		flags_read(char **argv, int argc, t_fla *flag)
+static t_fla	*flags_read_add(char **argv, int i, t_fla *flag)
+{
+	if (!ft_strcmp(argv[i], "-c"))
+		flag->c++;
+	else if (!ft_strcmp(argv[i], "-l"))
+		flag->l++;
+	return (flag);
+}
+
+int				flags_read(char **argv, int argc, t_fla *flag)
 {
 	int i;
 
@@ -44,10 +53,8 @@ int		flags_read(char **argv, int argc, t_fla *flag)
 	{
 		if (!ft_strcmp(argv[i], "-v"))
 			flag->v++;
-		else if (!ft_strcmp(argv[i], "-c"))
-			flag->c++;
-		else if (!ft_strcmp(argv[i], "-l"))
-			flag->l++;
+		else if (!ft_strcmp(argv[i], "-c") || !ft_strcmp(argv[i], "-l"))
+			flag = flags_read_add(argv, i, flag);
 		else if (!ft_strcmp(argv[i], "-n") && argv[i + 1] \
 				&& ft_arr_dig(argv[i + 1] + (argv[i + 1][0] == '-')))
 		{

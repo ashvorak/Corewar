@@ -12,6 +12,18 @@
 
 #include "../inc/corewar_vm.h"
 
+static void			ret_arg1_add(t_game *game, t_process *p, unsigned int *arg1)
+{
+	if (check_reg_ind(game->area[(p->pc + 2) % MEM_SIZE].value))
+		*arg1 = p->reg_num[game->area[(p->pc + 2) % MEM_SIZE].value - 1];
+	else
+	{
+		*arg1 = 0;
+		game->er = 1;
+	}
+	p->pc = (p->pc + 3) % MEM_SIZE;
+}
+
 static unsigned	int	ret_arg1(t_game *game, t_process *p, unsigned int codage)
 {
 	unsigned int	arg1;
@@ -19,8 +31,7 @@ static unsigned	int	ret_arg1(t_game *game, t_process *p, unsigned int codage)
 
 	if (ret_arg(codage, MASK_1, 6) == T_DIR)
 	{
-		arg1 = write_2_bytes(game, (p->pc + 2) % MEM_SIZE);
-		arg1 = (short)arg1;
+		arg1 = (short)write_2_bytes(game, (p->pc + 2) % MEM_SIZE);
 		p->pc = (p->pc + 4) % MEM_SIZE;
 	}
 	else if (ret_arg(game->area[(p->pc + 1) % MEM_SIZE].value, MASK_1, 6) ==
@@ -31,16 +42,7 @@ static unsigned	int	ret_arg1(t_game *game, t_process *p, unsigned int codage)
 		p->pc = (p->pc + 4) % MEM_SIZE;
 	}
 	else
-	{
-		if (check_reg_ind(game->area[(p->pc + 2) % MEM_SIZE].value))
-			arg1 = p->reg_num[game->area[(p->pc + 2) % MEM_SIZE].value - 1];
-		else
-		{
-			arg1 = 0;
-			game->er = 1;
-		}
-		p->pc = (p->pc + 3) % MEM_SIZE;
-	}
+		ret_arg1_add(game, p, &arg1);
 	return (arg1);
 }
 

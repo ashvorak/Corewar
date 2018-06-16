@@ -12,7 +12,7 @@
 
 #include "../inc/corewar_vm.h"
 
-unsigned	int	ft_chartoint(unsigned char *str)
+unsigned int	ft_chartoint(unsigned char *str)
 {
 	unsigned int	res;
 
@@ -22,6 +22,14 @@ unsigned	int	ft_chartoint(unsigned char *str)
 	res = res | str[2] << 8;
 	res = res | str[3] << 0;
 	return (res);
+}
+
+static t_player	read_magic(t_game *game, t_player *player, unsigned char buf[])
+{
+	player->magic = ft_chartoint(buf);
+	player->magic != COREWAR_EXEC_MAGIC ?
+	ft_error("Incorrect magic number", game) : 0;
+	return (*player);
 }
 
 t_player		read_player(char *file, t_game *game)
@@ -35,9 +43,7 @@ t_player		read_player(char *file, t_game *game)
 	ft_bzero(player.prog_name, sizeof(player.prog_name));
 	ft_bzero(player.comment, sizeof(player.comment));
 	read(fd, buf, 4);
-	player.magic = ft_chartoint(buf);
-	player.magic != COREWAR_EXEC_MAGIC ?
-		ft_error("Incorrect magic number", game) : 0;
+	player = read_magic(game, &player, buf);
 	read(fd, player.prog_name, sizeof(player.prog_name) - 1);
 	read(fd, buf, 4);
 	ft_chartoint(buf) ? ft_error("Name must be followed by NULL", game) : 0;

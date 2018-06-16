@@ -24,6 +24,13 @@ void	ft_error(char *str, t_game *game)
 
 void	exit_game(t_game *game)
 {
+	if (game->flags.v)
+	{
+		nodelay(stdscr, FALSE);
+		manage_keys(game, getch());
+		nocbreak();
+		endwin();
+	}
 	free(game);
 	game = NULL;
 	exit(0);
@@ -77,13 +84,6 @@ int		main(int ac, char **av)
 	if (!game->flags.v)
 		show_players(game);
 	start_game(game);
-	if (game->flags.v)
-	{
-		nodelay(stdscr, FALSE);
-		manage_keys(game, getch());
-		nocbreak();
-		endwin();
-	}
 	exit_game(game);
 	return (0);
 }

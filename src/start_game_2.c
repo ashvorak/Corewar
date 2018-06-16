@@ -104,7 +104,7 @@ int				check_procces(t_game *game)
 	buf = NULL;
 	check_process_add(game, tmp, buf);
 	i = 0;
-	while (i < game->players_num)
+	while (i++ < game->players_num)
 	{
 		if (game->live_count >= 21 || game->checks == MAX_CHECKS)
 		{
@@ -112,13 +112,11 @@ int				check_procces(t_game *game)
 			game->checks = 0;
 			break ;
 		}
-		i++;
 	}
-	i = 0;
-	while (i < game->players_num)
+	while (--i >= 0)
 	{
 		game->players[i].count_lives = 0;
-		game->players[i++].lives_in_cp = 0;
+		game->players[i].lives_in_cp = 0;
 	}
 	game->live_count = 0;
 	return (0);

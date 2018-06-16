@@ -25,5 +25,5 @@ void	dump_memory(t_game *game)
 		i++;
 	}
 	printf("\n");
-	exit(0);
+	finish_game(game);
 }

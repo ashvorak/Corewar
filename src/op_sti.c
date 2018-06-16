@@ -45,8 +45,6 @@ static void		set_value(t_game *game, t_process *process, unsigned int tmp)
 
 unsigned int	second_arg(t_game *game, t_process *pr, int *jump, int *er)
 {
-	unsigned int t_ind;
-
 	if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4) == T_REG)
 	{
 		*jump = *jump + 4;
@@ -61,10 +59,9 @@ unsigned int	second_arg(t_game *game, t_process *pr, int *jump, int *er)
 	else if (ret_arg(game->area[(pr->pc + 1) % MEM_SIZE].value, MASK_2, 4)
 		== T_IND)
 	{
-		t_ind = (short)write_2_bytes(game, (pr->pc + 3) % MEM_SIZE);
 		*jump = *jump + 5;
-		t_ind = write_4_bytes(game, ((pr->pc + (t_ind % IDX_MOD)) % MEM_SIZE));
-		return (t_ind);
+		return (write_4_bytes(game, ((pr->pc + (((short)write_2_bytes(game,
+			(pr->pc + 3) % MEM_SIZE)) % IDX_MOD)) % MEM_SIZE)));
 	}
 	else
 	{

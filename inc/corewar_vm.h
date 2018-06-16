@@ -98,7 +98,7 @@ typedef struct			s_game
 	int					num_proc;
 	int					players_num;
 	size_t				cycle;
-	size_t				cycle_to_die;
+	ssize_t				cycle_to_die;
 	int					pause;
 	unsigned int		n;
 	unsigned int		live_count;
@@ -140,6 +140,7 @@ void	                init(t_game *game);
 void                    exit_game(t_game *game);
 int                     checking_regs(t_game *game, t_process *process, int i);
 int                     wrong_codage(t_game *game, t_process *p);
+int		                processes_number(t_game *game);
 
 unsigned int			write_arg(t_process *process, \
 t_game *game, int tt, int pc);
