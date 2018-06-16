@@ -42,7 +42,8 @@ SRC =	./src/main.c \
 		./src/jump_pc.c \
 		./src/flags_read.c \
 		./src/dump.c \
-		./src/finish_game.c
+		./src/finish_game.c \
+		./src/execute_process.c
 
 MLIB = make -C lib
 

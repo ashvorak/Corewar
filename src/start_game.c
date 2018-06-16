@@ -12,58 +12,7 @@
 
 #include "../inc/corewar_vm.h"
 
-void	execute_process(t_game *game, t_process *process)
-{
-	if (process->op_id == 0)
-		op_live(game, process);
-	else if (process->op_id == 1)
-		op_ld(game, process);
-	else if (process->op_id == 2)
-		op_st(game, process);
-	else if (process->op_id == 3)
-		op_add(game, process);
-	else if (process->op_id == 4)
-		op_sub(game, process);
-	else if (process->op_id == 5)
-		op_and(game, process);
-	else if (process->op_id == 6)
-		op_or(game, process);
-	else if (process->op_id == 7)
-		op_xor(game, process);
-	else if (process->op_id == 8)
-		op_zjmp(game, process);
-	else if (process->op_id == 9)
-		op_ldi(game, process);
-	else if (process->op_id == 10)
-		op_sti(game, process);
-	else if (process->op_id == 11)
-		op_fork(game, process);
-	else if (process->op_id == 12)
-		op_lld(game, process);
-	else if (process->op_id == 13)
-		op_lldi(game, process);
-	else if (process->op_id == 14)
-		op_lfork(game, process);
-	else if (process->op_id == 15)
-		op_aff(game, process);
-}
-
-int		processes_number(t_game *game)
-{
-	int i;
-	t_process *tmp;
-
-	i = 0;
-	tmp = game->process;
-	while (tmp)
-	{
-		i++;
-		tmp = tmp->next;
-	}
-	return (i);
-}
-
-void	my_pause(t_game *game)
+void			my_pause(t_game *game)
 {
 	int s;
 
@@ -86,7 +35,7 @@ void	my_pause(t_game *game)
 	}
 }
 
-void	manage_keys(t_game *game, int action)
+void			manage_keys(t_game *game, int action)
 {
 	if (action == 32 || game->pause == 1)
 		my_pause(game);
@@ -107,10 +56,10 @@ void	manage_keys(t_game *game, int action)
 	}
 }
 
-void    set_pc(t_game *game)
+void			set_pc(t_game *game)
 {
 	t_process *pr;
-	
+
 	pr = game->process;
 	while (pr)
 	{
@@ -119,19 +68,25 @@ void    set_pc(t_game *game)
 	}
 }
 
-void	start_game(t_game *game)
+static void		cycle_op_id(t_game *game)
 {
 	t_process	*process;
-	int			action;
-	int			i;
 
-	action = -1;
 	process = game->process;
 	while (process)
 	{
 		process->op_id = push_op_id(game->area[process->pc].value);
 		process = process->next;
 	}
+}
+
+void			start_game(t_game *game)
+{
+	int			action;
+	int			i;
+
+	action = -1;
+	cycle_op_id(game);
 	i = 1;
 	while (game->process && game->cycle_to_die > 0)
 	{
@@ -141,7 +96,8 @@ void	start_game(t_game *game)
 		set_pc(game);
 		if (game->flags.dump > 0 && game->cycle == game->flags.dump)
 			dump_memory(game);
-		(game->flags.c) ? ft_printf("Cycle: %zu\n", game->cycle) : 0;
+		(game->flags.c && !game->flags.v) ? ft_printf("Cycle: %zu\n",
+			game->cycle) : 0;
 		if (i % game->cycle_to_die == 0)
 			i = check_procces(game);
 		game->num_proc = processes_number(game);

@@ -12,15 +12,26 @@
 
 #include "../inc/corewar_vm.h"
 
-static int	ret_arg1(t_game *game, t_process *p, unsigned int codage)
+static	void	ret_arg1_add(t_game *game, t_process *p, unsigned int *arg1)
+{
+	if (check_reg_ind(game->area[p->pc + 2].value))
+		*arg1 = p->reg_num[game->area[p->pc + 2].value - 1];
+	else
+	{
+		game->er = 1;
+		*arg1 = 0;
+	}
+	p->pc = (p->pc + 3) % MEM_SIZE;
+}
+
+static int		ret_arg1(t_game *game, t_process *p, unsigned int codage)
 {
 	unsigned int	arg1;
 	unsigned int	t_ind;
 
 	if (ret_arg(codage, MASK_1, 6) == T_DIR)
 	{
-		arg1 = write_2_bytes(game, p->pc + 2);
-		arg1 = (short)arg1;
+		arg1 = (short)write_2_bytes(game, p->pc + 2);
 		p->pc = (p->pc + 4) % MEM_SIZE;
 	}
 	else if (ret_arg(game->area[p->pc + 1].value, MASK_1, 6) == T_IND)
@@ -30,20 +41,11 @@ static int	ret_arg1(t_game *game, t_process *p, unsigned int codage)
 		p->pc = (p->pc + 4) % MEM_SIZE;
 	}
 	else
-	{
-		if (check_reg_ind(game->area[p->pc + 2].value))
-			arg1 = p->reg_num[game->area[p->pc + 2].value - 1];
-		else
-		{
-			game->er = 1;
-			arg1 = 0;
-		}
-		p->pc = (p->pc + 3) % MEM_SIZE;
-	}
+		ret_arg1_add(game, p, &arg1);
 	return (arg1);
 }
 
-static int	ret_arg2(t_game *game, t_process *p, unsigned int codage)
+static int		ret_arg2(t_game *game, t_process *p, unsigned int codage)
 {
 	unsigned int	arg2;
 
@@ -67,7 +69,7 @@ static int	ret_arg2(t_game *game, t_process *p, unsigned int codage)
 	return (arg2);
 }
 
-void		op_ldi(t_game *game, t_process *p)
+void			op_ldi(t_game *game, t_process *p)
 {
 	unsigned int	arg1;
 	unsigned int	arg2;

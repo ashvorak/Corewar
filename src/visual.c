@@ -25,7 +25,7 @@ int		get_first_reg(int n, t_game *game, int pos)
 	}
 }
 
-void			visual(t_game *game)
+void	visual(t_game *game)
 {
 	initialize_colors();
 	print_frame(stdscr, game->speed);

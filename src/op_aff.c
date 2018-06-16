@@ -19,8 +19,8 @@ void	op_aff(t_game *game, t_process *process)
 			return ;
 	game->area[process->pc].pc = 0;
 	if (check_reg_ind(game->area[process->pc + 2].value))
-		ft_printf("%c\n", process->reg_num[game->area[process->pc + 2].value] \
-	% 256);
+		ft_printf("%c\n",
+		process->reg_num[game->area[process->pc + 2].value - 1] % 256);
 	process->pc += 3;
 	process->pc %= MEM_SIZE;
 }

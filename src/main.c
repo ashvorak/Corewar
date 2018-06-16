@@ -22,8 +22,15 @@ void	ft_error(char *str, t_game *game)
 	exit(1);
 }
 
-void    exit_game(t_game *game)
+void	exit_game(t_game *game)
 {
+	if (game->flags.v)
+	{
+		nodelay(stdscr, FALSE);
+		manage_keys(game, getch());
+		nocbreak();
+		endwin();
+	}
 	free(game);
 	game = NULL;
 	exit(0);
@@ -31,7 +38,7 @@ void    exit_game(t_game *game)
 
 void	ft_usage(void)
 {
-	ft_printf("Usage: ./corewar [-dump N -n N -v <champion1.cor> <...>\n");
+	ft_printf("Usage: ./corewar [-dump N -n N -v <champion1.cor> <...>]\n");
 	ft_printf("       -dump N   : Dumps memory after N cycles then exits\n");
 	ft_printf("       -n N      : sets the number of the next player\n");
 	ft_printf("       -c        : Show cycles\n");
@@ -40,7 +47,7 @@ void	ft_usage(void)
 	exit(1);
 }
 
-void    init(t_game *game)
+void	init(t_game *game)
 {
 	game->pause = 1;
 	game->speed = 2000;
@@ -77,13 +84,6 @@ int		main(int ac, char **av)
 	if (!game->flags.v)
 		show_players(game);
 	start_game(game);
-	if (game->flags.v)
-	{
-		nodelay(stdscr, FALSE);
-		manage_keys(game, getch());
-		nocbreak();
-		endwin();
-	}
 	exit_game(game);
 	return (0);
 }

@@ -60,7 +60,6 @@ void			execute(t_game *game)
 		execute_add(game, process);
 		if (process->op_id == 16)
 			process->op_id = push_op_id(game->area[process->pc].value);
-		//game->area[process->pc].pc = 1;
 		process = process->next;
 		if (game->flags.v)
 			action = getch();
@@ -105,16 +104,13 @@ int				check_procces(t_game *game)
 	buf = NULL;
 	check_process_add(game, tmp, buf);
 	i = 0;
-	while (i < game->players_num)
-	{
+	while (i++ < game->players_num)
 		if (game->live_count >= 21 || game->checks == MAX_CHECKS)
 		{
 			game->cycle_to_die -= CYCLE_DELTA;
 			game->checks = 0;
 			break ;
 		}
-		i++;
-	}
 	i = 0;
 	while (i < game->players_num)
 	{

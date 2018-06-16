@@ -12,7 +12,7 @@
 
 #include "../inc/corewar_vm.h"
 
-int     wrong_codage(t_game *game, t_process *p)
+int		wrong_codage(t_game *game, t_process *p)
 {
 	game->area[p->pc].pc = 0;
 	p->pc += jump_pc(game->area[(p->pc + 1) % MEM_SIZE].value, \

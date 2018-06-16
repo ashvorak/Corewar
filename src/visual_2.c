@@ -74,7 +74,7 @@ void	print_data(t_game *game)
 	int		j;
 	int		k;
 	int		l;
-	
+
 	i = 2;
 	k = 0;
 	while (k < MEM_SIZE)

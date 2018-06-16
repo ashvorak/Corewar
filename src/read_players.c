@@ -42,7 +42,7 @@ t_game	*read_players(char **av, int ac, int i)
 		if (i < ac)
 		{
 			if (j > 3)
-				ft_usage();
+				ft_error("Too many champions!", game);
 			add_player(game, av[i], j);
 			game->players_num++;
 			i++;
