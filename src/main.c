@@ -38,7 +38,7 @@ void	exit_game(t_game *game)
 
 void	ft_usage(void)
 {
-	ft_printf("Usage: ./corewar [-dump N -n N -v <champion1.cor> <...>\n");
+	ft_printf("Usage: ./corewar [-dump N -n N -v <champion1.cor> <...>]\n");
 	ft_printf("       -dump N   : Dumps memory after N cycles then exits\n");
 	ft_printf("       -n N      : sets the number of the next player\n");
 	ft_printf("       -c        : Show cycles\n");
