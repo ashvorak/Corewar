@@ -14,7 +14,7 @@ Rhône 1982 (that is one delicious French wine!), etc...
 • The game ends when all the processes are dead. The winner is the last player
 reported to be “alive”.
 
-#This project can be broken down into three distinctive parts:
+This project can be broken down into three distinctive parts:
 
 • The assembler: this is the program that will compile your champions and translate
 them from the language you will write them in (assembly language) into “Bytecode”.Bytecode
